@@ -67,10 +67,18 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Doctor\DoctorDetails.aspx" />
     <Content Include="homePage.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Doctor\DoctorDetails.aspx.cs">
+      <DependentUpon>DoctorDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Doctor\DoctorDetails.aspx.designer.cs">
+      <DependentUpon>DoctorDetails.aspx</DependentUpon>
+    </Compile>
     <Compile Include="homePage.aspx.cs">
       <DependentUpon>homePage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
