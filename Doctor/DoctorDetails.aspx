@@ -112,8 +112,8 @@
                 </tr>
                 <tr>
                     <td colspan="2" style="text-align: center">
-                        <asp:Button ID="btnSubmit" runat="server" Text="submit" Width="115px" CssClass="btnsubmit" />
-                        <asp:Button ID="btnReset" runat="server" Text="Reset" Width="115px" />
+                        <asp:Button ID="btnSubmit" runat="server" Text="submit" Width="120px" CssClass="btnsubmit" />
+                        <asp:Button ID="btnReset" runat="server" Text="Reset" Width="120px" />
                     </td>
                 </tr>
                 <tr>
