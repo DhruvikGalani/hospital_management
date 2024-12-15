@@ -60,22 +60,22 @@ namespace hospital_management.Doctor
         protected global::System.Web.UI.WebControls.TextBox txtAddress;
 
         /// <summary>
-        /// ddlSpecialties control.
+        /// ddlSpecialities control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlSpecialties;
+        protected global::System.Web.UI.WebControls.DropDownList ddlSpecialities;
 
         /// <summary>
-        /// ddlSpecialtiesTypes control.
+        /// ddlSpecialitiesTypes control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlSpecialtiesTypes;
+        protected global::System.Web.UI.WebControls.DropDownList ddlSpecialitiesTypes;
 
         /// <summary>
         /// txtExperienceYear control.

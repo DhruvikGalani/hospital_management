@@ -21,10 +21,10 @@
 
         .no-spinner {
             -moz-appearance: textfield; /* Firefox */
-             width : 300px;
+             width : 360px;
         }
         .textFields {
-            width : 300px;
+            width : 360px;
         }
         .btnsubmit {
             margin-right: 50px;
@@ -68,9 +68,9 @@
                 <tr>
                     <td class="auto-style2">Specialization :</td>
                     <td>
-                        <asp:DropDownList ID="ddlSpecialties" runat="server" Width="180px">
+                        <asp:DropDownList ID="ddlSpecialities" runat="server" Width="180px" AutoPostBack="True" OnSelectedIndexChanged="ddlSpecialities_SelectedIndexChanged" >
                         </asp:DropDownList>
-                        <asp:DropDownList ID="ddlSpecialtiesTypes" runat="server" Width="180px">
+                        <asp:DropDownList ID="ddlSpecialitiesTypes" runat="server" Width="180px">
                         </asp:DropDownList>
                     </td>
                 </tr>
@@ -112,8 +112,8 @@
                 </tr>
                 <tr>
                     <td colspan="2" style="text-align: center">
-                        <asp:Button ID="btnSubmit" runat="server" Text="submit" Width="120px" CssClass="btnsubmit" />
-                        <asp:Button ID="btnReset" runat="server" Text="Reset" Width="120px" />
+                        <asp:Button ID="btnSubmit" runat="server" Text="submit" Width="120px" CssClass="btnsubmit" OnClick="btnSubmit_Click" />
+                        <asp:Button ID="btnReset" runat="server" Text="Reset" Width="120px" OnClick="btnReset_Click" />
                     </td>
                 </tr>
                 <tr>
