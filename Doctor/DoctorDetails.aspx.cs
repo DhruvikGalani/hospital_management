@@ -97,7 +97,7 @@ namespace hospital_management.Doctor
             ddlSpecialities.Items.Add("Alternative and Holistic Specialties");
             ddlSpecialities.Items.Add("Specialized Fields");
             ddlSpecialities.Items.Add("Emerging Fields");
-            ddlSpecialities.Items.Insert(0, new ListItem("Select"));
+            ddlSpecialities.Items.Insert(0, new ListItem("select"));
         }
 
         protected void fnBindTypesOfSpecialities()
@@ -184,7 +184,7 @@ namespace hospital_management.Doctor
                 ddlSpecialitiesTypes.Items.Add("Lifestyle Medicine");
             }
 
-            ddlSpecialitiesTypes.Items.Insert(0, new ListItem("Select"));
+            ddlSpecialitiesTypes.Items.Insert(0, new ListItem("select"));
         }
 
         protected void ddlSpecialities_SelectedIndexChanged(object sender, EventArgs e)
