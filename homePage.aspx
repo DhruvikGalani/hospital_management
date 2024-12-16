@@ -9,7 +9,7 @@
 <body>
     <form id="form1" runat="server">
         <div>
-            WEL-COME&nbsp;&nbsp; : teammates</div>
+            WELCOME&nbsp;:</div>
     </form>
 </body>
 </html>
