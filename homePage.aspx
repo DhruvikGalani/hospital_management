@@ -9,7 +9,7 @@
 <body>
     <form id="form1" runat="server">
         <div>
-            wel-come</div>
+            welcome</div>
     </form>
     <p>
         &nbsp;</p>
