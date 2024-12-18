@@ -15,15 +15,5 @@ namespace hospital_management.Patient
         {
 
         }
-
-        //protected void btnSubmit_Click(object sender, EventArgs e)
-        //{    
-          
-        //}
-
-        //protected void btnReset_Click(object sender, EventArgs e)
-        //{
-
-        //}
     }
 }
