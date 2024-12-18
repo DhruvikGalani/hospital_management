@@ -9,6 +9,6 @@
 <body>
 
     <p>
-        change : 08</p>
+        change : 0</p>
 </body>
 </html>
