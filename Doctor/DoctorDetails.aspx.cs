@@ -84,6 +84,7 @@ namespace hospital_management.Doctor
            txtLicenseNo.Text = "";
            txtFee.Text = "";
             lblDetails.Text = "";
+
         }
 
         protected void fnBindSpecialities()
