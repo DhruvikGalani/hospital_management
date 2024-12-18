@@ -7,9 +7,8 @@
     <title></title>
 </head>
 <body>
-    <form id="form1" runat="server">
-        <div>
-            WEL-COME&nbsp;&nbsp; : teammate</div>
-    </form>
+
+    <p>
+        change : 08</p>
 </body>
 </html>

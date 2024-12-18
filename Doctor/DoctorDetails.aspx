@@ -8,10 +8,10 @@
     <style type="text/css">
         .auto-style1 {
             width: 100%;
-            height: 400px;
+          
         }
         .auto-style2 {
-            width: 192px;
+            width: 160px;
         }
         .no-spinner::-webkit-inner-spin-button, 
         .no-spinner::-webkit-outer-spin-button {
@@ -31,7 +31,7 @@
         }
     </style>
 </head>
-<body style="width: 600px">
+<body style="width: 589px; height: 429px;">
     <form id="form1" runat="server">
         <div>
             <table class="auto-style1">
