@@ -10,7 +10,6 @@
 namespace hospital_management.Patient
 {
 
-
     public partial class Patients
     {
 
