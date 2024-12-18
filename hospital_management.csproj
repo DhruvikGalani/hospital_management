@@ -72,7 +72,6 @@
     <Content Include="Doctor\MedicalRecord.aspx" />
     <Content Include="homePage.aspx" />
     <Content Include="Patient\Patients.aspx" />
-    <Content Include="Patient\patient\Patients.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -102,13 +101,6 @@
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Patient\Patients.aspx.designer.cs">
-      <DependentUpon>Patients.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Patient\patient\Patients.aspx.cs">
-      <DependentUpon>Patients.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Patient\patient\Patients.aspx.designer.cs">
       <DependentUpon>Patients.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
