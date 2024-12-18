@@ -149,7 +149,16 @@
                
                 <tr>
                     <td colspan="2" style="text-align: center">
-                        &nbsp;</td>
+                        <asp:Button ID="btnSave" runat="server" OnClick="btnSave_Click" Text="Save" />
+                        <asp:Button ID="btnReset" runat="server" OnClick="btnReset_Click" Text="Reset" />
+                    </td>
+                </tr>
+                
+               
+                <tr>
+                    <td colspan="2" style="text-align: center" class="auto-style4">
+                        <asp:Label ID="lblDetails" runat="server" Text="Details"></asp:Label>
+                    </td>
                 </tr>
             </table>
         </div>
