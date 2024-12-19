@@ -105,13 +105,13 @@ namespace hospital_management.Patient
         protected global::System.Web.UI.WebControls.TextBox txtEmergencycontactno;
 
         /// <summary>
-        /// ddlBloodgroup control.
+        /// rblBlood control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlBloodgroup;
+        protected global::System.Web.UI.WebControls.RadioButtonList rblBlood;
 
         /// <summary>
         /// txtAllergies control.

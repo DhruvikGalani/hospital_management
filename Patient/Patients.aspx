@@ -10,9 +10,6 @@
             width: 100%;
             height: 400px; 
         }
-        .auto-style2 {
-            width: 192px;
-        }
         .no-spinner::-webkit-inner-spin-button, 
         .no-spinner::-webkit-outer-spin-button {
             -webkit-appearance: none;
@@ -29,19 +26,7 @@
         .btnsubmit {
             margin-right: 50px;
         }
-        .auto-style3 {
-            width: 192px;
-            height: 26px;
-        }
-        .auto-style4 {
-            height: 26px;
-        }
-        .auto-style5 {
-            height: 32px;
-        }
-        .auto-style6 {
-            height: 32px;
-        }
+        
     </style>
 </head>
 <body style="width: 600px">
@@ -52,20 +37,20 @@
                     <td colspan="2" style="text-align: center">Patient Registration</td>
                 </tr>
                 <tr>
-                    <td class="auto-style2">Name : </td>
+                    <td>Name </td>
                     <td>
                         <asp:TextBox ID="txtName" runat="server" CssClass="textFields"></asp:TextBox>
                     </td>
                 </tr>
                 <tr>
-                    <td class="auto-style2">Age :</td>
+                    <td>Age </td>
                     <td>
                         <asp:TextBox ID="txtAge" runat="server" ClientIDMode="AutoID" CssClass="no-spinner" TextMode="Number"></asp:TextBox>
                     </td>
                 </tr>
                 <tr>
-                    <td class="auto-style2">Gender :</td>
-                    <td>
+                    <td >Gender </td>
+                    <td >
                         <asp:RadioButtonList ID="rblGender" runat="server" CellPadding="2" CellSpacing="2" RepeatDirection="Horizontal" RepeatLayout="Flow">
                             <asp:ListItem>Male</asp:ListItem>
                             <asp:ListItem>Female</asp:ListItem>
@@ -73,46 +58,45 @@
                     </td>
                 </tr>
                 <tr>
-                    <td class="auto-style2">Address :</td>
-                    <td>
+                    <td >Address </td>
+                    <td >
                         <asp:TextBox ID="txtAddress" runat="server" TextMode="MultiLine" CssClass="textFields"></asp:TextBox>
                     </td>
                 </tr>
                 <tr>
-                    <td class="auto-style2">Date of birth</td>
-                    <td>
-                        <asp:TextBox ID="txtDate" runat="server" TextMode="Date" Width="146px"></asp:TextBox>
+                    <td >Date of birth</td>
+                    <td >
+                        <asp:TextBox ID="txtDate" runat="server" TextMode="Date" CssClass="textFields"></asp:TextBox>
                     </td>
                 </tr>
                 <tr>
-                    <td class="auto-style2">Contact No :</td>
-                    <td>
+                    <td >Contact No </td>
+                    <td >
                         <asp:TextBox ID="txtContactNo" runat="server" TextMode="Number" ValidateRequestMode="Disabled" CssClass="no-spinner"></asp:TextBox>
                     </td>
                 </tr>
                 <tr>
-                    <td class="auto-style2">Email :</td>
-                    <td>
+                    <td >Email </td>
+                    <td >
                         <asp:TextBox ID="txtEmail" runat="server" TextMode="Email" CssClass="textFields"></asp:TextBox>
                     </td>
                 </tr>
                 <tr>
-                    <td class="auto-style2">Password : </td>
-                    <td>
+                    <td >Password </td>
+                    <td >
                         <asp:TextBox ID="txtPassword" runat="server" TextMode="Password" CssClass="textFields"></asp:TextBox>
                     </td>
                 </tr>
                 <tr>
-                    <td class="auto-style2">Emergency Contact no</td>
-                    <td>
+                    <td>Emergency Contact no</td>
+                    <td >
                         <asp:TextBox ID="txtEmergencycontactno" runat="server" CssClass="no-spinner" TextMode="Number" ValidateRequestMode="Disabled"></asp:TextBox>
                     </td>
                 </tr>
                 <tr>
-                    <td class="auto-style3">Blood Group</td>
-                    <td class="auto-style4">
-                        <asp:DropDownList ID="ddlBloodgroup" runat="server">
-                            <asp:ListItem>---select your Blood group--</asp:ListItem>
+                    <td >Blood Group</td>
+                    <td >
+                        <asp:RadioButtonList ID="rblBlood" runat="server" RepeatColumns="4" Width="270px">
                             <asp:ListItem>A+</asp:ListItem>
                             <asp:ListItem>A-</asp:ListItem>
                             <asp:ListItem>B+</asp:ListItem>
@@ -121,25 +105,25 @@
                             <asp:ListItem>AB-</asp:ListItem>
                             <asp:ListItem>O+</asp:ListItem>
                             <asp:ListItem>O-</asp:ListItem>
-                        </asp:DropDownList>
+                        </asp:RadioButtonList>
                     </td>
                 </tr>
                 <tr>
-                    <td class="auto-style2">Allergies</td>
-                    <td>
-                        <asp:TextBox ID="txtAllergies" runat="server" Width="295px"></asp:TextBox>
+                    <td >Allergies</td>
+                    <td >
+                        <asp:TextBox ID="txtAllergies" runat="server" Width="295px" CssClass="textFields"></asp:TextBox>
                     </td>
                 </tr>
                 <tr>
-                    <td class="auto-style2">RunningMedicines</td>
-                    <td>
-                        <asp:TextBox ID="txtRunningmedicine" runat="server" Width="293px"></asp:TextBox>
+                    <td >RunningMedicines</td>
+                    <td >
+                        <asp:TextBox ID="txtRunningmedicine" runat="server" Width="293px" CssClass="textFields"></asp:TextBox>
                     </td>
                 </tr>
                 <tr>
-                    <td class="auto-style5">Insurance</td>
-                    <td class="auto-style6">
-                        <asp:RadioButtonList ID="rblInsurance" runat="server" RepeatDirection="Horizontal">
+                    <td>Insurance</td>
+                    <td >
+                        <asp:RadioButtonList ID="rblInsurance" runat="server" RepeatDirection="Horizontal" Width="180px">
                             <asp:ListItem>YES</asp:ListItem>
                             <asp:ListItem>No</asp:ListItem>
                         </asp:RadioButtonList>
@@ -149,14 +133,14 @@
                
                 <tr>
                     <td colspan="2" style="text-align: center">
-                        <asp:Button ID="btnSave" runat="server" OnClick="btnSave_Click" Text="Save" />
+                        <asp:Button ID="btnSave" runat="server" OnClick="btnSave_Click" Text="Save" CssClass="btnsubmit" />
                         <asp:Button ID="btnReset" runat="server" OnClick="btnReset_Click" Text="Reset" />
                     </td>
                 </tr>
                 
                
                 <tr>
-                    <td colspan="2" style="text-align: center" class="auto-style4">
+                    <td colspan="2" style="text-align: center" >
                         <asp:Label ID="lblDetails" runat="server" Text="Details"></asp:Label>
                     </td>
                 </tr>

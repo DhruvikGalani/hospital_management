@@ -11,7 +11,7 @@
         height: 400px; 
     }
     .auto-style2 {
-        width: 192px;
+        width: 190px;
     }
     .no-spinner::-webkit-inner-spin-button, 
     .no-spinner::-webkit-outer-spin-button {
@@ -20,19 +20,19 @@
     }
 
     .no-spinner {
-        -moz-appearance: textfield; /* Firefox */
+        -moz-appearance: textfield; 
+         width : 250px;
         }
     .textFields {
+        width : 250px;
         }
     .btnsubmit {
         margin-right: 50px;
     }
-    .auto-style4 {
-        height: 26px;
-    }
+   
     </style>
 </head>
-<body>
+<body style="width: 485px">
     <form id="form1" runat="server">
                <div>
            <table class="auto-style1">
@@ -40,37 +40,25 @@
                    <td colspan="2" style="text-align: center; font-size: large;"><strong>Insurance</strong></td>
                </tr>
                <tr>
-                   <td class="auto-style2"><span style="font-size: medium; line-height: 107%; font-family: &quot;Calibri&quot;,sans-serif; mso-ascii-theme-font: minor-latin; mso-fareast-font-family: Calibri; mso-fareast-theme-font: minor-latin; mso-hansi-theme-font: minor-latin; mso-bidi-font-family: Shruti; mso-bidi-theme-font: minor-bidi; mso-ansi-language: EN-IN; mso-fareast-language: EN-US; mso-bidi-language: AR-SA">PolicyNumber:</span></td>
+                   <td class="auto-style2">PolicyNumber</td>
                    <td>
-                       <asp:TextBox ID="txtPolicynumber" runat="server" CssClass="textFields" Width="283px"></asp:TextBox>
+                       <asp:TextBox ID="txtPolicynumber" runat="server" CssClass="no-spinner"></asp:TextBox>
                    </td>
                </tr>
                <tr>
-                   <td class="auto-style2"><span style="font-size:11.0pt;line-height:107%;
-font-family:&quot;Calibri&quot;,sans-serif;mso-ascii-theme-font:minor-latin;mso-fareast-font-family:
-Calibri;mso-fareast-theme-font:minor-latin;mso-hansi-theme-font:minor-latin;
-mso-bidi-font-family:Shruti;mso-bidi-theme-font:minor-bidi;mso-ansi-language:
-EN-IN;mso-fareast-language:EN-US;mso-bidi-language:AR-SA">Provider</span></td>
+                   <td class="auto-style2">provider</td>
                    <td>
-                       <asp:TextBox ID="txtProvide" runat="server" ClientIDMode="AutoID" CssClass="no-spinner" Width="289px"></asp:TextBox>
+                       <asp:TextBox ID="txtProvide" runat="server" ClientIDMode="AutoID" CssClass="no-spinner"></asp:TextBox>
                    </td>
                </tr>
                <tr>
-                   <td class="auto-style2"><span style="font-size:11.0pt;line-height:107%;
-font-family:&quot;Calibri&quot;,sans-serif;mso-ascii-theme-font:minor-latin;mso-fareast-font-family:
-Calibri;mso-fareast-theme-font:minor-latin;mso-hansi-theme-font:minor-latin;
-mso-bidi-font-family:Shruti;mso-bidi-theme-font:minor-bidi;mso-ansi-language:
-EN-IN;mso-fareast-language:EN-US;mso-bidi-language:AR-SA">CoverageDetails</span></td>
+                   <td class="auto-style2">CoverageDetails</td>
                    <td>
-                       <asp:TextBox ID="txtCoverage" runat="server" Width="297px"></asp:TextBox>
+                       <asp:TextBox ID="txtCoverage" runat="server" CssClass="textFields"></asp:TextBox>
                    </td>
                </tr>
                <tr>
-                   <td class="auto-style2"><span style="font-size:11.0pt;line-height:107%;
-font-family:&quot;Calibri&quot;,sans-serif;mso-ascii-theme-font:minor-latin;mso-fareast-font-family:
-Calibri;mso-fareast-theme-font:minor-latin;mso-hansi-theme-font:minor-latin;
-mso-bidi-font-family:Shruti;mso-bidi-theme-font:minor-bidi;mso-ansi-language:
-EN-IN;mso-fareast-language:EN-US;mso-bidi-language:AR-SA">ClaimStatus</span></td>
+                   <td class="auto-style2">ClaimStatus</td>
                    <td>
                        <asp:RadioButtonList ID="rblClaimstatus" runat="server" AutoPostBack="True" RepeatDirection="Horizontal">
                            <asp:ListItem>Approved</asp:ListItem>
@@ -79,45 +67,33 @@ EN-IN;mso-fareast-language:EN-US;mso-bidi-language:AR-SA">ClaimStatus</span></td
                    </td>
                </tr>
                <tr>
-                   <td class="auto-style2"><span style="font-size:11.0pt;line-height:107%;
-font-family:&quot;Calibri&quot;,sans-serif;mso-ascii-theme-font:minor-latin;mso-fareast-font-family:
-Calibri;mso-fareast-theme-font:minor-latin;mso-hansi-theme-font:minor-latin;
-mso-bidi-font-family:Shruti;mso-bidi-theme-font:minor-bidi;mso-ansi-language:
-EN-IN;mso-fareast-language:EN-US;mso-bidi-language:AR-SA">ClaimAmount</span></td>
+                   <td class="auto-style2">ClaimAmount</ntd>
                    <td>
-                       <asp:TextBox ID="txtClaim" runat="server" TextMode="Number" Width="146px"></asp:TextBox>
+                       <asp:TextBox ID="txtClaim" runat="server" TextMode="Number" Width="146px" CssClass="no-spinner"></asp:TextBox>
                    </td>
                </tr>
                <tr>
-                   <td class="auto-style2"><span style="font-size:11.0pt;line-height:107%;
-font-family:&quot;Calibri&quot;,sans-serif;mso-ascii-theme-font:minor-latin;mso-fareast-font-family:
-Calibri;mso-fareast-theme-font:minor-latin;mso-hansi-theme-font:minor-latin;
-mso-bidi-font-family:Shruti;mso-bidi-theme-font:minor-bidi;mso-ansi-language:
-EN-IN;mso-fareast-language:EN-US;mso-bidi-language:AR-SA">ApprovalDate</span></td>
+                   <td class="auto-style2">ApprovalDate</td>
                    <td>
-                       <asp:TextBox ID="txtApprovaldate" runat="server" TextMode="Date" ValidateRequestMode="Disabled" CssClass="no-spinner" Width="145px"></asp:TextBox>
+                       <asp:TextBox ID="txtApprovaldate" runat="server" TextMode="Date" ValidateRequestMode="Disabled" Width="145px"></asp:TextBox>
                    </td>
                </tr>
                <tr>
-                   <td class="auto-style2"><span style="font-size:11.0pt;line-height:107%;
-font-family:&quot;Calibri&quot;,sans-serif;mso-ascii-theme-font:minor-latin;mso-fareast-font-family:
-Calibri;mso-fareast-theme-font:minor-latin;mso-hansi-theme-font:minor-latin;
-mso-bidi-font-family:Shruti;mso-bidi-theme-font:minor-bidi;mso-ansi-language:
-EN-IN;mso-fareast-language:EN-US;mso-bidi-language:AR-SA">PolicyExpiryDate</span></td>
+                   <td class="auto-style2">PolicyExpiryDate</td>
                    <td>
-                       <asp:TextBox ID="txtExpirydate" runat="server" TextMode="Date" CssClass="textFields" Width="143px"></asp:TextBox>
+                       <asp:TextBox ID="txtExpirydate" runat="server" TextMode="Date" Width="143px"></asp:TextBox>
                    </td>
                </tr>
               
                    <td colspan="2" style="text-align: center">
-                       <asp:Button ID="btnSave" runat="server" OnClick="btnSave_Click" Text="Save" />
+                       <asp:Button ID="btnSave" runat="server" OnClick="btnSave_Click" Text="Save" CssClass="btnsubmit" />
                        <asp:Button ID="btnReset" runat="server" OnClick="btnReset_Click" Text="Reset" />
                    </td>
                </tr>
                
               
                <tr>
-                   <td colspan="2" style="text-align: center" class="auto-style4">
+                   <td colspan="2" style="text-align: center">
                        <asp:Label ID="lblDetails" runat="server" Text="Details"></asp:Label>
                    </td>
                </tr>

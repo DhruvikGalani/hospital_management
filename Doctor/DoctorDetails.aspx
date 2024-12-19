@@ -39,19 +39,19 @@
                     <td colspan="2" style="text-align: center">Doctor&#39;s Registration</td>
                 </tr>
                 <tr>
-                    <td class="auto-style2">Name : </td>
+                    <td class="auto-style2">Name </td>
                     <td>
                         <asp:TextBox ID="txtName" runat="server"  CssClass="textFields"></asp:TextBox>
                     </td>
                 </tr>
                 <tr>
-                    <td class="auto-style2">Age :</td>
+                    <td class="auto-style2">Age </td>
                     <td>
                         <asp:TextBox ID="txtAge" runat="server" ClientIDMode="AutoID" CssClass="no-spinner" TextMode="Number"></asp:TextBox>
                     </td>
                 </tr>
                 <tr>
-                    <td class="auto-style2">Gender :</td>
+                    <td class="auto-style2">Gender </td>
                     <td>
                         <asp:RadioButtonList ID="rblGender" runat="server" CellPadding="2" CellSpacing="2" RepeatDirection="Horizontal">
                             <asp:ListItem>Male</asp:ListItem>
@@ -60,13 +60,13 @@
                     </td>
                 </tr>
                 <tr>
-                    <td class="auto-style2">Address :</td>
+                    <td class="auto-style2">Address </td>
                     <td>
                         <asp:TextBox ID="txtAddress" runat="server" TextMode="MultiLine" CssClass="textFields"></asp:TextBox>
                     </td>
                 </tr>
                 <tr>
-                    <td class="auto-style2">Specialization :</td>
+                    <td class="auto-style2">Specialization </td>
                     <td>
                         <asp:DropDownList ID="ddlSpecialities" runat="server" Width="180px" AutoPostBack="True" OnSelectedIndexChanged="ddlSpecialities_SelectedIndexChanged" >
                         </asp:DropDownList>
@@ -75,37 +75,37 @@
                     </td>
                 </tr>
                 <tr>
-                    <td class="auto-style2">Experience Years : </td>
+                    <td class="auto-style2">Experience Years </td>
                     <td>
                         <asp:TextBox ID="txtExperienceYear" runat="server" TextMode="Number" CssClass="no-spinner"></asp:TextBox>
                     </td>
                 </tr>
                 <tr>
-                    <td class="auto-style2">Contact No :</td>
+                    <td class="auto-style2">Contact No </td>
                     <td>
                         <asp:TextBox ID="txtContactNo" runat="server" TextMode="Number" ValidateRequestMode="Disabled" CssClass="no-spinner"></asp:TextBox>
                     </td>
                 </tr>
                 <tr>
-                    <td class="auto-style2">Email :</td>
+                    <td class="auto-style2">Email </td>
                     <td>
                         <asp:TextBox ID="txtEmail" runat="server" TextMode="Email" CssClass="textFields"></asp:TextBox>
                     </td>
                 </tr>
                 <tr>
-                    <td class="auto-style2">Password : </td>
+                    <td class="auto-style2">Password </td>
                     <td>
                         <asp:TextBox ID="txtPassword" runat="server" TextMode="Password" CssClass="textFields"></asp:TextBox>
                     </td>
                 </tr>
                 <tr>
-                    <td class="auto-style2">License Number :</td>
+                    <td class="auto-style2">License Number </td>
                     <td>
                         <asp:TextBox ID="txtLicenseNo" runat="server" TextMode="Number" CssClass="no-spinner"></asp:TextBox>
                     </td>
                 </tr>
                 <tr>
-                    <td class="auto-style2">Consultation Fee :</td>
+                    <td class="auto-style2">Consultation Fee</td>
                     <td>
                         <asp:TextBox ID="txtFee" runat="server" TextMode="Number" CssClass="no-spinner"></asp:TextBox>
                     </td>
