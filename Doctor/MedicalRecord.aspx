@@ -28,9 +28,7 @@
         .btnsubmit {
             margin-right: 50px;
         }
-        .auto-style2 {
-            width: 266px;
-        }
+       
       
        
     </style>
@@ -40,16 +38,16 @@
         <div>
             <table class="auto-style1">
                 <tr>
-                    <td colspan="2" style="text-align: center">Medical Records</td>
+                    <td colspan="2" style="text-align: center;font-family:large"><strong>Medical Records</strong></td>
                 </tr>
                 <tr>
-                    <td class="auto-style2">Patient Name </td>
+                    <td >Patient Name </td>
                     <td>
                         <asp:TextBox ID="txtPatientName" runat="server" CssClass="textFields"></asp:TextBox>
                     </td>
                 </tr>
                 <tr>
-                    <td class="auto-style2">Blood Group </td>
+                    <td >Blood Group </td>
                     <td>
                         <asp:RadioButtonList ID="rblBlood" runat="server" RepeatColumns="4">
                             <asp:ListItem>A+</asp:ListItem>
@@ -64,37 +62,37 @@
                     </td>
                 </tr>
                 <tr>
-                    <td class="auto-style2">Doctor Name </td>
+                    <td>Doctor Name </td>
                     <td>
                         <asp:TextBox ID="txtDoctorName" runat="server" CssClass="textFields"></asp:TextBox>
                     </td>
                 </tr>
                 <tr>
-                    <td class="auto-style2">Visit Date </td>
+                    <td >Visit Date </td>
                     <td>
                         <asp:TextBox ID="txtVisitDate" runat="server" CssClass="textFields" TextMode="Date"></asp:TextBox>
                     </td>
                 </tr>
                 <tr>
-                    <td class="auto-style2">Diagnosis </td>
+                    <td>Diagnosis </td>
                     <td >
                         <asp:TextBox ID="txtDiagnosis" runat="server" CssClass="textFields" TextMode="MultiLine"></asp:TextBox>
                     </td>
                 </tr>
                 <tr>
-                    <td class="auto-style2">Prescribed Medications </td>
+                    <td >Prescribed Medications </td>
                     <td>
                         <asp:TextBox ID="txtPrescribedMedications" runat="server" CssClass="textFields" TextMode="MultiLine"></asp:TextBox>
                     </td>
                 </tr>
                 <tr>
-                    <td class="auto-style2">Treatment Notes </td>
+                    <td >Treatment Notes </td>
                     <td>
                         <asp:TextBox ID="txtTreatmentNote" runat="server" CssClass="textFields" TextMode="MultiLine"></asp:TextBox>
                     </td>
                 </tr>
                 <tr>
-                    <td class="auto-style2">Treatment Status :</td>
+                    <td >Treatment Status :</td>
                     <td>
                         <asp:DropDownList ID="ddlTreatmentStatus" runat="server" Width="255px" style ="text-align:center">
                             <asp:ListItem>Not Started</asp:ListItem>
@@ -118,7 +116,7 @@
                 </tr>
                 <tr>
                     <td  colspan="2">
-                        <asp:Label ID="lblDetails" runat="server" Text=" "></asp:Label>
+                        <asp:Label ID="lblDetails" runat="server" Text="Details"></asp:Label>
                     </td>
                 </tr>
             </table>

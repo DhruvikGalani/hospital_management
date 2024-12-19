@@ -30,7 +30,7 @@ namespace hospital_management.Patient
                 string email = txtEmail.Text;
                 string password = txtPassword.Text;
                 string emergencycontactnumber = txtEmergencycontactno.Text;
-                string bloodgroup = ddlBloodgroup.SelectedValue;
+                string bloodgroup = rblBlood.SelectedValue;
                 string allergies = txtAllergies.Text;
                 string runningmedicine = txtRunningmedicine.Text;
                 string insurance = rblInsurance.SelectedValue;
@@ -50,11 +50,13 @@ namespace hospital_management.Patient
                     "</br> insurance:" + insurance;
 
             }
-            catch (Exception)
+            catch (Exception SaveError)
             {
-
+                Response.Write(SaveError.ToString());
                 throw;
             }
+
+
         }
 
         protected void btnReset_Click(object sender, EventArgs e)
@@ -66,7 +68,7 @@ namespace hospital_management.Patient
             txtContactNo.Text = "";
             txtEmail.Text = "";
             txtPassword.Text = "";
-            ddlBloodgroup.ClearSelection();
+            rblBlood.ClearSelection();
             txtAllergies.Text = "";
             txtRunningmedicine.Text = "";
             rblInsurance.ClearSelection();

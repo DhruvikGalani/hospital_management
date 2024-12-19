@@ -8,7 +8,7 @@
     <style type="text/css">
         .auto-style1 {
             width: 100%;
-            height: 400px; 
+         
         }
         .no-spinner::-webkit-inner-spin-button, 
         .no-spinner::-webkit-outer-spin-button {
@@ -29,12 +29,12 @@
         
     </style>
 </head>
-<body style="width: 600px">
+<body style="width: 508px">
     <form id="form2" runat="server">
         <div>
             <table class="auto-style1">
                 <tr>
-                    <td colspan="2" style="text-align: center">Patient Registration</td>
+                    <td colspan="2" style="text-align: center"><strong>Patient's Registration</strong></td>
                 </tr>
                 <tr>
                     <td>Name </td>
@@ -140,7 +140,7 @@
                 
                
                 <tr>
-                    <td colspan="2" style="text-align: center" >
+                    <td colspan="2" >
                         <asp:Label ID="lblDetails" runat="server" Text="Details"></asp:Label>
                     </td>
                 </tr>
