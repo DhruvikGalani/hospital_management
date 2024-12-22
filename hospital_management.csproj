@@ -53,6 +53,7 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web" />
@@ -67,16 +68,56 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Doctor\DoctorDetails.aspx" />
+    <Content Include="Doctor\MedicalRecord.aspx" />
+    <Content Include="Doctor\NutritionWellness.aspx" />
     <Content Include="homePage.aspx" />
+    <Content Include="Patient\Insurance.aspx" />
+    <Content Include="Patient\Patients.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Doctor\DoctorDetails.aspx.cs">
+      <DependentUpon>DoctorDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Doctor\DoctorDetails.aspx.designer.cs">
+      <DependentUpon>DoctorDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Doctor\MedicalRecord.aspx.cs">
+      <DependentUpon>MedicalRecord.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Doctor\MedicalRecord.aspx.designer.cs">
+      <DependentUpon>MedicalRecord.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Doctor\NutritionWellness.aspx.cs">
+      <DependentUpon>NutritionWellness.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Doctor\NutritionWellness.aspx.designer.cs">
+      <DependentUpon>NutritionWellness.aspx</DependentUpon>
+    </Compile>
     <Compile Include="homePage.aspx.cs">
       <DependentUpon>homePage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="homePage.aspx.designer.cs">
       <DependentUpon>homePage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Patient\Insurance.aspx.cs">
+      <DependentUpon>Insurance.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Patient\Insurance.aspx.designer.cs">
+      <DependentUpon>Insurance.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Patient\Patients.aspx.cs">
+      <DependentUpon>Patients.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Patient\Patients.aspx.designer.cs">
+      <DependentUpon>Patients.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
