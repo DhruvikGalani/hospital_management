@@ -29,7 +29,7 @@
         }
     </style>
 </head>
-<body style="width: 556px; height: 429px;">
+<body style="width: 550px; height: 430px;">
     <form id="form1" runat="server">
         <div>
             <table class="auto-style1">

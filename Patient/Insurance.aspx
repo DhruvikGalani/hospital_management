@@ -7,7 +7,7 @@
     <title></title>
     <style type="text/css">
     .auto-style1 {
-        width: 94%;
+        width: 100%;
        
     }
     
@@ -28,16 +28,16 @@
         margin-right: 50px;
     }
    
-        .auto-style2 {
-            width: 307px;
+        .auto-style5 {
+            width: 141px;
         }
-        .auto-style3 {
-            width: 176px;
+        .auto-style6 {
+            width: 849px;
         }
    
     </style>
 </head>
-<body style="width: 485px">
+<body style="width: 420px">
     <form id="form1" runat="server">
                <div>
                    <table class="auto-style1">
@@ -45,26 +45,26 @@
                            <td colspan="2" style="text-align: center; font-size: large;"><strong>Insurance</strong></td>
                        </tr>
                        <tr>
-                           <td class="auto-style3" >PolicyNumber</td>
-                           <td class="auto-style2">
+                           <td class="auto-style5" >PolicyNumber</td>
+                           <td class="auto-style6">
                                <asp:TextBox ID="txtPolicynumber" runat="server" CssClass="no-spinner" TextMode="Number"></asp:TextBox>
                            </td>
                        </tr>
                        <tr>
-                           <td class="auto-style3" >provider</td>
-                           <td class="auto-style2">
+                           <td class="auto-style5" >provider</td>
+                           <td class="auto-style6">
                                <asp:TextBox ID="txtProvide" runat="server" ClientIDMode="AutoID" CssClass="no-spinner"></asp:TextBox>
                            </td>
                        </tr>
                        <tr>
-                           <td class="auto-style3" >CoverageDetails</td>
-                           <td class="auto-style2">
+                           <td class="auto-style5" >CoverageDetails</td>
+                           <td class="auto-style6">
                                <asp:TextBox ID="txtCoverage" runat="server" CssClass="textFields"></asp:TextBox>
                            </td>
                        </tr>
                        <tr>
-                           <td class="auto-style3" >ClaimStatus</td>
-                           <td class="auto-style2">
+                           <td class="auto-style5" >ClaimStatus</td>
+                           <td class="auto-style6">
                                <asp:RadioButtonList ID="rblClaimstatus" runat="server" AutoPostBack="True" RepeatDirection="Horizontal">
                                    <asp:ListItem>Approved</asp:ListItem>
                                    <asp:ListItem>Pending</asp:ListItem>
@@ -72,20 +72,20 @@
                            </td>
                        </tr>
                        <tr>
-                           <td class="auto-style3" >ClaimAmount</td>
-                           <td class="auto-style2">
+                           <td class="auto-style5" >ClaimAmount</td>
+                           <td class="auto-style6">
                                <asp:TextBox ID="txtClaim" runat="server" TextMode="Number" Width="146px" CssClass="no-spinner"></asp:TextBox>
                            </td>
                        </tr>
                        <tr>
-                           <td class="auto-style3" >ApprovalDate</td>
-                           <td class="auto-style2">
+                           <td class="auto-style5" >ApprovalDate</td>
+                           <td class="auto-style6">
                                <asp:TextBox ID="txtApprovaldate" runat="server" TextMode="Date" ValidateRequestMode="Disabled" Width="145px"></asp:TextBox>
                            </td>
                        </tr>
                        <tr>
-                           <td class="auto-style3" >PolicyExpiryDate</td>
-                           <td class="auto-style2">
+                           <td class="auto-style5" >PolicyExpiryDate</td>
+                           <td class="auto-style6">
                                <asp:TextBox ID="txtExpirydate" runat="server" TextMode="Date" Width="143px"></asp:TextBox>
                            </td>
                        </tr>

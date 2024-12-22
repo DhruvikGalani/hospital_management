@@ -70,6 +70,7 @@
   <ItemGroup>
     <Content Include="Doctor\DoctorDetails.aspx" />
     <Content Include="Doctor\MedicalRecord.aspx" />
+    <Content Include="Doctor\NutritionWellness.aspx" />
     <Content Include="homePage.aspx" />
     <Content Include="Patient\Insurance.aspx" />
     <Content Include="Patient\Patients.aspx" />
@@ -89,6 +90,13 @@
     </Compile>
     <Compile Include="Doctor\MedicalRecord.aspx.designer.cs">
       <DependentUpon>MedicalRecord.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Doctor\NutritionWellness.aspx.cs">
+      <DependentUpon>NutritionWellness.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Doctor\NutritionWellness.aspx.designer.cs">
+      <DependentUpon>NutritionWellness.aspx</DependentUpon>
     </Compile>
     <Compile Include="homePage.aspx.cs">
       <DependentUpon>homePage.aspx</DependentUpon>
