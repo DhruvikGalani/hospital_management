@@ -10,9 +10,7 @@
             width: 100%;
           
         }
-        .auto-style2 {
-            width: 160px;
-        }
+       
         .no-spinner::-webkit-inner-spin-button, 
         .no-spinner::-webkit-outer-spin-button {
             -webkit-appearance: none;
@@ -31,27 +29,27 @@
         }
     </style>
 </head>
-<body style="width: 589px; height: 429px;">
+<body style="width: 550px; height: 430px;">
     <form id="form1" runat="server">
         <div>
             <table class="auto-style1">
                 <tr>
-                    <td colspan="2" style="text-align: center">Doctor&#39;s Registration</td>
+                    <td colspan="2" style="text-align: center; font-family:large;"><strong>Doctor's Registration</strong></td>
                 </tr>
                 <tr>
-                    <td class="auto-style2">Name : </td>
+                    <td >Name </td>
                     <td>
                         <asp:TextBox ID="txtName" runat="server"  CssClass="textFields"></asp:TextBox>
                     </td>
                 </tr>
                 <tr>
-                    <td class="auto-style2">Age :</td>
+                    <td >Age </td>
                     <td>
-                        <asp:TextBox ID="txtAge" runat="server" ClientIDMode="AutoID" CssClass="no-spinner" TextMode="Number"></asp:TextBox>
+                        <asp:TextBox ID="txtAge" runat="server" ClientIDMode="AutoID" CssClass="no-spinner" TextMode="Number" MaxLength="3"></asp:TextBox>
                     </td>
                 </tr>
                 <tr>
-                    <td class="auto-style2">Gender :</td>
+                    <td >Gender </td>
                     <td>
                         <asp:RadioButtonList ID="rblGender" runat="server" CellPadding="2" CellSpacing="2" RepeatDirection="Horizontal">
                             <asp:ListItem>Male</asp:ListItem>
@@ -60,13 +58,13 @@
                     </td>
                 </tr>
                 <tr>
-                    <td class="auto-style2">Address :</td>
+                    <td >Address </td>
                     <td>
                         <asp:TextBox ID="txtAddress" runat="server" TextMode="MultiLine" CssClass="textFields"></asp:TextBox>
                     </td>
                 </tr>
                 <tr>
-                    <td class="auto-style2">Specialization :</td>
+                    <td >Specialization </td>
                     <td>
                         <asp:DropDownList ID="ddlSpecialities" runat="server" Width="180px" AutoPostBack="True" OnSelectedIndexChanged="ddlSpecialities_SelectedIndexChanged" >
                         </asp:DropDownList>
@@ -75,37 +73,37 @@
                     </td>
                 </tr>
                 <tr>
-                    <td class="auto-style2">Experience Years : </td>
+                    <td >Experience Years </td>
                     <td>
-                        <asp:TextBox ID="txtExperienceYear" runat="server" TextMode="Number" CssClass="no-spinner"></asp:TextBox>
+                        <asp:TextBox ID="txtExperienceYear" runat="server" TextMode="Number" CssClass="no-spinner" MaxLength="3"></asp:TextBox>
                     </td>
                 </tr>
                 <tr>
-                    <td class="auto-style2">Contact No :</td>
+                    <td>Contact No </td>
                     <td>
-                        <asp:TextBox ID="txtContactNo" runat="server" TextMode="Number" ValidateRequestMode="Disabled" CssClass="no-spinner"></asp:TextBox>
+                        <asp:TextBox ID="txtContactNo" runat="server" TextMode="Number" ValidateRequestMode="Disabled" CssClass="no-spinner" MaxLength="10"></asp:TextBox>
                     </td>
                 </tr>
                 <tr>
-                    <td class="auto-style2">Email :</td>
+                    <td >Email </td>
                     <td>
                         <asp:TextBox ID="txtEmail" runat="server" TextMode="Email" CssClass="textFields"></asp:TextBox>
                     </td>
                 </tr>
                 <tr>
-                    <td class="auto-style2">Password : </td>
+                    <td >Password </td>
                     <td>
                         <asp:TextBox ID="txtPassword" runat="server" TextMode="Password" CssClass="textFields"></asp:TextBox>
                     </td>
                 </tr>
                 <tr>
-                    <td class="auto-style2">License Number :</td>
+                    <td >License Number </td>
                     <td>
-                        <asp:TextBox ID="txtLicenseNo" runat="server" TextMode="Number" CssClass="no-spinner"></asp:TextBox>
+                        <asp:TextBox ID="txtLicenseNo" runat="server" TextMode="Number" CssClass="no-spinner" MaxLength="12"></asp:TextBox>
                     </td>
                 </tr>
                 <tr>
-                    <td class="auto-style2">Consultation Fee :</td>
+                    <td >Consultation Fee</td>
                     <td>
                         <asp:TextBox ID="txtFee" runat="server" TextMode="Number" CssClass="no-spinner"></asp:TextBox>
                     </td>
@@ -117,7 +115,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <td colspan="2">&nbsp;<asp:Label ID="lblDetails" runat="server" Text=" "></asp:Label>
+                    <td colspan="2"><asp:Label ID="lblDetails" runat="server" Text="Details"></asp:Label>
                     </td>
                 </tr>
             </table>

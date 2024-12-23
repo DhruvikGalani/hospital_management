@@ -49,24 +49,11 @@ namespace hospital_management.Doctor
                     "</br> license : " + license +
                     "</br> consultationFee : " + consultationFee;
             }
-            catch (Exception)
+            catch (Exception saveError)
             {
-
+                Response.Write(saveError.ToString());
                 throw;
             }
-
-            txtName.Text = "";
-            txtAge.Text = "";
-            rblGender.ClearSelection();
-            txtAddress.Text = "";
-            ddlSpecialities.ClearSelection();
-            ddlSpecialitiesTypes.ClearSelection();
-            txtExperienceYear.Text = "";
-            txtContactNo.Text = "";
-            txtEmail.Text = "";
-            txtPassword.Text = "";
-            txtLicenseNo.Text = "";
-            txtFee.Text = "";
         }
 
         protected void btnReset_Click(object sender, EventArgs e)
@@ -83,7 +70,7 @@ namespace hospital_management.Doctor
            txtPassword.Text = "";
            txtLicenseNo.Text = "";
            txtFee.Text = "";
-            lblDetails.Text = "";
+           lblDetails.Text = "";
         }
 
         protected void fnBindSpecialities()
@@ -102,89 +89,96 @@ namespace hospital_management.Doctor
 
         protected void fnBindTypesOfSpecialities()
         {
-            ddlSpecialitiesTypes.Items.Clear();
+            try
+            {
+                ddlSpecialitiesTypes.Items.Clear();
+                if(ddlSpecialities.SelectedValue == "Clinical Specialties")
+                {
+                    ddlSpecialitiesTypes.Items.Add("Cardiology");
+                    ddlSpecialitiesTypes.Items.Add("Neurology");
+                    ddlSpecialitiesTypes.Items.Add("Dermatology");
+                    ddlSpecialitiesTypes.Items.Add("Endocrinology");
+                    ddlSpecialitiesTypes.Items.Add("Gastroenterology");
+                    ddlSpecialitiesTypes.Items.Add("Hematology");
+                    ddlSpecialitiesTypes.Items.Add("Oncology");
+                    ddlSpecialitiesTypes.Items.Add("Nephrology");
+                    ddlSpecialitiesTypes.Items.Add("Pulmonology");
+                    ddlSpecialitiesTypes.Items.Add("Rheumatology");
+                    ddlSpecialitiesTypes.Items.Add("Psychiatry");
+                    ddlSpecialitiesTypes.Items.Add("Ophthalmology");
+                    ddlSpecialitiesTypes.Items.Add("Otolaryngology (ENT)");
+                    ddlSpecialitiesTypes.Items.Add("Urology");
+                    ddlSpecialitiesTypes.Items.Add("Gynecology");
+                    ddlSpecialitiesTypes.Items.Add("Obstetrics");
+                    ddlSpecialitiesTypes.Items.Add("Pediatrics");
+                    ddlSpecialitiesTypes.Items.Add("Geriatrics");
+                    ddlSpecialitiesTypes.Items.Add("Allergy and Immunology");
+                }
+                else if(ddlSpecialities.SelectedValue == "Surgical Specialties")
+                {
+                    ddlSpecialitiesTypes.Items.Add("General Surgery");
+                    ddlSpecialitiesTypes.Items.Add("Cardiothoracic Surgery");
+                    ddlSpecialitiesTypes.Items.Add("Neurosurgery");
+                    ddlSpecialitiesTypes.Items.Add("Orthopedic Surgery");
+                    ddlSpecialitiesTypes.Items.Add("Plastic and Reconstructive Surgery");
+                    ddlSpecialitiesTypes.Items.Add("Vascular Surgery");
+                    ddlSpecialitiesTypes.Items.Add("Ophthalmic Surgery");
+                    ddlSpecialitiesTypes.Items.Add("ENT Surgery");
+                    ddlSpecialitiesTypes.Items.Add("Trauma Surgery");
+                }
+                else if(ddlSpecialities.SelectedValue == "Diagnostic Specialties")
+                {
+                    ddlSpecialitiesTypes.Items.Add("Radiology");
+                    ddlSpecialitiesTypes.Items.Add("Pathology");
+                    ddlSpecialitiesTypes.Items.Add("Nuclear Medicine");
+                }
+                else if(ddlSpecialities.SelectedValue == "Subspecialties")
+                {
+                    ddlSpecialitiesTypes.Items.Add("Interventional Cardiology");
+                    ddlSpecialitiesTypes.Items.Add("Pediatric Neurology");
+                    ddlSpecialitiesTypes.Items.Add("Pediatric Oncology");
+                    ddlSpecialitiesTypes.Items.Add("Reproductive Endocrinology");
+                    ddlSpecialitiesTypes.Items.Add("Sleep Medicine");
+                    ddlSpecialitiesTypes.Items.Add("Sports Medicine");
+                    ddlSpecialitiesTypes.Items.Add("Pain Management");
+                }
+                else if(ddlSpecialities.SelectedValue == "Emergency and Critical Care")
+                {
+                    ddlSpecialitiesTypes.Items.Add("Emergency Medicine");
+                    ddlSpecialitiesTypes.Items.Add("Critical Care Medicine (ICU)");
+                    ddlSpecialitiesTypes.Items.Add("Anesthesiology");
+                }
+                else if(ddlSpecialities.SelectedValue == "Alternative and Holistic Specialties")
+                {
+                    ddlSpecialitiesTypes.Items.Add("Homeopathy");
+                    ddlSpecialitiesTypes.Items.Add("Ayurveda");
+                    ddlSpecialitiesTypes.Items.Add("Chiropractic Medicine");
+                    ddlSpecialitiesTypes.Items.Add("Acupuncture");
+                }
+                else if(ddlSpecialities.SelectedValue == "Specialized Fields")
+                {
+                    ddlSpecialitiesTypes.Items.Add("Forensic Medicine");
+                    ddlSpecialitiesTypes.Items.Add("Occupational Medicine");
+                    ddlSpecialitiesTypes.Items.Add("Palliative Medicine");
+                    ddlSpecialitiesTypes.Items.Add("Preventive Medicine");
+                    ddlSpecialitiesTypes.Items.Add("Tropical Medicine");
+                    ddlSpecialitiesTypes.Items.Add("Aerospace Medicine");
+                }
+                else if(ddlSpecialities.SelectedValue == "Emerging Fields")
+                {
+                    ddlSpecialitiesTypes.Items.Add("Genomic Medicine");
+                    ddlSpecialitiesTypes.Items.Add("Regenerative Medicine");
+                    ddlSpecialitiesTypes.Items.Add("Telemedicine");
+                    ddlSpecialitiesTypes.Items.Add("Lifestyle Medicine");
+                }
 
-            if (ddlSpecialities.SelectedValue == "Clinical Specialties")
-            {
-                ddlSpecialitiesTypes.Items.Add("Cardiology");
-                ddlSpecialitiesTypes.Items.Add("Neurology");
-                ddlSpecialitiesTypes.Items.Add("Dermatology");
-                ddlSpecialitiesTypes.Items.Add("Endocrinology");
-                ddlSpecialitiesTypes.Items.Add("Gastroenterology");
-                ddlSpecialitiesTypes.Items.Add("Hematology");
-                ddlSpecialitiesTypes.Items.Add("Oncology");
-                ddlSpecialitiesTypes.Items.Add("Nephrology");
-                ddlSpecialitiesTypes.Items.Add("Pulmonology");
-                ddlSpecialitiesTypes.Items.Add("Rheumatology");
-                ddlSpecialitiesTypes.Items.Add("Psychiatry");
-                ddlSpecialitiesTypes.Items.Add("Ophthalmology");
-                ddlSpecialitiesTypes.Items.Add("Otolaryngology (ENT)");
-                ddlSpecialitiesTypes.Items.Add("Urology");
-                ddlSpecialitiesTypes.Items.Add("Gynecology");
-                ddlSpecialitiesTypes.Items.Add("Obstetrics");
-                ddlSpecialitiesTypes.Items.Add("Pediatrics");
-                ddlSpecialitiesTypes.Items.Add("Geriatrics");
-                ddlSpecialitiesTypes.Items.Add("Allergy and Immunology");
+                ddlSpecialitiesTypes.Items.Insert(0, new ListItem("select"));
             }
-            else if (ddlSpecialities.SelectedValue == "Surgical Specialties")
+            catch(Exception SpecialitiesSelectionError)
             {
-                ddlSpecialitiesTypes.Items.Add("General Surgery");
-                ddlSpecialitiesTypes.Items.Add("Cardiothoracic Surgery");
-                ddlSpecialitiesTypes.Items.Add("Neurosurgery");
-                ddlSpecialitiesTypes.Items.Add("Orthopedic Surgery");
-                ddlSpecialitiesTypes.Items.Add("Plastic and Reconstructive Surgery");
-                ddlSpecialitiesTypes.Items.Add("Vascular Surgery");
-                ddlSpecialitiesTypes.Items.Add("Ophthalmic Surgery");
-                ddlSpecialitiesTypes.Items.Add("ENT Surgery");
-                ddlSpecialitiesTypes.Items.Add("Trauma Surgery");
+                Response.Write(SpecialitiesSelectionError.ToString());
+                throw;
             }
-            else if (ddlSpecialities.SelectedValue == "Diagnostic Specialties")
-            {
-                ddlSpecialitiesTypes.Items.Add("Radiology");
-                ddlSpecialitiesTypes.Items.Add("Pathology");
-                ddlSpecialitiesTypes.Items.Add("Nuclear Medicine");
-            }
-            else if (ddlSpecialities.SelectedValue == "Subspecialties")
-            {
-                ddlSpecialitiesTypes.Items.Add("Interventional Cardiology");
-                ddlSpecialitiesTypes.Items.Add("Pediatric Neurology");
-                ddlSpecialitiesTypes.Items.Add("Pediatric Oncology");
-                ddlSpecialitiesTypes.Items.Add("Reproductive Endocrinology");
-                ddlSpecialitiesTypes.Items.Add("Sleep Medicine");
-                ddlSpecialitiesTypes.Items.Add("Sports Medicine");
-                ddlSpecialitiesTypes.Items.Add("Pain Management");
-            }
-            else if (ddlSpecialities.SelectedValue == "Emergency and Critical Care")
-            {
-                ddlSpecialitiesTypes.Items.Add("Emergency Medicine");
-                ddlSpecialitiesTypes.Items.Add("Critical Care Medicine (ICU)");
-                ddlSpecialitiesTypes.Items.Add("Anesthesiology");
-            }
-            else if (ddlSpecialities.SelectedValue == "Alternative and Holistic Specialties")
-            {
-                ddlSpecialitiesTypes.Items.Add("Homeopathy");
-                ddlSpecialitiesTypes.Items.Add("Ayurveda");
-                ddlSpecialitiesTypes.Items.Add("Chiropractic Medicine");
-                ddlSpecialitiesTypes.Items.Add("Acupuncture");
-            }
-            else if (ddlSpecialities.SelectedValue == "Specialized Fields")
-            {
-                ddlSpecialitiesTypes.Items.Add("Forensic Medicine");
-                ddlSpecialitiesTypes.Items.Add("Occupational Medicine");
-                ddlSpecialitiesTypes.Items.Add("Palliative Medicine");
-                ddlSpecialitiesTypes.Items.Add("Preventive Medicine");
-                ddlSpecialitiesTypes.Items.Add("Tropical Medicine");
-                ddlSpecialitiesTypes.Items.Add("Aerospace Medicine");
-            }
-            else if (ddlSpecialities.SelectedValue == "Emerging Fields")
-            {
-                ddlSpecialitiesTypes.Items.Add("Genomic Medicine");
-                ddlSpecialitiesTypes.Items.Add("Regenerative Medicine");
-                ddlSpecialitiesTypes.Items.Add("Telemedicine");
-                ddlSpecialitiesTypes.Items.Add("Lifestyle Medicine");
-            }
-
-            ddlSpecialitiesTypes.Items.Insert(0, new ListItem("select"));
         }
 
         protected void ddlSpecialities_SelectedIndexChanged(object sender, EventArgs e)
