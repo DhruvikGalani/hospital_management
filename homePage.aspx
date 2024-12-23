@@ -8,6 +8,6 @@
 </head>
 <body>
     <p>
-        stock handler added</p>
+        stock added</p>
 </body>
 </html>
