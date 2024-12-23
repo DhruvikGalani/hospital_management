@@ -7,8 +7,7 @@
     <title></title>
 </head>
 <body>
-
     <p>
-        change : 0</p>
+        stock added</p>
 </body>
 </html>

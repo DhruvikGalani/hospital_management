@@ -38,20 +38,11 @@ namespace hospital_management.Doctor
                     "</br> TreatmentNotes : " + TreatmentNotes +
                     "</br> TreatmentStatus : " + TreatmentStatus;
             }
-            catch (Exception)
+            catch (Exception SavaError)
             {
-
+                Response.Write(SavaError.ToString());
                 throw;
             }
-
-            txtPatientName.Text = "";
-            rblBlood.ClearSelection();
-            txtDoctorName.Text = "";
-            txtVisitDate.Text = "";
-            txtDiagnosis.Text = "";
-            txtPrescribedMedications.Text = "";
-            txtTreatmentNote.Text = "";
-            ddlTreatmentStatus.ClearSelection();
         }
 
         protected void btnreset_Click(object sender, EventArgs e)

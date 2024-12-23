@@ -32,18 +32,14 @@ namespace hospital_management.Patient
                 lblDetails.Text = "</br> policynumber : " + policynumber +
                                     "</br> Provider name" + Provide +
                                     "</br>  Claimstatus" + Claimstatus +
-                    "</br> Coverage" + Coverage +
-
-
-                    "</br> Claim ammount" + Claim +
-                    "</br> approvaldate" + approvaldate +
-                    "</br> expirydate:" + expirydate;
-                    
-
+                                    "</br> Coverage" + Coverage +
+                                    "</br> Claim ammount" + Claim +
+                                    "</br> approvaldate" + approvaldate +
+                                    "</br> expirydate:" + expirydate;
             }
-            catch (Exception)
+            catch (Exception SaveError)
             {
-
+                Response.Write(SaveError.ToString());
                 throw;
             }
         }
