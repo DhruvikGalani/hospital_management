@@ -44,7 +44,7 @@
                 <tr>
                     <td>Age </td>
                     <td>
-                        <asp:TextBox ID="txtAge" runat="server" ClientIDMode="AutoID" CssClass="no-spinner" TextMode="Number"></asp:TextBox>
+                        <asp:TextBox ID="txtAge" runat="server" ClientIDMode="AutoID" CssClass="no-spinner" TextMode="Number" MaxLength="3"></asp:TextBox>
                     </td>
                 </tr>
                 <tr>
@@ -71,7 +71,7 @@
                 <tr>
                     <td >Contact No </td>
                     <td >
-                        <asp:TextBox ID="txtContactNo" runat="server" TextMode="Number" ValidateRequestMode="Disabled" CssClass="no-spinner"></asp:TextBox>
+                        <asp:TextBox ID="txtContactNo" runat="server" TextMode="Number" ValidateRequestMode="Disabled" CssClass="no-spinner" MaxLength="10"></asp:TextBox>
                     </td>
                 </tr>
                 <tr>
@@ -89,7 +89,7 @@
                 <tr>
                     <td>Emergency Contact no</td>
                     <td >
-                        <asp:TextBox ID="txtEmergencycontactno" runat="server" CssClass="no-spinner" TextMode="Number" ValidateRequestMode="Disabled"></asp:TextBox>
+                        <asp:TextBox ID="txtEmergencycontactno" runat="server" CssClass="no-spinner" TextMode="Number" ValidateRequestMode="Disabled" MaxLength="10"></asp:TextBox>
                     </td>
                 </tr>
                 <tr>
@@ -114,7 +114,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <td >RunningMedicines</td>
+                    <td >Running Medicines</td>
                     <td >
                         <asp:TextBox ID="txtRunningmedicine" runat="server" Width="293px" CssClass="textFields"></asp:TextBox>
                     </td>
