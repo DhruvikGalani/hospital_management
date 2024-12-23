@@ -74,6 +74,8 @@
     <Content Include="homePage.aspx" />
     <Content Include="Patient\Insurance.aspx" />
     <Content Include="Patient\Patients.aspx" />
+    <Content Include="stock_handler\ambulance.aspx" />
+    <Content Include="stock_handler\pharmacy.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -120,6 +122,20 @@
       <DependentUpon>Patients.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="stock_handler\ambulance.aspx.cs">
+      <DependentUpon>ambulance.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="stock_handler\ambulance.aspx.designer.cs">
+      <DependentUpon>ambulance.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="stock_handler\pharmacy.aspx.cs">
+      <DependentUpon>pharmacy.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="stock_handler\pharmacy.aspx.designer.cs">
+      <DependentUpon>pharmacy.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

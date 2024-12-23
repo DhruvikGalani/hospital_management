@@ -45,7 +45,7 @@
                 <tr>
                     <td >Age </td>
                     <td>
-                        <asp:TextBox ID="txtAge" runat="server" ClientIDMode="AutoID" CssClass="no-spinner" TextMode="Number"></asp:TextBox>
+                        <asp:TextBox ID="txtAge" runat="server" ClientIDMode="AutoID" CssClass="no-spinner" TextMode="Number" MaxLength="3"></asp:TextBox>
                     </td>
                 </tr>
                 <tr>
@@ -75,13 +75,13 @@
                 <tr>
                     <td >Experience Years </td>
                     <td>
-                        <asp:TextBox ID="txtExperienceYear" runat="server" TextMode="Number" CssClass="no-spinner"></asp:TextBox>
+                        <asp:TextBox ID="txtExperienceYear" runat="server" TextMode="Number" CssClass="no-spinner" MaxLength="3"></asp:TextBox>
                     </td>
                 </tr>
                 <tr>
                     <td>Contact No </td>
                     <td>
-                        <asp:TextBox ID="txtContactNo" runat="server" TextMode="Number" ValidateRequestMode="Disabled" CssClass="no-spinner"></asp:TextBox>
+                        <asp:TextBox ID="txtContactNo" runat="server" TextMode="Number" ValidateRequestMode="Disabled" CssClass="no-spinner" MaxLength="10"></asp:TextBox>
                     </td>
                 </tr>
                 <tr>
@@ -99,7 +99,7 @@
                 <tr>
                     <td >License Number </td>
                     <td>
-                        <asp:TextBox ID="txtLicenseNo" runat="server" TextMode="Number" CssClass="no-spinner"></asp:TextBox>
+                        <asp:TextBox ID="txtLicenseNo" runat="server" TextMode="Number" CssClass="no-spinner" MaxLength="12"></asp:TextBox>
                     </td>
                 </tr>
                 <tr>
