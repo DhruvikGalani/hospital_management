@@ -72,6 +72,8 @@
     <Content Include="Doctor\MedicalRecord.aspx" />
     <Content Include="Doctor\NutritionWellness.aspx" />
     <Content Include="homePage.aspx" />
+    <Content Include="Patient\Appointments.aspx" />
+    <Content Include="Patient\FeedbackReview.aspx" />
     <Content Include="Patient\Insurance.aspx" />
     <Content Include="Patient\Patients.aspx" />
     <Content Include="stock_handler\ambulance.aspx" />
@@ -106,6 +108,20 @@
     </Compile>
     <Compile Include="homePage.aspx.designer.cs">
       <DependentUpon>homePage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Patient\Appointments.aspx.cs">
+      <DependentUpon>Appointments.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Patient\Appointments.aspx.designer.cs">
+      <DependentUpon>Appointments.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Patient\FeedbackReview.aspx.cs">
+      <DependentUpon>FeedbackReview.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Patient\FeedbackReview.aspx.designer.cs">
+      <DependentUpon>FeedbackReview.aspx</DependentUpon>
     </Compile>
     <Compile Include="Patient\Insurance.aspx.cs">
       <DependentUpon>Insurance.aspx</DependentUpon>
