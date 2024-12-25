@@ -19,6 +19,13 @@
         .auto-style4 {
             width: 74%;
         }
+         .btnsubmit {
+     margin-right: 50px;
+     width : 110px;
+ }
+ .btnreset {
+         width : 110px;
+ }
      
     </style>
 </head>
@@ -100,8 +107,8 @@
                 </tr>
                 <tr>
                     <td colspan="2" style="text-align: center">
-                        <asp:Button ID="btnSave" runat="server" Text="save" Width="90px" OnClick="btnSave_Click" />
-                        <asp:Button ID="btnReset" runat="server" Text="reset" Width="90px" OnClick="btnReset_Click" />
+                        <asp:Button ID="btnSave" runat="server" Text="SAVE" OnClick="btnSave_Click" CssClass="btnsubmit" />
+                        <asp:Button ID="btnReset" runat="server" Text="RESET" OnClick="btnReset_Click" CssClass="btnreset" />
                     </td>
                 </tr>
                 <tr>

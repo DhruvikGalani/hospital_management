@@ -74,5 +74,7 @@ namespace hospital_management.Patient
             rblInsurance.ClearSelection();
             lblDetails.Text = "";
         }
+
+     
     }
 }

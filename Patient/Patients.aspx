@@ -24,6 +24,11 @@
         }
         .btnsubmit {
             margin-right: 50px;
+            width: 110px;
+        }
+
+        .btnreset {
+            width: 110px;
         }
         
     </style>
@@ -65,7 +70,7 @@
                 <tr>
                     <td >Date of birth</td>
                     <td >
-                        <asp:TextBox ID="txtDate" runat="server" TextMode="Date" CssClass="textFields"></asp:TextBox>
+                        <asp:TextBox ID="txtDate" runat="server" TextMode="Date" CssClass="textFields" OnTextChanged="txtDate_TextChanged"></asp:TextBox>
                     </td>
                 </tr>
                 <tr>
@@ -132,8 +137,8 @@
                
                 <tr>
                     <td colspan="2" style="text-align: center">
-                        <asp:Button ID="btnSave" runat="server" OnClick="btnSave_Click" Text="Save" CssClass="btnsubmit" />
-                        <asp:Button ID="btnReset" runat="server" OnClick="btnReset_Click" Text="Reset" />
+                        <asp:Button ID="btnSave" runat="server" OnClick="btnSave_Click" Text="SAVE" CssClass="btnsubmit" />
+                        <asp:Button ID="btnReset" runat="server" OnClick="btnReset_Click" Text="RESET" CssClass="btnreset" />
                     </td>
                 </tr>
                 
