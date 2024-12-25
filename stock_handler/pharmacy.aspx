@@ -42,7 +42,7 @@
     <form id="form1" runat="server">
         <table class="auto-style1">
             <tr>
-                <td colspan="2" style="text-align: center; font-size: large;"><strong>Phamacy</strong></td>
+                <td colspan="2" style="text-align: center; font-size: large;"><strong>Pharmacy</strong></td>
             </tr>
             <tr>
                 <td class="auto-style2">Medicine Name</td>
