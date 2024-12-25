@@ -24,9 +24,13 @@
         .textFields {
             width : 360px;
         }
-        .btnsubmit {
-            margin-right: 50px;
-        }
+         .btnsubmit {
+     margin-right: 50px;
+     width : 110px;
+ }
+ .btnreset {
+         width : 110px;
+ }
     </style>
 </head>
 <body style="width: 550px; height: 430px;">
@@ -110,8 +114,8 @@
                 </tr>
                 <tr>
                     <td colspan="2" style="text-align: center">
-                        <asp:Button ID="btnSubmit" runat="server" Text="submit" Width="120px" CssClass="btnsubmit" OnClick="btnSubmit_Click" />
-                        <asp:Button ID="btnReset" runat="server" Text="Reset" Width="120px" OnClick="btnReset_Click" />
+                        <asp:Button ID="btnSubmit" runat="server" Text="SUBMIT" CssClass="btnsubmit" OnClick="btnSubmit_Click" />
+                        <asp:Button ID="btnReset" runat="server" Text="RESET" OnClick="btnReset_Click" CssClass="btnreset" />
                     </td>
                 </tr>
                 <tr>
