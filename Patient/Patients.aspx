@@ -65,7 +65,7 @@
                 <tr>
                     <td >Date of birth</td>
                     <td >
-                        <asp:TextBox ID="txtDate" runat="server" TextMode="Date" CssClass="textFields"></asp:TextBox>
+                        <asp:TextBox ID="txtDate" runat="server" TextMode="Date" CssClass="textFields" OnTextChanged="txtDate_TextChanged"></asp:TextBox>
                     </td>
                 </tr>
                 <tr>
