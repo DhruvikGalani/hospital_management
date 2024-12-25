@@ -8,7 +8,7 @@
     <style type="text/css">
      .auto-style1 {
          width: 99%;
-            height: 496px;
+            height: 298px;
         }
     
      .no-spinner::-webkit-inner-spin-button, 
@@ -32,7 +32,7 @@
         }
  </style>
 </head>
-<body style="width: 498px; height: 499px;">
+<body style="width: 498px; height: 303px;">
     <form id="form1" runat="server">
         <div>
            

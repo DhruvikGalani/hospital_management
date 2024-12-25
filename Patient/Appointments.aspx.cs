@@ -52,6 +52,7 @@ namespace hospital_management.Patient
             txtReason.Text = "";
             ddlCliniclocation.ClearSelection();
             rblStatus.ClearSelection();
+            lblDetails.Text = "";
         }
     }
 }
