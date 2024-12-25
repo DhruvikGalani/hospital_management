@@ -27,9 +27,12 @@
 
         .btnsubmit {
             margin-right: 50px;
+            width: 110px;
         }
-       
-      
+
+        .btnreset {
+            width: 110px;
+        }
        
     </style>
 </head>
@@ -110,8 +113,8 @@
                 </tr>
                 <tr>
                     <td colspan="2" style="text-align: center">
-                        <asp:Button ID="btnSubmit" runat="server" Text="submit" Width="120px" CssClass="btnsubmit" OnClick="btnSubmit_Click" />
-                        <asp:Button ID="btnreset" runat="server" Text="reset" Width="120px" OnClick="btnreset_Click" />
+                        <asp:Button ID="btnSubmit" runat="server" Text="SUBMIT" CssClass="btnsubmit" OnClick="btnSubmit_Click" />
+                        <asp:Button ID="btnreset" runat="server" Text="RESET" OnClick="btnreset_Click" CssClass="btnreset" />
                     </td>
                 </tr>
                 <tr>
