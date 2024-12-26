@@ -8,6 +8,6 @@
 </head>
 <body>
     <p>
-        stock added</p>
+        stock</p>
 </body>
 </html>
