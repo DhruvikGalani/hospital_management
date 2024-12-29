@@ -78,6 +78,11 @@
     <Content Include="Patient\Patients.aspx" />
     <Content Include="stock_handler\ambulance.aspx" />
     <Content Include="stock_handler\pharmacy.aspx" />
+    <Content Include="StyleSheet\doctors.css" />
+    <Content Include="StyleSheet\header.css" />
+    <Content Include="StyleSheet\hero.css" />
+    <Content Include="StyleSheet\main.css" />
+    <Content Include="StyleSheet\service.css" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
