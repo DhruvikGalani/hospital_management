@@ -68,17 +68,26 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Billing.aspx" />
     <Content Include="Doctor\DoctorDetails.aspx" />
     <Content Include="Doctor\MedicalRecord.aspx" />
     <Content Include="Doctor\NutritionWellness.aspx" />
     <Content Include="homePage.aspx" />
     <Content Include="Patient\Insurance.aspx" />
     <Content Include="Patient\Patients.aspx" />
+    <Content Include="StaffInformation.aspx" />
     <Content Include="stock_handler\ambulance.aspx" />
     <Content Include="stock_handler\pharmacy.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Billing.aspx.cs">
+      <DependentUpon>Billing.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Billing.aspx.designer.cs">
+      <DependentUpon>Billing.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Doctor\DoctorDetails.aspx.cs">
       <DependentUpon>DoctorDetails.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -122,6 +131,13 @@
       <DependentUpon>Patients.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StaffInformation.aspx.cs">
+      <DependentUpon>StaffInformation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="StaffInformation.aspx.designer.cs">
+      <DependentUpon>StaffInformation.aspx</DependentUpon>
+    </Compile>
     <Compile Include="stock_handler\ambulance.aspx.cs">
       <DependentUpon>ambulance.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
