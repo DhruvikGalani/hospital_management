@@ -165,5 +165,7 @@ namespace hospital_management.Doctor
         {
             fnBindHealthGoalTypes();
         }
+
+        
     }
 }

@@ -7,11 +7,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace hospital_management.stock_handler
+namespace hospital_management.Patient
 {
 
 
-    public partial class pharmacy
+    public partial class FeedbackReview
     {
 
         /// <summary>
@@ -24,76 +24,40 @@ namespace hospital_management.stock_handler
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
-        /// txtMedicineName control.
+        /// txtPatientname control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtMedicineName;
+        protected global::System.Web.UI.WebControls.TextBox txtPatientname;
 
         /// <summary>
-        /// txtBatchNumber control.
+        /// txtVisitdate control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtBatchNumber;
+        protected global::System.Web.UI.WebControls.TextBox txtVisitdate;
 
         /// <summary>
-        /// txtManufacturingDate control.
+        /// txtFeedback control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtManufacturingDate;
+        protected global::System.Web.UI.WebControls.TextBox txtFeedback;
 
         /// <summary>
-        /// txtExpiryDate control.
+        /// btnSave control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtExpiryDate;
-
-        /// <summary>
-        /// txtStockQuantity control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtStockQuantity;
-
-        /// <summary>
-        /// txtSuppierDatails control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtSuppierDatails;
-
-        /// <summary>
-        /// txtPricePerUnit control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtPricePerUnit;
-
-        /// <summary>
-        /// btnSubmit control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnSubmit;
+        protected global::System.Web.UI.WebControls.Button btnSave;
 
         /// <summary>
         /// btnReset control.
