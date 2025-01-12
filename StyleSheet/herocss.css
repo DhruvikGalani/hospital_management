@@ -6,51 +6,78 @@
     background-repeat: no-repeat;
     display: flex;
     align-items: center;
-    justify-content: center;
-    text-align: center;
-    color: white;
+    justify-content: start;
     position: relative;
 }
-.hero::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.5); /* Black with 50% opacity for the dark effect */
-    z-index: 1; /* Ensure it sits between the image and text */
-}
+
+    .hero::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.5); /* Black with 50% opacity for the dark effect */
+        z-index: 1; /* Ensure it sits between the image and text */
+    }
 
 .hero-content {
-    max-width: 800px;
-    padding: 2rem;
+    position: relative;
+    max-width: 700px;
+    padding-top: 6rem;
+    padding-left: 10rem;
+    padding-bottom: 5rem; /* Add padding at the bottom for the button */
     z-index: 1;
 }
 
     .hero-content h2 {
-        font-size: 3rem;
+        font-size: 90px;
         z-index: 1;
-        margin-bottom: 1rem;
+        color : white;
+        font-weight: bold;
+        font-family: Lucida Sans;
+        line-height: 80px;
+        margin-bottom: 2rem;
     }
 
     .hero-content p {
         z-index: 1;
-        font-size: 1.2rem;
+        color: white;
+        opacity: .9;
+        font-family: Nunito;
+        font-size: 25px;
+        font-weight: 400;
+        line-height: 30px;
         margin-bottom: 2rem;
     }
 
 .cta-button {
+    position: absolute; /* Absolute position within hero-content */
+    bottom: 2rem; /* Position button 2rem above the bottom of hero-content */
+    left: 10rem; /* Position button 2rem from the left of hero-content */
     padding: 1rem 2rem;
     font-size: 1.1rem;
-    background-color: #3498db;
+    background-color: transparent;
     color: white;
-    border: none;
-    border-radius: 5px;
+    font-family: 'Numans', sans-serif;
+    border: 1.5px solid white;
+    border-radius: 20px;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: all 0.4s ease-in-out;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+    display: inline-block;
 }
 
     .cta-button:hover {
-        background-color: #2980b9;
+        background-color: #1a3e5d;
+        color: white;
+        border: 3px solid white;
+        border-radius: 50px;
+        transform: scale(1.1) rotate(2deg);
+        box-shadow: 0 0 20px rgba(255, 255, 255, 0.6), 0 0 10px rgba(26, 62, 93, 0.8);
+    }
+
+    .cta-button:active {
+        transform: scale(0.95) rotate(-2deg);
+        box-shadow: 0 0 5px rgba(255, 255, 255, 0.4);
     }
