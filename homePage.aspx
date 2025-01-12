@@ -6,11 +6,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MedCare Hospital</title>
-    <link rel="stylesheet" href="StyleSheet/main.css">
-    <link rel="stylesheet" href="StyleSheet/header.css">
-    <link rel="stylesheet" href="StyleSheet/hero.css">
-    <link rel="stylesheet" href="StyleSheet/services.css">
-    <link rel="stylesheet" href="StyleSheet/doctors.css">
+    <link rel="stylesheet" href="StyleSheet/maincss.css">
+    <link rel="stylesheet" href="StyleSheet/headercss.css">
+    <link rel="stylesheet" href="StyleSheet/herocss.css">
+    <link rel="stylesheet" href="StyleSheet/servicecss.css">
+    <link rel="stylesheet" href="StyleSheet/doctorscss.css">
 </head>
 <body>
     <header class="header">

@@ -1,0 +1,51 @@
+﻿header {
+    background-color: #1a3e5d;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 1rem 2rem;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo h1 {
+    color: #f9f9f9;
+    font-size: 1.8rem;
+}
+
+.nav ul {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav a {
+    text-decoration: none;
+    color: whitesmoke;
+    font-weight: 500;
+    position: relative;
+    transition: color 0.3s;
+}
+
+    .nav a::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -5px;
+        width: 0;
+        height: 2px;
+        background-color: #ff8f40;
+        border-radius: 3px;
+        transition: width 0.5s ease-in-out;
+    }
+
+    .nav a:hover {
+        color: #ff8f40;
+    }
+
+        .nav a:hover::after {
+            width: 70%;
+        }
