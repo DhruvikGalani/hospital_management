@@ -73,6 +73,7 @@
     <Content Include="Doctor\MedicalRecord.aspx" />
     <Content Include="Doctor\NutritionWellness.aspx" />
     <Content Include="homePage.aspx" />
+    <Content Include="Iamges\hms_im.jpg" />
     <Content Include="Patient\Appointments.aspx" />
     <Content Include="Patient\FeedbackReview.aspx" />
     <Content Include="Patient\Insurance.aspx" />
@@ -80,11 +81,11 @@
     <Content Include="Admin\StaffInformation.aspx" />
     <Content Include="stock_handler\ambulance.aspx" />
     <Content Include="stock_handler\pharmacy.aspx" />
-    <Content Include="StyleSheet\doctors.css" />
-    <Content Include="StyleSheet\header.css" />
-    <Content Include="StyleSheet\hero.css" />
-    <Content Include="StyleSheet\main.css" />
-    <Content Include="StyleSheet\service.css" />
+    <Content Include="StyleSheet\doctorscss.css" />
+    <Content Include="StyleSheet\headercss.css" />
+    <Content Include="StyleSheet\herocss.css" />
+    <Content Include="StyleSheet\maincss.css" />
+    <Content Include="StyleSheet\servicecss.css" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -183,6 +184,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
