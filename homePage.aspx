@@ -15,7 +15,7 @@
 <body>
     <header class="header">
         <div class="logo">
-            <h1>Infinity Health Care</h1>
+            <h1>InfinityHealthCare</h1>
             </div>
             <nav class="nav">
             <ul>
