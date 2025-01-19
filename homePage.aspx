@@ -3,6 +3,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MedCare Hospital</title>
@@ -11,13 +12,17 @@
     <link rel="stylesheet" href="StyleSheet/herocss.css">
     <link rel="stylesheet" href="StyleSheet/servicecss.css">
     <link rel="stylesheet" href="StyleSheet/doctorscss.css">
+   
 </head>
 <body>
     <header class="header">
         <div class="logo">
-            <h1>Infinity  Health  Care</h1>
-            </div>
-            <nav class="nav">
+            <object type="image/svg+xml" data="Iamges/hms_logo.svg" width="60" height="60">
+                <img src="Iamges/hms_logo.svg" alt="Infinity Health Care Logo" />
+            </object>
+            <h1>Infinity Health Care</h1>
+        </div>
+        <nav class="nav">
             <ul>
                 <li><a href="#home">Home</a></li>
                 <li><a href="#services">Services</a></li>
@@ -27,14 +32,14 @@
             </ul>
         </nav>
     </header>
-
+    
     <section id="home" class="hero">
         <div class="hero-content">
             <h2>Your Health Is Our Priority</h2>
             <p>Providing exceptional healthcare services with compassion and expertise</p>
             <button class="cta-button">Book Appointment</button>
         </div>
-        
+
     </section>
 
     <section id="services" class="services">
@@ -67,8 +72,8 @@
         <h2>Our Doctors</h2>
         <div class="doctors-grid">
             <div class="doctor-card">
-                <img src="https://img.freepik.com/premium-photo/indian-female-doctor-indian-nurse_714173-202.jpg" alt="Dr.  Priyanka Shah">
-                <h3>Dr.  Priyanka Shah</h3>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBDeQ7Fy5RfL7FeXNuKgMFpWeqB7X6HgtOpA&s">
+                <h3>Dr. Naman Shah</h3>
                 <p>Cardiologist</p>
             </div>
             <div class="doctor-card">

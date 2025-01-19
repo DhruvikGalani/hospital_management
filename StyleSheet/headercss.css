@@ -11,10 +11,24 @@
     align-items: center;
 }
 
-.logo h1 {
-    color: #f9f9f9;
-    font-size: 1.8rem;
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
 }
+
+    .logo img,
+    .logo svg {
+        width: 80px; /* Adjust size */
+        height: auto;
+    }
+
+
+
+    .logo h1 {
+        color: aliceblue;
+        font-size: 1.8rem;
+    }
 
 .nav ul {
     display: flex;
