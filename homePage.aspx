@@ -16,8 +16,8 @@
     <header class="header">
         <div class="logo">
             <h1>MedCare</h1>
-        </div>
-        <nav class="nav">
+            </div>
+            <nav class="nav">
             <ul>
                 <li><a href="#home">Home</a></li>
                 <li><a href="#services">Services</a></li>
@@ -34,6 +34,7 @@
             <p>Providing exceptional healthcare services with compassion and expertise</p>
             <button class="cta-button">Book Appointment</button>
         </div>
+        
     </section>
 
     <section id="services" class="services">
