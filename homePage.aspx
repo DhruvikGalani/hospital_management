@@ -66,23 +66,23 @@
         <h2>Our Doctors</h2>
         <div class="doctors-grid">
             <div class="doctor-card">
-                <img src="https://placehold.co/200x200" alt="Dr. Smith">
-                <h3>Dr. Smith Sarah</h3>
+                <img src="https://img.freepik.com/premium-photo/indian-female-doctor-indian-nurse_714173-202.jpg" alt="Dr.  Priyanka Shah">
+                <h3>Dr.  Priyanka Shah</h3>
                 <p>Cardiologist</p>
             </div>
             <div class="doctor-card">
-                <img src="https://placehold.co/200x200" alt="Dr. Michael">
-                <h3>Dr. Michael Johnson</h3>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQJpvTE_s_sSmQheRF5_mmWKEw5ctkYUm6bXA&s" alt="Dr. Arushi Sharma">
+                <h3>Dr. Arushi Sharma</h3>
                 <p>Neurologist</p>
             </div>
             <div class="doctor-card">
-                <img src="https://placehold.co/200x200" alt="Dr. Emily">
-                <h3>Dr. Emily Williams</h3>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQC34t53kCXc4x1BUAkUcu8VxT2xFBAKlQdVg&s" alt="Dr. Rasha Agarwal">
+                <h3>Dr. Rasha Agarwal</h3>
                 <p>Pediatrician</p>
             </div>
             <div class="doctor-card">
-                <img src="https://placehold.co/200x200" alt="Dr. Mickey">
-                <h3>Dr. Mickey Williams</h3>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQxwpz0blH-K289vdSbk_fihzo4S0JKpcSQlA&s" alt="Dr. Aditi Soni">
+                <h3>Dr. Aditi Soni</h3>
                 <p>Neurologist</p>
             </div>
         </div>
