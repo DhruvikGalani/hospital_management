@@ -9,7 +9,6 @@
             width: 100%;
           
         }
-       
         .no-spinner::-webkit-inner-spin-button, 
         .no-spinner::-webkit-outer-spin-button {
             -webkit-appearance: none;
