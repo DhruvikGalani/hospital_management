@@ -68,6 +68,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Admin\Billing.aspx" />
+    <Content Include="Admin\StaffInformation.aspx" />
     <Content Include="Doctor\DoctorDetails.aspx" />
     <Content Include="Doctor\MedicalRecord.aspx" />
     <Content Include="Doctor\NutritionWellness.aspx" />
@@ -88,6 +90,20 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Admin\Billing.aspx.cs">
+      <DependentUpon>Billing.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Billing.aspx.designer.cs">
+      <DependentUpon>Billing.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\StaffInformation.aspx.cs">
+      <DependentUpon>StaffInformation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\StaffInformation.aspx.designer.cs">
+      <DependentUpon>StaffInformation.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Doctor\DoctorDetails.aspx.cs">
       <DependentUpon>DoctorDetails.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -169,9 +185,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Admin\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
