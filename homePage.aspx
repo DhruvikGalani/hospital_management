@@ -84,6 +84,94 @@
                 <h3>24 Hours Service</h3>
                 <p>Round-the-clock support for all your medical requirements, day or night.</p>
             </div>
+            <div class="service-card">
+                <img src="https://www.apollohospitals.com/wp-content/themes/apollohospitals/assets-v3/images/cardiology_icon.svg" alt="Pediatrics">
+                <h3>Cardiology</h3>
+            </div>
+             <div class="service-card">
+                 <img src="https://www.apollohospitals.com/wp-content/themes/apollohospitals/assets-v3/images/neurology.svg" alt="Pediatrics">
+                 <h3>Neurology</h3>
+             </div>
+            <div class="service-card">
+                 <img src="https://www.apollohospitals.com/wp-content/themes/apollohospitals/assets-v3/images/gastroenterology.svg" alt="Pediatrics">
+                 <h3>Gastroenterology</h3>
+           </div>
+             <div class="service-card">
+                <img src="https://www.apollohospitals.com/wp-content/themes/apollohospitals/assets-v3/images/orthopaedic.svg" alt="Pediatrics">
+                <h3>Orthopedic</h3>
+            </div>
+             <div class="service-card">
+                <img src="https://www.apollohospitals.com/wp-content/themes/apollohospitals/assets-v3/images/oncology_icon.svg" alt="Pediatrics">
+                <h3>Oncology</h3>
+            </div>
+             <div class="service-card">
+                 <img src="https://www.apollohospitals.com/wp-content/themes/apollohospitals/assets-v3/images/gynecology.svg" alt="Pediatrics">
+                 <h3>Gynecology</h3>
+            </div>
+             <div class="service-card">
+                <img src="https://www.apollohospitals.com/wp-content/themes/apollohospitals/assets-v3/images/dermatology.svg" alt="Pediatrics">
+                <h3>Dermatology</h3>
+            </div>
+             <div class="service-card">
+                <img src="https://www.apollohospitals.com/wp-content/themes/apollohospitals/assets-v3/images/ophthalmology.svg" alt="Pediatrics">
+                <h3>Ophthalmology</h3>
+            </div>
+             <div class="service-card">
+                <img src="https://www.apollohospitals.com/wp-content/themes/apollohospitals/assets-v3/images/paediatricurology.svg" alt="Pediatrics">
+                <h3>Pediatrics</h3>
+            </div>
+             <div class="service-card">
+                <img src="https://www.apollohospitals.com/wp-content/themes/apollohospitals/assets-v3/images/endocrinology.svg" alt="Pediatrics">
+                <h3>Endocrinology</h3>
+            </div>
+             <div class="service-card">
+                <img src="https://www.apollohospitals.com/wp-content/themes/apollohospitals/assets-v3/images/urology.svg" alt="Pediatrics">
+                <h3>Urology</h3>
+            </div>
+             <div class="service-card">
+                 <img src="https://www.apollohospitals.com/wp-content/themes/apollohospitals/assets-v3/images/nephrology.svg" alt="Pediatrics">
+                 <h3>Nephrology</h3>
+            </div>
+             <div class="service-card">
+                  <img src="https://www.apollohospitals.com/wp-content/themes/apollohospitals/assets-v3/images/pulmonology.svg" alt="Pediatrics">
+                  <h3>Pulmonology</h3>
+            </div>
+             <div class="service-card">
+                  <img src="https://www.apollohospitals.com/wp-content/themes/apollohospitals/assets-v3/images/rheumatology.svg" alt="Pediatrics">
+                  <h3>Rheumatology</h3>
+            </div>
+             <div class="service-card">
+                  <img src="https://www.apollohospitals.com/wp-content/themes/apollohospitals/assets-v3/images/neurology.svg" alt="Pediatrics">
+                  <h3>Neurosurgery</h3>
+            </div>
+             <div class="service-card">
+                 <img src="https://www.apollohospitals.com/wp-content/themes/apollohospitals/assets-v3/images/radiology.svg" alt="Pediatrics">
+                 <h3>Radiology</h3>
+            </div>
+             <div class="service-card">
+                    <img src="https://www.apollohospitals.com/wp-content/themes/apollohospitals/assets-v3/images/plasticsurgery.svg" alt="Pediatrics">
+                    <h3>Plastic surgery</h3>
+            </div>
+             <div class="service-card">
+                    <img src="https://www.apollohospitals.com/wp-content/themes/apollohospitals/assets-v3/images/neonatology.svg" alt="Pediatrics">
+                    <h3>Neonatology</h3>
+            </div>
+             <div class="service-card">
+                    <img src="https://www.apollohospitals.com/wp-content/themes/apollohospitals/assets-v3/images/vascularsurgery.svg" alt="Pediatrics">
+                    <h3>Vascular Surgery</h3>
+            </div>
+             <div class="service-card" style="display: none;">
+                    <img src="https://www.apollohospitals.com/wp-content/themes/apollohospitals/assets-v3/images/psychiatry.svg" alt="Pediatrics">
+                    <h3>Psychiatry</h3>
+            </div>
+             <div class="service-card" style="display: none;">
+                    <img src="https://www.apollohospitals.com/wp-content/themes/apollohospitals/assets-v3/images/dentistry.svg" alt="Pediatrics">
+                    <h3>Dentistry</h3>
+            </div>
+             <div class="service-card" style="display: none;">
+                    <img src="https://www.apollohospitals.com/wp-content/themes/apollohospitals/assets-v3/images/ent.svg" alt="Pediatrics">
+                    <h3>ENT (Ear, Nose, Throat)</h3>
+            </div>
         </div>
     </section>
 
@@ -111,6 +199,7 @@
                 <h3>Dr. Aditi Soni</h3>
                 <p>Neurologist</p>
             </div>
+
         </div>
     </section>
 
