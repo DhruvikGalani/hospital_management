@@ -141,7 +141,7 @@
                     <img src="https://www.apollohospitals.com/wp-content/themes/apollohospitals/assets-v3/images/vascularsurgery.svg" alt="Pediatrics">
                     <h3>Vascular Surgery</h3>
             </div>
-             <div class="service-card">
+             <div class="service-card" style="display: none;">
                     <img src="https://www.apollohospitals.com/wp-content/themes/apollohospitals/assets-v3/images/psychiatry.svg" alt="Pediatrics">
                     <h3>Psychiatry</h3>
             </div>
