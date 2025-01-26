@@ -1,0 +1,32 @@
+﻿
+.provide {
+    padding: 5rem 2rem;
+    background-color: #f9f9f9;
+}
+
+    .provide svgs {
+        height: 10px;
+    }
+
+
+
+.provide-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.provide-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+    .provide-card h3 {
+        color: #2c3e50;
+        margin-bottom: 0.5rem;
+    }
