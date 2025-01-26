@@ -96,6 +96,10 @@
     <Content Include="Doctor\MedicalRecord.aspx" />
     <Content Include="Doctor\NutritionWellness.aspx" />
     <Content Include="homePage.aspx" />
+    <Content Include="Iamges\24_svg.svg" />
+    <Content Include="Iamges\ambulance_svg.svg" />
+    <Content Include="Iamges\checkup_svg.svg" />
+    <Content Include="Iamges\doctor_svg.svg" />
     <Content Include="Iamges\hms_im.jpg" />
     <Content Include="Iamges\hms_logo.svg" />
     <Content Include="Patient\Appointments.aspx" />
