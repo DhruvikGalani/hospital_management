@@ -70,6 +70,10 @@
   <ItemGroup>
     <Content Include="Admin\Billing.aspx" />
     <Content Include="Admin\StaffInformation.aspx" />
+    <Content Include="App_Data\db_HMS.mdf" />
+    <Content Include="App_Data\db_HMS_log.ldf">
+      <DependentUpon>db_HMS.mdf</DependentUpon>
+    </Content>
     <Content Include="Bootstrap\css\bootstrap-grid.css" />
     <Content Include="Bootstrap\css\bootstrap-grid.min.css" />
     <Content Include="Bootstrap\css\bootstrap-grid.rtl.css" />
