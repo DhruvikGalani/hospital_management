@@ -112,14 +112,15 @@
         <img src="Images/hms_im5.jpeg" alt="Image 5" />
         <img src="../Images/hms_im6.jpg" alt="Image 6" />
     </div>
+
     <section id="home" class="hero">
         <div class="hero-content">
-            <font class="maintxt">Your Health Is Our Priority</font>
+            <h1 class="maintxt">Your Health Is Our Priority</h1>
             <p>Providing exceptional healthcare services with compassion and expertise</p>
             <button class="cta-button">Book Appointment</button>
         </div>
-
     </section>
+
 
     <section id="services" class="services">
         <h2>Our Services</h2>

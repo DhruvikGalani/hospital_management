@@ -1,7 +1,16 @@
-﻿* {
+﻿
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Prevents horizontal scrolling */
 }
 
 body {
@@ -10,6 +19,9 @@ body {
     color: #333;
 }
 
+.hero, .footer, .contact-info {
+    width: 100%; /* Ensure these sections take full width */
+}
 
 .footer {
     background-color: #1a3E5d;
@@ -20,8 +32,8 @@ body {
 
 .contact-info {
     background-color: transparent;
-    max-width: 600px;
-    margin: 0 auto;
+    width: 100%; /* Ensure it can take full width */
+    padding: 2rem;
 }
 
     .contact-info h3 {
@@ -31,3 +43,29 @@ body {
     .contact-info p {
         margin: 0.5rem 0;
     }
+
+/* Media Query for Mobile */
+@media (max-width: 768px) {
+    .contact-info {
+        padding: 1.5rem;
+        max-width: 100%; /* Remove max-width for mobile, let it take full width */
+    }
+
+    .hero-content {
+        padding: 2rem;
+        text-align: center;
+    }
+
+    .maintxt {
+        font-size: 2rem; /* Adjust font size */
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+    }
+
+    .cta-button {
+        padding: 0.8rem 1.5rem;
+        font-size: 1rem;
+    }
+}
