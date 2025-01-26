@@ -1,6 +1,11 @@
-﻿.hero {
+﻿
+.image-preload {
+    display: none;
+}
+
+.hero {
     height: 100vh;
-    background-image: url("../Iamges/hms_im.jpg");
+    background-image: url("../Images/img1.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -8,25 +13,57 @@
     align-items: center;
     justify-content: start;
     position: relative;
+    animation: changeBackground 40s infinite ease-in-out;
+    transition: background-image 1.5s ease-in-out;
 }
 
-    .hero::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: rgba(0, 0, 0, 0.5); /* Black with 50% opacity for the dark effect */
-        z-index: 1; /* Ensure it sits between the image and text */
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, .6);
+    z-index: 1;
+}
+
+@keyframes changeBackground {
+    0% {
+        background-image: url("../Images/hms_im.jpg");
     }
+
+    16.66% {
+        background-image: url("../Images/hms_im2.jpeg");
+    }
+
+    33.33% {
+        background-image: url("../Images/hms_im3.jpg");
+    }
+
+    50% {
+        background-image: url("../Images/hms_im4.jpeg");
+    }
+
+    66.66% {
+        background-image: url("../Images/hms_im5.jpeg");
+    }
+
+    83.33% {
+        background-image: url("../Images/hms_im6.jpg");
+    }
+
+    100% {
+        background-image: url("../Images/hms_im.jpg");  Loop back to the first image 
+    }
+}
 
 .hero-content {
     position: relative;
     max-width: 700px;
     padding-top: 6rem;
     padding-left: 10rem;
-    padding-bottom: 5rem; /* Add padding at the bottom for the button */
+    padding-bottom: 5rem;
     z-index: 1;
 }
 
@@ -43,18 +80,19 @@
     .hero-content p {
         z-index: 1;
         color: white;
-        opacity: .9;
+        opacity: 0.9;
         font-family: Nunito;
-        font-size: 25px;
+        font-size: 24px;
         font-weight: 400;
         line-height: 30px;
         margin-bottom: 2rem;
+        margin-top: 2rem;
     }
 
 .cta-button {
-    position: absolute; /* Absolute position within hero-content */
-    bottom: 2rem; /* Position button 2rem above the bottom of hero-content */
-    left: 10rem; /* Position button 2rem from the left of hero-content */
+    position: absolute;
+    bottom: 2rem;
+    left: 10rem;
     padding: 1rem 2rem;
     font-size: 1.1rem;
     background-color: transparent;
@@ -81,3 +119,5 @@
         transform: scale(0.95) rotate(-2deg);
         box-shadow: 0 0 5px rgba(255, 255, 255, 0.4);
     }
+
+

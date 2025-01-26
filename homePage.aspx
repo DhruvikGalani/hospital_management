@@ -27,17 +27,17 @@
             }
     </style>
     <script>
+
+        // Smooth scrolling for anchor links
         document.addEventListener("DOMContentLoaded", function () {
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
                     const targetId = this.getAttribute('href');
                     const targetElement = document.querySelector(targetId);
 
                     if (targetElement) {
-                        // Prevent default scrolling only if the target element exists
-                        e.preventDefault();
-
-                        const offset = 60; // Adjust this offset as needed
+                        const offset = 60;
                         const elementPosition = targetElement.offsetTop;
                         const offsetPosition = elementPosition - offset;
 
@@ -48,8 +48,28 @@
                     }
                 });
             });
+
+            // Image preloading logic
+            const images = [
+                "../Images/img1.jpg",
+                "../Images/img2.jpg",
+                "../Images/img3.jpg",
+                "../Images/img4.jpg",
+                "../Images/img5.jpg",
+                "../Images/img6.jpg",
+            ];
+
+            images.forEach((src) => {
+                const img = new Image();
+                img.src = src;
+            });
+
+            console.log("Images preloaded and ready for animation.");
         });
+
     </script>
+
+
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -60,13 +80,17 @@
     <link rel="stylesheet" href="StyleSheet/headercss.css">
     <link rel="stylesheet" href="StyleSheet/herocss.css">
     <link rel="stylesheet" href="StyleSheet/servicecss.css">
+    <link rel="stylesheet" href="StyleSheet/providecss.css">
     <link rel="stylesheet" href="StyleSheet/doctorscss.css">
 </head>
 <body>
+    
+
+
     <header class="header">
         <div class="logo">
             <object type="image/svg+xml" data="Iamges/hms_logo.svg" width="60" height="60">
-                <img src="Iamges/hms_logo.svg" alt="Infinity Health Care Logo" />
+                <img src="Images/hms_logo.svg" alt="Infinity Health Care Logo" />
             </object>
             <h1>Infinity Health Care</h1>
         </div>
@@ -80,7 +104,14 @@
             </ul>
         </nav>
     </header>
-
+    <div class="image-preload">
+        <img src="Images/hms_im.jpg" alt="Image 1" />
+        <img src="Images/hms_im2.jpeg" alt="Image 2" />
+        <img src="Images/hms_im3.jpg" alt="Image 3" />
+        <img src="Images/hms_im4.jpeg" alt="Image 4" />
+        <img src="Images/hms_im5.jpeg" alt="Image 5" />
+        <img src="../Images/hms_im6.jpg" alt="Image 6" />
+    </div>
     <section id="home" class="hero">
         <div class="hero-content">
             <font class="maintxt">Your Health Is Our Priority</font>
@@ -211,10 +242,11 @@
 
         </div>
     </section>
-    <section id="provide" class="services">
+
+    <section id="provide" class="provide">
         <h2>Why Choose Us?</h2>
-        <div class="services-grid">
-            <div class="service-card">
+        <div class="provide-grid">
+            <div class="provide-card">
                 <div class="svg_class">
                     <svg width="80" height="75" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M32 12.5C32 13.0523 32.4477 13.5 33 13.5C33.5523 13.5 34 13.0523 34 12.5V11C34 10.4477 33.5523 10 33 10C32.4477 10 32 10.4477 32 11V12.5Z" fill="currentColor" />
@@ -228,7 +260,7 @@
                 <h3>Emergency Services</h3>
                 <p>24/7 emergency care to address all critical medical needs swiftly and efficiently.</p>
             </div>
-            <div class="service-card">
+            <div class="provide-card">
                 <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="60" height="80" x="0" y="0" viewBox="0 0 512 512" style="enable-background: new 0 0 512 512" xml:space="preserve">
                     <g>
                         <path d="M426.802 335.888c-30.756-15.528-64.55-26.22-97.827-32.936a63.389 63.389 0 0 1-15.657-30.182c20.599-16.11 36.369-40.274 45.009-69.06 23.857-3.612 30.061-40.271 20.599-60.345 43.445-190.382-288.17-190.777-245.757-.415-9.956 20.064-3.761 57.218 20.373 60.779 8.526 28.786 24.41 52.951 45.009 69.06a63.776 63.776 0 0 1-16.6 31.314c-15.751 2.754-25.447 5.074-25.655 5.301C91.765 327.167 34.499 347.13 42.361 426.567c-3.276 113.782 430.382 113.888 427.281.003 3.408-35.841-8.164-74.339-42.84-90.682zM256.217 15.657c74.86-1.031 118.948 48.205 109.24 114.654-4.426-2.132-9.742-2.225-14.506-1.151-1.886-5.659-4.961-14.733-10.243-29.465-.671-1.305-1.768-2.486-2.641-3.678-67.459-44.884-95.62 38.341-156.192-.245-.358-.226-.604-.434-.924-.679-3.094-.789-6.561-.265-8.526 2.528-6.27 12.626-9.564 26.62-11.639 31.54-4.575-1.171-9.595-1.074-13.921.924-9.711-66.393 34.517-115.438 109.352-114.428zm-89.546 177.489c-3.842-9.718-10.218-2.807-14.393-5.998-9.47-6.437-11.824-39.35.341-42.803 6.325-2.081 11.912 5.979 17.844 1.358a8.454 8.454 0 0 0 3.113-5.282c.566-2.547 4.584-14.28 8.979-26.409 69.039 31.684 83.889-40.54 144.572-6.527 7.999 19.532 8.173 29.892 14.259 38.2 5.912 4.649 11.539-3.493 17.847-1.359 4.848 1.358 9.432 10.582 8.3 23.014-.943 10.356-4.848 16.977-7.942 19.788-4.493 2.917-11.318-3.671-14.393 5.999-27.511 111.775-151.125 111.802-178.527.019zm45.707 88.867a88.228 88.228 0 0 0 87.132 0 77.055 77.055 0 0 0 17.6 31.125c-4.018 12.658-32.936 36.615-61.119 54.101-28.296-17.487-57.214-41.5-61.137-54.101a77.354 77.354 0 0 0 17.524-31.125zM57.902 426.566c-5.767-63.339 28.955-79.046 82.171-96.432a284.201 284.201 0 0 0-5.659 30.823c-32.999 9.958-31.215 40.323-26.032 68.155-7.242 9.846 4.999 23.253 15.45 16.807 7.791-4.253 7.492-16.26-.359-20.259-2.931-20.397-8.512-45.611 19.419-49.76 26.465-1.17 26.956 24.466 28.967 43.856-6.787 5.866-3.726 17.564 4.925 19.648 11.381 3.463 19.988-12.115 10.6-19.648-1.711-26.18-5.794-55.38-37.294-59.609a285.313 285.313 0 0 1 7.338-35.087c5.045-1.325 7.368-2.088 23.712-5.074 10.017 23.485 51.706 51.121 67.117 60.553v115.786c-90.6-3.711-190.28-22.243-190.355-69.759zm396.139 0c-.024 47.422-99.68 66.071-190.392 69.758V380.538c15.657-9.677 57.912-37.728 67.362-61.232 7.642 1.45 15.028 3.346 22.316 5.282a288.056 288.056 0 0 1 8.979 49.499c-36.075 12.984-17.678 66.958 18.814 55.209 27.59-8.449 24.972-50.915-3.27-56.115a316.443 316.443 0 0 0-7.149-43.387c53.488 17.271 89.314 33.064 83.34 96.772zm-82.302-38.652c17.724.176 17.768 27.068-.013 27.152-17.792-.123-17.673-27.007.051-27.152h-.038z" fill="#000000" opacity="1" data-original="#000000"></path>
@@ -237,7 +269,7 @@
                 <h3>Qualified Doctors</h3>
                 <p>Our team of experienced and certified doctors ensures you receive the best treatment.</p>
             </div>
-            <div class="service-card">
+            <div class="provide-card">
                 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0,0,256,256" width="60" height="80" fill-rule="nonzero">
                     <g fill="#190932" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal">
                         <g transform="scale(4,4)">
@@ -247,7 +279,7 @@
                 <h3>Outdoor Checkup</h3>
                 <p>Convenient health checkups in comfortable outdoor settings for your well-being.</p>
             </div>
-            <div class="service-card">
+            <div class="provide-card">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" width="60" height="80">
                     <path d="M 24.984375 1.9863281 A 1.0001 1.0001 0 0 0 24.814453 2.0039062 C 12.237888 2.1031784 2.1084057 12.229427 2.0039062 24.804688 A 1.0001 1.0001 0 0 0 2.0039062 25.183594 C 2.102141 37.76107 12.228737 47.891604 24.804688 47.996094 A 1.0001 1.0001 0 0 0 25.183594 47.996094 C 37.76107 47.897859 47.891604 37.771263 47.996094 25.195312 A 1.0001 1.0001 0 0 0 47.994141 24.804688 C 47.958948 20.664327 46.820153 16.802224 44.935547 13.503906 A 1.0001 1.0001 0 1 0 43.199219 14.496094 C 44.79785 17.293916 45.801992 20.52893 45.966797 24 L 44 24 A 1.0001 1.0001 0 1 0 44 26 L 45.974609 26 C 45.473247 36.853995 36.853995 45.473247 26 45.974609 L 26 44 A 1.0001 1.0001 0 0 0 24.984375 42.986328 A 1.0001 1.0001 0 0 0 24 44 L 24 45.974609 C 13.146005 45.473247 4.5267535 36.853995 4.0253906 26 L 6 26 A 1.0001 1.0001 0 1 0 6 24 L 4.0234375 24 C 4.5248095 13.146126 13.145999 4.5267539 24 4.0253906 L 24 6 A 1.0001 1.0001 0 1 0 26 6 L 26 4.0429688 C 30.427366 4.2564387 34.526051 5.8520499 37.871094 8.3808594 A 1.000399 1.000399 0 1 0 39.078125 6.7851562 C 35.209579 3.8605843 30.397088 2.0543585 25.203125 2.0078125 A 1.0001 1.0001 0 0 0 24.984375 1.9863281 z M 47.037109 3.9902344 A 1.0001 1.0001 0 0 0 46.263672 4.3242188 L 24.96875 27.554688 L 16.707031 19.292969 A 1.0001 1.0001 0 1 0 15.292969 20.707031 L 25.03125 30.445312 L 47.736328 5.6757812 A 1.0001 1.0001 0 0 0 47.037109 3.9902344 z" />
                 </svg>
