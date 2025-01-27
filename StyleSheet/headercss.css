@@ -1,4 +1,6 @@
-﻿header {
+﻿
+
+header {
     background-color: #1a3e5d;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     padding: 1rem 2rem;
@@ -19,7 +21,7 @@
 
     .logo img,
     .logo svg {
-        width: 80px; /* Adjust size */
+        width: 60px;  Adjust size 
         height: auto;
     }
 
@@ -63,3 +65,4 @@
         .nav a:hover::after {
             width: 70%;
         }
+

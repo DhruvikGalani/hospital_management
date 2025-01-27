@@ -100,12 +100,17 @@
     <Content Include="Doctor\MedicalRecord.aspx" />
     <Content Include="Doctor\NutritionWellness.aspx" />
     <Content Include="homePage.aspx" />
-    <Content Include="Iamges\24_svg.svg" />
-    <Content Include="Iamges\ambulance_svg.svg" />
-    <Content Include="Iamges\checkup_svg.svg" />
-    <Content Include="Iamges\doctor_svg.svg" />
-    <Content Include="Iamges\hms_im.jpg" />
-    <Content Include="Iamges\hms_logo.svg" />
+    <Content Include="Images\24_svg.svg" />
+    <Content Include="Images\ambulance_svg.svg" />
+    <Content Include="Images\checkup_svg.svg" />
+    <Content Include="Images\doctor_svg.svg" />
+    <Content Include="Images\hms_im.jpg" />
+    <Content Include="Images\hms_im2.jpeg" />
+    <Content Include="Images\hms_im3.jpg" />
+    <Content Include="Images\hms_im4.jpeg" />
+    <Content Include="Images\hms_im5.jpeg" />
+    <Content Include="Images\hms_im6.jpg" />
+    <Content Include="Images\hms_logo.svg" />
     <Content Include="Patient\Appointments.aspx" />
     <Content Include="Patient\FeedbackReview.aspx" />
     <Content Include="Patient\Insurance.aspx" />
@@ -117,6 +122,7 @@
     <Content Include="StyleSheet\herocss.css" />
     <Content Include="StyleSheet\maincss.css" />
     <Content Include="StyleSheet\servicecss.css" />
+    <Content Include="StyleSheet\providecss.css" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
