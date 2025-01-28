@@ -25,6 +25,16 @@
                 border-radius: 2px; /* Smooth and modern edges */
                 box-shadow: 0 0 15px rgba(255, 143, 64, 0.6), 0 0 25px rgba(255, 143, 64, 0.4); /* Vibrant orange glow */
             }
+
+            #dd ul ul
+            {
+                position :absolute;
+                display : none;
+            }
+            #dd ul li:hover ul
+            {
+                display :block;
+            }
     </style>
     <script>
 
@@ -95,13 +105,27 @@
             <h1>Infinity Health Care</h1>
         </div>
         <nav class="nav">
+            <div id="dd">
             <ul>
                 <li><a href="#home">Home</a></li>
+                <li><a href="#Patients and carers">Patients and carers</a>
+                    <ul>
+                        <li><a href="#">Becoming a Peter Mac patient</a></li>
+                        <li><a href="#">Types of cancer</a></li>
+                        <li><a href="#">Treatments</a></li>
+                        <li><a href="#">Tests and diagnosis</a></li>
+                        <li><a href="#">Health services</a></li>
+                        <li><a href="#">Children and young people</a></li>
+                        <li><a href="#">Clinical Trials</a></li>
+                        <li><a href="#">Support and Wellbeing</a></li>
+                    </ul>
+                </li>
                 <li><a href="#services">Services</a></li>
                 <li><a href="#doctors">Doctors</a></li>
                 <li><a href="#appointments">Appointments</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
+                </div>
         </nav>
     </header>
     <div class="image-preload">
