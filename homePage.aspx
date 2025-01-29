@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="homePage.aspx.cs" Inherits="hospital_management.homePage" %>
+﻿﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="homePage.aspx.cs" Inherits="hospital_management.homePage" %>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -18,56 +18,42 @@
             h2::after {
                 content: '';
                 display: block;
-                width: 55%; /* Balanced underline width */
+                width: 40%; /* Balanced underline width */
                 height: 4px; /* Slightly thicker line for prominence */
                 background: linear-gradient(90deg, #ff8f40, #ffd6b0); /* Gradient from vibrant orange to a soft peach tone */
-                margin: 0.7rem auto 1rem; /* Added spacing for breathing room */
+                margin: 0.9rem auto 1rem; /* Added spacing for breathing room */
                 border-radius: 2px; /* Smooth and modern edges */
                 box-shadow: 0 0 15px rgba(255, 143, 64, 0.6), 0 0 25px rgba(255, 143, 64, 0.4); /* Vibrant orange glow */
             }
+
+        section {
+            scroll-margin-top: 80px; /* Adjust based on your header height */
+        }
     </style>
     <script>
-
-        // Smooth scrolling for anchor links
+       
         document.addEventListener("DOMContentLoaded", function () {
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function (e) {
+                anchor.addEventListener("click", function (e) {
                     e.preventDefault();
-                    const targetId = this.getAttribute('href');
-                    const targetElement = document.querySelector(targetId);
+                    let targetId = this.getAttribute("href");
+                    let targetElement = document.querySelector(targetId);
 
                     if (targetElement) {
-                        const offset = 60;
-                        const elementPosition = targetElement.offsetTop;
-                        const offsetPosition = elementPosition - offset;
 
-                        window.scrollTo({
-                            top: offsetPosition,
-                            behavior: "smooth"
+                        targetElement.scrollIntoView({
+                            behavior: "smooth",
+                            block: "start"
                         });
                     }
                 });
             });
-
-            // Image preloading logic
-            const images = [
-                "../Images/img1.jpg",
-                "../Images/img2.jpg",
-                "../Images/img3.jpg",
-                "../Images/img4.jpg",
-                "../Images/img5.jpg",
-                "../Images/img6.jpg",
-            ];
-
-            images.forEach((src) => {
-                const img = new Image();
-                img.src = src;
-            });
-
-            console.log("Images preloaded and ready for animation.");
         });
 
+
+
     </script>
+
 
 
 
@@ -84,7 +70,7 @@
     <link rel="stylesheet" href="StyleSheet/doctorscss.css">
 </head>
 <body>
-    
+
 
 
     <header class="header">
