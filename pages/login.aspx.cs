@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace hospital_management
+namespace hospital_management.pages
 {
     public partial class login : System.Web.UI.Page
     {
