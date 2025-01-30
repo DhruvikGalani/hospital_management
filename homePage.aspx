@@ -26,19 +26,126 @@
                 box-shadow: 0 0 15px rgba(255, 143, 64, 0.6), 0 0 25px rgba(255, 143, 64, 0.4); /* Vibrant orange glow */
             }
 
-            #dd ul ul
-            {
-                position :absolute;
-                display : none;
-            }
-            #dd ul li:hover ul
-            {
-                display :block;
-            }
+           
 
         section {
             scroll-margin-top: 80px; /* Adjust based on your header height */
         }
+        /* Style for the dropdown menu */
+.nav ul {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+    position: relative;
+}
+
+.nav ul li {
+    position: relative;
+}
+
+.nav ul li ul {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #333;
+    padding: 0;
+    list-style: none;
+    min-width: 200px;
+    z-index: 1000;
+}
+
+.nav ul li ul li {
+    width: 100%;
+}
+
+.nav ul li ul li a {
+    display: block;
+    padding: 10px;
+    color: white;
+    background-color: #444;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: background 0.3s;
+}
+
+.nav ul li ul li a:hover {
+    background-color: #ff8f40;
+}
+
+/* ======= Dropdown Menu Styles ======= */
+
+/* Hide dropdowns by default */
+.nav ul li ul {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: rgba(30, 30, 30, 0.5); /* Semi-transparent black */
+    min-width: 200px;
+    padding: 10px 0;
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.34); /* Soft shadow */
+    opacity: 0;
+    transform: translateY(10px); /* Smooth dropdown effect */
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Dropdown items */
+.nav ul li ul li {
+    width: 100%;
+}
+
+/* Dropdown links */
+.nav ul li ul li a {
+    display: block;
+    padding: 12px 15px;
+    color: rgba(255, 255, 255, 0.9); /* Slightly transparent white text */
+    font-size: 14px;
+    font-weight: 500;
+    background: none;
+    transition: background 0.3s ease, padding-left 0.3s ease;
+    border-left: 3px solid transparent; /* Left border effect */
+}
+
+/* Hover effect */
+.nav ul li ul li a:hover {
+    background: rgba(255, 143, 64, 0.4); /* Orange hover with transparency */
+    color: #fff;
+    padding-left: 18px;
+    border-left: 3px solid #fff;
+}
+
+/* Show dropdown on hover */
+.nav ul li:hover > ul {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ======= Submenu (Second-Level Dropdown) ======= */
+.nav ul li ul li ul {
+    display: none;
+    position: absolute;
+    left: 100%;
+    top: 0;
+    background: rgba(40, 40, 40, 0.45); /* Slightly lighter transparent black */
+    min-width: 200px;
+    border-radius: 8px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.4);
+    opacity: 0;
+    transform: translateX(10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Show sub-dropdown on hover */
+.nav ul li ul li:hover > ul {
+    display: block;
+    opacity: 1;
+    transform: translateX(0);
+}
+
+
     </style>
     <script>
        
@@ -59,7 +166,6 @@
                 });
             });
         });
-
 
 
     </script>
@@ -90,14 +196,50 @@
             </object>
             <h1>Infinity Health Care</h1>
         </div>
-        <nav class="nav">
+        <%--  <nav class="nav">
             <div id="dd">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#Patients and carers">Patients and carers</a>
+                        <ul>
+                            <li><a href="#">Becoming a Peter Mac patient</a></li>
+                            <li><a href="#">Types of cancer</a>
+                                <ul>
+                                    <li><a href="#">Blood cancer</a></li>
+                                    <li><a href="#">Breast Cancer</a></li>
+                                    <li><a href="#">Children's cancer</a></li>
+                                    <li><a href="#">Reproductive-related cancer</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">Treatments</a></li>
+                            <li><a href="#">Tests and diagnosis</a></li>
+                            <li><a href="#">Health services</a></li>
+                            <li><a href="#">Children and young people</a></li>
+                            <li><a href="#">Clinical Trials</a></li>
+                            <li><a href="#">Support and Wellbeing</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#doctors">Doctors</a></li>
+                    <li><a href="#appointments">Appointments</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </nav>--%>
+        <nav class="nav">
             <ul>
                 <li><a href="#home">Home</a></li>
-                <li><a href="#Patients and carers">Patients and carers</a>
-                    <ul>
+                <li><a href="#patients">Patients and carers</a>
+                    <ul class="dropdown">
                         <li><a href="#">Becoming a Peter Mac patient</a></li>
-                        <li><a href="#">Types of cancer</a></li>
+                        <li><a href="#">Types of cancer</a>
+                            <ul class="dropdown">
+                                <li><a href="#">Blood cancer</a></li>
+                                <li><a href="#">Breast Cancer</a></li>
+                                <li><a href="#">Children's cancer</a></li>
+                                <li><a href="#">Reproductive-related cancer</a></li>
+                            </ul>
+                        </li>
                         <li><a href="#">Treatments</a></li>
                         <li><a href="#">Tests and diagnosis</a></li>
                         <li><a href="#">Health services</a></li>
@@ -111,7 +253,6 @@
                 <li><a href="#appointments">Appointments</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
-                </div>
         </nav>
     </header>
     <div class="image-preload">
@@ -282,7 +423,7 @@
             </div>
             <div class="provide-card">
                 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0,0,256,256" width="60" height="80" fill-rule="nonzero">
-                    <g fill="#190932" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0"  style="mix-blend-mode: normal">
+                    <g fill="#190932" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" style="mix-blend-mode: normal">
                         <g transform="scale(4,4)">
                             <path d="M5.343,56.447c4.30048,4.30819 11.27697,4.32161 15.594,0.03l23.91,-23.91c1.65167,-1.65195 3.89199,-2.58002 6.228,-2.58002c2.33601,0 4.57633,0.92808 6.228,2.58002c0.02659,0.02653 0.05464,0.05157 0.084,0.075c3.37028,3.45134 3.33685,8.97174 -0.075,12.382l-2.4,2.412l-1.825,1.891c-2.98848,-2.15552 -7.13464,-1.6353 -9.49794,1.19173c-2.36331,2.82702 -2.1403,6.99974 0.51085,9.55878c2.65115,2.55904 6.82914,2.6344 9.57086,0.17263c2.74172,-2.46176 3.11505,-6.62372 0.85523,-9.53414l1.814,-1.881l2.389,-2.4c2.02713,-2.0266 3.16601,-4.77558 3.16601,-7.642c0,-2.86642 -1.13888,-5.6154 -3.16601,-7.642c-0.02888,-0.02859 -0.05925,-0.05563 -0.091,-0.081c-4.23284,-4.14274 -11.01155,-4.10662 -15.2,0.081l-23.91,23.91c-3.52634,3.5072 -9.22462,3.50317 -12.746,-0.009l-0.191,-0.2c-1.63161,-1.62978 -2.5484,-3.84134 -2.5484,-6.1475c0,-2.30616 0.91679,-4.51772 2.5484,-6.1475l3.566,-3.566l18.717,-6.971c3.38291,-0.03885 6.61623,-1.4003 9.008,-3.793l1.418,-1.414c0.39038,-0.3905 0.39038,-1.0235 0,-1.414l-0.708,-0.708l5.658,-5.656c1.67712,-1.68171 1.94234,-4.31014 0.635,-6.293l0.072,-0.071c0.37525,-0.3751 0.58607,-0.88393 0.58607,-1.4145c0,-0.53057 -0.21082,-1.0394 -0.58607,-1.4145l-0.707,-0.707c-1.17167,-1.17361 -3.07289,-1.17517 -4.2465,-0.0035c-1.17361,1.17167 -1.17517,3.07289 -0.0035,4.2465v0l0.707,0.707c0.72942,0.73678 1.90342,0.78692 2.693,0.115c0.55829,1.14513 0.3308,2.51814 -0.567,3.422l-5.658,5.656l-0.707,-0.707c-0.3905,-0.39038 -1.0235,-0.39038 -1.414,0l-1.414,1.413c-2.73381,2.73381 -7.16619,2.73381 -9.9,0c-2.73381,-2.73381 -2.73381,-7.16619 0,-9.9l1.415,-1.414c0.39038,-0.3905 0.39038,-1.0235 0,-1.414l-0.708,-0.708l5.653,-5.655c0.90381,-0.89859 2.27741,-1.12652 3.423,-0.568c-0.66126,0.79141 -0.61233,1.95586 0.113,2.689l0.707,0.707c1.17167,1.17278 3.07222,1.17367 4.245,0.002c1.17278,-1.17167 1.17367,-3.07222 0.002,-4.245l-0.707,-0.706c-0.7915,-0.75594 -2.0375,-0.75594 -2.829,0l-0.071,0.072c-1.98318,-1.30669 -4.61137,-1.04107 -6.293,0.636l-5.657,5.655l-0.707,-0.707c-0.3905,-0.39038 -1.0235,-0.39038 -1.414,0l-1.412,1.414c-2.392,2.39183 -3.75336,5.62455 -3.793,9.007l-6.969,18.729l-3.564,3.564c-4.16994,4.16612 -4.17978,10.92175 -0.022,15.1zM49,60c-2.76142,0 -5,-2.23858 -5,-5c0,-2.76142 2.23858,-5 5,-5c0.94824,0.00214 1.87595,0.27633 2.673,0.79l-1.433,1.486c-0.3885,-0.18063 -0.81157,-0.27479 -1.24,-0.276c-1.65685,0 -3,1.34315 -3,3c0,1.65685 1.34315,3 3,3c1.65685,0 3,-1.34315 3,-3c-0.00283,-0.46341 -0.11449,-0.91967 -0.326,-1.332l1.443,-1.495c1.05449,1.52831 1.17361,3.5156 0.30922,5.15892c-0.86439,1.64332 -2.56943,2.67111 -4.42622,2.66808zM50,55c0,0.55228 -0.44772,1 -1,1c-0.55228,0 -1,-0.44772 -1,-1c0,-0.55228 0.44772,-1 1,-1c0.55228,0 1,0.44772 1,1zM42.125,12.671l-0.707,-0.707c-0.39074,-0.39074 -0.39074,-1.02426 0,-1.415c0.39074,-0.39074 1.02426,-0.39074 1.415,0l0.707,0.708zM36.468,4.186l0.708,0.707c0.39047,0.39074 0.39024,1.02403 -0.0005,1.4145c-0.39074,0.39047 -1.02403,0.39024 -1.4145,-0.0005l-0.707,-0.707zM20.912,11.256l0.707,-0.707l1.414,1.415l-0.707,0.707c-3.51502,3.51474 -3.51524,9.21348 -0.0005,12.7285c3.51474,3.51502 9.21348,3.51524 12.7285,0.0005l0.707,-0.707l1.414,1.415l-0.707,0.707c-4.2965,4.29567 -11.26183,4.295 -15.5575,-0.0015c-4.29567,-4.2965 -4.295,-11.26183 0.0015,-15.5575zM18.549,27.162c0.5901,0.7441 1.26349,1.41816 2.007,2.009l-3.014,1.006zM16.309,22.962c0.22146,0.71082 0.50418,1.40107 0.845,2.063l-2.143,6.419c-0.10198,0.3051 -0.05095,0.64062 0.13711,0.90161c0.18806,0.26099 0.4902,0.41557 0.81189,0.41539c0.10747,0.00006 0.21422,-0.01751 0.316,-0.052l6.416,-2.141c0.66481,0.3424 1.35808,0.62646 2.072,0.849l-13.464,5.013z"></path>
                         </g>
