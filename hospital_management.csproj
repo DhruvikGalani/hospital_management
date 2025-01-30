@@ -74,6 +74,7 @@
     <Content Include="App_Data\db_HMS_log.ldf">
       <DependentUpon>db_HMS.mdf</DependentUpon>
     </Content>
+    <Content Include="BookAppointment.aspx" />
     <Content Include="Bootstrap\css\bootstrap-grid.css" />
     <Content Include="Bootstrap\css\bootstrap-grid.min.css" />
     <Content Include="Bootstrap\css\bootstrap-grid.rtl.css" />
@@ -99,6 +100,7 @@
     <Content Include="Doctor\DoctorDetails.aspx" />
     <Content Include="Doctor\MedicalRecord.aspx" />
     <Content Include="Doctor\NutritionWellness.aspx" />
+    <Content Include="Doctor\Patientsandcarers.aspx" />
     <Content Include="homePage.aspx" />
     <Content Include="Images\24_svg.svg" />
     <Content Include="Images\ambulance_svg.svg" />
@@ -111,6 +113,7 @@
     <Content Include="Images\hms_im5.jpeg" />
     <Content Include="Images\hms_im6.jpg" />
     <Content Include="Images\hms_logo.svg" />
+    <Content Include="pages\login.aspx" />
     <Content Include="Patient\Appointments.aspx" />
     <Content Include="Patient\FeedbackReview.aspx" />
     <Content Include="Patient\Insurance.aspx" />
@@ -140,6 +143,13 @@
     <Compile Include="Admin\StaffInformation.aspx.designer.cs">
       <DependentUpon>StaffInformation.aspx</DependentUpon>
     </Compile>
+    <Compile Include="BookAppointment.aspx.cs">
+      <DependentUpon>BookAppointment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BookAppointment.aspx.designer.cs">
+      <DependentUpon>BookAppointment.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Doctor\DoctorDetails.aspx.cs">
       <DependentUpon>DoctorDetails.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -161,12 +171,26 @@
     <Compile Include="Doctor\NutritionWellness.aspx.designer.cs">
       <DependentUpon>NutritionWellness.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Doctor\Patientsandcarers.aspx.cs">
+      <DependentUpon>Patientsandcarers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Doctor\Patientsandcarers.aspx.designer.cs">
+      <DependentUpon>Patientsandcarers.aspx</DependentUpon>
+    </Compile>
     <Compile Include="homePage.aspx.cs">
       <DependentUpon>homePage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="homePage.aspx.designer.cs">
       <DependentUpon>homePage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pages\login.aspx.cs">
+      <DependentUpon>login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pages\login.aspx.designer.cs">
+      <DependentUpon>login.aspx</DependentUpon>
     </Compile>
     <Compile Include="Patient\Appointments.aspx.cs">
       <DependentUpon>Appointments.aspx</DependentUpon>

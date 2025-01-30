@@ -21,11 +21,9 @@ header {
 
     .logo img,
     .logo svg {
-        width: 60px;  Adjust size 
+        width: 60px;
         height: auto;
     }
-
-
 
     .logo h1 {
         color: aliceblue;
@@ -65,4 +63,3 @@ header {
         .nav a:hover::after {
             width: 70%;
         }
-
