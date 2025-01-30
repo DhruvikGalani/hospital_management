@@ -70,6 +70,7 @@
   <ItemGroup>
     <Content Include="Admin\Billing.aspx" />
     <Content Include="Admin\StaffInformation.aspx" />
+    <Content Include="ambulance.aspx" />
     <Content Include="App_Data\db_HMS.mdf" />
     <Content Include="App_Data\db_HMS_log.ldf">
       <DependentUpon>db_HMS.mdf</DependentUpon>
@@ -101,6 +102,7 @@
     <Content Include="Doctor\MedicalRecord.aspx" />
     <Content Include="Doctor\NutritionWellness.aspx" />
     <Content Include="Doctor\Patientsandcarers.aspx" />
+    <Content Include="Emergencymanagement.aspx" />
     <Content Include="homePage.aspx" />
     <Content Include="Images\24_svg.svg" />
     <Content Include="Images\ambulance_svg.svg" />
@@ -113,7 +115,13 @@
     <Content Include="Images\hms_im5.jpeg" />
     <Content Include="Images\hms_im6.jpg" />
     <Content Include="Images\hms_logo.svg" />
+
+    <Content Include="Laboratorytest.aspx" />
+    <Content Include="login.aspx" />
+    <Content Include="nurse.aspx" />
+
     <Content Include="pages\login.aspx" />
+
     <Content Include="Patient\Appointments.aspx" />
     <Content Include="Patient\FeedbackReview.aspx" />
     <Content Include="Patient\Insurance.aspx" />
@@ -142,6 +150,13 @@
     </Compile>
     <Compile Include="Admin\StaffInformation.aspx.designer.cs">
       <DependentUpon>StaffInformation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ambulance.aspx.cs">
+      <DependentUpon>ambulance.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ambulance.aspx.designer.cs">
+      <DependentUpon>ambulance.aspx</DependentUpon>
     </Compile>
     <Compile Include="BookAppointment.aspx.cs">
       <DependentUpon>BookAppointment.aspx</DependentUpon>
@@ -178,6 +193,13 @@
     <Compile Include="Doctor\Patientsandcarers.aspx.designer.cs">
       <DependentUpon>Patientsandcarers.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Emergencymanagement.aspx.cs">
+      <DependentUpon>Emergencymanagement.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Emergencymanagement.aspx.designer.cs">
+      <DependentUpon>Emergencymanagement.aspx</DependentUpon>
+    </Compile>
     <Compile Include="homePage.aspx.cs">
       <DependentUpon>homePage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -185,12 +207,30 @@
     <Compile Include="homePage.aspx.designer.cs">
       <DependentUpon>homePage.aspx</DependentUpon>
     </Compile>
+
+    <Compile Include="Laboratorytest.aspx.cs">
+      <DependentUpon>Laboratorytest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Laboratorytest.aspx.designer.cs">
+      <DependentUpon>Laboratorytest.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="login.aspx.cs">
+
     <Compile Include="pages\login.aspx.cs">
+
       <DependentUpon>login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="pages\login.aspx.designer.cs">
       <DependentUpon>login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="nurse.aspx.cs">
+      <DependentUpon>nurse.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="nurse.aspx.designer.cs">
+      <DependentUpon>nurse.aspx</DependentUpon>
     </Compile>
     <Compile Include="Patient\Appointments.aspx.cs">
       <DependentUpon>Appointments.aspx</DependentUpon>
