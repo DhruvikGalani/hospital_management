@@ -216,9 +216,6 @@
       <DependentUpon>Laboratorytest.aspx</DependentUpon>
     </Compile>
     <Compile Include="login.aspx.cs">
-
-    <Compile Include="pages\login.aspx.cs">
-
       <DependentUpon>login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
