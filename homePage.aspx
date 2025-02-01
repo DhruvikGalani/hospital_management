@@ -26,6 +26,7 @@
                 box-shadow: 0 0 15px rgba(255, 143, 64, 0.6), 0 0 25px rgba(255, 143, 64, 0.4); /* Vibrant orange glow */
             }
 
+
         section {
             scroll-margin-top: 80px; /* Adjust based on your header height */
         }
