@@ -117,7 +117,6 @@
     <Content Include="Images\hms_logo.svg" />
     <Content Include="Laboratorytest.aspx" />
     <Content Include="nurse.aspx" />
-    <Content Include="pages\login.aspx" />
     <Content Include="Patient\Appointments.aspx" />
     <Content Include="Patient\FeedbackReview.aspx" />
     <Content Include="Patient\Insurance.aspx" />
@@ -211,9 +210,6 @@
     <Compile Include="Laboratorytest.aspx.designer.cs">
       <DependentUpon>Laboratorytest.aspx</DependentUpon>
     </Compile>
-    <Compile Include="pages\login.aspx.designer.cs">
-      <DependentUpon>login.aspx</DependentUpon>
-    </Compile>
     <Compile Include="nurse.aspx.cs">
       <DependentUpon>nurse.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -296,7 +292,9 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="pages\" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
