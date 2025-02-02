@@ -127,6 +127,7 @@
     <Content Include="StyleSheet\doctorscss.css" />
     <Content Include="StyleSheet\headercss.css" />
     <Content Include="StyleSheet\herocss.css" />
+    <Content Include="StyleSheet\location.css" />
     <Content Include="StyleSheet\maincss.css" />
     <Content Include="StyleSheet\servicecss.css" />
     <Content Include="StyleSheet\providecss.css" />
