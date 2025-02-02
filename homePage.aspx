@@ -5,10 +5,13 @@
 <head>
     <style>
         h2 {
+            font-size: 2.2rem;
+            font-weight: bold;
+            color: #2c3e50;
             text-align: center;
             margin-bottom: 1.5rem; /* Increased for a balanced layout */
-            font-size: 2.4rem; /* Larger font for emphasis */
-            color: #ff8f40; /* Vibrant orange for boldness */
+            /*font-size: 2.4rem;*/ /* Larger font for emphasis */
+             /*color: #ff8f40;*/ /* Vibrant orange for boldness */
             font-family: 'Playfair Display', serif; /* A luxurious serif font */
             position: relative;
             text-transform: uppercase;
@@ -26,128 +29,125 @@
                 box-shadow: 0 0 15px rgba(255, 143, 64, 0.6), 0 0 25px rgba(255, 143, 64, 0.4); /* Vibrant orange glow */
             }
 
-
         section {
             scroll-margin-top: 80px; /* Adjust based on your header height */
         }
         /* Style for the dropdown menu */
-.nav ul {
-    display: flex;
-    list-style: none;
-    gap: 2rem;
-    position: relative;
-}
+        .nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            position: relative;
+        }
 
-.nav ul li {
-    position: relative;
-}
+            .nav ul li {
+                position: relative;
+            }
 
-.nav ul li ul {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background-color: #333;
-    padding: 0;
-    list-style: none;
-    min-width: 200px;
-    z-index: 1000;
-}
+                .nav ul li ul {
+                    display: none;
+                    position: absolute;
+                    top: 100%;
+                    left: 0;
+                    background-color: #333;
+                    padding: 0;
+                    list-style: none;
+                    min-width: 200px;
+                    z-index: 1000;
+                }
 
-.nav ul li ul li {
-    width: 100%;
-}
+                    .nav ul li ul li {
+                        width: 100%;
+                    }
 
-.nav ul li ul li a {
-    display: block;
-    padding: 10px;
-    color: white;
-    background-color: #444;
-    text-decoration: none;
-    white-space: nowrap;
-    transition: background 0.3s;
-}
+                        .nav ul li ul li a {
+                            display: block;
+                            padding: 10px;
+                            color: white;
+                            background-color: #444;
+                            text-decoration: none;
+                            white-space: nowrap;
+                            transition: background 0.3s;
+                        }
 
-.nav ul li ul li a:hover {
-    background-color: #ff8f40;
-}
+                            .nav ul li ul li a:hover {
+                                background-color: #ff8f40;
+                            }
 
-/* ======= Dropdown Menu Styles ======= */
+                /* ======= Dropdown Menu Styles ======= */
 
-/* Hide dropdowns by default */
-.nav ul li ul {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background: rgba(30, 30, 30, 0.5); /* Semi-transparent black */
-    min-width: 200px;
-    padding: 10px 0;
-    border-radius: 8px; /* Rounded corners */
-    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.34); /* Soft shadow */
-    opacity: 0;
-    transform: translateY(10px); /* Smooth dropdown effect */
-    transition: opacity 0.3s ease, transform 0.3s ease;
-}
+                /* Hide dropdowns by default */
+                .nav ul li ul {
+                    display: none;
+                    position: absolute;
+                    top: 100%;
+                    left: 0;
+                    background: rgba(30, 30, 30, 0.5); /* Semi-transparent black */
+                    min-width: 200px;
+                    padding: 10px 0;
+                    border-radius: 8px; /* Rounded corners */
+                    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.34); /* Soft shadow */
+                    opacity: 0;
+                    transform: translateY(10px); /* Smooth dropdown effect */
+                    transition: opacity 0.3s ease, transform 0.3s ease;
+                }
 
-/* Dropdown items */
-.nav ul li ul li {
-    width: 100%;
-}
+                    /* Dropdown items */
+                    .nav ul li ul li {
+                        width: 100%;
+                    }
 
-/* Dropdown links */
-.nav ul li ul li a {
-    display: block;
-    padding: 12px 15px;
-    color: rgba(255, 255, 255, 0.9); /* Slightly transparent white text */
-    font-size: 14px;
-    font-weight: 500;
-    background: none;
-    transition: background 0.3s ease, padding-left 0.3s ease;
-    border-left: 3px solid transparent; /* Left border effect */
-}
+                        /* Dropdown links */
+                        .nav ul li ul li a {
+                            display: block;
+                            padding: 12px 15px;
+                            color: rgba(255, 255, 255, 0.9); /* Slightly transparent white text */
+                            font-size: 14px;
+                            font-weight: 500;
+                            background: none;
+                            transition: background 0.3s ease, padding-left 0.3s ease;
+                            border-left: 3px solid transparent; /* Left border effect */
+                        }
 
-/* Hover effect */
-.nav ul li ul li a:hover {
-    background: rgba(255, 143, 64, 0.4); /* Orange hover with transparency */
-    color: #fff;
-    padding-left: 18px;
-    border-left: 3px solid #fff;
-}
+                            /* Hover effect */
+                            .nav ul li ul li a:hover {
+                                background: rgba(255, 143, 64, 0.4); /* Orange hover with transparency */
+                                color: #fff;
+                                padding-left: 18px;
+                                border-left: 3px solid #fff;
+                            }
 
-/* Show dropdown on hover */
-.nav ul li:hover > ul {
-    display: block;
-    opacity: 1;
-    transform: translateY(0);
-}
+                /* Show dropdown on hover */
+                .nav ul li:hover > ul {
+                    display: block;
+                    opacity: 1;
+                    transform: translateY(0);
+                }
 
-/* ======= Submenu (Second-Level Dropdown) ======= */
-.nav ul li ul li ul {
-    display: none;
-    position: absolute;
-    left: 100%;
-    top: 0;
-    background: rgba(40, 40, 40, 0.45); /* Slightly lighter transparent black */
-    min-width: 200px;
-    border-radius: 8px;
-    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.4);
-    opacity: 0;
-    transform: translateX(10px);
-    transition: opacity 0.3s ease, transform 0.3s ease;
-}
+                /* ======= Submenu (Second-Level Dropdown) ======= */
+                .nav ul li ul li ul {
+                    display: none;
+                    position: absolute;
+                    left: 100%;
+                    top: 0;
+                    background: rgba(40, 40, 40, 0.45); /* Slightly lighter transparent black */
+                    min-width: 200px;
+                    border-radius: 8px;
+                    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.4);
+                    opacity: 0;
+                    transform: translateX(10px);
+                    transition: opacity 0.3s ease, transform 0.3s ease;
+                }
 
-/* Show sub-dropdown on hover */
-.nav ul li ul li:hover > ul {
-    display: block;
-    opacity: 1;
-    transform: translateX(0);
-}
-
-
+                /* Show sub-dropdown on hover */
+                .nav ul li ul li:hover > ul {
+                    display: block;
+                    opacity: 1;
+                    transform: translateX(0);
+                }
     </style>
     <script>
-       
+
         document.addEventListener("DOMContentLoaded", function () {
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 anchor.addEventListener("click", function (e) {
@@ -169,7 +169,169 @@
 
     </script>
 
+    <script>
 
+        const details = {
+
+            Ahmedabad: {
+                image_url: "https://cdn.apollohospitals.com/apollohospitals/apollo-prohealth/ah/location.jpg",
+                address: "📍Plot No.1A, Bhat GIDC Estate, Gandhinagar – 382428, Gujarat, India.",
+            },
+
+            Bangalore: {
+                image_url: "https://cdn.apollohospitals.com/dev-apollohospitals/2020/09/bangalore-new.jpg",
+                address: "📍154 / 11, Bannerghatta Road, Opp. I.I.M, Bangalore – 560076",
+            },
+
+
+            Aragonda: {
+                image_url: "https://cdn.apollohospitals.com/dev-apollohospitals/2020/09/aragonda-new.jpg",
+                address: "📍Aragonda (V), Thavanampalli (M), Chittoor (D)",
+            },
+
+
+            Bhubaneshwar: {
+                image_url: "https://cdn.apollohospitals.com/dev-apollohospitals/2020/09/bhubaneshwar-new.jpg",
+                address: "📍Plot No. 251, Old Sainik School Road Bhubaneshwar - 750 015",
+            },
+
+
+            Bilaspur: {
+                image_url: "https://cdn.apollohospitals.com/dev-apollohospitals/2020/10/bilaspur-new.jpg",
+                address: "📍Apollo Hospitals Bilaspur, Seepat Road, Bilaspur, Chhattisgarh, 495006",
+            },
+            
+      
+
+            Delhi: {
+                image_url: "https://cdn.apollohospitals.com/dev-apollohospitals/2020/09/bangalore-new.jpg",
+                address: "📍Sarita Vihar Delhi Mathura Road, New Delhi - 110076 (India)",
+            },
+
+
+            Guwahati: {
+                image_url: "https://cdn.apollohospitals.com/dev-apollohospitals/2020/10/guwahati-new.jpg",
+                address: "📍Apollo Hospitals, Guwahati Unit: International Hospitals Lotus Tower, Christian Basti, G.S.Road Guwahati - 781 005",
+            },
+
+            Hyderabad: {
+                image_url: "https://cdn.apollohospitals.com/dev-apollohospitals/2020/09/hyderabad-new.jpg",
+                address: "📍 Nagar, Jubilee Hills, Hyderabad, Telangana State, India. Toll No – 1860 500 1066",
+            },
+
+            Indore: {
+                image_url: "https://cdn.apollohospitals.com/dev-apollohospitals/2020/10/Indore-new.jpg",
+                address: "📍Scheme No. 74 C, Sector D, Vijay Nagar, Indore 452 010 (Madhya Pradesh).",
+            },
+
+            Kakinada: {
+                image_url: "https://cdn.apollohospitals.com/dev-apollohospitals/2020/10/Kakinada-new.jpg",
+                address: "📍13-1-3, Suryaraopeta Main Road, Kakinada - 533 001",
+            },
+
+            Karur: {
+                image_url: "https://cdn.apollohospitals.com/dev-apollohospitals/2020/10/Karur-new.jpg",
+                address: "📍163 - AE, Allwyn Nagar Kovai Road Karur - 639002",
+            },
+
+            Kolkata: {
+                image_url: "https://cdn.apollohospitals.com/dev-apollohospitals/2020/09/Kolkata-new.jpg",
+                address: "📍58, Canal Circular Road Kolkata - 700 054",
+            },
+
+
+            Kochi: {
+                image_url: "https://cdn.apollohospitals.com/dev-apollohospitals/2020/12/Kochi-new.jpg",
+                address: "📍Apollo Adlux Hospital Angamaly, Cable Junction, Ernakulam District, National Highway 47 Karukutty, Kerala 683576",
+            },
+
+
+            Lucknow: {
+                image_url: "https://cdn.apollohospitals.com/dev-apollohospitals/2020/09/Lucknow-new.jpg",
+                address: "📍Apollomedics Super Speciality Hospitals Kanpur - Lucknow Rd, Sector B, Bargawan, LDA Colony, Lucknow, Uttar Pradesh 226012",
+            },
+
+            Madurai: {
+                image_url: "https://cdn.apollohospitals.com/dev-apollohospitals/2020/10/Madurai-new.jpg",
+                address: "📍Lake View Road, K.K. Nagar, Madurai - 625 020",
+            },
+
+            Mumbai: {
+                image_url: "https://cdn.apollohospitals.com/dev-apollohospitals/2020/09/Mumbai-new.jpg",
+                address: "📍Parsik Hill Road, Sector 23, CBD Belapur, Navi Mumbai - 400 614",
+            },
+
+            Mysore: {
+                image_url: "https://cdn.apollohospitals.com/dev-apollohospitals/2020/10/Mysore-new.jpg",
+                address: "📍Adhichunchanagiri Road Kuvempunagar, Mysore - 570 023",
+            },
+
+            Nashik: {
+                image_url: "https://cdn.apollohospitals.com/dev-apollohospitals/2020/10/Nashik-new.jpg",
+                address: "📍Swaminarayan Nagar Near Lunge Mangal Karyalaya New Adgaon Naka, Panchavati Nashik 422 003, Maharashtra.",
+            },
+
+            Nellore: {
+                image_url: "https://cdn.apollohospitals.com/dev-apollohospitals/2020/10/Nellore-new.jpg",
+                address: "📍Apollo specialty Hospitals Nellore, 16/111, 1133, Muthukur Rd, Pinakini Avenue, Ramji Nagar, Nellore, Andhra Pradesh 524004",
+            },
+
+            Noida: {
+                image_url: "https://cdn.apollohospitals.com/dev-apollohospitals/2023/04/Noida-new.jpg",
+                address: "📍E 2, Apollo Hospitals Rd, Block E, Sector 26, Noida, Uttar Pradesh 201301",
+            },
+        };
+
+
+        // Ensure the default location is selected when the page loads
+        document.addEventListener("DOMContentLoaded", function () {
+            showDetails("Ahmedabad"); // Show Ahmedabad details by default
+            setActiveIcon("Ahmedabad"); // Set Ahmedabad icon as active by default
+        });
+
+        // Function to show details of the selected location
+        function showDetails(location) {
+            const detailsContainer = document.getElementById("location-details");
+            const locationDetails = details[location];
+            detailsContainer.innerHTML = `
+            <h4>${location}</h4>
+            <img src="${locationDetails.image_url}" alt="${location} Image">
+            <p>${locationDetails.address}</p>
+        `;
+        }
+
+        // Function to set the clicked icon as active
+        function setActiveIcon(location) {
+            const icons = document.querySelectorAll(".location-icon");
+
+            // Remove the active class from all icons
+            icons.forEach(icon => icon.classList.remove("location-active"));
+
+            // Add the active class to the clicked or default icon
+            const selectedIcon = document.querySelector(`.location-icon[data-location='${location}']`);
+            if (selectedIcon) {
+                selectedIcon.classList.add("location-active");
+            }
+        }
+
+        // Attach the showDetails function to each icon click event
+        function attachIconClickEvents() {
+            const icons = document.querySelectorAll(".location-icon");
+            icons.forEach(icon => {
+                icon.addEventListener("click", function () {
+                    const location = icon.getAttribute("data-location");
+                    showDetails(location); // Show details of the clicked location
+                    setActiveIcon(location); // Set the clicked icon as active
+                });
+            });
+        }
+
+        // Call the function to attach events when DOM content is loaded
+        document.addEventListener("DOMContentLoaded", attachIconClickEvents);
+
+
+
+    </script>
 
 
     <meta charset="UTF-8">
@@ -183,8 +345,7 @@
     <link rel="stylesheet" href="StyleSheet/servicecss.css">
     <link rel="stylesheet" href="StyleSheet/providecss.css">
     <link rel="stylesheet" href="StyleSheet/doctorscss.css">
-        <link rel="stylesheet" href="StyleSheet/location.css">
-
+    <link rel="stylesheet" href="StyleSheet/location.css">
 </head>
 <body>
 
@@ -399,307 +560,122 @@
 
     <section id="Location" class="Location">
 
-         <div class="container">
-          <h4 class="sec_title text-center mt-4">LOCATION</h4>
-          <h2 class="text-center my-4">Hospitals in India</h2>
-          <p class="text-center">
-  Apollo Group is one of the best hospital groups in India with over 10,000+ beds across 73+ hospitals, 6,000+ pharmacies, over 700+ clinics, 2,300+ diagnostic centres, and 200+ Telemedicine units.
-          </p>
-    
-
-   <div class="row">
-     <!-- Location Icons -->
-     <div class="col-md-6" style="font-size: small">
-       <div class="locations-container" id="locations">
-
-         <div class="location-icon" onclick="showDetails('Ahmedabad')">
-           <img src="https://www.apollohospitals.com/wp-content/themes/apollohospitals/assets-v3/images/ahmedabad_city.svg" alt="Ahmedabad Icon" width="80" height="80">
-           <p>Ahmedabad</p>
-         </div>
-         <div class="location-icon" onclick="showDetails('Bangalore')">
-           <img src="https://www.apollohospitals.com/wp-content/themes/apollohospitals/assets-v3/images/bangalore_city.svg" alt="Bangalore Icon" width="80" height="80">
-           <p>Bangalore</p>
-         </div>
-         <div class="location-icon" onclick="showDetails('Chennai')">
-           <img src="https://www.apollohospitals.com/wp-content/themes/apollohospitals/assets-v3/images/chennai_city.svg" alt="Chennai Icon" width="80" height="80">
-           <p>Chennai</p>
-         </div>
-         <div class="location-icon" onclick="showDetails('Aragonda')">
-           <img src="https://www.apollohospitals.com/wp-content/themes/apollohospitals/assets-v3/images/ahmedabad_city.svg" alt="Aragonda Icon" width="80" height="80">
-           <p>Aragonda</p>
-         </div>
-         <div class="location-icon" onclick="showDetails('Bhubaneshwar')">
-           <img src="https://www.apollohospitals.com/wp-content/themes/apollohospitals/assets-v3/images/bhubaneshwar_city.svg" alt="Bhubaneshwar Icon" width="80" height="80">
-           <p>Bhubaneshwar</p>
-         </div>
-         <div class="location-icon location-active" onclick="showDetails('Bilaspur')">
-           <img src="https://www.apollohospitals.com/wp-content/themes/apollohospitals/assets-v3/images/bangalore_city.svg" alt="Bilaspur Icon" width="80" height="80">
-           <p>Bilaspur</p>
-         </div>
-         <div class="location-icon" onclick="showDetails('Bhopal')">
-           <img src="https://www.apollohospitals.com/wp-content/themes/apollohospitals/assets-v3/images/lucknow_city.svg" alt="Bhopal Icon" width="80" height="80">
-           <p>Bhopal</p>
-         </div>
-         <div class="location-icon" onclick="showDetails('Delhi')">
-           <img src="https://www.apollohospitals.com/wp-content/themes/apollohospitals/assets-v3/images/delhi_city.svg" alt="Delhi Icon" width="80" height="80">
-           <p>Delhi</p>
-         </div>
-         <div class="location-icon" onclick="showDetails('Guwahati')">
-           <img src="https://www.apollohospitals.com/wp-content/themes/apollohospitals/assets-v3/images/guwahati_city.svg" alt="Guwahati Icon" width="80" height="80">
-           <p>Guwahati</p>
-         </div>
-         <div class="location-icon" onclick="showDetails('Hyderabad')">
-           <img src="https://www.apollohospitals.com/wp-content/themes/apollohospitals/assets-v3/images/hyderabad_city.svg" alt="Hyderabad Icon" width="80" height="80">
-           <p>Hyderabad</p>
-         </div>
-         <div class="location-icon" onclick="showDetails('Indore')">
-           <img src="https://www.apollohospitals.com/wp-content/themes/apollohospitals/assets-v3/images/indore_city.svg" alt="Indore Icon" width="80" height="80">
-           <p>Indore</p>
-         </div>
-         <div class="location-icon" onclick="showDetails('Kakinada')">
-           <img src="https://www.apollohospitals.com/wp-content/themes/apollohospitals/assets-v3/images/kakinada_city.svg" alt="Kakinada Icon" width="80" height="80">
-           <p>Kakinada</p>
-         </div>
-         <div class="location-icon" onclick="showDetails('Karur')">
-           <img src="https://www.apollohospitals.com/wp-content/themes/apollohospitals/assets-v3/images/kakinada_city.svg" alt="Karur Icon" width="80" height="80">
-           <p>Karur</p>
-         </div>
-         <div class="location-icon" onclick="showDetails('Kolkata')">
-           <img src="https://www.apollohospitals.com/wp-content/themes/apollohospitals/assets-v3/images/kolkata_city.svg" alt="Kolkata Icon" width="80" height="80">
-           <p>Kolkata</p>
-         </div>
-         <div class="location-icon" onclick="showDetails('Kochi')">
-           <img src="https://www.apollohospitals.com/wp-content/themes/apollohospitals/assets-v3/images/kakinada_city.svg" alt="Kochi Icon" width="80" height="80">
-           <p>Kochi</p>
-         </div>
-         <div class="location-icon" onclick="showDetails('Lucknow')">
-           <img src="https://www.apollohospitals.com/wp-content/themes/apollohospitals/assets-v3/images/lucknow_city.svg" alt="Lucknow Icon" width="80" height="80">
-           <p>Lucknow</p>
-         </div>
-         <div class="location-icon" onclick="showDetails('Madurai')">
-           <img src="https://www.apollohospitals.com/wp-content/themes/apollohospitals/assets-v3/images/lucknow_city.svg" alt="Madurai Icon" width="80" height="80">
-           <p>Madurai</p>
-         </div>
-         <div class="location-icon" onclick="showDetails('Mumbai')">
-           <img src="https://www.apollohospitals.com/wp-content/themes/apollohospitals/assets-v3/images/mumbai_city.svg" alt="Mumbai Icon" width="80" height="80">
-           <p>Mumbai</p>
-         </div>
-         <div class="location-icon" onclick="showDetails('Mysore')">
-           <img src="https://www.apollohospitals.com/wp-content/themes/apollohospitals/assets-v3/images/mysore_city.svg" alt="Mysore Icon" width="80" height="80">
-           <p>Mysore</p>
-         </div>
-         <div class="location-icon" onclick="showDetails('Nashik')">
-           <img src="https://www.apollohospitals.com/wp-content/themes/apollohospitals/assets-v3/images/nashik_city.svg" alt="Nashik Icon" width="80" height="80">
-           <p>Nashik</p>
-         </div>
-         <div class="location-icon" onclick="showDetails('Nellore')">
-           <img src="https://www.apollohospitals.com/wp-content/themes/apollohospitals/assets-v3/images/lucknow_city.svg" alt="Nellore Icon" width="80" height="80">
-           <p>Nellore</p>
-         </div>
-         <div class="location-icon" onclick="showDetails('Noida')">
-           <img src="https://www.apollohospitals.com/wp-content/themes/apollohospitals/assets-v3/images/delhi_city.svg" alt="Noida Icon" width="80" height="80">
-           <p>Noida</p>
-         </div>
-         <div class="location-icon" onclick="showDetails('Rourkela')">
-           <img src="https://cdn.apollohospitals.com/dev-apollohospitals/2024/03/rourkela-main.svg" alt="Rourkela Icon" width="80" height="80">
-           <p>Rourkela</p>
-         </div>
-         
-       </div>
-     </div>
-       
-     <!-- Location Details -->
-     <div class="col-md-6">
-       <div class="details-container" id="location-details">
-         <h4>Ahmedabad</h4>
-
-         <img src="https://cdn.apollohospitals.com/apollohospitals/apollo-prohealth/ah/location.jpg" alt="Ahemdabad Image" style="width: 80%; height: auto;">
-         <p>📍Plot No.1A, Bhat GIDC Estate, Gandhinagar – 382428, Gujarat, India.</p>
-         <p>Phone: +📞91 8401801066</p>
-          </div>
- </div>
-
-        </div></div>
-        
-        
-         </section>
-       
-       <script>
-
-		   const details = {
-
-			   Ahmedabad: {
+        <div class="container">
+            <h2>Hospitals in India</h2>
+            <p class="text-center">
+                Infinily Health Care Group is one of the best hospital groups in India with over 10,000+ beds across 73+ hospitals, 6,000+ pharmacies, over 700+ clinics, 2,300+ diagnostic centres, and 200+ Telemedicine units.
+            </p>
 
 
-				   image_url: "https://cdn.apollohospitals.com/apollohospitals/apollo-prohealth/ah/location.jpg",
-				   address: "📍Plot No.1A, Bhat GIDC Estate, Gandhinagar – 382428, Gujarat, India.",
-				   phone_number: "+📞91 8401801066"
-			   },
+            <div class="row">
+                <!-- Location Icons -->
+                <div class="col-md-6" style="font-size: small">
+                    <div class="locations-container" id="locations">
 
-			   Bangalore: {
-				   image_url: "https://cdn.apollohospitals.com/dev-apollohospitals/2020/09/bangalore-new.jpg",
-				   address: "📍154 / 11, Bannerghatta Road, Opp. I.I.M, Bangalore – 560076",
-				   phone_number: "+📞91-80-26304050"
-			   },
+                        <div class="location-icon" onclick="showDetails('Ahmedabad')" data-location="Ahmedabad">
+                            <img src="svgs/ahmedabad_city.svg" alt="Ahmedabad Icon" width="80" height="80">
+                            <p>Ahmedabad</p>
+                        </div>
+                        <div class="location-icon" onclick="showDetails('Bangalore')" data-location="Bangalore">
+                            <img src="svgs/bangalore_city.svg" alt="Bangalore Icon" width="80" height="80">
+                            <p>Bangalore</p>
+                        </div>
+                      
+                        <div class="location-icon" onclick="showDetails('Aragonda')" data-location="Aragonda">
+                            <img src="svgs/ahmedabad_city.svg" alt="Aragonda Icon" width="80" height="80">
+                            <p>Aragonda</p>
+                        </div>
+                        <div class="location-icon" onclick="showDetails('Bhubaneshwar')" data-location="Bhubaneshwar">
+                            <img src="svgs/bhubaneshwar_city.svg" alt="Bhubaneshwar Icon" width="80" height="80">
+                            <p>Bhubaneshwar</p>
+                        </div>
+                        <div class="location-icon location-active" onclick="showDetails('Bilaspur')" data-location="Bilaspur">
+                            <img src="svgs/bangalore_city.svg" alt="Bilaspur Icon" width="80" height="80">
+                            <p>Bilaspur</p>
+                        </div>
+                      
+                        <div class="location-icon" onclick="showDetails('Delhi')" data-location="Delhi">
+                            <img src="svgs/delhi_city.svg" alt="Delhi Icon" width="80" height="80">
+                            <p>Delhi</p>
+                        </div>
+                        <div class="location-icon" onclick="showDetails('Guwahati')" data-location="Guwahati">
+                            <img src="svgs/guwahati_city.svg" alt="Guwahati Icon" width="80" height="80">
+                            <p>Guwahati</p>
+                        </div>
+                        <div class="location-icon" onclick="showDetails('Hyderabad')" data-location="Hyderabad">
+                            <img src="svgs/hyderabad_city.svg" alt="Hyderabad Icon" width="80" height="80">
+                            <p>Hyderabad</p>
+                        </div>
+                        <div class="location-icon" onclick="showDetails('Indore')" data-location="Indore">
+                            <img src="svgs/indore_city.svg" alt="Indore Icon" width="80" height="80">
+                            <p>Indore</p>
+                        </div>
+                        <div class="location-icon" onclick="showDetails('Kakinada')" data-location="Kakinada">
+                            <img src="svgs/kakinada_city.svg" alt="Kakinada Icon" width="80" height="80">
+                            <p>Kakinada</p>
+                        </div>
+                        <div class="location-icon" onclick="showDetails('Karur')" data-location="Karur">
+                            <img src="svgs/kakinada_city.svg" alt="Karur Icon" width="80" height="80">
+                            <p>Karur</p>
+                        </div>
+                        <div class="location-icon" onclick="showDetails('Kolkata')" data-location="Kolkata">
+                            <img src="svgs/kolkata_city.svg" alt="Kolkata Icon" width="80" height="80">
+                            <p>Kolkata</p>
+                        </div>
+                        <div class="location-icon" onclick="showDetails('Kochi')" data-location="Kochi">
+                            <img src="svgs/kakinada_city.svg" alt="Kochi Icon" width="80" height="80">
+                            <p>Kochi</p>
+                        </div>
+                        <div class="location-icon" onclick="showDetails('Lucknow')" data-location="Lucknow">
+                            <img src="svgs/lucknow_city.svg" alt="Lucknow Icon" width="80" height="80">
+                            <p>Lucknow</p>
+                        </div>
+                        <div class="location-icon" onclick="showDetails('Madurai')" data-location="Madurai">
+                            <img src="svgs/lucknow_city.svg" alt="Madurai Icon" width="80" height="80">
+                            <p>Madurai</p>
+                        </div>
+                        <div class="location-icon" onclick="showDetails('Mumbai')" data-location="Mumbai">
+                            <img src="svgs/mumbai_city.svg" alt="Mumbai Icon" width="80" height="80">
+                            <p>Mumbai</p>
+                        </div>
+                        <div class="location-icon" onclick="showDetails('Mysore')" data-location="Mysore">
+                            <img src="svgs/mysore_city.svg" alt="Mysore Icon" width="80" height="80">
+                            <p>Mysore</p>
+                        </div>
+                        <div class="location-icon" onclick="showDetails('Nashik')" data-location="Nashik">
+                            <img src="svgs/nashik_city.svg" alt="Nashik Icon" width="80" height="80">
+                            <p>Nashik</p>
+                        </div>
+                        <div class="location-icon" onclick="showDetails('Nellore')" data-location="Nellore">
+                            <img src="svgs/lucknow_city.svg" alt="Nellore Icon" width="80" height="80">
+                            <p>Nellore</p>
+                        </div>
+                        <div class="location-icon" onclick="showDetails('Noida')" data-location="Noida">
+                            <img src="svgs/delhi_city.svg" alt="Noida Icon" width="80" height="80">
+                            <p>Noida</p>
+                        </div>
+                        
 
+                    </div>
+                </div>
 
-			   Aragonda: {
-				   image_url: "https://cdn.apollohospitals.com/dev-apollohospitals/2020/09/aragonda-new.jpg",
-				   address: "📍Aragonda (V), Thavanampalli (M), Chittoor (D)",
-				   phone_number: "+📞91-08573 283 220/221/222"
-			   },
+                <!-- Location Details -->
+                <div class="col-md-6">
+                    <div class="details-container" id="location-details">
+                        <h4>Ahmedabad</h4>
 
+                       <div class="imgcon"> <img class="locimg"  src="https://cdn.apollohospitals.com/apollohospitals/apollo-prohealth/ah/location.jpg" alt="Ahemdabad Image">
+                       </div> <p class ="locaddress">📍Plot No.1A, Bhat GIDC Estate, Gandhinagar – 382428, Gujarat, India.</p>
+                    </div>
+                </div>
 
-			   Bhubaneshwar: {
-				   image_url: "https://cdn.apollohospitals.com/dev-apollohospitals/2020/09/bhubaneshwar-new.jpg",
-				   address: "📍Plot No. 251, Old Sainik School Road Bhubaneshwar - 750 015",
-				   phone_number: "+📞91-06747150382 / +91-06746661016"
-			   },
-
-
-			   Bilaspur: {
-				   image_url: "https://cdn.apollohospitals.com/dev-apollohospitals/2020/10/bilaspur-new.jpg",
-				   address: "📍Apollo Hospitals Bilaspur, Seepat Road, Bilaspur, Chhattisgarh, 495006",
-				   phone_number: "+📞 91-7752-433433, 433233"
-			   },
-
-
-			   Chennai: {
-				   image_url: "https://cdn.apollohospitals.com/dev-apollohospitals/2020/09/chennai-new.jpg",
-				   address: "📍21, Greams Lane, Off Greams Road Chennai – 600006",
-				   phone_number: " +📞91-44-40401066"
-			   },
-
-
-			   Delhi: {
-
-
-				   image_url: "https://cdn.apollohospitals.com/dev-apollohospitals/2020/09/bangalore-new.jpg",
-				   address: "📍Sarita Vihar Delhi Mathura Road, New Delhi - 110076 (India)",
-				   phone_number: "+📞91-11-71791090 / 1091"
-			   },
-
-
-			   Guwahati: {
-				   image_url: "https://cdn.apollohospitals.com/dev-apollohospitals/2020/10/guwahati-new.jpg",
-				   address: "📍Apollo Hospitals, Guwahati Unit: International Hospitals Lotus Tower, Christian Basti, G.S.Road Guwahati - 781 005",
-				   phone_number: "+📞91 -361-/ 7135005/2347700"
-			   },
-
-			   Hyderabad: {
-				   image_url: "https://cdn.apollohospitals.com/dev-apollohospitals/2020/09/hyderabad-new.jpg",
-				   address: "📍 Nagar, Jubilee Hills, Hyderabad, Telangana State, India. Toll No – 1860 500 1066",
-				   phone_number: " + 📞91-40-2360 7777 / 5555 / 2000"
-			   },
-
-			   Indore: {
-				   image_url: "https://cdn.apollohospitals.com/dev-apollohospitals/2020/09/bangalore-new.jpg",
-				   address: "📍Scheme No. 74 C, Sector D, Vijay Nagar, Indore 452 010 (Madhya Pradesh).",
-				   phone_number: "+📞91-0731-2445566"
-			   },
-
-			   Kakinada: {
-				   image_url: "https://cdn.apollohospitals.com/dev-apollohospitals/2020/09/bangalore-new.jpg",
-				   address: "📍13-1-3, Suryaraopeta Main Road, Kakinada - 533 001",
-				   phone_number: "+91-884-2345700 / 800"
-			   },
-
-			   Karur: {
-				   image_url: "https://cdn.apollohospitals.com/dev-apollohospitals/2020/10/Karur-new.jpg",
-				   address: "📍163 - AE, Allwyn Nagar Kovai Road Karur - 639002",
-				   phone_number: " +📞91 4324 241900 / 240800 / 240900"
-			   },
-
-
-			   Kolkata: {
-				   image_url: "https://cdn.apollohospitals.com/dev-apollohospitals/2020/09/Kolkata-new.jpg",
-				   address: "📍58, Canal Circular Road Kolkata - 700 054",
-				   phone_number: " +📞91-33-2320 3040 / 2122"
-			   },
-
-
-			   kochi: {
-				   image_url: "https://cdn.apollohospitals.com/dev-apollohospitals/2020/12/Kochi-new.jpg",
-				   address: "📍Apollo Adlux Hospital Angamaly, Cable Junction, Ernakulam District, National Highway 47 Karukutty, Kerala 683576",
-				   phone_number: "+📞91 484 7185000"
-			   },
-
-
-			   Lucknow: {
-				   image_url: "https://cdn.apollohospitals.com/dev-apollohospitals/2020/09/Lucknow-new.jpg",
-				   address: "📍Apollomedics Super Speciality Hospitals Kanpur - Lucknow Rd, Sector B, Bargawan, LDA Colony, Lucknow, Uttar Pradesh 226012",
-				   phone_number: "+📞91-0522 67 88 888"
-			   },
-
-			   Madurai: {
-				   image_url: "https://cdn.apollohospitals.com/dev-apollohospitals/2020/10/Madurai-new.jpg",
-				   address: "📍Lake View Road, K.K. Nagar, Madurai - 625 020",
-				   phone_number: "+📞91-80-26304050"
-			   },
-
-			   Mumbai: {
-				   image_url: "https://cdn.apollohospitals.com/dev-apollohospitals/2020/09/Mumbai-new.jpg",
-				   address: "📍Parsik Hill Road, Sector 23, CBD Belapur, Navi Mumbai - 400 614",
-				   phone_number: "📞+(91)-22 3350 3350"
-			   },
-
-			   Mysore: {
-				   image_url: "https://cdn.apollohospitals.com/dev-apollohospitals/2020/10/Mysore-new.jpg",
-				   address: "📍Adhichunchanagiri Road Kuvempunagar, Mysore - 570 023",
-				   phone_number: "📞+91-0821 - 2568888, +91-0821 - 2566666"
-			   },
-
-			   Nashik: {
-				   image_url: "https://cdn.apollohospitals.com/dev-apollohospitals/2020/10/Nashik-new.jpg",
-				   address: "📍Swaminarayan Nagar Near Lunge Mangal Karyalaya New Adgaon Naka, Panchavati Nashik 422 003, Maharashtra.",
-				   phone_number: "📞+91-253 2510 250 / 350 / 450 / 550 / 750"
-			   },
-
-			   Nellore: {
-				   image_url: "https://cdn.apollohospitals.com/dev-apollohospitals/2020/10/Nellore-new.jpg",
-				   address: "📍Apollo specialty Hospitals Nellore, 16/111, 1133, Muthukur Rd, Pinakini Avenue, Ramji Nagar, Nellore, Andhra Pradesh 524004",
-				   phone_number: "📞+91-861-6667333"
-			   },
-
-			   Noida: {
-				   image_url: "https://cdn.apollohospitals.com/dev-apollohospitals/2023/04/Noida-new.jpg",
-				   address: "📍E 2, Apollo Hospitals Rd, Block E, Sector 26, Noida, Uttar Pradesh 201301",
-				   phone_number: "📞+91-0120-401200"
-			   },
-
-			   Rourkela: {
-				   image_url: "https://cdn.apollohospitals.com/dev-apollohospitals/2024/03/Rourkela-new.jpg",
-				   address: "📍Apollo Hospitals In Rourkela SECTOR- 19, NEAR NEHRU PARK, ROURKELA",
-				   phone_number: "📞+91-0661-2433484, +91-9124556935 & +91-88955034484"
-			   },
+            </div>
+        </div>
 
 
+    </section>
 
-
-		   };
-
-
-
-
-
-		   function showDetails(location) {
-			   const detailsContainer = document.getElementById("location-details");
-			   const icons = document.querySelectorAll(".location-icon");
-
-			   icons.forEach(icon => icon.classList.remove("location-active"));
-			   event.currentTarget.classList.add("location-active");
-
-			   const locationDetails = details[location];
-			   detailsContainer.innerHTML = `
-         <h4>${location}</h4>
-         <img src="${locationDetails.image_url}" alt="${location} Image" style="width: 80%; height: auto;">
-         <p>${locationDetails.address}</p>
-         <p>Phone: ${locationDetails.phone_number}</p>
-          `;
-		   }
-
-
-	   </script>
+ 
 
 
 
