@@ -183,6 +183,8 @@
     <link rel="stylesheet" href="StyleSheet/servicecss.css">
     <link rel="stylesheet" href="StyleSheet/providecss.css">
     <link rel="stylesheet" href="StyleSheet/doctorscss.css">
+        <link rel="stylesheet" href="StyleSheet/location.css">
+
 </head>
 <body>
 
@@ -393,6 +395,317 @@
 
         </div>
     </section>
+
+
+    <section id="Location" class="Location">
+
+         <div class="container">
+          <h4 class="sec_title text-center mt-4">LOCATION</h4>
+          <h2 class="text-center my-4">Hospitals in India</h2>
+          <p class="text-center">
+  Apollo Group is one of the best hospital groups in India with over 10,000+ beds across 73+ hospitals, 6,000+ pharmacies, over 700+ clinics, 2,300+ diagnostic centres, and 200+ Telemedicine units.
+          </p>
+    
+
+   <div class="row">
+     <!-- Location Icons -->
+     <div class="col-md-6" style="font-size: small">
+       <div class="locations-container" id="locations">
+
+         <div class="location-icon" onclick="showDetails('Ahmedabad')">
+           <img src="https://www.apollohospitals.com/wp-content/themes/apollohospitals/assets-v3/images/ahmedabad_city.svg" alt="Ahmedabad Icon" width="80" height="80">
+           <p>Ahmedabad</p>
+         </div>
+         <div class="location-icon" onclick="showDetails('Bangalore')">
+           <img src="https://www.apollohospitals.com/wp-content/themes/apollohospitals/assets-v3/images/bangalore_city.svg" alt="Bangalore Icon" width="80" height="80">
+           <p>Bangalore</p>
+         </div>
+         <div class="location-icon" onclick="showDetails('Chennai')">
+           <img src="https://www.apollohospitals.com/wp-content/themes/apollohospitals/assets-v3/images/chennai_city.svg" alt="Chennai Icon" width="80" height="80">
+           <p>Chennai</p>
+         </div>
+         <div class="location-icon" onclick="showDetails('Aragonda')">
+           <img src="https://www.apollohospitals.com/wp-content/themes/apollohospitals/assets-v3/images/ahmedabad_city.svg" alt="Aragonda Icon" width="80" height="80">
+           <p>Aragonda</p>
+         </div>
+         <div class="location-icon" onclick="showDetails('Bhubaneshwar')">
+           <img src="https://www.apollohospitals.com/wp-content/themes/apollohospitals/assets-v3/images/bhubaneshwar_city.svg" alt="Bhubaneshwar Icon" width="80" height="80">
+           <p>Bhubaneshwar</p>
+         </div>
+         <div class="location-icon location-active" onclick="showDetails('Bilaspur')">
+           <img src="https://www.apollohospitals.com/wp-content/themes/apollohospitals/assets-v3/images/bangalore_city.svg" alt="Bilaspur Icon" width="80" height="80">
+           <p>Bilaspur</p>
+         </div>
+         <div class="location-icon" onclick="showDetails('Bhopal')">
+           <img src="https://www.apollohospitals.com/wp-content/themes/apollohospitals/assets-v3/images/lucknow_city.svg" alt="Bhopal Icon" width="80" height="80">
+           <p>Bhopal</p>
+         </div>
+         <div class="location-icon" onclick="showDetails('Delhi')">
+           <img src="https://www.apollohospitals.com/wp-content/themes/apollohospitals/assets-v3/images/delhi_city.svg" alt="Delhi Icon" width="80" height="80">
+           <p>Delhi</p>
+         </div>
+         <div class="location-icon" onclick="showDetails('Guwahati')">
+           <img src="https://www.apollohospitals.com/wp-content/themes/apollohospitals/assets-v3/images/guwahati_city.svg" alt="Guwahati Icon" width="80" height="80">
+           <p>Guwahati</p>
+         </div>
+         <div class="location-icon" onclick="showDetails('Hyderabad')">
+           <img src="https://www.apollohospitals.com/wp-content/themes/apollohospitals/assets-v3/images/hyderabad_city.svg" alt="Hyderabad Icon" width="80" height="80">
+           <p>Hyderabad</p>
+         </div>
+         <div class="location-icon" onclick="showDetails('Indore')">
+           <img src="https://www.apollohospitals.com/wp-content/themes/apollohospitals/assets-v3/images/indore_city.svg" alt="Indore Icon" width="80" height="80">
+           <p>Indore</p>
+         </div>
+         <div class="location-icon" onclick="showDetails('Kakinada')">
+           <img src="https://www.apollohospitals.com/wp-content/themes/apollohospitals/assets-v3/images/kakinada_city.svg" alt="Kakinada Icon" width="80" height="80">
+           <p>Kakinada</p>
+         </div>
+         <div class="location-icon" onclick="showDetails('Karur')">
+           <img src="https://www.apollohospitals.com/wp-content/themes/apollohospitals/assets-v3/images/kakinada_city.svg" alt="Karur Icon" width="80" height="80">
+           <p>Karur</p>
+         </div>
+         <div class="location-icon" onclick="showDetails('Kolkata')">
+           <img src="https://www.apollohospitals.com/wp-content/themes/apollohospitals/assets-v3/images/kolkata_city.svg" alt="Kolkata Icon" width="80" height="80">
+           <p>Kolkata</p>
+         </div>
+         <div class="location-icon" onclick="showDetails('Kochi')">
+           <img src="https://www.apollohospitals.com/wp-content/themes/apollohospitals/assets-v3/images/kakinada_city.svg" alt="Kochi Icon" width="80" height="80">
+           <p>Kochi</p>
+         </div>
+         <div class="location-icon" onclick="showDetails('Lucknow')">
+           <img src="https://www.apollohospitals.com/wp-content/themes/apollohospitals/assets-v3/images/lucknow_city.svg" alt="Lucknow Icon" width="80" height="80">
+           <p>Lucknow</p>
+         </div>
+         <div class="location-icon" onclick="showDetails('Madurai')">
+           <img src="https://www.apollohospitals.com/wp-content/themes/apollohospitals/assets-v3/images/lucknow_city.svg" alt="Madurai Icon" width="80" height="80">
+           <p>Madurai</p>
+         </div>
+         <div class="location-icon" onclick="showDetails('Mumbai')">
+           <img src="https://www.apollohospitals.com/wp-content/themes/apollohospitals/assets-v3/images/mumbai_city.svg" alt="Mumbai Icon" width="80" height="80">
+           <p>Mumbai</p>
+         </div>
+         <div class="location-icon" onclick="showDetails('Mysore')">
+           <img src="https://www.apollohospitals.com/wp-content/themes/apollohospitals/assets-v3/images/mysore_city.svg" alt="Mysore Icon" width="80" height="80">
+           <p>Mysore</p>
+         </div>
+         <div class="location-icon" onclick="showDetails('Nashik')">
+           <img src="https://www.apollohospitals.com/wp-content/themes/apollohospitals/assets-v3/images/nashik_city.svg" alt="Nashik Icon" width="80" height="80">
+           <p>Nashik</p>
+         </div>
+         <div class="location-icon" onclick="showDetails('Nellore')">
+           <img src="https://www.apollohospitals.com/wp-content/themes/apollohospitals/assets-v3/images/lucknow_city.svg" alt="Nellore Icon" width="80" height="80">
+           <p>Nellore</p>
+         </div>
+         <div class="location-icon" onclick="showDetails('Noida')">
+           <img src="https://www.apollohospitals.com/wp-content/themes/apollohospitals/assets-v3/images/delhi_city.svg" alt="Noida Icon" width="80" height="80">
+           <p>Noida</p>
+         </div>
+         <div class="location-icon" onclick="showDetails('Rourkela')">
+           <img src="https://cdn.apollohospitals.com/dev-apollohospitals/2024/03/rourkela-main.svg" alt="Rourkela Icon" width="80" height="80">
+           <p>Rourkela</p>
+         </div>
+         
+       </div>
+     </div>
+       
+     <!-- Location Details -->
+     <div class="col-md-6">
+       <div class="details-container" id="location-details">
+         <h4>Ahmedabad</h4>
+
+         <img src="https://cdn.apollohospitals.com/apollohospitals/apollo-prohealth/ah/location.jpg" alt="Ahemdabad Image" style="width: 80%; height: auto;">
+         <p>📍Plot No.1A, Bhat GIDC Estate, Gandhinagar – 382428, Gujarat, India.</p>
+         <p>Phone: +📞91 8401801066</p>
+          </div>
+ </div>
+
+        </div></div>
+        
+        
+         </section>
+       
+       <script>
+
+		   const details = {
+
+			   Ahmedabad: {
+
+
+				   image_url: "https://cdn.apollohospitals.com/apollohospitals/apollo-prohealth/ah/location.jpg",
+				   address: "📍Plot No.1A, Bhat GIDC Estate, Gandhinagar – 382428, Gujarat, India.",
+				   phone_number: "+📞91 8401801066"
+			   },
+
+			   Bangalore: {
+				   image_url: "https://cdn.apollohospitals.com/dev-apollohospitals/2020/09/bangalore-new.jpg",
+				   address: "📍154 / 11, Bannerghatta Road, Opp. I.I.M, Bangalore – 560076",
+				   phone_number: "+📞91-80-26304050"
+			   },
+
+
+			   Aragonda: {
+				   image_url: "https://cdn.apollohospitals.com/dev-apollohospitals/2020/09/aragonda-new.jpg",
+				   address: "📍Aragonda (V), Thavanampalli (M), Chittoor (D)",
+				   phone_number: "+📞91-08573 283 220/221/222"
+			   },
+
+
+			   Bhubaneshwar: {
+				   image_url: "https://cdn.apollohospitals.com/dev-apollohospitals/2020/09/bhubaneshwar-new.jpg",
+				   address: "📍Plot No. 251, Old Sainik School Road Bhubaneshwar - 750 015",
+				   phone_number: "+📞91-06747150382 / +91-06746661016"
+			   },
+
+
+			   Bilaspur: {
+				   image_url: "https://cdn.apollohospitals.com/dev-apollohospitals/2020/10/bilaspur-new.jpg",
+				   address: "📍Apollo Hospitals Bilaspur, Seepat Road, Bilaspur, Chhattisgarh, 495006",
+				   phone_number: "+📞 91-7752-433433, 433233"
+			   },
+
+
+			   Chennai: {
+				   image_url: "https://cdn.apollohospitals.com/dev-apollohospitals/2020/09/chennai-new.jpg",
+				   address: "📍21, Greams Lane, Off Greams Road Chennai – 600006",
+				   phone_number: " +📞91-44-40401066"
+			   },
+
+
+			   Delhi: {
+
+
+				   image_url: "https://cdn.apollohospitals.com/dev-apollohospitals/2020/09/bangalore-new.jpg",
+				   address: "📍Sarita Vihar Delhi Mathura Road, New Delhi - 110076 (India)",
+				   phone_number: "+📞91-11-71791090 / 1091"
+			   },
+
+
+			   Guwahati: {
+				   image_url: "https://cdn.apollohospitals.com/dev-apollohospitals/2020/10/guwahati-new.jpg",
+				   address: "📍Apollo Hospitals, Guwahati Unit: International Hospitals Lotus Tower, Christian Basti, G.S.Road Guwahati - 781 005",
+				   phone_number: "+📞91 -361-/ 7135005/2347700"
+			   },
+
+			   Hyderabad: {
+				   image_url: "https://cdn.apollohospitals.com/dev-apollohospitals/2020/09/hyderabad-new.jpg",
+				   address: "📍 Nagar, Jubilee Hills, Hyderabad, Telangana State, India. Toll No – 1860 500 1066",
+				   phone_number: " + 📞91-40-2360 7777 / 5555 / 2000"
+			   },
+
+			   Indore: {
+				   image_url: "https://cdn.apollohospitals.com/dev-apollohospitals/2020/09/bangalore-new.jpg",
+				   address: "📍Scheme No. 74 C, Sector D, Vijay Nagar, Indore 452 010 (Madhya Pradesh).",
+				   phone_number: "+📞91-0731-2445566"
+			   },
+
+			   Kakinada: {
+				   image_url: "https://cdn.apollohospitals.com/dev-apollohospitals/2020/09/bangalore-new.jpg",
+				   address: "📍13-1-3, Suryaraopeta Main Road, Kakinada - 533 001",
+				   phone_number: "+91-884-2345700 / 800"
+			   },
+
+			   Karur: {
+				   image_url: "https://cdn.apollohospitals.com/dev-apollohospitals/2020/10/Karur-new.jpg",
+				   address: "📍163 - AE, Allwyn Nagar Kovai Road Karur - 639002",
+				   phone_number: " +📞91 4324 241900 / 240800 / 240900"
+			   },
+
+
+			   Kolkata: {
+				   image_url: "https://cdn.apollohospitals.com/dev-apollohospitals/2020/09/Kolkata-new.jpg",
+				   address: "📍58, Canal Circular Road Kolkata - 700 054",
+				   phone_number: " +📞91-33-2320 3040 / 2122"
+			   },
+
+
+			   kochi: {
+				   image_url: "https://cdn.apollohospitals.com/dev-apollohospitals/2020/12/Kochi-new.jpg",
+				   address: "📍Apollo Adlux Hospital Angamaly, Cable Junction, Ernakulam District, National Highway 47 Karukutty, Kerala 683576",
+				   phone_number: "+📞91 484 7185000"
+			   },
+
+
+			   Lucknow: {
+				   image_url: "https://cdn.apollohospitals.com/dev-apollohospitals/2020/09/Lucknow-new.jpg",
+				   address: "📍Apollomedics Super Speciality Hospitals Kanpur - Lucknow Rd, Sector B, Bargawan, LDA Colony, Lucknow, Uttar Pradesh 226012",
+				   phone_number: "+📞91-0522 67 88 888"
+			   },
+
+			   Madurai: {
+				   image_url: "https://cdn.apollohospitals.com/dev-apollohospitals/2020/10/Madurai-new.jpg",
+				   address: "📍Lake View Road, K.K. Nagar, Madurai - 625 020",
+				   phone_number: "+📞91-80-26304050"
+			   },
+
+			   Mumbai: {
+				   image_url: "https://cdn.apollohospitals.com/dev-apollohospitals/2020/09/Mumbai-new.jpg",
+				   address: "📍Parsik Hill Road, Sector 23, CBD Belapur, Navi Mumbai - 400 614",
+				   phone_number: "📞+(91)-22 3350 3350"
+			   },
+
+			   Mysore: {
+				   image_url: "https://cdn.apollohospitals.com/dev-apollohospitals/2020/10/Mysore-new.jpg",
+				   address: "📍Adhichunchanagiri Road Kuvempunagar, Mysore - 570 023",
+				   phone_number: "📞+91-0821 - 2568888, +91-0821 - 2566666"
+			   },
+
+			   Nashik: {
+				   image_url: "https://cdn.apollohospitals.com/dev-apollohospitals/2020/10/Nashik-new.jpg",
+				   address: "📍Swaminarayan Nagar Near Lunge Mangal Karyalaya New Adgaon Naka, Panchavati Nashik 422 003, Maharashtra.",
+				   phone_number: "📞+91-253 2510 250 / 350 / 450 / 550 / 750"
+			   },
+
+			   Nellore: {
+				   image_url: "https://cdn.apollohospitals.com/dev-apollohospitals/2020/10/Nellore-new.jpg",
+				   address: "📍Apollo specialty Hospitals Nellore, 16/111, 1133, Muthukur Rd, Pinakini Avenue, Ramji Nagar, Nellore, Andhra Pradesh 524004",
+				   phone_number: "📞+91-861-6667333"
+			   },
+
+			   Noida: {
+				   image_url: "https://cdn.apollohospitals.com/dev-apollohospitals/2023/04/Noida-new.jpg",
+				   address: "📍E 2, Apollo Hospitals Rd, Block E, Sector 26, Noida, Uttar Pradesh 201301",
+				   phone_number: "📞+91-0120-401200"
+			   },
+
+			   Rourkela: {
+				   image_url: "https://cdn.apollohospitals.com/dev-apollohospitals/2024/03/Rourkela-new.jpg",
+				   address: "📍Apollo Hospitals In Rourkela SECTOR- 19, NEAR NEHRU PARK, ROURKELA",
+				   phone_number: "📞+91-0661-2433484, +91-9124556935 & +91-88955034484"
+			   },
+
+
+
+
+		   };
+
+
+
+
+
+		   function showDetails(location) {
+			   const detailsContainer = document.getElementById("location-details");
+			   const icons = document.querySelectorAll(".location-icon");
+
+			   icons.forEach(icon => icon.classList.remove("location-active"));
+			   event.currentTarget.classList.add("location-active");
+
+			   const locationDetails = details[location];
+			   detailsContainer.innerHTML = `
+         <h4>${location}</h4>
+         <img src="${locationDetails.image_url}" alt="${location} Image" style="width: 80%; height: auto;">
+         <p>${locationDetails.address}</p>
+         <p>Phone: ${locationDetails.phone_number}</p>
+          `;
+		   }
+
+
+	   </script>
+
+
+
+
+
+
 
     <section id="provide" class="provide">
         <h2>Why Choose Us?</h2>
