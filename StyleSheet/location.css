@@ -1,6 +1,6 @@
 ﻿
 .Location {
-    background-color: #f4f6f9; /* Light background for the section */
+    background-color: #f4fffe; /* Light background for the section */
     padding: 5rem 2rem;
 }
 
@@ -77,6 +77,25 @@ p.text-center {
         text-transform: capitalize;
     }
 
+.imgcon {
+    width: 80%;
+    height: 70%;
+}
+
+    .imgcon .locimg {
+        border-radius: 12px; /* Rounded corners */
+        margin-bottom: 20px; /* Space between image and text */
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Shadow effect */
+    }
+
+/* Address Styling */
+.locaddress {
+    font-size: 1rem;
+    color: #34495e;
+    text-align: center;
+    padding: 10px 0;
+    line-height: 1.6;
+}
 
 /* Responsive Styling */
 @media (max-width: 768px) {

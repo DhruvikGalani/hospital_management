@@ -201,17 +201,7 @@
                 address: "📍Apollo Hospitals Bilaspur, Seepat Road, Bilaspur, Chhattisgarh, 495006",
             },
             
-            Bhopal: {
-                image_url: "https://cdn.apollohospitals.com/dev-apollohospitals/2023/05/ASH-PIC.jpg",
-                address: "📍Apollo Hospitals Bilaspur, Seepat Apollo Sage Hospitals, E-8 Extension, Arera Colony, Bhopal - 462026",
-            },
-
-
-            Chennai: {
-                image_url: "https://cdn.apollohospitals.com/dev-apollohospitals/2020/09/chennai-new.jpg",
-                address: "📍21, Greams Lane, Off Greams Road Chennai – 600006",
-            },
-
+      
 
             Delhi: {
                 image_url: "https://cdn.apollohospitals.com/dev-apollohospitals/2020/09/bangalore-new.jpg",
@@ -293,76 +283,6 @@
         };
 
 
-
-        
-        //--------------------------------------------------------------------------------
-
-        //// Function to show details of the selected location
-        //function showDetails(location) {
-        //    const detailsContainer = document.getElementById("location-details");
-        //    const locationDetails = details[location];
-        //    detailsContainer.innerHTML = `
-        //       <h4>${location}</h4>
-        //       <img src="${locationDetails.image_url}" alt="${location} Image" style="width: 80%; height: auto;">
-        //       <p>${locationDetails.address}</p>
-        //       <p>Phone: ${locationDetails.phone_number}</p>
-        //   `;
-        //}
-
-        //// Function to set the clicked icon as active
-        //function setActiveIcon(location) {
-        //    const icons = document.querySelectorAll(".location-icon");
-
-        //    // Remove the active class from all icons
-        //    icons.forEach(icon => icon.classList.remove("location-active"));
-
-        //    // Add the active class to the clicked or default icon
-        //    const selectedIcon = document.querySelector(`.location-icon[data-location='${location}']`);
-        //    if (selectedIcon) {
-        //        selectedIcon.classList.add("location-active");
-        //    }
-        //}
-
-        //// Attach the showDetails function to each icon click event
-        //function attachIconClickEvents() {
-        //    const icons = document.querySelectorAll(".location-icon");
-        //    icons.forEach(icon => {
-        //        icon.addEventListener("click", function () {
-        //            const location = icon.getAttribute("data-location");
-        //            showDetails(location); // Show details of the clicked location
-        //            setActiveIcon(location); // Set the clicked icon as active
-        //        });
-        //    });
-        //}
-
-        //// Call the function to attach events when DOM content is loaded
-        //document.addEventListener("DOMContentLoaded", attachIconClickEvents);
-
-        //----------------------------------------------------------------
-
-        //document.addEventListener("DOMContentLoaded", function () {
-        //    showDetails("Ahmedabad"); // Show Ahmedabad details by default
-        //    setActiveIcon("Ahmedabad"); // Set Ahmedabad icon as active by default
-        //});
-
-
-        //function showDetails(location) {
-        //    const detailsContainer = document.getElementById("location-details");
-        //    const icons = document.querySelectorAll(".location-icon");
-
-        //    icons.forEach(icon => icon.classList.remove("location-active"));
-        //    event.currentTarget.classList.add("location-active");
-
-        //    const locationDetails = details[location];
-        //    detailsContainer.innerHTML = `
-        // <h4>${location}</h4>
-        // <img src="${locationDetails.image_url}" alt="${location} Image" style="width: 80%; height: auto;">
-        // <p>${locationDetails.address}</p>
-        // <p>Phone: ${locationDetails.phone_number}</p>
-        //  `;
-        //}
-
-        //---------------------------------------------------------------
         // Ensure the default location is selected when the page loads
         document.addEventListener("DOMContentLoaded", function () {
             showDetails("Ahmedabad"); // Show Ahmedabad details by default
@@ -660,10 +580,7 @@
                             <img src="svgs/bangalore_city.svg" alt="Bangalore Icon" width="80" height="80">
                             <p>Bangalore</p>
                         </div>
-                        <div class="location-icon" onclick="showDetails('Chennai')" data-location="Chennai">
-                            <img src="svgs/chennai_city.svg" alt="Chennai Icon" width="80" height="80">
-                            <p>Chennai</p>
-                        </div>
+                      
                         <div class="location-icon" onclick="showDetails('Aragonda')" data-location="Aragonda">
                             <img src="svgs/ahmedabad_city.svg" alt="Aragonda Icon" width="80" height="80">
                             <p>Aragonda</p>
@@ -676,10 +593,7 @@
                             <img src="svgs/bangalore_city.svg" alt="Bilaspur Icon" width="80" height="80">
                             <p>Bilaspur</p>
                         </div>
-                        <div class="location-icon" onclick="showDetails('Bhopal')" data-location="Bhopal">
-                            <img src="svgs/lucknow_city.svg" alt="Bhopal Icon" width="80" height="80">
-                            <p>Bhopal</p>
-                        </div>
+                      
                         <div class="location-icon" onclick="showDetails('Delhi')" data-location="Delhi">
                             <img src="svgs/delhi_city.svg" alt="Delhi Icon" width="80" height="80">
                             <p>Delhi</p>
@@ -750,8 +664,8 @@
                     <div class="details-container" id="location-details">
                         <h4>Ahmedabad</h4>
 
-                        <img class="locimg" src="https://cdn.apollohospitals.com/apollohospitals/apollo-prohealth/ah/location.jpg" alt="Ahemdabad Image">
-                        <p class ="locaddress">📍Plot No.1A, Bhat GIDC Estate, Gandhinagar – 382428, Gujarat, India.</p>
+                       <div class="imgcon"> <img class="locimg"  src="https://cdn.apollohospitals.com/apollohospitals/apollo-prohealth/ah/location.jpg" alt="Ahemdabad Image">
+                       </div> <p class ="locaddress">📍Plot No.1A, Bhat GIDC Estate, Gandhinagar – 382428, Gujarat, India.</p>
                     </div>
                 </div>
 
