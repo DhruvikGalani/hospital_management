@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Registration.aspx.cs" Inherits="hospital_management.pages.Registration" %>
+﻿﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Registration.aspx.cs" Inherits="hospital_management.pages.Registration" %>
 
 
 <!DOCTYPE html>
@@ -131,10 +131,11 @@ button:focus{
 }
        </style>
    </head>
+
    <body>
       <div class="content">
          <div class="text">
-            Login-Form
+            Login-form
          </div>
          <form action="#">
             <div class="field">
