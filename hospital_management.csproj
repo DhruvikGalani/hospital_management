@@ -108,6 +108,16 @@
     <Content Include="Images\ambulance_svg.svg" />
     <Content Include="Images\checkup_svg.svg" />
     <Content Include="Images\doctor_svg.svg" />
+    <Content Include="Images\formImage_1.jpg" />
+    <Content Include="Images\formImage_10.jpg" />
+    <Content Include="Images\formImage_2.jpg" />
+    <Content Include="Images\formImage_3.jpg" />
+    <Content Include="Images\formImage_4.jpg" />
+    <Content Include="Images\formImage_5.jpg" />
+    <Content Include="Images\formImage_6.jpg" />
+    <Content Include="Images\formImage_7.jpg" />
+    <Content Include="Images\formImage_8.jpg" />
+    <Content Include="Images\formImage_9.jpg" />
     <Content Include="Images\hms_im.jpg" />
     <Content Include="Images\hms_im2.jpeg" />
     <Content Include="Images\hms_im3.jpg" />
@@ -117,6 +127,8 @@
     <Content Include="Images\hms_logo.svg" />
     <Content Include="Laboratorytest.aspx" />
     <Content Include="nurse.aspx" />
+    <Content Include="pages\LoginPage.aspx" />
+    <Content Include="pages\RegisterPage.aspx" />
     <Content Include="Patient\Appointments.aspx" />
     <Content Include="Patient\FeedbackReview.aspx" />
     <Content Include="Patient\Insurance.aspx" />
@@ -291,6 +303,20 @@
     </Compile>
     <Compile Include="nurse.aspx.designer.cs">
       <DependentUpon>nurse.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pages\LoginPage.aspx.cs">
+      <DependentUpon>LoginPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pages\LoginPage.aspx.designer.cs">
+      <DependentUpon>LoginPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pages\RegisterPage.aspx.cs">
+      <DependentUpon>RegisterPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pages\RegisterPage.aspx.designer.cs">
+      <DependentUpon>RegisterPage.aspx</DependentUpon>
     </Compile>
     <Compile Include="Patient\Appointments.aspx.cs">
       <DependentUpon>Appointments.aspx</DependentUpon>
