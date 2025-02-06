@@ -100,6 +100,15 @@
                         <asp:TextBox ID="txtPassword" runat="server" TextMode="Password" CssClass="textFields"></asp:TextBox>
                     </td>
                 </tr>
+
+
+                <tr>
+                   <td >confirm-Password </td>
+                    <td>
+                        <asp:TextBox ID="txtconfirm" runat="server" TextMode="Password" CssClass="textFields"></asp:TextBox>
+                    </td>
+               </tr>
+
                 <tr>
                     <td >License Number </td>
                     <td>
