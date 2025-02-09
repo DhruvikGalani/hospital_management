@@ -126,6 +126,13 @@
                 <h2>Stomal therapy</h2>
                 <h2>Surgery</h2>
             </div>
+            <div class="content4">
+                <h1>Tests And Diagnosis</h1>
+                <h2>Biopsies</h2>
+                <h2>Genetic testing</h2>
+                <h2>Imaging</h2>
+                <h2>Pathology</h2>
+            </div>
         </div>
     </form>
 </body>
