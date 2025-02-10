@@ -391,25 +391,7 @@
         <nav class="nav">
             <ul>
                 <li><a href="#home">Home</a></li>
-                <li><a href="#patients">Patients and carers</a>
-                    <ul class="dropdown">
-                        <li><a href="#">Becoming a Peter Mac patient</a></li>
-                        <li><a href="#">Types of cancer</a>
-                            <ul class="dropdown">
-                                <li><a href="#">Blood cancer</a></li>
-                                <li><a href="#">Breast Cancer</a></li>
-                                <li><a href="#">Children's cancer</a></li>
-                                <li><a href="#">Reproductive-related cancer</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="#">Treatments</a></li>
-                        <li><a href="#">Tests and diagnosis</a></li>
-                        <li><a href="#">Health services</a></li>
-                        <li><a href="#">Children and young people</a></li>
-                        <li><a href="#">Clinical Trials</a></li>
-                        <li><a href="#">Support and Wellbeing</a></li>
-                    </ul>
-                </li>
+                <li><a href="https://localhost:44331/Doctor/Patientsandcarers.aspx">Patients and carers</a>
                 <li><a href="#services">Services</a></li>
                 <li><a href="#doctors">Doctors</a></li>
                 <li><a href="#appointments">Appointments</a></li>
