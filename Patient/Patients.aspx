@@ -70,7 +70,7 @@
                 <tr>
                     <td >Date of birth</td>
                     <td >
-                        <asp:TextBox ID="txtDate" runat="server" TextMode="Date" CssClass="textFields" OnTextChanged="txtDate_TextChanged"></asp:TextBox>
+                        <asp:TextBox ID="txtDate" runat="server" TextMode="Date" CssClass="textFields" ></asp:TextBox>
                     </td>
                 </tr>
                 <tr>
@@ -91,6 +91,14 @@
                         <asp:TextBox ID="txtPassword" runat="server" TextMode="Password" CssClass="textFields"></asp:TextBox>
                     </td>
                 </tr>
+                <tr>
+                  <td >confirm-Password </td>
+                  <td >
+                        <asp:TextBox ID="txtconfirm" runat="server" TextMode="Password" CssClass="textFields"></asp:TextBox>
+                  </td>
+               </tr>
+
+
                 <tr>
                     <td>Emergency Contact no</td>
                     <td >

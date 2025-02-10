@@ -83,6 +83,12 @@
                     <asp:TextBox ID="txtpass" runat="server" TextMode="Password" CssClass="no-spinner"></asp:TextBox>
                 </td>
             </tr>
+               <tr>
+                 <td class="auto-style2">confirm-Password: </td>
+                 <td class="auto-style3">
+                   <asp:TextBox ID="txtconfirm" runat="server" TextMode="Password" CssClass="textFields"></asp:TextBox>
+                 </td>
+              </tr>
             <tr>
                 <td class="auto-style2">Contact Number:</td>
                 <td class="auto-style3">

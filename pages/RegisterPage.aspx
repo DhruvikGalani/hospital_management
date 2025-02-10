@@ -124,25 +124,29 @@
         <div class="text">Register</div>
         <form runat="server">
             <div class="field">
-                <input type="text" name="fullname" id="fullname" required>
+                <input type="text" name="fullname" id="fullname" minlength="3" maxlength="50" onerror="not required length" required>
                 <span class="fas fa-user"></span>
                 <label for="fullname">Full Name</label>
             </div>
+
             <div class="field">
-                <input type="email" name="email" id="email" required>
+                <input type="email" name="email" id="email"  required>
                 <span class="fas fa-envelope"></span>
                 <label for="email">Email</label>
             </div>
+
             <div class="field">
-                <input type="password" name="password" id="password" required>
+                <input type="password" name="password" id="password" minlength="8" required>
                 <span class="fas fa-lock"></span>
                 <label for="password">Password</label>
             </div>
+
             <div class="field">
-                <input type="password" name="confirm_password" id="confirm_password" required>
+                <input type="password" name="confirm_password" id="confirm_password"  oninput="this.setCustomValidity(this.value !== document.getElementById('password').value ? 'Passwords do not match!' : '')" required>
                 <span class="fas fa-lock"></span>
                 <label for="confirm_password">Confirm Password</label>
             </div>
+
             <button type="submit">Sign up</button>
             <div class="sign-up">
                 Already have an account? <a href="LoginPage.aspx">Login here</a>

@@ -46,7 +46,10 @@
                 <tr>
                     <td >Patient Name </td>
                     <td>
-                        <asp:TextBox ID="txtPatientName" runat="server" CssClass="textFields"></asp:TextBox>
+                        <asp:TextBox ID="txtPatientName" runat="server" CssClass="textFields"></asp:TextBox><br />
+                          <asp:RequiredFieldValidator ID="rfvName" runat="server" ControlToValidate="txtPatientName" ErrorMessage="Patient Name is required" ForeColor="Red" Display="Dynamic" /><br />
+                          <asp:RegularExpressionValidator ID="revName" runat="server" ControlToValidate="txtPatientName" ErrorMessage="Only letters allowed" ForeColor="Red" Display="Dynamic"  ValidationExpression="^[a-zA-Z\s]+$" />
+                 
                     </td>
                 </tr>
                 <tr>
@@ -61,37 +64,47 @@
                             <asp:ListItem>AB-</asp:ListItem>
                             <asp:ListItem>O+</asp:ListItem>
                             <asp:ListItem>O-</asp:ListItem>
-                        </asp:RadioButtonList>
+                        </asp:RadioButtonList><br />
+                        <asp:RequiredFieldValidator ID="rfvBlood" runat="server" ControlToValidate="rblBlood" ErrorMessage=" Blood Group is required" ForeColor="Red" Display="Dynamic" />
                     </td>
                 </tr>
                 <tr>
                     <td>Doctor Name </td>
                     <td>
-                        <asp:TextBox ID="txtDoctorName" runat="server" CssClass="textFields"></asp:TextBox>
+                        <asp:TextBox ID="txtDoctorName" runat="server" CssClass="textFields"></asp:TextBox><br />
+						<asp:RequiredFieldValidator ID="rfvDoctorName" runat="server" ControlToValidate="txtDoctorName" ErrorMessage="Doctor Name is required" ForeColor="Red" Display="Dynamic" /><br />
+						<asp:RegularExpressionValidator ID="revDoctorName" runat="server" ControlToValidate="txtDoctorName" ErrorMessage="Only letters allowed" ForeColor="Red" Display="Dynamic" ValidationExpression="^[a-zA-Z\s]+$" />
                     </td>
                 </tr>
                 <tr>
                     <td >Visit Date </td>
                     <td>
-                        <asp:TextBox ID="txtVisitDate" runat="server" CssClass="textFields" TextMode="Date"></asp:TextBox>
+                        <asp:TextBox ID="txtVisitDate" runat="server" CssClass="textFields" TextMode="Date"></asp:TextBox><br />
+                       <asp:RequiredFieldValidator ID="rfvVisit" runat="server" ControlToValidate="txtVisitDate" ErrorMessage=" visit date is required" ForeColor="Red" Display="Dynamic" />
+
                     </td>
                 </tr>
                 <tr>
                     <td>Diagnosis </td>
                     <td >
-                        <asp:TextBox ID="txtDiagnosis" runat="server" CssClass="textFields" TextMode="MultiLine"></asp:TextBox>
+                        <asp:TextBox ID="txtDiagnosis" runat="server" CssClass="textFields" TextMode="MultiLine"></asp:TextBox><br />
+                       <asp:RequiredFieldValidator ID="rfvDiagnosis" runat="server" ControlToValidate="txtDiagnosis" ErrorMessage=" Diagnosis is required" ForeColor="Red" Display="Dynamic" />
                     </td>
                 </tr>
                 <tr>
                     <td >Prescribed Medications </td>
                     <td>
-                        <asp:TextBox ID="txtPrescribedMedications" runat="server" CssClass="textFields" TextMode="MultiLine"></asp:TextBox>
+                        <asp:TextBox ID="txtPrescribedMedications" runat="server" CssClass="textFields" TextMode="MultiLine"></asp:TextBox><br />
+                        <asp:RequiredFieldValidator ID="rfvMedication" runat="server" ControlToValidate="txtPrescribedMedications" ErrorMessage=" Diagnosis is required" ForeColor="Red" Display="Dynamic" />
+
                     </td>
                 </tr>
                 <tr>
                     <td >Treatment Notes </td>
                     <td>
-                        <asp:TextBox ID="txtTreatmentNote" runat="server" CssClass="textFields" TextMode="MultiLine"></asp:TextBox>
+                        <asp:TextBox ID="txtTreatmentNote" runat="server" CssClass="textFields" TextMode="MultiLine"></asp:TextBox><br />
+                        <asp:RequiredFieldValidator ID="rfvTreatment" runat="server" ControlToValidate="txtTreatmentNote" ErrorMessage=" Diagnosis is required" ForeColor="Red" Display="Dynamic" />
+
                     </td>
                 </tr>
                 <tr>
@@ -108,7 +121,9 @@
                             <asp:ListItem>Referred</asp:ListItem>
                             <asp:ListItem>Follow-up Required</asp:ListItem>
                             <asp:ListItem>Emergency</asp:ListItem>
-                        </asp:DropDownList>
+                        </asp:DropDownList><br />
+                    <asp:RequiredFieldValidator ID="rfvStatus" runat="server" ControlToValidate="ddlTreatmentStatus" ErrorMessage=" Diagnosis is required" ForeColor="Red" Display="Dynamic" />
+
                     </td>
                 </tr>
                 <tr>
