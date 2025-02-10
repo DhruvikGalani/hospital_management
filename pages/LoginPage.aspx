@@ -346,20 +346,28 @@
             <div class="field">
                 <input type="text" name="email" id="email" required>
                 <span class="fas fa-user"></span>
-                <label for="email">Email or Phone</label>
+                <label for="email">Email</label>
+
+                 
             </div>
             <div class="field">
-                <input type="password" name="password" id="password" required>
+                <input type="password" name="password" id="password" minlength="8" required />
                 <span class="fas fa-lock"></span>
                 <label for="password">Password</label>
             </div>
+
+
+
             <div class="forgot-pass">
                 <a href="#">Forgot Password?</a>
             </div>
+
+
             <button type="submit">Sign in</button>
             <div class="sign-up">
                 Not a member? <a href="RegisterPage.aspx">Signup now</a>
             </div>
+
         </form>
     </div>
 </body>
