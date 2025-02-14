@@ -6,31 +6,31 @@
 <head runat="server">
     <title></title>
     <style type="text/css">
-        .auto-style1 {
-            width: 100%;
-          
-        }
-       
-        .no-spinner::-webkit-inner-spin-button, 
-        .no-spinner::-webkit-outer-spin-button {
-            -webkit-appearance: none;
-            margin: 0;
-        }
+               .auto-style1 {
+           width: 100%;
+         
+       }
+      
+       .no-spinner::-webkit-inner-spin-button, 
+       .no-spinner::-webkit-outer-spin-button {
+           -webkit-appearance: none;
+           margin: 0;
+       }
 
-        .no-spinner {
-            -moz-appearance: textfield; /* Firefox */
-             width : 360px;
-        }
-        .textFields {
+       .no-spinner {
+           -moz-appearance: textfield; /* Firefox */
             width : 360px;
-        }
-         .btnsubmit {
-     margin-right: 50px;
-     width : 110px;
- }
- .btnreset {
-         width : 110px;
- }
+       }
+       .textFields {
+           width : 360px;
+       }
+        .btnsubmit {
+    margin-right: 50px;
+    width : 110px;
+}
+.btnreset {
+        width : 110px;
+}
     </style>
 </head>
 <body style="width: 550px; height: 430px;">
@@ -95,6 +95,20 @@
                         <asp:TextBox ID="txtEmail" runat="server" CssClass="textFields" TextMode="Email"></asp:TextBox>
                     </td>
                 </tr>
+                <tr>
+                   <td >Password </td>
+                   <td >
+                        <asp:TextBox ID="txtPassword" runat="server" TextMode="Password" CssClass="textFields"></asp:TextBox>
+                </td>
+                </tr>
+
+                 <tr>
+                   <td >confirm-Password </td>
+                   <td >
+                       <asp:TextBox ID="txtconfirm" runat="server" TextMode="Password" CssClass="textFields"></asp:TextBox>
+                  </td>
+                  </tr>
+
                 <tr>
                     <td >Shift Timing</td>
                     <td>
