@@ -49,19 +49,25 @@
                 <tr>
                     <td class="auto-style2">Vehicle Number</td>
                     <td>
-                        <asp:TextBox ID="txtVehicleNumber" runat="server" CssClass="textFields"></asp:TextBox>
+                        <asp:TextBox ID="txtVehicleNumber" runat="server" CssClass="textFields"></asp:TextBox><br />
+                        <asp:RequiredFieldValidator ID="rfvVehicleNumber" runat="server" ControlToValidate="txtVehicleNumber" ErrorMessage="Vehicle Number is required" ForeColor="Red" Display="Dynamic" /><br />
+                        <asp:RegularExpressionValidator ID="revVehicleNumber" runat="server" ControlToValidate="txtVehicleNumber" ErrorMessage="Invalid format (e.g., MH12AB1234)" ForeColor="Red" Display="Dynamic" ValidationExpression="^[A-Z]{2}[0-9]{2}[A-Z]{1,2}[0-9]{4}$" />
                     </td>
                 </tr>
                 <tr>
                     <td class="auto-style2">Driver Name</td>
                     <td>
-                        <asp:TextBox ID="txtDriverName" runat="server" CssClass="textFields"></asp:TextBox>
+                        <asp:TextBox ID="txtDriverName" runat="server" CssClass="textFields"></asp:TextBox><br />
+                        <asp:RequiredFieldValidator ID="rfvDriverName" runat="server" ControlToValidate="txtDriverName" ErrorMessage="Driver Name is required" ForeColor="Red" Display="Dynamic" /><br />
+                        <asp:RegularExpressionValidator ID="revDriverName" runat="server" ControlToValidate="txtDriverName" ErrorMessage="Only alphabets allowed" ForeColor="Red" Display="Dynamic" ValidationExpression="^[A-Za-z\s]+$" />
                     </td>
                 </tr>
                 <tr>
                     <td class="auto-style2">Contact Number</td>
                     <td>
-                        <asp:TextBox ID="txtContactNumber" runat="server" CssClass="no-spinner" MaxLength="10" TextMode="Number"></asp:TextBox>
+                        <asp:TextBox ID="txtContactNumber" runat="server" CssClass="no-spinner" MaxLength="10" TextMode="Number"></asp:TextBox><br />
+                        <asp:RequiredFieldValidator ID="rfvContactNumber" runat="server" ControlToValidate="txtContactNumber"  ErrorMessage="Contact Number is required" ForeColor="Red" Display="Dynamic" /><br />
+                        <asp:RegularExpressionValidator ID="revContactNumber" runat="server" ControlToValidate="txtContactNumber" ErrorMessage="Enter a valid 10-digit number" ForeColor="Red" Display="Dynamic" ValidationExpression="^\d{10}$" />
                     </td>
                 </tr>
                 <tr>
@@ -70,7 +76,8 @@
                         <asp:RadioButtonList ID="rblAvailabilityStatus" runat="server">
                             <asp:ListItem>Available</asp:ListItem>
                             <asp:ListItem>Not Available</asp:ListItem>
-                        </asp:RadioButtonList>
+                        </asp:RadioButtonList><br />
+                         <asp:RequiredFieldValidator ID="rfvAvailabilityStatus" runat="server" ControlToValidate="rblAvailabilityStatus"  InitialValue="" ErrorMessage="Please select availability status" ForeColor="Red" Display="Dynamic" />
                     </td>
                 </tr>
                 <tr>
