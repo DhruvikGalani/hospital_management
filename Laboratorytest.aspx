@@ -39,31 +39,38 @@
         <div>
             <table cellpadding="3" cellspacing="4" class="auto-style1">
                 <tr>
-                    <td colspan="2" style="font-weight: bold; font-size: medium">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Laboratory Tests</td>
+                    <td colspan="2" style="font-weight: bold; text-align:center; font-size: medium">Laboratory Tests</td>
                 </tr>
                 <tr>
                     <td>TestsType:</td>
                     <td class="auto-style2">
                         <asp:DropDownList ID="ddlTesttype" runat="server" AutoPostBack="True" Height="25px" OnSelectedIndexChanged="ddlTesttype_SelectedIndexChanged" Width="180px">
-                        </asp:DropDownList>
+                        </asp:DropDownList><br />
+                        <asp:RequiredFieldValidator ID="rfvTestType" runat="server" ControlToValidate="ddlTesttype"  ErrorMessage="Please select a test type!" CssClass="error" Display="Dynamic" ForeColor="Red"></asp:RequiredFieldValidator>
+
                     </td>
                 </tr>
                 <tr>
                     <td>TestDate:</td>
                     <td class="auto-style2">
-                        <asp:TextBox ID="txtTestdate" runat="server" TextMode="Date" Height="25px" Width="360px"></asp:TextBox>
+                        <asp:TextBox ID="txtTestdate" runat="server" TextMode="Date" Height="25px" Width="360px"></asp:TextBox><br />
+                        <asp:RequiredFieldValidator ID="rfvTestDate" runat="server" ControlToValidate="txtTestdate" ErrorMessage="Test date is required!" CssClass="error" Display="Dynamic" ForeColor="Red"></asp:RequiredFieldValidator>
                     </td>
                 </tr>
                 <tr>
                     <td>ResultDate:</td>
                     <td class="auto-style2">
-                        <asp:TextBox ID="txtResultdate" runat="server" TextMode="Date" Height="25px" Width="360px"></asp:TextBox>
+                        <asp:TextBox ID="txtResultdate" runat="server" TextMode="Date" Height="25px" Width="360px"></asp:TextBox><br />
+                        <asp:RequiredFieldValidator ID="rfvResultDate" runat="server" ControlToValidate="txtResultdate" ErrorMessage="Result date is required!" CssClass="error" Display="Dynamic" ForeColor="Red"></asp:RequiredFieldValidator>
+                        <asp:CompareValidator ID="cvResultDate" runat="server" ControlToValidate="txtResultdate" ControlToCompare="txtTestdate" Operator="GreaterThanEqual" Type="Date"  ErrorMessage="Result date must be after or on the test date!" CssClass="error" Display="Dynamic" ForeColor="Red"></asp:CompareValidator>
+
                     </td>
                 </tr>
                 <tr>
                     <td>Result:</td>
                     <td class="auto-style2">
-                        <asp:TextBox ID="txtResult" runat="server" TextMode="MultiLine" Height="37px" Width="360px"></asp:TextBox>
+                        <asp:TextBox ID="txtResult" runat="server" TextMode="MultiLine" Height="37px" Width="360px"></asp:TextBox><br />
+                        <asp:RequiredFieldValidator ID="rfvResult" runat="server" ControlToValidate="txtResult" ErrorMessage="Test result is required!" CssClass="error" Display="Dynamic" ForeColor="Red"></asp:RequiredFieldValidator>
                     </td>
                 </tr>
                  <tr>

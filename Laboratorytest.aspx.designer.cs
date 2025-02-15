@@ -33,6 +33,15 @@ namespace hospital_management
         protected global::System.Web.UI.WebControls.DropDownList ddlTesttype;
 
         /// <summary>
+        /// rfvTestType control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvTestType;
+
+        /// <summary>
         /// txtTestdate control.
         /// </summary>
         /// <remarks>
@@ -40,6 +49,15 @@ namespace hospital_management
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtTestdate;
+
+        /// <summary>
+        /// rfvTestDate control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvTestDate;
 
         /// <summary>
         /// txtResultdate control.
@@ -51,6 +69,24 @@ namespace hospital_management
         protected global::System.Web.UI.WebControls.TextBox txtResultdate;
 
         /// <summary>
+        /// rfvResultDate control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvResultDate;
+
+        /// <summary>
+        /// cvResultDate control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CompareValidator cvResultDate;
+
+        /// <summary>
         /// txtResult control.
         /// </summary>
         /// <remarks>
@@ -58,6 +94,15 @@ namespace hospital_management
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtResult;
+
+        /// <summary>
+        /// rfvResult control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvResult;
 
         /// <summary>
         /// btnSubmit control.

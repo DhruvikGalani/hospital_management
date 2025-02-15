@@ -38,48 +38,59 @@
         <div>
             <table cellpadding="3" cellspacing="4" class="auto-style1" border="0">
                 <tr>
-                    <td colspan="2" style="font-weight: bold; font-size: medium">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Laboratory Management</td>
+                    <td colspan="2" style="font-weight: bold; font-size: medium; text-align:center;"> Laboratory Management</td>
                 </tr>
                 <tr>
                     <td>PatientName:</td>
                     <td class="auto-style2">
-                        <asp:TextBox ID="txtPatientname" runat="server" Height="25px" Width="360px"></asp:TextBox>
+                        <asp:TextBox ID="txtPatientname" runat="server" Height="25px" Width="360px"></asp:TextBox><br />
+                        <asp:RequiredFieldValidator ID="rfvPatientName" runat="server" ControlToValidate="txtPatientname" ErrorMessage="Patient name is required!" CssClass="error" ForeColor="Red" Display="Dynamic"></asp:RequiredFieldValidator>
+                       
                     </td>
+                    
                 </tr>
                 <tr>
                     <td>ContactNumber:</td>
                     <td class="auto-style2">
-                        <asp:TextBox ID="txtContactnumber" runat="server" TextMode="Number" CssClass="no-spinner"></asp:TextBox>
+                        <asp:TextBox ID="txtContactnumber" runat="server" TextMode="Number" CssClass="no-spinner"></asp:TextBox><br />
+                        <asp:RequiredFieldValidator ID="rfvContactNumber" runat="server" ControlToValidate="txtContactnumber" ErrorMessage="Contact number is required!" CssClass="error" ForeColor="Red" Display="Dynamic"></asp:RequiredFieldValidator>
+                        <asp:RegularExpressionValidator ID="revContactNumber" runat="server" ControlToValidate="txtContactnumber" ValidationExpression="^\d{10,15}$" ErrorMessage="Enter a valid 10-15 digit phone number!" CssClass="error" ForeColor="Red" Display="Dynamic"></asp:RegularExpressionValidator>
                     </td>
                 </tr>
                 <tr>
                     <td>Repoeted Symptoms:</td>
                     <td class="auto-style2">
-                        <asp:TextBox ID="txtSymptoms" runat="server" TextMode="MultiLine" Height="44px" Width="360px"></asp:TextBox>
+                        <asp:TextBox ID="txtSymptoms" runat="server" TextMode="MultiLine" Height="44px" Width="360px"></asp:TextBox><br />
+                         <asp:RequiredFieldValidator ID="rfvSymptoms" runat="server" ControlToValidate="txtSymptoms"  ErrorMessage="Symptoms are required!" CssClass="error" ForeColor="Red" Display="Dynamic"></asp:RequiredFieldValidator>
                     </td>
                 </tr>
                 <tr>
                     <td>Location:</td>
                     <td class="auto-style2">
-                        <asp:TextBox ID="txtLocation" runat="server" TextMode="MultiLine" CssClass="no-spinner"></asp:TextBox>
+                        <asp:TextBox ID="txtLocation" runat="server" TextMode="MultiLine" CssClass="no-spinner"></asp:TextBox><br />
+                        <asp:RequiredFieldValidator ID="rfvLocation" runat="server" ControlToValidate="txtLocation" ErrorMessage="Location is required!" CssClass="error" ForeColor="Red" Display="Dynamic"></asp:RequiredFieldValidator>
                     </td>
                 </tr>
                 <tr>
                     <td>AmbulanceID:</td>
                     <td class="auto-style2" id="txtTechnician">
-                        <asp:TextBox ID="txtAmbulanceid" runat="server" CssClass="no-spinner" TextMode="Number"></asp:TextBox>
+                        <asp:TextBox ID="txtAmbulanceid" runat="server" CssClass="no-spinner" TextMode="Number"></asp:TextBox><br />
+                        <asp:RequiredFieldValidator ID="rfvAmbulanceID" runat="server" ControlToValidate="txtAmbulanceid" ErrorMessage="Ambulance ID is required!" CssClass="error" ForeColor="Red" Display="Dynamic"></asp:RequiredFieldValidator>
+                        <asp:RangeValidator ID="rvAmbulanceID" runat="server" ControlToValidate="txtAmbulanceid" MinimumValue="1" MaximumValue="9999" Type="Integer" ErrorMessage="Enter a valid Ambulance ID (1-9999)!" CssClass="error" ForeColor="Red" Display="Dynamic"></asp:RangeValidator>
                     </td>
                 </tr>
                 <tr>
                     <td>DriverName:</td>
                     <td class="auto-style2">
-                        <asp:TextBox ID="txtDrivername" runat="server" Height="25px" Width="360px"></asp:TextBox>
+                        <asp:TextBox ID="txtDrivername" runat="server" Height="25px" Width="360px"></asp:TextBox><br />
+                        <asp:RequiredFieldValidator ID="rfvDriverName" runat="server" ControlToValidate="txtDrivername"  ErrorMessage="Driver name is required!" CssClass="error" ForeColor="Red" Display="Dynamic"></asp:RequiredFieldValidator>
                     </td>
                 </tr>
                 <tr>
                     <td>ArrivalTime:</td>
                     <td class="auto-style2">
-                        <asp:TextBox ID="txtArrivaltime" runat="server" TextMode="Time" Height="25px" Width="360px"></asp:TextBox>
+                        <asp:TextBox ID="txtArrivaltime" runat="server" TextMode="Time" Height="25px" Width="360px"></asp:TextBox><br />
+                        <asp:RequiredFieldValidator ID="rfvArrivalTime" runat="server" ControlToValidate="txtArrivaltime" ErrorMessage="Arrival time is required!" CssClass="error" ForeColor="Red" Display="Dynamic"></asp:RequiredFieldValidator>
                     </td>
                 </tr>
                 <tr>
