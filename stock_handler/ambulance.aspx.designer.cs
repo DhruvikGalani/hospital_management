@@ -33,6 +33,24 @@ namespace hospital_management.stock_handler
         protected global::System.Web.UI.WebControls.TextBox txtVehicleNumber;
 
         /// <summary>
+        /// rfvVehicleNumber control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvVehicleNumber;
+
+        /// <summary>
+        /// revVehicleNumber control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator revVehicleNumber;
+
+        /// <summary>
         /// txtDriverName control.
         /// </summary>
         /// <remarks>
@@ -40,6 +58,24 @@ namespace hospital_management.stock_handler
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtDriverName;
+
+        /// <summary>
+        /// rfvDriverName control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvDriverName;
+
+        /// <summary>
+        /// revDriverName control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator revDriverName;
 
         /// <summary>
         /// txtContactNumber control.
@@ -51,6 +87,24 @@ namespace hospital_management.stock_handler
         protected global::System.Web.UI.WebControls.TextBox txtContactNumber;
 
         /// <summary>
+        /// rfvContactNumber control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvContactNumber;
+
+        /// <summary>
+        /// revContactNumber control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator revContactNumber;
+
+        /// <summary>
         /// rblAvailabilityStatus control.
         /// </summary>
         /// <remarks>
@@ -58,6 +112,15 @@ namespace hospital_management.stock_handler
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RadioButtonList rblAvailabilityStatus;
+
+        /// <summary>
+        /// rfvAvailabilityStatus control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvAvailabilityStatus;
 
         /// <summary>
         /// btnSave control.

@@ -33,6 +33,15 @@ namespace hospital_management
         protected global::System.Web.UI.WebControls.TextBox txtPatientname;
 
         /// <summary>
+        /// rfvPatientName control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvPatientName;
+
+        /// <summary>
         /// txtContactnumber control.
         /// </summary>
         /// <remarks>
@@ -40,6 +49,24 @@ namespace hospital_management
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtContactnumber;
+
+        /// <summary>
+        /// rfvContactNumber control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvContactNumber;
+
+        /// <summary>
+        /// revContactNumber control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator revContactNumber;
 
         /// <summary>
         /// txtSymptoms control.
@@ -51,6 +78,15 @@ namespace hospital_management
         protected global::System.Web.UI.WebControls.TextBox txtSymptoms;
 
         /// <summary>
+        /// rfvSymptoms control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvSymptoms;
+
+        /// <summary>
         /// txtLocation control.
         /// </summary>
         /// <remarks>
@@ -58,6 +94,15 @@ namespace hospital_management
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtLocation;
+
+        /// <summary>
+        /// rfvLocation control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvLocation;
 
         /// <summary>
         /// txtAmbulanceid control.
@@ -69,6 +114,24 @@ namespace hospital_management
         protected global::System.Web.UI.WebControls.TextBox txtAmbulanceid;
 
         /// <summary>
+        /// rfvAmbulanceID control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvAmbulanceID;
+
+        /// <summary>
+        /// rvAmbulanceID control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RangeValidator rvAmbulanceID;
+
+        /// <summary>
         /// txtDrivername control.
         /// </summary>
         /// <remarks>
@@ -78,6 +141,15 @@ namespace hospital_management
         protected global::System.Web.UI.WebControls.TextBox txtDrivername;
 
         /// <summary>
+        /// rfvDriverName control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvDriverName;
+
+        /// <summary>
         /// txtArrivaltime control.
         /// </summary>
         /// <remarks>
@@ -85,6 +157,15 @@ namespace hospital_management
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtArrivaltime;
+
+        /// <summary>
+        /// rfvArrivalTime control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvArrivalTime;
 
         /// <summary>
         /// btnSubmit control.

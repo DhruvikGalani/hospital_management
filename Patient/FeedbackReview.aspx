@@ -45,34 +45,49 @@
                 <tr>
                     <td>Patient Name</td>
                     <td >
-                        <asp:TextBox ID="txtPatientname" runat="server" CssClass="textFields" ></asp:TextBox>
+                        <asp:TextBox ID="txtPatientname" runat="server" CssClass="textFields" ></asp:TextBox><br />
+                        <asp:RequiredFieldValidator ID="rfvName" runat="server" ControlToValidate="txtPatientname"  ErrorMessage="Name is required" ForeColor="Red" Display="Dynamic" /><br />
+                        <asp:RegularExpressionValidator ID="revName" runat="server" ControlToValidate="txtPatientname"  ErrorMessage="Only letters allowed" ForeColor="Red" Display="Dynamic"  ValidationExpression="^[a-zA-Z\s]+$" />
+                 
+
+
                     </td>
                 </tr>
 
                 <tr>
                     <td>Visit Date</td>
                     <td >
-                        <asp:TextBox ID="txtVisitdate" runat="server" TextMode="Date" CssClass="textFields"></asp:TextBox>
+                        <asp:TextBox ID="txtVisitdate" runat="server" TextMode="Date" CssClass="textFields"></asp:TextBox><br/>
+                        <asp:RequiredFieldValidator ID="rfvVisitdate" runat="server" ControlToValidate="txtVisitdate" ErrorMessage="Visit Date is required" ForeColor="Red" Display="Dynamic"/>
+                        
+
                     </td>
                 </tr>
+
                 <tr>
-                    <td  id="txtFeedback">Feedback</td>
+                    <td id="textFeedback">Feedback</td>
                     <td>
                         <asp:TextBox ID="txtFeedback" runat="server" TextMode="MultiLine" CssClass="textFields"></asp:TextBox>
+						<regularexpressionvalidator id="revFeedback" runat="server" controltovalidate="txtFeedback" errormessage="feedback is required" forecolor="Red" display="Dynamic" validationexpression="^[a-zA-Z\s]+$" /> 
+
                     </td>
                 </tr>
 
 
                 <tr>
-                    <td  id="txtFeedback">Rating</td>
+                    <td  id="txtRating">Rating</td>
                     <td >slider for rating</td>
+                   <regularexpressionvalidator id="revRating" runat="server" controltovalidate="txtRating" errormessage="Rating is required" forecolor="Red" display="Dynamic"  /> 
+
                 </tr>
 
 
                 <tr>
                     <td colspan="2" style="text-align: center" >
-                        <asp:Button ID="btnSave" runat="server" OnClick="btnSave_Click" Text="SUBMIT" CssClass="btnsubmit" />
-                        <asp:Button ID="btnReset" runat="server" OnClick="btnReset_Click" Text="RESET" CssClass="btnreset" />
+
+                        <asp:Button ID="btnSave" runat="server" OnClick="btnSave_Click" Text="SUBMIT" CssClass="btnsubmit"/>
+                        <asp:Button ID="btnReset" runat="server" OnClick="btnReset_Click" Text="RESET" CssClass="btnreset"/>
+
                     </td>
                 </tr>
                 <tr>
