@@ -48,69 +48,80 @@
                 <tr>
                     <td>Patient Name</td>
                     <td>
-                        <asp:TextBox ID="txtPatientname" runat="server" CssClass="textFields"></asp:TextBox>
+                        <asp:TextBox ID="txtPatientname" runat="server" CssClass="textFields"></asp:TextBox><br />
+                  
+               <asp:RequiredFieldValidator ID="rfvPatientName" runat="server" ControlToValidate="txtPatientname"  ErrorMessage="Patient Name is required." ForeColor="Red" Display="Dynamic" />
+                <asp:RegularExpressionValidator ID="revName" runat="server" ControlToValidate="txtPatientname"  ErrorMessage="Only letters allowed" ForeColor="Red" Display="Dynamic"  ValidationExpression="^[a-zA-Z\s]+$" />
                     </td>
                 </tr>
                 <tr>
                     <td>Doctor Name</td>
                     <td>
-                        <asp:TextBox ID="txtDoctorname" runat="server" CssClass="textFields" ></asp:TextBox>
+                        <asp:TextBox ID="txtDoctorname" runat="server" CssClass="textFields" ></asp:TextBox><br />
+                         <asp:RequiredFieldValidator ID="rfvDoctorName" runat="server" ControlToValidate="txtDoctorname" ErrorMessage="Doctor Name is required." ForeColor="Red" Display="Dynamic" />
+						<asp:RegularExpressionValidator ID="revDoctorName" runat="server" ControlToValidate="txtDoctorname" ErrorMessage="Only letters allowed" ForeColor="Red" Display="Dynamic" ValidationExpression="^[a-zA-Z\s]+$" />
+
+        
                     </td>
                 </tr>
                 <tr>
-                    <td >Appoitment Date &amp; Time</td>
+                    <td >Appoitment Date & Time</td>
                     <td>
-                        <asp:TextBox ID="txtDateandtime" runat="server" TextMode="DateTime" CssClass="textFields" ></asp:TextBox>
+                        <asp:TextBox ID="txtDateandtime" runat="server" TextMode="DateTime" CssClass="textFields" ></asp:TextBox><br />
+                         <asp:RequiredFieldValidator ID="rfvDateTime" runat="server" ControlToValidate="txtDateandtime"   ErrorMessage="Appointment Date & Time is required." ForeColor="Red" Display="Dynamic" />
+                        <asp:CompareValidator ID="cvDateTime" runat="server" ControlToValidate="txtDateandtime"  Operator="DataTypeCheck"  ErrorMessage="Invalid Date format."  ForeColor="Red" Display="Dynamic" />
+						<asp:RangeValidator ErrorMessage="Appointment date & time must be greater than current date." MinimumValue="<%#DateTime.Now%>"  ControlToValidate="txtDateandtime" ForeColor="Red" Display="Dynamic" runat="server" />
+                        
+                        
                     </td>
                 </tr>
                 <tr>
                     <td >Reason For Visit</td>
                     <td>
-                        <asp:TextBox ID="txtReason" runat="server" CssClass="textFields" TextMode="MultiLine"></asp:TextBox>
-                    </td>
+                        <asp:TextBox ID="txtReason" runat="server" CssClass="textFields" TextMode="MultiLine"></asp:TextBox><br />
+                        <asp:RequiredFieldValidator ID="rfvReason" runat="server" ControlToValidate="txtReason"  ErrorMessage="Reason for Visit is required." ForeColor="Red" Display="Dynamic" />
+                        
+
+        </td>
+                   
                 </tr>
+
                 <tr>
                     <td >Clinic Location</td>
                     <td>
                         <asp:DropDownList ID="ddlCliniclocation" runat="server" Width="200px">
                             <asp:ListItem>select</asp:ListItem>
-                            <asp:ListItem>Ahmedabad
-</asp:ListItem>
-                            <asp:ListItem></asp:ListItem>
+                            <asp:ListItem>Ahmedabad</asp:ListItem>
+                            <asp:ListItem>vadodara</asp:ListItem>
                             <asp:ListItem>Aragonda</asp:ListItem>
                             <asp:ListItem>Bangalore</asp:ListItem>
                             <asp:ListItem>Bhubaneshwar</asp:ListItem>
                             <asp:ListItem>Bilaspur</asp:ListItem>
-                            <asp:ListItem>Bhopal
-</asp:ListItem>
+                            <asp:ListItem>Bhopal</asp:ListItem>
                             <asp:ListItem>Chennai</asp:ListItem>
                             <asp:ListItem>Delhi</asp:ListItem>
                             <asp:ListItem>Guwahati</asp:ListItem>
                             <asp:ListItem>Hyderabad</asp:ListItem>
-                            <asp:ListItem>Indore
-</asp:ListItem>
-                            <asp:ListItem>Kakinada
-</asp:ListItem>
+                            <asp:ListItem>Indore</asp:ListItem>
+                            <asp:ListItem>Kakinada</asp:ListItem>
                             <asp:ListItem>Karur</asp:ListItem>
                             <asp:ListItem>Kolkata</asp:ListItem>
-                            <asp:ListItem>Kochi
-</asp:ListItem>
-                            <asp:ListItem>Lucknow
-</asp:ListItem>
+                            <asp:ListItem>Kochi</asp:ListItem>
+                            <asp:ListItem>Lucknow</asp:ListItem>
                             <asp:ListItem>Madurai</asp:ListItem>
                             <asp:ListItem>Mumbai</asp:ListItem>
-                            <asp:ListItem>Mysore
-</asp:ListItem>
+                            <asp:ListItem>Mysore</asp:ListItem>
                             <asp:ListItem>Nashik</asp:ListItem>
-                            <asp:ListItem>Nellore
-</asp:ListItem>
+                            <asp:ListItem>Nellore</asp:ListItem>
                             <asp:ListItem>Noida</asp:ListItem>
-                            <asp:ListItem>Rourkela
-</asp:ListItem>
+                            <asp:ListItem>Rourkela</asp:ListItem>
                             <asp:ListItem>Trichy</asp:ListItem>
                             <asp:ListItem>Trichy</asp:ListItem>
-                        </asp:DropDownList>
-
+                        </asp:DropDownList> <br />
+			
+                        <asp:RequiredFieldValidator ID="rfvClinicLocation" runat="server" ControlToValidate="ddlCliniclocation"  ErrorMessage="Please select a Clinic Location." ForeColor="Red" Display="Dynamic" />
+                        
+					
 
                     </td>
                 </tr>
@@ -120,7 +131,10 @@
                         <asp:RadioButtonList ID="rblStatus" runat="server" CellPadding="2" CellSpacing="2" RepeatDirection="Horizontal">
                             <asp:ListItem>Pending</asp:ListItem>
                             <asp:ListItem>Confirm</asp:ListItem>
-                        </asp:RadioButtonList>
+                        </asp:RadioButtonList><br />
+                        <asp:RequiredFieldValidator ID="rfvStatus" runat="server" ControlToValidate="rblStatus"  InitialValue="" ErrorMessage="Please select a Clinic status." ForeColor="Red" Display="Dynamic" />
+                        
+
                     </td>
                 </tr>
                 <tr>

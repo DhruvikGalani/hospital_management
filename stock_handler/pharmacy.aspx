@@ -47,43 +47,56 @@
             <tr>
                 <td class="auto-style2">Medicine Name</td>
                 <td>
-                    <asp:TextBox ID="txtMedicineName" runat="server" CssClass="textFields"></asp:TextBox>
+                    <asp:TextBox ID="txtMedicineName" runat="server" CssClass="textFields"></asp:TextBox><br />
+                    <asp:RequiredFieldValidator ID="rfvMedicineName" runat="server" ControlToValidate="txtMedicineName" ErrorMessage="Medicine Name is required" ForeColor="Red" Display="Dynamic" /><br />
+                    <asp:RegularExpressionValidator ID="revMedicineName" runat="server" ControlToValidate="txtMedicineName" ErrorMessage="Only alphabets allowed" ForeColor="Red" Display="Dynamic" ValidationExpression="^[A-Za-z\s]+$" />
                 </td>
             </tr>
             <tr>
                 <td class="auto-style2">Batch Number</td>
                 <td>
-                    <asp:TextBox ID="txtBatchNumber" runat="server" CssClass="no-spinner" TextMode="Number"></asp:TextBox>
+                    <asp:TextBox ID="txtBatchNumber" runat="server" CssClass="no-spinner" TextMode="Number"></asp:TextBox><br />
+                    <asp:RequiredFieldValidator ID="rfvBatchNumber" runat="server" ControlToValidate="txtBatchNumber"  ErrorMessage="Batch Number is required" ForeColor="Red" Display="Dynamic" /><br />
+                    <asp:RegularExpressionValidator ID="revBatchNumber" runat="server" ControlToValidate="txtBatchNumber" ErrorMessage="Alphanumeric only" ForeColor="Red" Display="Dynamic" ValidationExpression="^[A-Za-z0-9]+$" />
                 </td>
             </tr>
             <tr>
                 <td class="auto-style2">Manufacturing Date</td>
                 <td>
-                    <asp:TextBox ID="txtManufacturingDate" runat="server" CssClass="textFields" TextMode="Date"></asp:TextBox>
+                    <asp:TextBox ID="txtManufacturingDate" runat="server" CssClass="textFields" TextMode="Date"></asp:TextBox><br />
+                    <asp:RequiredFieldValidator ID="rfvManufacturingDate" runat="server" ControlToValidate="txtManufacturingDate" ErrorMessage="Manufacturing Date is required" ForeColor="Red" Display="Dynamic" />
                 </td>
             </tr>
             <tr>
                 <td class="auto-style2">Expiry Date</td>
                 <td>
-                    <asp:TextBox ID="txtExpiryDate" runat="server" CssClass="textFields" TextMode="Date"></asp:TextBox>
+                    <asp:TextBox ID="txtExpiryDate" runat="server" CssClass="textFields" TextMode="Date"></asp:TextBox><br />
+                    <asp:RequiredFieldValidator ID="rfvExpiryDate" runat="server" ControlToValidate="txtExpiryDate" ErrorMessage="Expiry Date is required" ForeColor="Red" Display="Dynamic" /><br />
+                    <asp:CompareValidator ID="cvExpiryDate" runat="server" ControlToValidate="txtExpiryDate" ControlToCompare="txtManufacturingDate" Operator="GreaterThan"  ErrorMessage="Expiry Date must be later than Manufacturing Date" ForeColor="Red" Display="Dynamic" />
+
                 </td>
             </tr>
             <tr>
                 <td class="auto-style2">Stock Quantity</td>
                 <td>
-                    <asp:TextBox ID="txtStockQuantity" runat="server" CssClass="no-spinner" TextMode="Number"></asp:TextBox>
+                    <asp:TextBox ID="txtStockQuantity" runat="server" CssClass="no-spinner" TextMode="Number"></asp:TextBox><br />
+                    <asp:RequiredFieldValidator ID="rfvStockQuantity" runat="server" ControlToValidate="txtStockQuantity" ErrorMessage="Stock Quantity is required" ForeColor="Red" Display="Dynamic" /><br />
+                    <asp:RangeValidator ID="rvStockQuantity" runat="server" ControlToValidate="txtStockQuantity"  MinimumValue="1" MaximumValue="1000000" Type="Integer" ErrorMessage="Enter a valid stock quantity (1+)" ForeColor="Red" Display="Dynamic" />
                 </td>
             </tr>
             <tr>
                 <td class="auto-style2">Suppier Details</td>
                 <td>
-                    <asp:TextBox ID="txtSuppierDatails" runat="server" CssClass="textFields" TextMode="MultiLine"></asp:TextBox>
+                    <asp:TextBox ID="txtSuppierDatails" runat="server" CssClass="textFields" TextMode="MultiLine"></asp:TextBox><br />
+                    <asp:RequiredFieldValidator ID="rfvSupplierDetails" runat="server" ControlToValidate="txtSuppierDatails" ErrorMessage="Supplier Details are required" ForeColor="Red" Display="Dynamic" />
                 </td>
             </tr>
             <tr>
                 <td class="auto-style2">Price per Unit</td>
                 <td>
-                    <asp:TextBox ID="txtPricePerUnit" runat="server" CssClass="no-spinner" TextMode="Number"></asp:TextBox>
+                    <asp:TextBox ID="txtPricePerUnit" runat="server" CssClass="no-spinner" TextMode="Number"></asp:TextBox><br />
+                    <asp:RequiredFieldValidator ID="rfvPricePerUnit" runat="server" ControlToValidate="txtPricePerUnit" ErrorMessage="Price per unit is required" ForeColor="Red" Display="Dynamic" /><br />
+                    <asp:RegularExpressionValidator ID="revPricePerUnit" runat="server" ControlToValidate="txtPricePerUnit" ErrorMessage="Enter a valid price (e.g., 10.50)" ForeColor="Red" Display="Dynamic" ValidationExpression="^\d+(\.\d{1,2})?$" />
                 </td>
             </tr>
             <tr>

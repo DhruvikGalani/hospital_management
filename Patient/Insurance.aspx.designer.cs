@@ -33,6 +33,24 @@ namespace hospital_management.Patient
         protected global::System.Web.UI.WebControls.TextBox txtPolicynumber;
 
         /// <summary>
+        /// rfvpolicynumber control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvpolicynumber;
+
+        /// <summary>
+        /// revPolicyNumber control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator revPolicyNumber;
+
+        /// <summary>
         /// txtProvide control.
         /// </summary>
         /// <remarks>
@@ -40,6 +58,24 @@ namespace hospital_management.Patient
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtProvide;
+
+        /// <summary>
+        /// rfvProvide control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvProvide;
+
+        /// <summary>
+        /// revprovide control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator revprovide;
 
         /// <summary>
         /// txtCoverage control.
@@ -51,6 +87,24 @@ namespace hospital_management.Patient
         protected global::System.Web.UI.WebControls.TextBox txtCoverage;
 
         /// <summary>
+        /// rfvCoverage control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvCoverage;
+
+        /// <summary>
+        /// revCoverage control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator revCoverage;
+
+        /// <summary>
         /// rblClaimstatus control.
         /// </summary>
         /// <remarks>
@@ -58,6 +112,15 @@ namespace hospital_management.Patient
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RadioButtonList rblClaimstatus;
+
+        /// <summary>
+        /// rfvClaimstatus control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvClaimstatus;
 
         /// <summary>
         /// txtClaim control.
@@ -69,6 +132,24 @@ namespace hospital_management.Patient
         protected global::System.Web.UI.WebControls.TextBox txtClaim;
 
         /// <summary>
+        /// rfvClaim control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvClaim;
+
+        /// <summary>
+        /// revClaim control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator revClaim;
+
+        /// <summary>
         /// txtApprovaldate control.
         /// </summary>
         /// <remarks>
@@ -78,6 +159,15 @@ namespace hospital_management.Patient
         protected global::System.Web.UI.WebControls.TextBox txtApprovaldate;
 
         /// <summary>
+        /// rfvApprovaldate control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvApprovaldate;
+
+        /// <summary>
         /// txtExpirydate control.
         /// </summary>
         /// <remarks>
@@ -85,6 +175,15 @@ namespace hospital_management.Patient
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtExpirydate;
+
+        /// <summary>
+        /// rfvExpirydate control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvExpirydate;
 
         /// <summary>
         /// btnSave control.

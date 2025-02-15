@@ -33,6 +33,24 @@ namespace hospital_management.Patient
         protected global::System.Web.UI.WebControls.TextBox txtPatientname;
 
         /// <summary>
+        /// rfvName control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvName;
+
+        /// <summary>
+        /// revName control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator revName;
+
+        /// <summary>
         /// txtVisitdate control.
         /// </summary>
         /// <remarks>
@@ -42,6 +60,15 @@ namespace hospital_management.Patient
         protected global::System.Web.UI.WebControls.TextBox txtVisitdate;
 
         /// <summary>
+        /// rfvVisitdate control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvVisitdate;
+
+        /// <summary>
         /// txtFeedback control.
         /// </summary>
         /// <remarks>
@@ -49,6 +76,15 @@ namespace hospital_management.Patient
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtFeedback;
+
+        /// <summary>
+        /// revFeedback control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl revFeedback;
 
         /// <summary>
         /// btnSave control.

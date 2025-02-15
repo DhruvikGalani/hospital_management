@@ -33,6 +33,24 @@ namespace hospital_management.stock_handler
         protected global::System.Web.UI.WebControls.TextBox txtMedicineName;
 
         /// <summary>
+        /// rfvMedicineName control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvMedicineName;
+
+        /// <summary>
+        /// revMedicineName control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator revMedicineName;
+
+        /// <summary>
         /// txtBatchNumber control.
         /// </summary>
         /// <remarks>
@@ -40,6 +58,24 @@ namespace hospital_management.stock_handler
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtBatchNumber;
+
+        /// <summary>
+        /// rfvBatchNumber control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvBatchNumber;
+
+        /// <summary>
+        /// revBatchNumber control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator revBatchNumber;
 
         /// <summary>
         /// txtManufacturingDate control.
@@ -51,6 +87,15 @@ namespace hospital_management.stock_handler
         protected global::System.Web.UI.WebControls.TextBox txtManufacturingDate;
 
         /// <summary>
+        /// rfvManufacturingDate control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvManufacturingDate;
+
+        /// <summary>
         /// txtExpiryDate control.
         /// </summary>
         /// <remarks>
@@ -58,6 +103,24 @@ namespace hospital_management.stock_handler
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtExpiryDate;
+
+        /// <summary>
+        /// rfvExpiryDate control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvExpiryDate;
+
+        /// <summary>
+        /// cvExpiryDate control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CompareValidator cvExpiryDate;
 
         /// <summary>
         /// txtStockQuantity control.
@@ -69,6 +132,24 @@ namespace hospital_management.stock_handler
         protected global::System.Web.UI.WebControls.TextBox txtStockQuantity;
 
         /// <summary>
+        /// rfvStockQuantity control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvStockQuantity;
+
+        /// <summary>
+        /// rvStockQuantity control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RangeValidator rvStockQuantity;
+
+        /// <summary>
         /// txtSuppierDatails control.
         /// </summary>
         /// <remarks>
@@ -78,6 +159,15 @@ namespace hospital_management.stock_handler
         protected global::System.Web.UI.WebControls.TextBox txtSuppierDatails;
 
         /// <summary>
+        /// rfvSupplierDetails control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvSupplierDetails;
+
+        /// <summary>
         /// txtPricePerUnit control.
         /// </summary>
         /// <remarks>
@@ -85,6 +175,24 @@ namespace hospital_management.stock_handler
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtPricePerUnit;
+
+        /// <summary>
+        /// rfvPricePerUnit control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvPricePerUnit;
+
+        /// <summary>
+        /// revPricePerUnit control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator revPricePerUnit;
 
         /// <summary>
         /// btnSubmit control.

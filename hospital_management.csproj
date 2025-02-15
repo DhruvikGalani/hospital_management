@@ -70,12 +70,10 @@
   <ItemGroup>
     <Content Include="Admin\Billing.aspx" />
     <Content Include="Admin\StaffInformation.aspx" />
-    <Content Include="ambulance.aspx" />
     <Content Include="App_Data\db_HMS.mdf" />
     <Content Include="App_Data\db_HMS_log.ldf">
       <DependentUpon>db_HMS.mdf</DependentUpon>
     </Content>
-    <Content Include="BookAppointment.aspx" />
     <Content Include="Bootstrap\css\bootstrap-grid.css" />
     <Content Include="Bootstrap\css\bootstrap-grid.min.css" />
     <Content Include="Bootstrap\css\bootstrap-grid.rtl.css" />
@@ -233,20 +231,6 @@
     </Compile>
     <Compile Include="Admin\StaffInformation.aspx.designer.cs">
       <DependentUpon>StaffInformation.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="ambulance.aspx.cs">
-      <DependentUpon>ambulance.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="ambulance.aspx.designer.cs">
-      <DependentUpon>ambulance.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="BookAppointment.aspx.cs">
-      <DependentUpon>BookAppointment.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="BookAppointment.aspx.designer.cs">
-      <DependentUpon>BookAppointment.aspx</DependentUpon>
     </Compile>
     <Compile Include="Doctor\DoctorDetails.aspx.cs">
       <DependentUpon>DoctorDetails.aspx</DependentUpon>
