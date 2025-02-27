@@ -90,7 +90,7 @@
         <ul>
                         <li><a href="home.aspx" target="contentFrame"><i class="fas fa-user-home"></i> Home</a></li>
 
-            <li><a href="nursedetails.aspx" target="contentFrame"><i class="fas fa-user-nurse"></i> Nurse Details</a></li>
+            <li><a href="nurse_details.aspx" target="contentFrame"><i class="fas fa-user-nurse"></i> Nurse Details</a></li>
             <li><a href=".aspx" target="contentFrame"><i class="fas fa-ambulance"></i> Ambulance Services</a></li>
             <li><a href=".aspx" target="contentFrame"><i class="fas fa-flask"></i> Emergency Management</a></li>
             <li><a href="laboratoryTest.aspx" target="contentFrame"><i class="fas fa-utensils"></i> Laboratory Management</a></li>
@@ -107,7 +107,7 @@
 
         <!-- Iframe to load pages without redirecting -->
     
-        <iframe name="contentFrame" class="content-frame" src="laboratoryTest.aspx"></iframe>
+        <iframe name="contentFrame" class="content-frame" src="nurse_details.aspx"></iframe>
 
     </div>
 
