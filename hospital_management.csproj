@@ -125,6 +125,8 @@
     <Content Include="Images\hms_logo.svg" />
     <Content Include="Laboratorytest.aspx" />
     <Content Include="nurse.aspx" />
+    <Content Include="Nurse_dashboard\nurse_dashboard.aspx" />
+    <Content Include="Nurse_dashboard\nurse_details.aspx" />
     <Content Include="pages\LoginPage.aspx" />
     <Content Include="pages\RegisterPage.aspx" />
     <Content Include="Patient\Appointments.aspx" />
@@ -287,6 +289,20 @@
     </Compile>
     <Compile Include="nurse.aspx.designer.cs">
       <DependentUpon>nurse.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Nurse_dashboard\nurse_dashboard.aspx.cs">
+      <DependentUpon>nurse_dashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Nurse_dashboard\nurse_dashboard.aspx.designer.cs">
+      <DependentUpon>nurse_dashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Nurse_dashboard\nurse_details.aspx.cs">
+      <DependentUpon>nurse_details.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Nurse_dashboard\nurse_details.aspx.designer.cs">
+      <DependentUpon>nurse_details.aspx</DependentUpon>
     </Compile>
     <Compile Include="pages\LoginPage.aspx.cs">
       <DependentUpon>LoginPage.aspx</DependentUpon>
