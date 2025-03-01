@@ -1,6 +1,5 @@
 ﻿﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="homePage.aspx.cs" Inherits="hospital_management.homePage" %>
 
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
