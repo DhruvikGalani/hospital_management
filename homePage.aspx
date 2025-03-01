@@ -1,4 +1,4 @@
-﻿﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="homePage.aspx.cs" Inherits="hospital_management.homePage" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="homePage.aspx.cs" Inherits="hospital_management.homePage" %>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -32,119 +32,7 @@
         section {
             scroll-margin-top: 80px; /* Adjust based on your header height */
         }
-        /* Style for the dropdown menu */
-        .nav ul {
-            display: flex;
-            list-style: none;
-            gap: 2rem;
-            position: relative;
-        }
 
-            .nav ul li {
-                position: relative;
-            }
-
-                .nav ul li ul {
-                    display: none;
-                    position: absolute;
-                    top: 100%;
-                    left: 0;
-                    background-color: #333;
-                    padding: 0;
-                    list-style: none;
-                    min-width: 200px;
-                    z-index: 1000;
-                }
-
-                    .nav ul li ul li {
-                        width: 100%;
-                    }
-
-                        .nav ul li ul li a {
-                            display: block;
-                            padding: 10px;
-                            color: white;
-                            background-color: #444;
-                            text-decoration: none;
-                            white-space: nowrap;
-                            transition: background 0.3s;
-                        }
-
-                            .nav ul li ul li a:hover {
-                                background-color: #ff8f40;
-                            }
-
-                /* ======= Dropdown Menu Styles ======= */
-
-                /* Hide dropdowns by default */
-                .nav ul li ul {
-                    display: none;
-                    position: absolute;
-                    top: 100%;
-                    left: 0;
-                    background: rgba(30, 30, 30, 0.5); /* Semi-transparent black */
-                    min-width: 200px;
-                    padding: 10px 0;
-                    border-radius: 8px; /* Rounded corners */
-                    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.34); /* Soft shadow */
-                    opacity: 0;
-                    transform: translateY(10px); /* Smooth dropdown effect */
-                    transition: opacity 0.3s ease, transform 0.3s ease;
-                }
-
-                    /* Dropdown items */
-                    .nav ul li ul li {
-                        width: 100%;
-                    }
-
-                        /* Dropdown links */
-                        .nav ul li ul li a {
-                            display: block;
-                            padding: 12px 15px;
-                            color: rgba(255, 255, 255, 0.9); /* Slightly transparent white text */
-                            font-size: 14px;
-                            font-weight: 500;
-                            background: none;
-                            transition: background 0.3s ease, padding-left 0.3s ease;
-                            border-left: 3px solid transparent; /* Left border effect */
-                        }
-
-                            /* Hover effect */
-                            .nav ul li ul li a:hover {
-                                background: rgba(255, 143, 64, 0.4); /* Orange hover with transparency */
-                                color: #fff;
-                                padding-left: 18px;
-                                border-left: 3px solid #fff;
-                            }
-
-                /* Show dropdown on hover */
-                .nav ul li:hover > ul {
-                    display: block;
-                    opacity: 1;
-                    transform: translateY(0);
-                }
-
-                /* ======= Submenu (Second-Level Dropdown) ======= */
-                .nav ul li ul li ul {
-                    display: none;
-                    position: absolute;
-                    left: 100%;
-                    top: 0;
-                    background: rgba(40, 40, 40, 0.45); /* Slightly lighter transparent black */
-                    min-width: 200px;
-                    border-radius: 8px;
-                    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.4);
-                    opacity: 0;
-                    transform: translateX(10px);
-                    transition: opacity 0.3s ease, transform 0.3s ease;
-                }
-
-                /* Show sub-dropdown on hover */
-                .nav ul li ul li:hover > ul {
-                    display: block;
-                    opacity: 1;
-                    transform: translateX(0);
-                }
     </style>
     <script>
 
@@ -171,116 +59,109 @@
 
     <script>
 
-        const details = {
+     const details = {
 
-            Ahmedabad: {
-                image_url: "https://cdn.apollohospitals.com/apollohospitals/apollo-prohealth/ah/location.jpg",
-                address: "📍Plot No.1A, Bhat GIDC Estate, Gandhinagar – 382428, Gujarat, India.",
-            },
+    Ahmedabad: {
+        image_url: 'Images/Ahmedabad_HMS.jpg',
+        address: "📍Infinity Health Care, 15 Sapphire Tower, SG Highway, Ahmedabad – 380051, Gujarat, India.",
+    },
 
-            Bangalore: {
-                image_url: "https://cdn.apollohospitals.com/dev-apollohospitals/2020/09/bangalore-new.jpg",
-                address: "📍154 / 11, Bannerghatta Road, Opp. I.I.M, Bangalore – 560076",
-            },
+    Bangalore: {
+        image_url: "Images/Bangalore_HMS.jpg",
+        address: "📍Infinity Health Care, 22 MG Road, Opp. Brigade Towers, Bangalore – 560001, Karnataka, India.",
+    },
 
+    Aragonda: {
+        image_url:  "Images/Aragonda_HMS.jpg",
+        address: "📍Infinity Health Care, Main Road, Aragonda, Chittoor, Andhra Pradesh 517129.",
+    },
 
-            Aragonda: {
-                image_url: "https://cdn.apollohospitals.com/dev-apollohospitals/2020/09/aragonda-new.jpg",
-                address: "📍Aragonda (V), Thavanampalli (M), Chittoor (D)",
-            },
+    Bhubaneshwar: {
+        image_url:  "Images/Bhubaneshwar_HMS.jpg",
+        address: "📍Infinity Health Care, Plot No. 102, Jaydev Vihar, Bhubaneshwar - 751013, Odisha, India.",
+    },
 
+    Bilaspur: {
+        image_url: "Images/Bilaspur_HMS.jpg",
+        address: "📍Infinity Health Care, Civil Lines, Near Gandhi Chowk, Bilaspur - 495001, Chhattisgarh, India.",
+    },
 
-            Bhubaneshwar: {
-                image_url: "https://cdn.apollohospitals.com/dev-apollohospitals/2020/09/bhubaneshwar-new.jpg",
-                address: "📍Plot No. 251, Old Sainik School Road Bhubaneshwar - 750 015",
-            },
+    Delhi: {
+        image_url: "Images/Delhi_HMS.jpg",
+        address: "📍Infinity Health Care, 5th Avenue, Connaught Place, New Delhi - 110001, India.",
+    },
 
+    Guwahati: {
+        image_url:  "Images/Guwahati_HMS.jpg",
+        address: "📍Infinity Health Care, 12 GS Road, Christian Basti, Guwahati - 781005, Assam, India.",
+    },
 
-            Bilaspur: {
-                image_url: "https://cdn.apollohospitals.com/dev-apollohospitals/2020/10/bilaspur-new.jpg",
-                address: "📍Apollo Hospitals Bilaspur, Seepat Road, Bilaspur, Chhattisgarh, 495006",
-            },
-            
-      
+    Hyderabad: {
+        image_url: "Images/Hyderabad_HMS.jpg",
+        address: "📍Infinity Health Care, Jubilee Hills, Hyderabad, Telangana - 500033, India.",
+    },
 
-            Delhi: {
-                image_url: "https://cdn.apollohospitals.com/dev-apollohospitals/2020/09/bangalore-new.jpg",
-                address: "📍Sarita Vihar Delhi Mathura Road, New Delhi - 110076 (India)",
-            },
+    Indore: {
+        image_url: "Images/Indore_HMS.jpg",
+        address: "📍Infinity Health Care, 3rd Floor, Orbit Mall, Vijay Nagar, Indore - 452010, Madhya Pradesh, India.",
+    },
 
+    Kakinada: {
+        image_url:  "Images/Kakinada_HMS.jpg",
+        address: "📍Infinity Health Care, 8-2-15, Suryaraopeta, Kakinada - 533001, Andhra Pradesh, India.",
+    },
 
-            Guwahati: {
-                image_url: "https://cdn.apollohospitals.com/dev-apollohospitals/2020/10/guwahati-new.jpg",
-                address: "📍Apollo Hospitals, Guwahati Unit: International Hospitals Lotus Tower, Christian Basti, G.S.Road Guwahati - 781 005",
-            },
+    Karur: {
+        image_url: "Images/Karur_HMS.jpg",
+        address: "📍Infinity Health Care, 27 Kovai Road, Karur - 639002, Tamil Nadu, India.",
+    },
 
-            Hyderabad: {
-                image_url: "https://cdn.apollohospitals.com/dev-apollohospitals/2020/09/hyderabad-new.jpg",
-                address: "📍 Nagar, Jubilee Hills, Hyderabad, Telangana State, India. Toll No – 1860 500 1066",
-            },
+    Kolkata: {
+        image_url: "Images/Kolkata_HMS.jpg",
+        address: "📍Infinity Health Care, 45 Park Street, Kolkata - 700016, West Bengal, India.",
+    },
 
-            Indore: {
-                image_url: "https://cdn.apollohospitals.com/dev-apollohospitals/2020/10/Indore-new.jpg",
-                address: "📍Scheme No. 74 C, Sector D, Vijay Nagar, Indore 452 010 (Madhya Pradesh).",
-            },
+    Kochi: {
+        image_url: "Images/Kochi_HMS.jpg",
+        address: "📍Infinity Health Care, 6th Floor, Infopark, Kakkanad, Kochi - 682030, Kerala, India.",
+    },
 
-            Kakinada: {
-                image_url: "https://cdn.apollohospitals.com/dev-apollohospitals/2020/10/Kakinada-new.jpg",
-                address: "📍13-1-3, Suryaraopeta Main Road, Kakinada - 533 001",
-            },
+    Lucknow: {
+        image_url:  "Images/Lucknow_HMS.jpg",
+        address: "📍Infinity Health Care, Gomti Nagar, Near Ambedkar Park, Lucknow - 226010, Uttar Pradesh, India.",
+    },
 
-            Karur: {
-                image_url: "https://cdn.apollohospitals.com/dev-apollohospitals/2020/10/Karur-new.jpg",
-                address: "📍163 - AE, Allwyn Nagar Kovai Road Karur - 639002",
-            },
+    Madurai: {
+        image_url: "Images/Madurai_HMS.jpg",
+        address: "📍Infinity Health Care, KK Nagar, Near Mattuthavani, Madurai - 625020, Tamil Nadu, India.",
+    },
 
-            Kolkata: {
-                image_url: "https://cdn.apollohospitals.com/dev-apollohospitals/2020/09/Kolkata-new.jpg",
-                address: "📍58, Canal Circular Road Kolkata - 700 054",
-            },
+    Mumbai: {
+        image_url: "Images/Mumbai_HMS.jpg",
+        address: "📍Infinity Health Care, 12th Floor, BKC Towers, Bandra East, Mumbai - 400051, Maharashtra, India.",
+    },
 
+    Mysore: {
+        image_url: "Images/Mysore_HMS.jpg",
+        address: "📍Infinity Health Care, Kuvempunagar, Mysore - 570023, Karnataka, India.",
+    },
 
-            Kochi: {
-                image_url: "https://cdn.apollohospitals.com/dev-apollohospitals/2020/12/Kochi-new.jpg",
-                address: "📍Apollo Adlux Hospital Angamaly, Cable Junction, Ernakulam District, National Highway 47 Karukutty, Kerala 683576",
-            },
+    Nashik: {
+        image_url: "Images/Nashik_HMS.jpg",
+        address: "📍Infinity Health Care, Swaminarayan Nagar, Panchavati, Nashik - 422003, Maharashtra, India.",
+    },
 
+    Nellore: {
+        image_url: "Images/Nellore_HMS.jpg",
+        address: "📍Infinity Health Care, Muthukur Road, Ramji Nagar, Nellore - 524004, Andhra Pradesh, India.",
+    },
 
-            Lucknow: {
-                image_url: "https://cdn.apollohospitals.com/dev-apollohospitals/2020/09/Lucknow-new.jpg",
-                address: "📍Apollomedics Super Speciality Hospitals Kanpur - Lucknow Rd, Sector B, Bargawan, LDA Colony, Lucknow, Uttar Pradesh 226012",
-            },
+    Noida: {
+        image_url: "Images/Noida_HMS.png",
+        address: "📍Infinity Health Care, Stellar Business Park, Sector 62, Noida - 201301, Uttar Pradesh, India.",
+    },
+};
 
-            Madurai: {
-                image_url: "https://cdn.apollohospitals.com/dev-apollohospitals/2020/10/Madurai-new.jpg",
-                address: "📍Lake View Road, K.K. Nagar, Madurai - 625 020",
-            },
-
-            Mumbai: {
-                image_url: "https://cdn.apollohospitals.com/dev-apollohospitals/2020/09/Mumbai-new.jpg",
-                address: "📍Parsik Hill Road, Sector 23, CBD Belapur, Navi Mumbai - 400 614",
-            },
-
-            Mysore: {
-                image_url: "https://cdn.apollohospitals.com/dev-apollohospitals/2020/10/Mysore-new.jpg",
-                address: "📍Adhichunchanagiri Road Kuvempunagar, Mysore - 570 023",
-            },
-
-            Nashik: {
-                image_url: "https://cdn.apollohospitals.com/dev-apollohospitals/2020/10/Nashik-new.jpg",
-                address: "📍Swaminarayan Nagar Near Lunge Mangal Karyalaya New Adgaon Naka, Panchavati Nashik 422 003, Maharashtra.",
-            },
-
-            Nellore: {
-                image_url: "https://cdn.apollohospitals.com/dev-apollohospitals/2020/10/Nellore-new.jpg",
-                address: "📍Apollo specialty Hospitals Nellore, 16/111, 1133, Muthukur Rd, Pinakini Avenue, Ramji Nagar, Nellore, Andhra Pradesh 524004",
-            },
-
-            Noida: {
-                image_url: "https://cdn.apollohospitals.com/dev-apollohospitals/2023/04/Noida-new.jpg",
-                address: "📍E 2, Apollo Hospitals Rd, Block E, Sector 26, Noida, Uttar Pradesh 201301",
-            },
-        };
 
 
         // Ensure the default location is selected when the page loads
@@ -294,9 +175,9 @@
             const detailsContainer = document.getElementById("location-details");
             const locationDetails = details[location];
             detailsContainer.innerHTML = `
-            <h4>${location}</h4>
-            <img src="${locationDetails.image_url}" alt="${location} Image">
-            <p>${locationDetails.address}</p>
+            <h4 style=" font-size: 2rem; font-weight: bold; color: #2c3e50; margin-bottom: 15px;text-transform: capitalize;">${location}</h4>
+            <img style=" height:360px; width:100%;border-radius: 12px; margin-bottom: 15px; box-shadow: 2px 4px 8px rgba(1, 1, 3, 0.2);   " src="${locationDetails.image_url}" alt="${location} Image">
+            <p style=" font-size: 16px; color: #34495e; text-align: start; padding: 20px 0px; line-height: 30px;">${locationDetails.address}</p>
         `;
         }
 
@@ -358,36 +239,7 @@
             </object>
             <h1>Infinity Health Care</h1>
         </div>
-        <%--  <nav class="nav">
-            <div id="dd">
-                <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#Patients and carers">Patients and carers</a>
-                        <ul>
-                            <li><a href="#">Becoming a Peter Mac patient</a></li>
-                            <li><a href="#">Types of cancer</a>
-                                <ul>
-                                    <li><a href="#">Blood cancer</a></li>
-                                    <li><a href="#">Breast Cancer</a></li>
-                                    <li><a href="#">Children's cancer</a></li>
-                                    <li><a href="#">Reproductive-related cancer</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="#">Treatments</a></li>
-                            <li><a href="#">Tests and diagnosis</a></li>
-                            <li><a href="#">Health services</a></li>
-                            <li><a href="#">Children and young people</a></li>
-                            <li><a href="#">Clinical Trials</a></li>
-                            <li><a href="#">Support and Wellbeing</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#doctors">Doctors</a></li>
-                    <li><a href="#appointments">Appointments</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </div>
-        </nav>--%>
+
         <nav class="nav">
             <ul>
                 <li><a href="#home">Home</a></li>
@@ -417,6 +269,91 @@
     </section>
 
     <section id="services" class="services">
+<<<<<<< HEAD
+        <div class="container">
+            <h2>Explore our Centres of Clinical Excellence</h2>
+            <p class="text-center">Infinity Health Care has dedicated Centres of Excellence for several key specialties and super specialties. They are unique and state-of-the-art facilities spread across multiple locations. Each Centre of Excellence stands out as a citadel of world-class clinical outcomes.</p>
+            <p class="text-center">Learn about the world-class health care we provide</p>
+        </div>
+
+        <div class="services-container">
+            <div class="services-image">
+                <img class="serimg" src="Images/doctor_team3.jpg" alt="Doctor Consultation">
+            </div>
+
+            <div class="services-grid">
+                <div class="service-card">
+                    <img src="svgs/cardiology_icon.svg" alt="Cardiology"><h3>Cardiology</h3>
+                </div>
+                <div class="service-card">
+                    <img src="svgs/neurology.svg" alt="Neurology"><h3>Neurology</h3>
+                </div>
+                <div class="service-card">
+                    <img src="svgs/gastroenterology.svg" alt="Gastroenterology"><h3>Gastroenterology</h3>
+                </div>
+                <div class="service-card">
+                    <img src="svgs/orthopaedic.svg" alt="Orthopedic"><h3>Orthopedic</h3>
+                </div>
+                <div class="service-card">
+                    <img src="svgs/oncology_icon.svg" alt="Oncology"><h3>Oncology</h3>
+                </div>
+                <div class="service-card">
+                    <img src="svgs/gynecology.svg" alt="Gynecology"><h3>Gynecology</h3>
+                </div>
+                <div class="service-card">
+                    <img src="svgs/dermatology.svg" alt="Dermatology"><h3>Dermatology</h3>
+                </div>
+                <div class="service-card">
+                    <img src="svgs/ophthalmology.svg" alt="Ophthalmology"><h3>Ophthalmology</h3>
+                </div>
+                <div class="service-card">
+                    <img src="svgs/paediatricurology.svg" alt="Pediatrics"><h3>Pediatrics</h3>
+                </div>
+                <div class="service-card">
+                    <img src="svgs/endocrinology.svg" alt="Endocrinology"><h3>Endocrinology</h3>
+                </div>
+                <div class="service-card">
+                    <img src="svgs/urology.svg" alt="Urology"><h3>Urology</h3>
+                </div>
+                <div class="service-card">
+                    <img src="svgs/nephrology.svg" alt="Nephrology"><h3>Nephrology</h3>
+                </div>
+                <div class="service-card">
+                    <img src="svgs/pulmonology.svg" alt="Pulmonology"><h3>Pulmonology</h3>
+                </div>
+                <div class="service-card">
+                    <img src="svgs/rheumatology.svg" alt="Rheumatology"><h3>Rheumatology</h3>
+                </div>
+                <div class="service-card">
+                    <img src="svgs/neurology.svg" alt="Neurosurgery"><h3>Neurosurgery</h3>
+                </div>
+                <div class="service-card">
+                    <img src="svgs/radiology.svg" alt="Radiology"><h3>Radiology</h3>
+                </div>
+                <div class="service-card">
+                    <img src="svgs/plasticsurgery.svg" alt="Plastic Surgery"><h3>Plastic Surgery</h3>
+                </div>
+                <div class="service-card">
+                    <img src="svgs/neonatology.svg" alt="Neonatology"><h3>Neonatology</h3>
+                </div>
+                <div class="service-card">
+                    <img src="svgs/vascularsurgery.svg" alt="Vascular Surgery"><h3>Vascular Surgery</h3>
+                </div>
+                <div class="service-card">
+                    <img src="svgs/psychiatry.svg" alt="Psychiatry"><h3>Psychiatry</h3>
+                </div>
+                <div class="service-card">
+                    <img src="svgs/dentistry.svg" alt="Dentistry"><h3>Dentistry</h3>
+                </div>
+                <div class="service-card">
+                    <img src="svgs/ent.svg" alt="ENT"><h3>ENT (Ear, Nose, Throat)</h3>
+                </div>
+            </div>
+        </div>
+
+   
+    </section>
+=======
     <h2>Our Services</h2>
     <div class="services-grid">
         <div class="service-card">
@@ -527,6 +464,9 @@
 		toggleButton.textContent = isExpanded ? 'Show Less' : 'Show More';
 	});
 </script>
+>>>>>>> cd588e03281fce4f9f49e376b3da6b2922a5fd05
+
+
 
     <section id="doctors" class="doctors">
         <h2>Our Doctors</h2>
@@ -557,6 +497,8 @@
     </section>
 
 
+
+
     <section id="Location" class="Location">
 
         <div class="container">
@@ -566,9 +508,8 @@
             </p>
 
 
-            <div class="row">
+            <div class="locrow">
                 <!-- Location Icons -->
-                <div class="col-md-6" style="font-size: small">
                     <div class="locations-container" id="locations">
 
                         <div class="location-icon" onclick="showDetails('Ahmedabad')" data-location="Ahmedabad">
@@ -579,7 +520,7 @@
                             <img src="svgs/bangalore_city.svg" alt="Bangalore Icon" width="80" height="80">
                             <p>Bangalore</p>
                         </div>
-                      
+
                         <div class="location-icon" onclick="showDetails('Aragonda')" data-location="Aragonda">
                             <img src="svgs/ahmedabad_city.svg" alt="Aragonda Icon" width="80" height="80">
                             <p>Aragonda</p>
@@ -592,7 +533,7 @@
                             <img src="svgs/bangalore_city.svg" alt="Bilaspur Icon" width="80" height="80">
                             <p>Bilaspur</p>
                         </div>
-                      
+
                         <div class="location-icon" onclick="showDetails('Delhi')" data-location="Delhi">
                             <img src="svgs/delhi_city.svg" alt="Delhi Icon" width="80" height="80">
                             <p>Delhi</p>
@@ -653,20 +594,19 @@
                             <img src="svgs/delhi_city.svg" alt="Noida Icon" width="80" height="80">
                             <p>Noida</p>
                         </div>
-                        
+
 
                     </div>
-                </div>
 
                 <!-- Location Details -->
-                <div class="col-md-6">
                     <div class="details-container" id="location-details">
                         <h4>Ahmedabad</h4>
 
-                       <div class="imgcon"> <img class="locimg"  src="https://cdn.apollohospitals.com/apollohospitals/apollo-prohealth/ah/location.jpg" alt="Ahemdabad Image">
-                       </div> <p class ="locaddress">📍Plot No.1A, Bhat GIDC Estate, Gandhinagar – 382428, Gujarat, India.</p>
+                        <div class="imgcon">
+                            <img class="locimg" src="https://cdn.apollohospitals.com/apollohospitals/apollo-prohealth/ah/location.jpg" alt="Ahemdabad Image">
+                        </div>
+                        <p class="locaddress">📍Plot No.1A, Bhat GIDC Estate, Gandhinagar – 382428, Gujarat, India.</p>
                     </div>
-                </div>
 
             </div>
         </div>
@@ -674,7 +614,7 @@
 
     </section>
 
- 
+
 
 
 
