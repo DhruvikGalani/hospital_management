@@ -18,8 +18,6 @@
             background-color: #f8f9fa;
         }
 
-       
-
         .dashboard-card {
             padding: 40px;
             text-align: center;

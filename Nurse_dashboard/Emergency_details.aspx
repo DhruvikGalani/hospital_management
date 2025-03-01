@@ -5,7 +5,7 @@
 <head>
 	<meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🚑 Emergency Management | Hospital Management System</title>
+    <title>⚠️ Emergency Management | Hospital Management System</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         .container {
@@ -15,11 +15,11 @@
 </head>
 <body>
    
-   
-        <form runat="server">
-             <div class="container">
-     <h2 class="text-center text-primary">Emergency Management</h2>
-        
+    <form runat="server">
+             <div class="container mt-5">
+     <h2 class="text-center text-primary">⚠️Emergency Management</h2>
+                    <div class="card shadow-lg p-4">
+
             <div class="row">
                 <div class="col-md-6">
                     <label>Patient ID:</label>
@@ -67,6 +67,7 @@
             </div>
 
             <asp:Label ID="lblMessage" runat="server" CssClass="mt-3"></asp:Label>
+                        </div>
 
             <h3 class="mt-5 text-center text-success">Emergency Cases</h3>
        <asp:GridView ID="gvEmergency" runat="server" CssClass="table table-bordered table-striped mt-3"
