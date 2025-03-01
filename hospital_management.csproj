@@ -150,6 +150,9 @@
     <Content Include="Images\Noida_HMS.png" />
     <Content Include="Laboratorytest.aspx" />
     <Content Include="nurse.aspx" />
+    <Content Include="Nurse_dashboard\Ambulance_details.aspx" />
+    <Content Include="Nurse_dashboard\Emergency_details.aspx" />
+    <Content Include="Nurse_dashboard\homepage.aspx" />
     <Content Include="Nurse_dashboard\nurse_dashboard.aspx" />
     <Content Include="Nurse_dashboard\nurse_details.aspx" />
     <Content Include="pages\LoginPage.aspx" />
@@ -314,6 +317,27 @@
     </Compile>
     <Compile Include="nurse.aspx.designer.cs">
       <DependentUpon>nurse.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Nurse_dashboard\Ambulance_details.aspx.cs">
+      <DependentUpon>Ambulance_details.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Nurse_dashboard\Ambulance_details.aspx.designer.cs">
+      <DependentUpon>Ambulance_details.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Nurse_dashboard\Emergency_details.aspx.cs">
+      <DependentUpon>Emergency_details.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Nurse_dashboard\Emergency_details.aspx.designer.cs">
+      <DependentUpon>Emergency_details.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Nurse_dashboard\homepage.aspx.cs">
+      <DependentUpon>homepage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Nurse_dashboard\homepage.aspx.designer.cs">
+      <DependentUpon>homepage.aspx</DependentUpon>
     </Compile>
     <Compile Include="Nurse_dashboard\nurse_dashboard.aspx.cs">
       <DependentUpon>nurse_dashboard.aspx</DependentUpon>

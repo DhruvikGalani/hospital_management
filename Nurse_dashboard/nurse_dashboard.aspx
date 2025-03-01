@@ -1,4 +1,5 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="nurse_dashboard.aspx.cs" Inherits="hospital_management.Nurse_dashboard.nurse_dashboard" %>
+﻿ś<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="nurse_dashboard.aspx.cs" Inherits="hospital_management.Nurse_dashboard.nurse_dashboard" %>
+
 
 
 
@@ -7,9 +8,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nurse Dashboard | Hospital Management System</title>
+    <title> 👩‍⚕️Nurse Dashboard | Hospital Management System</title>
     <link rel="stylesheet" href="bootstrap.min.css">
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
 
 <style>
     /* Sidebar */
@@ -77,6 +79,13 @@
         border: none;
         background: white;
     }
+    .sidebar ul li a {
+    font-size: 18px;
+}
+
+.sidebar ul li a::before {
+    margin-right: 10px;
+}
 
 </style>    
     
@@ -87,16 +96,15 @@
     <!-- Sidebar Navigation -->
     <div class="sidebar">
         <h2>HMS - Nurse</h2>
-        <ul>
-                        <li><a href="home.aspx" target="contentFrame"><i class="fas fa-user-home"></i> Home</a></li>
+                  <ul>
+    <li><a href="homepage.aspx" target="contentFrame">🚑 Home</a></li>
+    <li><a href="Ambulance_details.aspx" target="contentFrame">🚑 Ambulance Services</a></li>
+    <li><a href="Emergency_details.aspx" target="contentFrame">⚠️ Emergency Cases</a></li>
+    <li><a href="laboratoryTest.aspx" target="contentFrame">🧪 Laboratory Management</a></li>
+    <li><a href="#" target="contentFrame">💊 Pharmacy Cases</a></li>
+    <li><a href="login.aspx">🚪 Logout</a></li>
+</ul>
 
-            <li><a href="nurse_details.aspx" target="contentFrame"><i class="fas fa-user-nurse"></i> Nurse Details</a></li>
-            <li><a href=".aspx" target="contentFrame"><i class="fas fa-ambulance"></i> Ambulance Services</a></li>
-            <li><a href=".aspx" target="contentFrame"><i class="fas fa-flask"></i> Emergency Management</a></li>
-            <li><a href="laboratoryTest.aspx" target="contentFrame"><i class="fas fa-utensils"></i> Laboratory Management</a></li>
-            <li><a href=".aspx" target="contentFrame"><i class="fas fa-exclamation-triangle"></i> Pharmacy Cases</a></li>
-            <li><a href=".aspx"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
-        </ul>
     </div>
 
     <!-- Main Content -->
@@ -107,10 +115,11 @@
 
         <!-- Iframe to load pages without redirecting -->
     
-        <iframe name="contentFrame" class="content-frame" src="nurse_details.aspx"></iframe>
+        <iframe name="contentFrame" class="content-frame" src="homepage.aspx"></iframe>
 
     </div>
 
 </body>
 </html>
+
 
