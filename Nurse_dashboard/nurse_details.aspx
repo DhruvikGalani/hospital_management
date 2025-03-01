@@ -4,11 +4,11 @@
 
 
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nurse Management | Hospital Management System</title>
+    <title>👩‍⚕️Nurse Management | Hospital Management System</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         .container {
@@ -19,7 +19,8 @@
 <body>
     <form id="form1" runat="server">
         <div class="container">
-            <h2 class="text-center text-primary">Nurse Management</h2>
+
+            <h2 class="text-center text-primary">👩‍⚕️Nurse Management</h2>
             <div class="card p-4 shadow">
                 <div class="row">
                     <div class="col-md-6">
@@ -39,7 +40,7 @@
                         <asp:FileUpload ID="FileUploadProfile" runat="server" CssClass="form-control mb-3" />
                     </div>
                 </div>
-
+                
                 <div class="text-center">
                     <asp:Button ID="btnAddNurse" runat="server" CssClass="btn btn-primary" Text="Add Nurse" OnClick="btnAddNurse_Click" />
                 </div>
@@ -91,7 +92,6 @@
 
                     <asp:BoundField DataField="gender" HeaderText="Gender" />
                    
-                    <asp:BoundField DataField="contactNumber" HeaderText="Contact" />
                     <asp:CommandField ShowEditButton="True" ShowDeleteButton="True" />
                 </Columns>
             </asp:GridView>
