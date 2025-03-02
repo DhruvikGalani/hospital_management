@@ -11,7 +11,7 @@ namespace hospital_management.Nurse_dashboard
 {
 
 
-    public partial class Emergency_details
+    public partial class Emergency
     {
 
         /// <summary>

@@ -6,9 +6,9 @@ using System.Web.UI.WebControls;
 
 namespace hospital_management.Nurse_dashboard
 {
-    public partial class Emergency_details : System.Web.UI.Page
+    public partial class Emergency : System.Web.UI.Page
     {
-        SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["MyConnectionString"].ConnectionString);
+        SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["MyConnectionString"].ConnectionString);
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -22,7 +22,7 @@ namespace hospital_management.Nurse_dashboard
 
         void BindPatientID()
         {
-            SqlDataAdapter da = new SqlDataAdapter("SELECT patientID, name FROM tbl_Patients", con);
+            SqlDataAdapter da = new SqlDataAdapter("SELECT patientID, name FROM tbl_Patients", conn);
             DataTable dt = new DataTable();
             da.Fill(dt);
             ddlPatientID.DataSource = dt;
@@ -34,7 +34,7 @@ namespace hospital_management.Nurse_dashboard
 
         void BindAmbulanceID()
         {
-            SqlDataAdapter da = new SqlDataAdapter("SELECT ambulanceID,driverName FROM tbl_Ambulances", con);
+            SqlDataAdapter da = new SqlDataAdapter("SELECT ambulanceID,driverName FROM tbl_Ambulances", conn);
             DataTable dt = new DataTable();
             da.Fill(dt);
             ddlAmbulanceID.DataSource = dt;
@@ -48,8 +48,8 @@ namespace hospital_management.Nurse_dashboard
         {
             try
             {
-                con.Open();
-                SqlCommand cmd = new SqlCommand("INSERT INTO tbl_EmergencyManagement(patientID, ambulanceID, patientName, contactNumber, reportedSymptoms, location, arrivalTime) VALUES (@patientID, @ambulanceID, @patientName, @contactNumber, @reportedSymptoms, @location, @arrivalTime)", con);
+                conn.Open();
+                SqlCommand cmd = new SqlCommand("INSERT INTO tbl_EmergencyManagement(patientID, ambulanceID, patientName, contactNumber, reportedSymptoms, location, arrivalTime) VALUES (@patientID, @ambulanceID, @patientName, @contactNumber, @reportedSymptoms, @location, @arrivalTime)", conn);
                 cmd.Parameters.AddWithValue("@patientID", ddlPatientID.SelectedValue);
                 cmd.Parameters.AddWithValue("@ambulanceID", ddlAmbulanceID.SelectedValue);
                 cmd.Parameters.AddWithValue("@patientName", txtPatientName.Text);
@@ -71,7 +71,7 @@ namespace hospital_management.Nurse_dashboard
             }
             finally
             {
-                con.Close();
+                conn.Close();
             }
         }
         protected void gvEmergency_RowEditing(object sender, GridViewEditEventArgs e)
@@ -102,7 +102,7 @@ namespace hospital_management.Nurse_dashboard
                 if (txtName != null && txtContact != null && txtLocation != null && txtArrival != null)
                 {
                     string query = "UPDATE tbl_EmergencyManagement SET patientName=@patientName, contactNumber=@contactNumber, location=@location, arrivalTime=@arrivalTime WHERE emergencyCaseID=@emergencyCaseID";
-                    SqlCommand cmd = new SqlCommand(query, con);
+                    SqlCommand cmd = new SqlCommand(query, conn);
 
                     cmd.Parameters.AddWithValue("@patientName", txtName.Text);
                     cmd.Parameters.AddWithValue("@contactNumber", txtContact.Text);
@@ -110,9 +110,9 @@ namespace hospital_management.Nurse_dashboard
                     cmd.Parameters.AddWithValue("@arrivalTime", txtArrival.Text);
                     cmd.Parameters.AddWithValue("@emergencyCaseID", emergencyCaseID);
 
-                    con.Open();
+                    conn.Open();
                     cmd.ExecuteNonQuery();
-                    con.Close();
+                    conn.Close();
 
                     gvEmergency.EditIndex = -1;
                     BindGridView();
@@ -138,11 +138,11 @@ namespace hospital_management.Nurse_dashboard
         {
             int emergencyCaseID = Convert.ToInt32(gvEmergency.DataKeys[e.RowIndex].Value);
 
-            con.Open();
-            SqlCommand cmd = new SqlCommand("DELETE FROM tbl_EmergencyManagement WHERE emergencyCaseID=@ID", con);
+            conn.Open();
+            SqlCommand cmd = new SqlCommand("DELETE FROM tbl_EmergencyManagement WHERE emergencyCaseID=@ID", conn);
             cmd.Parameters.AddWithValue("@ID", emergencyCaseID);
             cmd.ExecuteNonQuery();
-            con.Close();
+            conn.Close();
 
             BindGridView();
             lblMessage.Text = "❌ Emergency Case Deleted Successfully!";
@@ -152,7 +152,7 @@ namespace hospital_management.Nurse_dashboard
 
         void BindGridView()
         {
-            SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM tbl_EmergencyManagement", con);
+            SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM tbl_EmergencyManagement", conn);
             DataTable dt = new DataTable();
             da.Fill(dt);
             gvEmergency.DataSource = dt;
