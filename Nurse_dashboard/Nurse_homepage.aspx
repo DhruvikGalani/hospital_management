@@ -112,7 +112,7 @@
 
         <!-- Iframe to load pages without redirecting -->
     
-        <iframe name="contentFrame" class="content-frame" src="homepage1.aspx"></iframe>
+        <iframe name="contentFrame" class="content-frame" src="homepage.aspx"></iframe>
 
     </div>
 
