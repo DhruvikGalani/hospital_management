@@ -1,9 +1,11 @@
-﻿﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="homePage.aspx.cs" Inherits="hospital_management.homePage" %>
+﻿
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="homePage.aspx.cs" Inherits="hospital_management.homePage" %>
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <style>
+               
         h2 {
             font-size: 2.2rem;
             font-weight: bold;
@@ -239,7 +241,6 @@
             </object>
             <h1>Infinity Health Care</h1>
         </div>
-
         <nav class="nav">
             <ul>
                 <li><a href="#home">Home</a></li>
@@ -248,6 +249,7 @@
                 <li><a href="#doctors">Doctors</a></li>
                 <li><a href="#appointments">Appointments</a></li>
                 <li><a href="#contact">Contact</a></li>
+               <li><a href="Nurse_dashboard/login.aspx">Login</a></li>
             </ul>
         </nav>
     </header>
@@ -570,6 +572,9 @@
 
         </div>
     </section>
+
+    
+    
     <footer class="footer">
         <div class="contact-info">
             <h3>Contact Us</h3>
