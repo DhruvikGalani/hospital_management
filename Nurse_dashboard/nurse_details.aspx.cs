@@ -8,8 +8,7 @@ namespace hospital_management.Nurse_dashboard
 {
     public partial class nurse_details : System.Web.UI.Page
     {
-        string connString = ConfigurationManager.ConnectionStrings["MyConnectionString"].ConnectionString;
-
+        SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["MyConnectionString"].ConnectionString);
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -20,10 +19,10 @@ namespace hospital_management.Nurse_dashboard
 
         protected void LoadNurses()
         {
-            using (SqlConnection conn = new SqlConnection(connString))
+            using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["MyConnectionString"].ConnectionString))
             {
                 string query = "SELECT nurseID, name, age, gender, address, email, contactNumber, profile FROM tbl_Nurse";
-                SqlDataAdapter da = new SqlDataAdapter(query, conn);
+                SqlDataAdapter da = new SqlDataAdapter(query, con);
                 DataTable dt = new DataTable();
                 da.Fill(dt);
                 gvNurses.DataSource = dt;
@@ -48,12 +47,12 @@ namespace hospital_management.Nurse_dashboard
                 FileUploadProfile.SaveAs(Server.MapPath(profilePath));
             }
 
-            using (SqlConnection conn = new SqlConnection(connString))
+            using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["MyConnectionString"].ConnectionString))
             {
                 string query = "INSERT INTO tbl_Nurse (name, age, gender, address, email, password, contactNumber, profile) " +
                 "VALUES (@Name, @Age, @Gender, @Address, @Email, @Password, @Contact, @Profile)";
 
-                SqlCommand cmd = new SqlCommand(query, conn);
+                SqlCommand cmd = new SqlCommand(query, con);
                 cmd.Parameters.AddWithValue("@Name", txtName.Text.Trim());
                 cmd.Parameters.AddWithValue("@Age", txtAge.Text.Trim());
                 cmd.Parameters.AddWithValue("@Gender", ddlGender.SelectedValue);
@@ -63,9 +62,9 @@ namespace hospital_management.Nurse_dashboard
                 cmd.Parameters.AddWithValue("@Contact", txtContact.Text.Trim());
                 cmd.Parameters.AddWithValue("@Profile", profilePath);
 
-                conn.Open();
+                con.Open();
                 cmd.ExecuteNonQuery();
-                conn.Close();
+                con.Close();
 
                 Response.Write("<script>alert('Nurse Added Successfully');</script>");
                 ClearFields();
@@ -94,19 +93,19 @@ namespace hospital_management.Nurse_dashboard
             string address = ((TextBox)row.FindControl("txtAddressEdit")).Text;
             string contact = ((TextBox)row.FindControl("txtContactEdit")).Text;
 
-            using (SqlConnection conn = new SqlConnection(connString))
+            using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["MyConnectionString"].ConnectionString))
             {
                 string query = "UPDATE tbl_Nurse SET name=@Name, age=@Age, address=@Address, contactNumber=@Contact WHERE nurseID=@NurseID";
-                SqlCommand cmd = new SqlCommand(query, conn);
+                SqlCommand cmd = new SqlCommand(query, con);
                 cmd.Parameters.AddWithValue("@Name", name);
                 cmd.Parameters.AddWithValue("@Age", age);
                 cmd.Parameters.AddWithValue("@Address", address);
                 cmd.Parameters.AddWithValue("@Contact", contact);
                 cmd.Parameters.AddWithValue("@NurseID", nurseID);
 
-                conn.Open();
+                con.Open();
                 cmd.ExecuteNonQuery();
-                conn.Close();
+                con.Close();
             }
 
             gvNurses.EditIndex = -1;
@@ -117,15 +116,15 @@ namespace hospital_management.Nurse_dashboard
         {
             int nurseID = Convert.ToInt32(gvNurses.DataKeys[e.RowIndex].Value);
 
-            using (SqlConnection conn = new SqlConnection(connString))
+            using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["MyConnectionString"].ConnectionString))
             {
                 string query = "DELETE FROM tbl_Nurse WHERE nurseID=@NurseID";
-                SqlCommand cmd = new SqlCommand(query, conn);
+                SqlCommand cmd = new SqlCommand(query, con);
                 cmd.Parameters.AddWithValue("@NurseID", nurseID);
 
-                conn.Open();
+                con.Open();
                 cmd.ExecuteNonQuery();
-                conn.Close();
+                con.Close();
             }
 
             Response.Write("<script>alert('Nurse Deleted Successfully');</script>");
