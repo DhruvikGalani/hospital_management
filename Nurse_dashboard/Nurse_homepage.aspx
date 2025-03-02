@@ -1,4 +1,4 @@
-﻿ś<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Nurse_homepage.aspx.cs" Inherits="hospital_management.Nurse_dashboard.Nurse_homepage" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Nurse_homepage.aspx.cs" Inherits="hospital_management.Nurse_dashboard.Nurse_homepage" %>
 
 
 

@@ -322,42 +322,49 @@
     </Compile>
     <Compile Include="Nurse_dashboard\Ambulance_details.aspx.cs">
       <DependentUpon>Ambulance_details.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Nurse_dashboard\Ambulance_details.aspx.designer.cs">
       <DependentUpon>Ambulance_details.aspx</DependentUpon>
     </Compile>
     <Compile Include="Nurse_dashboard\Emergency_details.aspx.cs">
       <DependentUpon>Emergency_details.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Nurse_dashboard\Emergency_details.aspx.designer.cs">
       <DependentUpon>Emergency_details.aspx</DependentUpon>
     </Compile>
     <Compile Include="Nurse_dashboard\homepage.aspx.cs">
       <DependentUpon>homepage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Nurse_dashboard\homepage.aspx.designer.cs">
       <DependentUpon>homepage.aspx</DependentUpon>
     </Compile>
     <Compile Include="Nurse_dashboard\laboratorytest_details.aspx.cs">
       <DependentUpon>laboratorytest_details.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Nurse_dashboard\laboratorytest_details.aspx.designer.cs">
       <DependentUpon>laboratorytest_details.aspx</DependentUpon>
     </Compile>
     <Compile Include="Nurse_dashboard\login.aspx.cs">
       <DependentUpon>login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Nurse_dashboard\login.aspx.designer.cs">
       <DependentUpon>login.aspx</DependentUpon>
     </Compile>
     <Compile Include="Nurse_dashboard\nurse_details.aspx.cs">
       <DependentUpon>nurse_details.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Nurse_dashboard\nurse_details.aspx.designer.cs">
       <DependentUpon>nurse_details.aspx</DependentUpon>
     </Compile>
     <Compile Include="Nurse_dashboard\Nurse_homepage.aspx.cs">
       <DependentUpon>Nurse_homepage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Nurse_dashboard\Nurse_homepage.aspx.designer.cs">
       <DependentUpon>Nurse_homepage.aspx</DependentUpon>
