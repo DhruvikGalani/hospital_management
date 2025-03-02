@@ -98,7 +98,7 @@
                   <ul>
     <li><a href="homepage1.aspx" target="contentFrame">🚑 Home</a></li>
     <li><a href="Ambulance_details.aspx" target="contentFrame">🚑 Ambulance Services</a></li>
-    <li><a href="Emergency.aspx" target="contentFrame">⚠️ Emergency Cases</a></li>
+    <li><a href="Emergency_details.aspx" target="contentFrame">⚠️ Emergency Cases</a></li>
     <li><a href="laboratorytest_details.aspx" target="contentFrame">🧪 Laboratory Management</a></li>
 </ul>
 
