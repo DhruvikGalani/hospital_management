@@ -1,4 +1,5 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="homepage.aspx.cs" Inherits="hospital_management.Nurse_dashboard.home_page" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="homepage1.aspx.cs" Inherits="hospital_management.Nurse_dashboard.homepage1" %>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -13,7 +14,6 @@
         body {
             background-color: #f8f9fa;
         }
-
 
         .dashboard-card {
             padding: 40px;

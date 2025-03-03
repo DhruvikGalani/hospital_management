@@ -1,4 +1,4 @@
-﻿ś<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Nurse_homepage.aspx.cs" Inherits="hospital_management.Nurse_dashboard.Nurse_homepage" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Nurse_homepage.aspx.cs" Inherits="hospital_management.Nurse_dashboard.Nurse_homepage" %>
 
 
 
@@ -9,7 +9,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> 👩‍⚕️Nurse Dashboard | Hospital Management System</title>
-    <link rel="stylesheet" href="bootstrap.min.css">
+    <link rel="stylesheet" href="https://bootstrap.min.css">
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
 
