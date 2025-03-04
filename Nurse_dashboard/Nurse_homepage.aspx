@@ -100,6 +100,8 @@
     <li><a href="Ambulance_details.aspx" target="contentFrame">🚑 Ambulance Services</a></li>
     <li><a href="Emergency_details.aspx" target="contentFrame">⚠️ Emergency Cases</a></li>
     <li><a href="laboratorytest_details.aspx" target="contentFrame">🧪 Laboratory Management</a></li>
+    <li><a href="profile.aspx" target="contentFrame">👤 My Profile</a></li>
+
 </ul>
 
     </div>
