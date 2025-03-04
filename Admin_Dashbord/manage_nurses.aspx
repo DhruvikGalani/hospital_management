@@ -1,19 +1,14 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="nurse_details.aspx.cs" Inherits="hospital_management.Nurse_dashboard.nurse_details" %>
-
-
-
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="manage_nurses.aspx.cs" Inherits="hospital_management.Admin_Dashbord.manage_nurses" %>
 
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>👩‍⚕️Nurse Management | Hospital Management System</title>
+    <title>Nurse Management | Hospital Management System</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <style>
-
-
         .container {
             margin-top: 50px;
         }
@@ -43,58 +38,58 @@
                         <asp:FileUpload ID="FileUploadProfile" runat="server" CssClass="form-control mb-3" />
                     </div>
                 </div>
-                
+
                 <div class="text-center">
                     <asp:Button ID="btnAddNurse" runat="server" CssClass="btn btn-primary" Text="Add Nurse" OnClick="btnAddNurse_Click" />
                 </div>
             </div>
 
             <h3 class="mt-5 text-center text-success">Nurse Details</h3>
-           <asp:GridView ID="gvNurses" runat="server" CssClass="table table-bordered table-striped mt-3" AutoGenerateColumns="False" DataKeyNames="nurseID"
-    OnRowEditing="gvNurses_RowEditing"
-    OnRowUpdating="gvNurses_RowUpdating"
-    OnRowDeleting="gvNurses_RowDeleting"
-    OnRowCancelingEdit="gvNurses_RowCancelingEdit">
+            <asp:GridView ID="gvNurses" runat="server" CssClass="table table-bordered table-striped mt-3" AutoGenerateColumns="False" DataKeyNames="nurseID"
+                OnRowEditing="gvNurses_RowEditing"
+                OnRowUpdating="gvNurses_RowUpdating"
+                OnRowDeleting="gvNurses_RowDeleting"
+                OnRowCancelingEdit="gvNurses_RowCancelingEdit">
 
                 <Columns>
-                   <asp:TemplateField HeaderText="Name">
-    <ItemTemplate>
-        <%# Eval("name") %>
-    </ItemTemplate>
-    <EditItemTemplate>
-        <asp:TextBox ID="txtNameEdit" runat="server" Text='<%# Bind("name") %>' CssClass="form-control"></asp:TextBox>
-    </EditItemTemplate>
-</asp:TemplateField>
+                    <asp:TemplateField HeaderText="Name">
+                        <ItemTemplate>
+                            <%# Eval("name") %>
+                        </ItemTemplate>
+                        <EditItemTemplate>
+                            <asp:TextBox ID="txtNameEdit" runat="server" Text='<%# Bind("name") %>' CssClass="form-control"></asp:TextBox>
+                        </EditItemTemplate>
+                    </asp:TemplateField>
 
-<asp:TemplateField HeaderText="Age">
-    <ItemTemplate>
-        <%# Eval("age") %>
-    </ItemTemplate>
-    <EditItemTemplate>
-        <asp:TextBox ID="txtAgeEdit" runat="server" Text='<%# Bind("age") %>' CssClass="form-control"></asp:TextBox>
-    </EditItemTemplate>
-</asp:TemplateField>
+                    <asp:TemplateField HeaderText="Age">
+                        <ItemTemplate>
+                            <%# Eval("age") %>
+                        </ItemTemplate>
+                        <EditItemTemplate>
+                            <asp:TextBox ID="txtAgeEdit" runat="server" Text='<%# Bind("age") %>' CssClass="form-control"></asp:TextBox>
+                        </EditItemTemplate>
+                    </asp:TemplateField>
 
-<asp:TemplateField HeaderText="Address">
-    <ItemTemplate>
-        <%# Eval("address") %>
-    </ItemTemplate>
-    <EditItemTemplate>
-        <asp:TextBox ID="txtAddressEdit" runat="server" Text='<%# Bind("address") %>' CssClass="form-control"></asp:TextBox>
-    </EditItemTemplate>
-</asp:TemplateField>
+                    <asp:TemplateField HeaderText="Address">
+                        <ItemTemplate>
+                            <%# Eval("address") %>
+                        </ItemTemplate>
+                        <EditItemTemplate>
+                            <asp:TextBox ID="txtAddressEdit" runat="server" Text='<%# Bind("address") %>' CssClass="form-control"></asp:TextBox>
+                        </EditItemTemplate>
+                    </asp:TemplateField>
 
-<asp:TemplateField HeaderText="Contact">
-    <ItemTemplate>
-        <%# Eval("contactNumber") %>
-    </ItemTemplate>
-    <EditItemTemplate>
-        <asp:TextBox ID="txtContactEdit" runat="server" Text='<%# Bind("contactNumber") %>' CssClass="form-control"></asp:TextBox>
-    </EditItemTemplate>
-</asp:TemplateField>
+                    <asp:TemplateField HeaderText="Contact">
+                        <ItemTemplate>
+                            <%# Eval("contactNumber") %>
+                        </ItemTemplate>
+                        <EditItemTemplate>
+                            <asp:TextBox ID="txtContactEdit" runat="server" Text='<%# Bind("contactNumber") %>' CssClass="form-control"></asp:TextBox>
+                        </EditItemTemplate>
+                    </asp:TemplateField>
 
                     <asp:BoundField DataField="gender" HeaderText="Gender" />
-                   
+
                     <asp:CommandField ShowEditButton="True" ShowDeleteButton="True" />
                 </Columns>
             </asp:GridView>

@@ -70,6 +70,9 @@
   <ItemGroup>
     <Content Include="Admin\Billing.aspx" />
     <Content Include="Admin\StaffInformation.aspx" />
+    <Content Include="Admin_Dashbord\Admin_DashBordPage.aspx" />
+    <Content Include="Admin_Dashbord\admin_homePage.aspx" />
+    <Content Include="Admin_Dashbord\manage_nurses.aspx" />
     <Content Include="App_Data\db_HMS.mdf" />
     <Content Include="App_Data\db_HMS_log.ldf">
       <DependentUpon>db_HMS.mdf</DependentUpon>
@@ -157,7 +160,6 @@
     <Content Include="Nurse_dashboard\login.aspx" />
     <Content Include="Nurse_dashboard\Nurse_homepage.aspx" />
     <Content Include="Nurse_dashboard\nurse_details.aspx" />
-    <Content Include="Nurse_dashboard\profile.aspx" />
     <Content Include="pages\LoginPage.aspx" />
     <Content Include="pages\RegisterPage.aspx" />
     <Content Include="Patient\Appointments.aspx" />
@@ -265,6 +267,27 @@
     <Compile Include="Admin\StaffInformation.aspx.designer.cs">
       <DependentUpon>StaffInformation.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Admin_Dashbord\Admin_DashBordPage.aspx.cs">
+      <DependentUpon>Admin_DashBordPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin_Dashbord\Admin_DashBordPage.aspx.designer.cs">
+      <DependentUpon>Admin_DashBordPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin_Dashbord\admin_homePage.aspx.cs">
+      <DependentUpon>admin_homePage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin_Dashbord\admin_homePage.aspx.designer.cs">
+      <DependentUpon>admin_homePage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin_Dashbord\manage_nurses.aspx.cs">
+      <DependentUpon>manage_nurses.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin_Dashbord\manage_nurses.aspx.designer.cs">
+      <DependentUpon>manage_nurses.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Doctor\DoctorDetails.aspx.cs">
       <DependentUpon>DoctorDetails.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -369,13 +392,6 @@
     </Compile>
     <Compile Include="Nurse_dashboard\nurse_details.aspx.designer.cs">
       <DependentUpon>nurse_details.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Nurse_dashboard\profile.aspx.cs">
-      <DependentUpon>profile.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Nurse_dashboard\profile.aspx.designer.cs">
-      <DependentUpon>profile.aspx</DependentUpon>
     </Compile>
     <Compile Include="pages\LoginPage.aspx.cs">
       <DependentUpon>LoginPage.aspx</DependentUpon>

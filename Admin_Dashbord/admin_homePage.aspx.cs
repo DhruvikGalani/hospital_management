@@ -5,9 +5,9 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace hospital_management.Nurse_dashboard
+namespace hospital_management.Admin_Dashbord
 {
-    public partial class  Nurse_homepage : System.Web.UI.Page
+    public partial class admin_homePage : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
