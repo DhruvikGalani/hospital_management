@@ -70,9 +70,6 @@
   <ItemGroup>
     <Content Include="Admin\Billing.aspx" />
     <Content Include="Admin\StaffInformation.aspx" />
-    <Content Include="Admin_Dashbord\Admin_DashBordPage.aspx" />
-    <Content Include="Admin_Dashbord\admin_homePage.aspx" />
-    <Content Include="Admin_Dashbord\manage_nurses.aspx" />
     <Content Include="App_Data\db_HMS.mdf" />
     <Content Include="App_Data\db_HMS_log.ldf">
       <DependentUpon>db_HMS.mdf</DependentUpon>
@@ -114,6 +111,8 @@
     <Content Include="Images\Bilaspur_HMS.jpg" />
     <Content Include="Images\checkup_svg.svg" />
     <Content Include="Images\Delhi_HMS.jpg" />
+    <Content Include="Images\doctorbg.jpg" />
+    <Content Include="Images\Doctor_stethoscope.jpg" />
     <Content Include="Images\doctor_svg.svg" />
     <Content Include="Images\doctor_team.jpg" />
     <Content Include="Images\doctor_team2.jpg" />
@@ -266,27 +265,6 @@
     </Compile>
     <Compile Include="Admin\StaffInformation.aspx.designer.cs">
       <DependentUpon>StaffInformation.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Admin_Dashbord\Admin_DashBordPage.aspx.cs">
-      <DependentUpon>Admin_DashBordPage.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Admin_Dashbord\Admin_DashBordPage.aspx.designer.cs">
-      <DependentUpon>Admin_DashBordPage.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Admin_Dashbord\admin_homePage.aspx.cs">
-      <DependentUpon>admin_homePage.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Admin_Dashbord\admin_homePage.aspx.designer.cs">
-      <DependentUpon>admin_homePage.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Admin_Dashbord\manage_nurses.aspx.cs">
-      <DependentUpon>manage_nurses.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Admin_Dashbord\manage_nurses.aspx.designer.cs">
-      <DependentUpon>manage_nurses.aspx</DependentUpon>
     </Compile>
     <Compile Include="Doctor\DoctorDetails.aspx.cs">
       <DependentUpon>DoctorDetails.aspx</DependentUpon>

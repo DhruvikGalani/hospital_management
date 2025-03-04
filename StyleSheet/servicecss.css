@@ -56,25 +56,7 @@
         text-align: center;
         font-weight: 500;
     }
-.view-more-container {
-    text-align: left;
-    margin-top: 20px;
-}
 
-.view-more-btn {
-    background-color: transparent;
-    color: #ed7b28;
-    border: 2px solid #ed7b28;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1rem;
-}
-
-    .view-more-btn:hover {
-        background-color: #ed7b28;
-        color: white;
-    }
 @media (max-width: 1024px) {
     .services-container {
         flex-direction: column;
