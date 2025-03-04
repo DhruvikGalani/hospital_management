@@ -20,8 +20,8 @@
                     <div class="card-body">
                         <asp:Label ID="lblMessage" runat="server" Text="" ForeColor="Red"></asp:Label>
                         <div class="form-group">
-                            <label for="txtEmail">User ID:</label>
-                            <asp:TextBox ID="txtEmail" runat="server" CssClass="form-control"></asp:TextBox>
+                            <label for="txtNurseID">User ID:</label>
+                            <asp:TextBox ID="txtNurseID" runat="server" CssClass="form-control"></asp:TextBox>
                         </div>
                         <div class="form-group">
                             <label for="txtpassword">Password:</label>
