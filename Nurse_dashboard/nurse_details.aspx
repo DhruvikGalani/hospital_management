@@ -93,6 +93,7 @@
     </EditItemTemplate>
 </asp:TemplateField>
 
+
                     <asp:BoundField DataField="gender" HeaderText="Gender" />
                    
                     <asp:CommandField ShowEditButton="True" ShowDeleteButton="True" />
