@@ -13,6 +13,5 @@ namespace hospital_management.Nurse_dashboard
         {
 
         }
-
     }
 }

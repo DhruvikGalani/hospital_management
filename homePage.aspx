@@ -1,5 +1,4 @@
-﻿
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="homePage.aspx.cs" Inherits="hospital_management.homePage" %>
+﻿﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="homePage.aspx.cs" Inherits="hospital_management.homePage" %>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -212,7 +211,63 @@
         // Call the function to attach events when DOM content is loaded
         document.addEventListener("DOMContentLoaded", attachIconClickEvents);
 
-
+        // for view more and less in services
+         document.addEventListener("DOMContentLoaded", function () {
+     const servicesGrid = document.getElementById("servicesGrid");
+     const viewMoreBtn = document.getElementById("viewMoreBtn");
+     const services = [
+         { img: "svgs/cardiology_icon.svg", name: "Cardiology" },
+         { img: "svgs/neurology.svg", name: "Neurology" },
+         { img: "svgs/gastroenterology.svg", name: "Gastroenterology" },
+         { img: "svgs/orthopaedic.svg", name: "Orthopedic" },
+         { img: "svgs/oncology_icon.svg", name: "Oncology" },
+         { img: "svgs/gynecology.svg", name: "Gynecology" },
+         { img: "svgs/dermatology.svg", name: "Dermatology" },
+         { img: "svgs/ophthalmology.svg", name: "Ophthalmology" },
+         { img: "svgs/paediatricurology.svg", name: "Pediatrics" },
+         { img: "svgs/endocrinology.svg", name: "Endocrinology" },
+         { img: "svgs/urology.svg", name: "Urology" },
+         { img: "svgs/nephrology.svg", name: "Nephrology" },
+         { img: "svgs/pulmonology.svg", name: "Pulmonology" },
+         { img: "svgs/rheumatology.svg", name: "Rheumatology" },
+         { img: "svgs/neurology.svg", name: "Neurosurgery" },
+         { img: "svgs/radiology.svg", name: "Radiology" },
+         { img: "svgs/plasticsurgery.svg", name: "Plastic Surgery" },
+         { img: "svgs/neonatology.svg", name: "Neonatology" },
+         { img: "svgs/vascularsurgery.svg", name: "Vascular Surgery" },
+         { img: "svgs/psychiatry.svg", name: "Psychiatry" },
+         { img: "svgs/dentistry.svg", name: "Dentistry" },
+         { img: "svgs/ent.svg", name: "ENT (Ear, Nose, Throat)" }
+     ];
+     
+     let expanded = false;
+     
+     function renderServices(limit) {
+         servicesGrid.innerHTML = "";
+         services.slice(0, limit).forEach(service => {
+             const serviceCard = document.createElement("div");
+             serviceCard.classList.add("service-card");
+             serviceCard.innerHTML = `
+                 <img src="${service.img}" alt="${service.name}">
+                 <h3>${service.name}</h3>
+             `;
+             servicesGrid.appendChild(serviceCard);
+         });
+     }
+     
+     renderServices(10);
+     
+     viewMoreBtn.addEventListener("click", function () {
+         if (expanded) {
+             renderServices(10);
+             viewMoreBtn.textContent = "View More";
+         } else {
+             renderServices(services.length);
+             viewMoreBtn.textContent = "View Less";
+         }
+         expanded = !expanded;
+     });
+ });
 
     </script>
 
@@ -249,7 +304,7 @@
                 <li><a href="#doctors">Doctors</a></li>
                 <li><a href="#appointments">Appointments</a></li>
                 <li><a href="#contact">Contact</a></li>
-               <li><a href="Nurse_dashboard/login.aspx">Login</a></li>
+                <li><a href="Nurse_dashboard/login.aspx">Login</a></li>
             </ul>
         </nav>
     </header>
@@ -269,7 +324,6 @@
             <button class="cta-button">Book Appointment</button>
         </div>
     </section>
-
     <section id="services" class="services">
         <div class="container">
             <h2>Explore our Centres of Clinical Excellence</h2>
@@ -281,96 +335,16 @@
             <div class="services-image">
                 <img class="serimg" src="Images/doctor_team3.jpg" alt="Doctor Consultation">
             </div>
-
-            <div class="services-grid">
-                <div class="service-card">
-                    <img src="svgs/cardiology_icon.svg" alt="Cardiology"><h3>Cardiology</h3>
+            <div>
+                <div class="services-grid" id="servicesGrid">
+                    <!-- Service cards here -->
                 </div>
-                <div class="service-card">
-                    <img src="svgs/neurology.svg" alt="Neurology"><h3>Neurology</h3>
-                </div>
-                <div class="service-card">
-                    <img src="svgs/gastroenterology.svg" alt="Gastroenterology"><h3>Gastroenterology</h3>
-                </div>
-                <div class="service-card">
-                    <img src="svgs/orthopaedic.svg" alt="Orthopedic"><h3>Orthopedic</h3>
-                </div>
-                <div class="service-card">
-                    <img src="svgs/oncology_icon.svg" alt="Oncology"><h3>Oncology</h3>
-                </div>
-                <div class="service-card">
-                    <img src="svgs/gynecology.svg" alt="Gynecology"><h3>Gynecology</h3>
-                </div>
-                <div class="service-card">
-                    <img src="svgs/dermatology.svg" alt="Dermatology"><h3>Dermatology</h3>
-                </div>
-                <div class="service-card">
-                    <img src="svgs/ophthalmology.svg" alt="Ophthalmology"><h3>Ophthalmology</h3>
-                </div>
-                <div class="service-card">
-                    <img src="svgs/paediatricurology.svg" alt="Pediatrics"><h3>Pediatrics</h3>
-                </div>
-                <div class="service-card">
-                    <img src="svgs/endocrinology.svg" alt="Endocrinology"><h3>Endocrinology</h3>
-                </div>
-                <div class="service-card">
-                    <img src="svgs/urology.svg" alt="Urology"><h3>Urology</h3>
-                </div>
-                <div class="service-card">
-                    <img src="svgs/nephrology.svg" alt="Nephrology"><h3>Nephrology</h3>
-                </div>
-                <div class="service-card">
-                    <img src="svgs/pulmonology.svg" alt="Pulmonology"><h3>Pulmonology</h3>
-                </div>
-                <div class="service-card">
-                    <img src="svgs/rheumatology.svg" alt="Rheumatology"><h3>Rheumatology</h3>
-                </div>
-                <div class="service-card">
-                    <img src="svgs/neurology.svg" alt="Neurosurgery"><h3>Neurosurgery</h3>
-                </div>
-                <div class="service-card">
-                    <img src="svgs/radiology.svg" alt="Radiology"><h3>Radiology</h3>
-                </div>
-                <div class="service-card">
-                    <img src="svgs/plasticsurgery.svg" alt="Plastic Surgery"><h3>Plastic Surgery</h3>
-                </div>
-                <div class="service-card">
-                    <img src="svgs/neonatology.svg" alt="Neonatology"><h3>Neonatology</h3>
-                </div>
-                <div class="service-card">
-                    <img src="svgs/vascularsurgery.svg" alt="Vascular Surgery"><h3>Vascular Surgery</h3>
-                </div>
-                <div class="service-card">
-                    <img src="svgs/psychiatry.svg" alt="Psychiatry"><h3>Psychiatry</h3>
-                </div>
-                <div class="service-card">
-                    <img src="svgs/dentistry.svg" alt="Dentistry"><h3>Dentistry</h3>
-                </div>
-                <div class="service-card">
-                    <img src="svgs/ent.svg" alt="ENT"><h3>ENT (Ear, Nose, Throat)</h3>
+                <div class="view-more-container">
+                    <button id="viewMoreBtn" class="view-more-btn">View More</button>
                 </div>
             </div>
         </div>
-
-   
     </section>
-
-<script>
-	const toggleButton = document.getElementById('toggleButton');
-	const serviceCards = document.querySelectorAll('.service-card');
-
-	let isExpanded = false;
-
-	toggleButton.addEventListener('click', () => {
-		isExpanded = !isExpanded;
-		serviceCards.forEach((card, index) => {
-			if (index >= 8) {
-				card.style.display = isExpanded ? 'block' : 'none';
-			}
-		});
-		toggleButton.textContent = isExpanded ? 'Show Less' : 'Show More';
-	});
-</script>
 
     <section id="doctors" class="doctors">
         <h2>Our Doctors</h2>
@@ -414,117 +388,109 @@
 
             <div class="locrow">
                 <!-- Location Icons -->
-                    <div class="locations-container" id="locations">
+                <div class="locations-container" id="locations">
 
-                        <div class="location-icon" onclick="showDetails('Ahmedabad')" data-location="Ahmedabad">
-                            <img src="svgs/ahmedabad_city.svg" alt="Ahmedabad Icon" width="80" height="80">
-                            <p>Ahmedabad</p>
-                        </div>
-                        <div class="location-icon" onclick="showDetails('Bangalore')" data-location="Bangalore">
-                            <img src="svgs/bangalore_city.svg" alt="Bangalore Icon" width="80" height="80">
-                            <p>Bangalore</p>
-                        </div>
-
-                        <div class="location-icon" onclick="showDetails('Aragonda')" data-location="Aragonda">
-                            <img src="svgs/ahmedabad_city.svg" alt="Aragonda Icon" width="80" height="80">
-                            <p>Aragonda</p>
-                        </div>
-                        <div class="location-icon" onclick="showDetails('Bhubaneshwar')" data-location="Bhubaneshwar">
-                            <img src="svgs/bhubaneshwar_city.svg" alt="Bhubaneshwar Icon" width="80" height="80">
-                            <p>Bhubaneshwar</p>
-                        </div>
-                        <div class="location-icon location-active" onclick="showDetails('Bilaspur')" data-location="Bilaspur">
-                            <img src="svgs/bangalore_city.svg" alt="Bilaspur Icon" width="80" height="80">
-                            <p>Bilaspur</p>
-                        </div>
-
-                        <div class="location-icon" onclick="showDetails('Delhi')" data-location="Delhi">
-                            <img src="svgs/delhi_city.svg" alt="Delhi Icon" width="80" height="80">
-                            <p>Delhi</p>
-                        </div>
-                        <div class="location-icon" onclick="showDetails('Guwahati')" data-location="Guwahati">
-                            <img src="svgs/guwahati_city.svg" alt="Guwahati Icon" width="80" height="80">
-                            <p>Guwahati</p>
-                        </div>
-                        <div class="location-icon" onclick="showDetails('Hyderabad')" data-location="Hyderabad">
-                            <img src="svgs/hyderabad_city.svg" alt="Hyderabad Icon" width="80" height="80">
-                            <p>Hyderabad</p>
-                        </div>
-                        <div class="location-icon" onclick="showDetails('Indore')" data-location="Indore">
-                            <img src="svgs/indore_city.svg" alt="Indore Icon" width="80" height="80">
-                            <p>Indore</p>
-                        </div>
-                        <div class="location-icon" onclick="showDetails('Kakinada')" data-location="Kakinada">
-                            <img src="svgs/kakinada_city.svg" alt="Kakinada Icon" width="80" height="80">
-                            <p>Kakinada</p>
-                        </div>
-                        <div class="location-icon" onclick="showDetails('Karur')" data-location="Karur">
-                            <img src="svgs/kakinada_city.svg" alt="Karur Icon" width="80" height="80">
-                            <p>Karur</p>
-                        </div>
-                        <div class="location-icon" onclick="showDetails('Kolkata')" data-location="Kolkata">
-                            <img src="svgs/kolkata_city.svg" alt="Kolkata Icon" width="80" height="80">
-                            <p>Kolkata</p>
-                        </div>
-                        <div class="location-icon" onclick="showDetails('Kochi')" data-location="Kochi">
-                            <img src="svgs/kakinada_city.svg" alt="Kochi Icon" width="80" height="80">
-                            <p>Kochi</p>
-                        </div>
-                        <div class="location-icon" onclick="showDetails('Lucknow')" data-location="Lucknow">
-                            <img src="svgs/lucknow_city.svg" alt="Lucknow Icon" width="80" height="80">
-                            <p>Lucknow</p>
-                        </div>
-                        <div class="location-icon" onclick="showDetails('Madurai')" data-location="Madurai">
-                            <img src="svgs/lucknow_city.svg" alt="Madurai Icon" width="80" height="80">
-                            <p>Madurai</p>
-                        </div>
-                        <div class="location-icon" onclick="showDetails('Mumbai')" data-location="Mumbai">
-                            <img src="svgs/mumbai_city.svg" alt="Mumbai Icon" width="80" height="80">
-                            <p>Mumbai</p>
-                        </div>
-                        <div class="location-icon" onclick="showDetails('Mysore')" data-location="Mysore">
-                            <img src="svgs/mysore_city.svg" alt="Mysore Icon" width="80" height="80">
-                            <p>Mysore</p>
-                        </div>
-                        <div class="location-icon" onclick="showDetails('Nashik')" data-location="Nashik">
-                            <img src="svgs/nashik_city.svg" alt="Nashik Icon" width="80" height="80">
-                            <p>Nashik</p>
-                        </div>
-                        <div class="location-icon" onclick="showDetails('Nellore')" data-location="Nellore">
-                            <img src="svgs/lucknow_city.svg" alt="Nellore Icon" width="80" height="80">
-                            <p>Nellore</p>
-                        </div>
-                        <div class="location-icon" onclick="showDetails('Noida')" data-location="Noida">
-                            <img src="svgs/delhi_city.svg" alt="Noida Icon" width="80" height="80">
-                            <p>Noida</p>
-                        </div>
-
-
+                    <div class="location-icon" onclick="showDetails('Ahmedabad')" data-location="Ahmedabad">
+                        <img src="svgs/ahmedabad_city.svg" alt="Ahmedabad Icon" width="80" height="80">
+                        <p>Ahmedabad</p>
                     </div>
+                    <div class="location-icon" onclick="showDetails('Bangalore')" data-location="Bangalore">
+                        <img src="svgs/bangalore_city.svg" alt="Bangalore Icon" width="80" height="80">
+                        <p>Bangalore</p>
+                    </div>
+
+                    <div class="location-icon" onclick="showDetails('Aragonda')" data-location="Aragonda">
+                        <img src="svgs/ahmedabad_city.svg" alt="Aragonda Icon" width="80" height="80">
+                        <p>Aragonda</p>
+                    </div>
+                    <div class="location-icon" onclick="showDetails('Bhubaneshwar')" data-location="Bhubaneshwar">
+                        <img src="svgs/bhubaneshwar_city.svg" alt="Bhubaneshwar Icon" width="80" height="80">
+                        <p>Bhubaneshwar</p>
+                    </div>
+                    <div class="location-icon location-active" onclick="showDetails('Bilaspur')" data-location="Bilaspur">
+                        <img src="svgs/bangalore_city.svg" alt="Bilaspur Icon" width="80" height="80">
+                        <p>Bilaspur</p>
+                    </div>
+
+                    <div class="location-icon" onclick="showDetails('Delhi')" data-location="Delhi">
+                        <img src="svgs/delhi_city.svg" alt="Delhi Icon" width="80" height="80">
+                        <p>Delhi</p>
+                    </div>
+                    <div class="location-icon" onclick="showDetails('Guwahati')" data-location="Guwahati">
+                        <img src="svgs/guwahati_city.svg" alt="Guwahati Icon" width="80" height="80">
+                        <p>Guwahati</p>
+                    </div>
+                    <div class="location-icon" onclick="showDetails('Hyderabad')" data-location="Hyderabad">
+                        <img src="svgs/hyderabad_city.svg" alt="Hyderabad Icon" width="80" height="80">
+                        <p>Hyderabad</p>
+                    </div>
+                    <div class="location-icon" onclick="showDetails('Indore')" data-location="Indore">
+                        <img src="svgs/indore_city.svg" alt="Indore Icon" width="80" height="80">
+                        <p>Indore</p>
+                    </div>
+                    <div class="location-icon" onclick="showDetails('Kakinada')" data-location="Kakinada">
+                        <img src="svgs/kakinada_city.svg" alt="Kakinada Icon" width="80" height="80">
+                        <p>Kakinada</p>
+                    </div>
+                    <div class="location-icon" onclick="showDetails('Karur')" data-location="Karur">
+                        <img src="svgs/kakinada_city.svg" alt="Karur Icon" width="80" height="80">
+                        <p>Karur</p>
+                    </div>
+                    <div class="location-icon" onclick="showDetails('Kolkata')" data-location="Kolkata">
+                        <img src="svgs/kolkata_city.svg" alt="Kolkata Icon" width="80" height="80">
+                        <p>Kolkata</p>
+                    </div>
+                    <div class="location-icon" onclick="showDetails('Kochi')" data-location="Kochi">
+                        <img src="svgs/kakinada_city.svg" alt="Kochi Icon" width="80" height="80">
+                        <p>Kochi</p>
+                    </div>
+                    <div class="location-icon" onclick="showDetails('Lucknow')" data-location="Lucknow">
+                        <img src="svgs/lucknow_city.svg" alt="Lucknow Icon" width="80" height="80">
+                        <p>Lucknow</p>
+                    </div>
+                    <div class="location-icon" onclick="showDetails('Madurai')" data-location="Madurai">
+                        <img src="svgs/lucknow_city.svg" alt="Madurai Icon" width="80" height="80">
+                        <p>Madurai</p>
+                    </div>
+                    <div class="location-icon" onclick="showDetails('Mumbai')" data-location="Mumbai">
+                        <img src="svgs/mumbai_city.svg" alt="Mumbai Icon" width="80" height="80">
+                        <p>Mumbai</p>
+                    </div>
+                    <div class="location-icon" onclick="showDetails('Mysore')" data-location="Mysore">
+                        <img src="svgs/mysore_city.svg" alt="Mysore Icon" width="80" height="80">
+                        <p>Mysore</p>
+                    </div>
+                    <div class="location-icon" onclick="showDetails('Nashik')" data-location="Nashik">
+                        <img src="svgs/nashik_city.svg" alt="Nashik Icon" width="80" height="80">
+                        <p>Nashik</p>
+                    </div>
+                    <div class="location-icon" onclick="showDetails('Nellore')" data-location="Nellore">
+                        <img src="svgs/lucknow_city.svg" alt="Nellore Icon" width="80" height="80">
+                        <p>Nellore</p>
+                    </div>
+                    <div class="location-icon" onclick="showDetails('Noida')" data-location="Noida">
+                        <img src="svgs/delhi_city.svg" alt="Noida Icon" width="80" height="80">
+                        <p>Noida</p>
+                    </div>
+
+
+                </div>
 
                 <!-- Location Details -->
-                    <div class="details-container" id="location-details">
-                        <h4>Ahmedabad</h4>
+                <div class="details-container" id="location-details">
+                    <h4>Ahmedabad</h4>
 
-                        <div class="imgcon">
-                            <img class="locimg" src="https://cdn.apollohospitals.com/apollohospitals/apollo-prohealth/ah/location.jpg" alt="Ahemdabad Image">
-                        </div>
-                        <p class="locaddress">📍Plot No.1A, Bhat GIDC Estate, Gandhinagar – 382428, Gujarat, India.</p>
+                    <div class="imgcon">
+                        <img class="locimg" src="https://cdn.apollohospitals.com/apollohospitals/apollo-prohealth/ah/location.jpg" alt="Ahemdabad Image">
                     </div>
+                    <p class="locaddress">📍Plot No.1A, Bhat GIDC Estate, Gandhinagar – 382428, Gujarat, India.</p>
+                </div>
 
             </div>
         </div>
 
 
     </section>
-
-
-
-
-
-
-
-
 
     <section id="provide" class="provide">
         <h2>Why Choose Us?</h2>
@@ -573,8 +539,8 @@
         </div>
     </section>
 
-    
-    
+
+
     <footer class="footer">
         <div class="contact-info">
             <h3>Contact Us</h3>
