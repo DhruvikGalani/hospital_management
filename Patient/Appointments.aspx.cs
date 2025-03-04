@@ -14,23 +14,45 @@ namespace hospital_management.Patient
 
         }
 
-        protected void btnSubmit_Click(object sender, EventArgs e)
+        protected void btnSave_Click(object sender, EventArgs e)
         {
-            // Store the input values
-            string patientName = txtPatientName.Text;
-            string phoneNumber = txtPhoneNumber.Text;
-            string email = txtEmail.Text;
-            string symptoms = txtSymptoms.Text;
-            string appointmentDate = txtDate.Text;
-            string department = ddlDepartment.SelectedValue;
-            string gender = ddlGender.SelectedValue;
-            string appointmentTime = txtTime.Text;
+            lblDetails.Text = "";
+            try
+            {
+                string Pnm = txtPatientname.Text;
+                string Dnm = txtDoctorname.Text;
+                string Dateandtime = txtDateandtime.Text;
+                string Reasonforvisit = txtReason.Text;
+                string location = ddlCliniclocation.SelectedValue;
+                string status = rblStatus.SelectedValue;
 
-            // You can save these values to a database or send them via email
-            string confirmationMessage = $"Appointment booked for {patientName} on {appointmentDate} at {appointmentTime} in {department} department.";
 
-            // Display confirmation (for now, just showing it on the page)
-            Response.Write("<script>alert('" + confirmationMessage + "');</script>");
+                lblDetails.Text = "</br> Patient Name : " + Pnm +
+                                  "</br> Doctor Name : " + Dnm +
+                                  "</br> Appoitment Date&time : " + Dateandtime +
+                                  "</br> Reason for visit : " + Reasonforvisit +
+                                  "</br> Clinic Location : " + location +
+                                  "</br> Appoitment Status : " + status;
+
+            }
+            catch (Exception saveError)
+            {
+                Response.Write(saveError.ToString());
+                throw;
+            }
+
+
+        }
+
+        protected void btnReset_Click(object sender, EventArgs e)
+        {
+            txtPatientname.Text="";
+            txtDoctorname.Text = "";
+            txtDateandtime.Text = "";
+            txtReason.Text = "";
+            ddlCliniclocation.ClearSelection();
+            rblStatus.ClearSelection();
+            lblDetails.Text = "";
         }
     }
 }
