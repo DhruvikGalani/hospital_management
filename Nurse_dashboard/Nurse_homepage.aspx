@@ -87,6 +87,7 @@
     margin-right: 10px;
 }
 
+
 </style>    
     
 </head>
@@ -96,10 +97,17 @@
     <div class="sidebar">
         <h2>HMS - Nurse</h2>
                   <ul>
-    <li><a href="homepage.aspx" target="contentFrame">🚑 Home</a></li>
+                       <li><a href="profile.aspx" target="contentFrame"> 👤Profile</a></li>
+    <li><a href="homepage.aspx" target="contentFrame">🏠 Home</a></li>
     <li><a href="Ambulance_details.aspx" target="contentFrame">🚑 Ambulance Services</a></li>
     <li><a href="Emergency_details.aspx" target="contentFrame">⚠️ Emergency Cases</a></li>
     <li><a href="laboratorytest_details.aspx" target="contentFrame">🧪 Laboratory Management</a></li>
+    <li><a href="patient_details.aspx" target="contentFrame">🧑‍⚕️ Patient Management</a></li>
+    <li><a href="medical_records.aspx" target="contentFrame">📄 Doctor Records</a></li>
+    <li><a href="billing_manage.aspx" target="contentFrame"> 💳Billing Management</a></li>
+
+
+
 </ul>
 
     </div>
