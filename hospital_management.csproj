@@ -390,6 +390,13 @@
     <Compile Include="Nurse_dashboard\login.aspx.designer.cs">
       <DependentUpon>login.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Nurse_dashboard\medical_records.aspx.cs">
+      <DependentUpon>medical_records.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Nurse_dashboard\medical_records.aspx.designer.cs">
+      <DependentUpon>medical_records.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Nurse_dashboard\Nurse_homepage.aspx.cs">
       <DependentUpon>Nurse_homepage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
