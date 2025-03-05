@@ -14,7 +14,6 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
 
 <style>
-    /* Sidebar */
     .sidebar {
         position: fixed;
         width: 250px;
@@ -93,7 +92,6 @@
 </head>
 <body>
 
-    <!-- Sidebar Navigation -->
     <div class="sidebar">
         <h2>HMS - Nurse</h2>
                   <ul>
@@ -112,7 +110,6 @@
 
     </div>
 
-    <!-- Main Content -->
     <div class="main-content">
         <div class="header">
             <h2>Welcome</h2>
