@@ -151,6 +151,9 @@
     <Content Include="Images\Nashik_HMS.jpg" />
     <Content Include="Images\Nellore_HMS.jpg" />
     <Content Include="Images\Noida_HMS.png" />
+    <Content Include="Images\profile.jpg" />
+    <Content Include="Images\profilelogo-removebg-preview.png" />
+    <Content Include="Images\profilelogo.jpeg" />
     <Content Include="Laboratorytest.aspx" />
     <Content Include="nurse.aspx" />
     <Content Include="Nurse_dashboard\Ambulance_details.aspx" />
