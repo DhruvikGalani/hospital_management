@@ -1,4 +1,4 @@
-﻿﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="homePage.aspx.cs" Inherits="hospital_management.homePage" %>
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="homePage.aspx.cs" Inherits="hospital_management.homePage" %>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -10,21 +10,19 @@
             font-weight: bold;
             color: #2c3e50;
             text-align: center;
-            margin-bottom: 1.5rem; /* Increased for a balanced layout */
-            /*font-size: 2.4rem;*/ /* Larger font for emphasis */
-             /*color: #ff8f40;*/ /* Vibrant orange for boldness */
-            font-family: 'Playfair Display', serif; /* A luxurious serif font */
+            margin-bottom: 1.5rem; 
+            font-family: 'Playfair Display', serif; 
             position: relative;
             text-transform: uppercase;
-            letter-spacing: 0.08em; /* Subtle spacing for sophistication */
+            letter-spacing: 0.08em; 
         }
 
             h2::after {
                 content: '';
                 display: block;
-                width: 40%; /* Balanced underline width */
-                height: 4px; /* Slightly thicker line for prominence */
-                background: linear-gradient(90deg, #ff8f40, #ffd6b0); /* Gradient from vibrant orange to a soft peach tone */
+                width: 40%; 
+                height: 4px;
+                background: linear-gradient(90deg, #ff8f40, #ffd6b0);
                 margin: 0.9rem auto 1rem; /* Added spacing for breathing room */
                 border-radius: 2px; /* Smooth and modern edges */
                 box-shadow: 0 0 15px rgba(255, 143, 64, 0.6), 0 0 25px rgba(255, 143, 64, 0.4); /* Vibrant orange glow */
@@ -304,7 +302,7 @@
                 <li><a href="#doctors">Doctors</a></li>
                 <li><a href="#appointments">Appointments</a></li>
                 <li><a href="#contact">Contact</a></li>
-                <li><a href="Nurse_dashboard/login.aspx">Login</a></li>
+                <li><a href="pages/LoginPage.aspx">Login</a></li>
                 <%--<li><a href="https://localhost:44331/pages/RegisterPage.aspx"><img src="Images\profilelogo.jpeg" alt="image" height="20px" width="20px"/></a></li>--%>
             <li>
     <a href="#" onclick="checkUserExists(event)">
