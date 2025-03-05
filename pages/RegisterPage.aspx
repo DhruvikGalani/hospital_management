@@ -1,14 +1,12 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="RegisterPage.aspx.cs" Inherits="hospital_management.pages.RegisterPage" %>
 
-
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8">
-    <title>Register Form</title>
+    <title>Register Patient</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
     <style>
-        /* Reset styles */
         * {
             margin: 0;
             padding: 0;
@@ -20,7 +18,6 @@
             height: 100%;
         }
 
-        /* Background Styling */
         body {
             display: flex;
             justify-content: center;
@@ -32,23 +29,21 @@
             text-align: center;
         }
 
-            /* Blur and Color Overlay */
-            body::before {
-                content: "";
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                backdrop-filter: blur(2px);
-                -webkit-backdrop-filter: blur(5px);
-                background: rgba(37, 97, 108, 0.20);
-                z-index: -1;
-            }
+        body::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            backdrop-filter: blur(2px);
+            -webkit-backdrop-filter: blur(5px);
+            background: rgba(37, 97, 108, 0.20);
+            z-index: -1;
+        }
 
-        /* Form Container */
         .content {
-            width: 380px;
+            width: 500px;
             padding: 40px;
             background: rgba(221, 225, 231, 0.95);
             border-radius: 20px;
@@ -57,14 +52,13 @@
             z-index: 1;
         }
 
-            .content .text {
-                font-size: 33px;
-                font-weight: 600;
-                margin-bottom: 25px;
-                color: #595959;
-            }
+        .content .text {
+            font-size: 30px;
+            font-weight: 600;
+            margin-bottom: 25px;
+            color: #595959;
+        }
 
-        /* Input Fields */
         .field {
             height: 50px;
             width: 100%;
@@ -73,60 +67,26 @@
             margin-bottom: 20px;
         }
 
-            .field input {
-                height: 100%;
-                width: 100%;
-                padding-left: 45px;
-                outline: none;
-                border: none;
-                font-size: 16px;
-                background: #dde1e7;
-                color: #595959;
-                border-radius: 25px;
-                box-shadow: inset 2px 2px 5px #BABECC, inset -5px -5px 10px #ffffff73;
-            }
-
-                .field input:focus {
-                    box-shadow: inset 1px 1px 2px #BABECC, inset -1px -1px 2px #ffffff73;
-                }
-
-            .field span {
-                position: absolute;
-                color: #595959;
-                width: 50px;
-                line-height: 50px;
-            }
-
-            .field label {
-                position: absolute;
-                top: 50%;
-                transform: translateY(-50%);
-                left: 45px;
-                pointer-events: none;
-                color: #666666;
-            }
-
-            .field input:valid ~ label {
-                opacity: 0;
-            }
-
-        /* Forgot Password Link */
-        .forgot-pass {
-            text-align: left;
-            margin-bottom: 15px;
+        .field input, .field select, .field textarea {
+            height: 100%;
+            width: 100%;
+            padding-left: 45px;
+            outline: none;
+            border: none;
+            font-size: 16px;
+            background: #dde1e7;
+            color: #595959;
+            border-radius: 25px;
+            box-shadow: inset 2px 2px 5px #BABECC, inset -5px -5px 10px #ffffff73;
         }
 
-            .forgot-pass a {
-                font-size: 16px;
-                color: #3498db;
-                text-decoration: none;
-            }
+        .field span {
+            position: absolute;
+            color: #595959;
+            width: 50px;
+            line-height: 50px;
+        }
 
-            .forgot-pass:hover a {
-                text-decoration: underline;
-            }
-
-        /* Buttons */
         button {
             width: 100%;
             height: 50px;
@@ -142,37 +102,49 @@
             margin-top: 10px;
         }
 
-            button:focus {
-                color: #3498db;
-                box-shadow: inset 2px 2px 5px #BABECC, inset -5px -5px 10px #ffffff73;
-            }
-
-        /* Sign Up/Login Links */
         .sign-up {
             margin-top: 10px;
             font-size: 16px;
             color: #595959;
         }
 
-            .sign-up a {
-                color: #3498db;
-                text-decoration: none;
-            }
-
-                .sign-up a:hover {
-                    text-decoration: underline;
-                }
+        .sign-up a {
+            color: #3498db;
+            text-decoration: none;
+        }
     </style>
 </head>
 
 <body>
     <div class="content">
-        <div class="text">Register</div>
+        <div class="text">Register Patient</div>
         <form runat="server">
             <div class="field">
-                <input type="text" name="fullname" id="fullname" minlength="3" maxlength="50" onerror="not required length" required>
+                <input type="text" name="fullname" id="fullname" required>
                 <span class="fas fa-user"></span>
                 <label for="fullname">Full Name</label>
+            </div>
+
+            <div class="field">
+                <input type="date" name="dob" id="dob" required>
+                <span class="fas fa-calendar"></span>
+                <label for="dob">Date of Birth</label>
+            </div>
+
+            <div class="field">
+                <select name="gender" id="gender" required>
+                    <option value="" disabled selected>Select Gender</option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                    <option value="Other">Other</option>
+                </select>
+                <span class="fas fa-venus-mars"></span>
+            </div>
+
+            <div class="field">
+                <input type="text" name="contact" id="contact" pattern="[0-9]{10}" required>
+                <span class="fas fa-phone"></span>
+                <label for="contact">Contact Number</label>
             </div>
 
             <div class="field">
@@ -182,20 +154,38 @@
             </div>
 
             <div class="field">
-                <input type="password" name="password" id="password" minlength="8" required>
-                <span class="fas fa-lock"></span>
-                <label for="password">Password</label>
+                <textarea name="address" id="address" rows="3" required></textarea>
+                <span class="fas fa-home"></span>
+                <label for="address">Address</label>
             </div>
 
             <div class="field">
-                <input type="password" name="confirm_password" id="confirm_password" oninput="this.setCustomValidity(this.value !== document.getElementById('password').value ? 'Passwords do not match!' : '')" required>
-                <span class="fas fa-lock"></span>
-                <label for="confirm_password">Confirm Password</label>
+                <textarea name="medical_history" id="medical_history" rows="3"></textarea>
+                <span class="fas fa-notes-medical"></span>
+                <label for="medical_history">Medical History (Optional)</label>
             </div>
 
-            <button type="submit">Sign up</button>
+            <div class="field">
+                <input type="text" name="blood_group" id="blood_group" required>
+                <span class="fas fa-tint"></span>
+                <label for="blood_group">Blood Group</label>
+            </div>
+
+            <div class="field">
+                <input type="text" name="allergies" id="allergies">
+                <span class="fas fa-allergies"></span>
+                <label for="allergies">Allergies (Optional)</label>
+            </div>
+
+            <div class="field">
+                <input type="text" name="emergency_contact" id="emergency_contact" pattern="[0-9]{10}" required>
+                <span class="fas fa-user-shield"></span>
+                <label for="emergency_contact">Emergency Contact</label>
+            </div>
+
+            <button type="submit">Register</button>
             <div class="sign-up">
-                Already have an account? <a href="LoginPage.aspx">Login here</a>
+                Already registered? <a href="LoginPage.aspx">Login here</a>
             </div>
         </form>
     </div>
