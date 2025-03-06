@@ -464,7 +464,7 @@
             <asp:Button ID="btnSubmit" runat="server" Text="Register" CssClass="btn btn-primary w-100" OnClick="btnSubmit_Click"/>
         </form>
     </div>--%>
-</body>--%>
+</body>
 
 
 </html>
