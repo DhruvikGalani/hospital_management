@@ -303,30 +303,8 @@
                 <li><a href="#appointments">Appointments</a></li>
                 <li><a href="#contact">Contact</a></li>
                 <li><a href="pages/LoginPage.aspx">Login</a></li>
-                <%--<li><a href="https://localhost:44331/pages/RegisterPage.aspx"><img src="Images\profilelogo.jpeg" alt="image" height="20px" width="20px"/></a></li>--%>
-            <li>
-    <a href="#" onclick="checkUserExists(event)">
-        <img src="Images/profilelogo-removebg-preview.png" alt="image" height="50" width="50"/>
-    </a>
-</li>
-                <script>
-                    function checkUserExists(event) {
-                        event.preventDefault(); // Prevent default navigation
-
-                        // Simulating user check (Replace with actual backend check)
-                        var userExists = false; // Change this to true if user exists
-
-                        if (!userExists) {
-                            // Show popup
-                            var register = confirm("User not found! Register now?");
-                            if (register) {
-                                window.location.href = "https://localhost:44331/pages/RegisterPage.aspx"; // Redirect to register page
-                            }
-                        } else {
-                            window.location.href = "https://localhost:44331/pages/Dashboard.aspx"; // Redirect to user's page
-                        }
-                    }
-                </script>
+               <li><a href="https://localhost:44331/pages/RegisterPage.aspx">Register</a></li>
+                
 
             </ul>
         </nav>

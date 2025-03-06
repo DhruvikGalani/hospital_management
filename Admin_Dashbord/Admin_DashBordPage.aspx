@@ -112,8 +112,9 @@
             <li><a href="manage_insurance.aspx" target="contentFrame"><i class="fas fa-file-invoice-dollar"></i>Insurance</a></li>
             <li><a href="appointments.aspx" target="contentFrame"><i class="fas fa-calendar-check"></i>Appointments</a></li>
             <li><a href="medical_records.aspx" target="contentFrame"><i class="fas fa-file-medical"></i>Medical Records</a></li>
+            <li><a href="../Nurse_dashboard/Emergency_details.aspx" target="contentFrame"><i class="fas fa-exclamation-triangle"></i>Emergency Management</a></li>
             <li><a href="billing.aspx" target="contentFrame"><i class="fas fa-money-bill-wave"></i>Billing & Payments</a></li>
-            <li><a href="../Nurse_dashboard/laboratorytest_details.aspx" target="contentFrame"><i class="fas fa-vials"></i>Laboratory Tests</a></li>
+            <li><a href="../Nurse_dashboard/laboratorytest_details.aspx" target="contentFrame"><i class="fas fa-vials"></i>Laboratory Test Management</a></li>
             <li><a href="feedback_review.aspx" target="contentFrame"><i class="fas fa-comment-dots"></i>Feedback & Reviews</a></li>
             <li><a href="nutrition_wellness.aspx" target="contentFrame"><i class="fas fa-apple-alt"></i>Nutrition & Wellness</a></li>
             <li><a href="reports.aspx" target="contentFrame"><i class="fas fa-chart-line"></i>Reports</a></li>

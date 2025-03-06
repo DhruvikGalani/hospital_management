@@ -19,6 +19,7 @@
         }
 
         body {
+            margin-top:100px;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -116,9 +117,9 @@
 </head>
 
 <body>
-    <div class="content">
+    <div class="content" >
         <div class="text">Register Patient</div>
-        <form runat="server">
+        <form runat="server" >
             <div class="field">
                 <input type="text" name="fullname" id="fullname" required>
                 <span class="fas fa-user"></span>
