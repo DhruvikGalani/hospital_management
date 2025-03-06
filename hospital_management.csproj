@@ -72,6 +72,7 @@
     <Content Include="Admin\StaffInformation.aspx" />
     <Content Include="Admin_Dashbord\Admin_DashBordPage.aspx" />
     <Content Include="Admin_Dashbord\admin_homePage.aspx" />
+    <Content Include="Admin_Dashbord\manage_doctors.aspx" />
     <Content Include="Admin_Dashbord\manage_nurses.aspx" />
     <Content Include="App_Data\db_HMS.mdf" />
     <Content Include="App_Data\db_HMS_log.ldf">
@@ -287,6 +288,13 @@
     </Compile>
     <Compile Include="Admin_Dashbord\admin_homePage.aspx.designer.cs">
       <DependentUpon>admin_homePage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin_Dashbord\manage_doctors.aspx.cs">
+      <DependentUpon>manage_doctors.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin_Dashbord\manage_doctors.aspx.designer.cs">
+      <DependentUpon>manage_doctors.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin_Dashbord\manage_nurses.aspx.cs">
       <DependentUpon>manage_nurses.aspx</DependentUpon>
