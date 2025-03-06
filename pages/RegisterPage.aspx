@@ -2,7 +2,153 @@
 
 <!DOCTYPE html>
 <html>
-<head>
+    <head>
+    <meta charset="utf-8">
+    <title>Register Patient</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <style>
+        body {
+            background: url("../Images/formImage_2.jpg") no-repeat center center fixed;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+            position: relative;
+        }
+
+        body::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            backdrop-filter: blur(3px);
+            background: rgba(37, 97, 108, 0.20);
+            z-index: -1;
+        }
+
+        .container {
+            max-width: 800px;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .form-label {
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h2 class="text-center mb-4">Patient Registration</h2>
+        <form id="form1" runat="server">
+            <div class="row">
+                <!-- Left Column -->
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <label class="form-label">Full Name</label>
+                        <asp:TextBox ID="txtName" runat="server" CssClass="form-control"></asp:TextBox>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Age</label>
+                        <asp:TextBox ID="txtAge" runat="server" CssClass="form-control" TextMode="Number"></asp:TextBox>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Gender</label>
+                        <asp:DropDownList ID="ddlGender" runat="server" CssClass="form-control">
+                            <asp:ListItem Text="Male" Value="Male"></asp:ListItem>
+                            <asp:ListItem Text="Female" Value="Female"></asp:ListItem>
+                            <asp:ListItem Text="Other" Value="Other"></asp:ListItem>
+                        </asp:DropDownList>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Date of Birth</label>
+                        <asp:TextBox ID="txtDOB" runat="server" CssClass="form-control" TextMode="Date"></asp:TextBox>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Contact Number</label>
+                        <asp:TextBox ID="txtContact" runat="server" CssClass="form-control"></asp:TextBox>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Email</label>
+                        <asp:TextBox ID="txtEmail" runat="server" CssClass="form-control" TextMode="Email"></asp:TextBox>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Password</label>
+                        <asp:TextBox ID="txtPassword" runat="server" CssClass="form-control" TextMode="Password"></asp:TextBox>
+                    </div>
+                </div>
+
+                <!-- Right Column -->
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <label class="form-label">Address</label>
+                        <asp:TextBox ID="txtAddress" runat="server" CssClass="form-control" TextMode="MultiLine"></asp:TextBox>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Emergency Contact</label>
+                        <asp:TextBox ID="txtEmergencyContact" runat="server" CssClass="form-control"></asp:TextBox>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Blood Group</label>
+                        <asp:DropDownList ID="ddlBloodGroup" runat="server" CssClass="form-control">
+                            <asp:ListItem Text="A+" Value="A+"></asp:ListItem>
+                            <asp:ListItem Text="A-" Value="A-"></asp:ListItem>
+                            <asp:ListItem Text="B+" Value="B+"></asp:ListItem>
+                            <asp:ListItem Text="B-" Value="B-"></asp:ListItem>
+                            <asp:ListItem Text="O+" Value="O+"></asp:ListItem>
+                            <asp:ListItem Text="O-" Value="O-"></asp:ListItem>
+                            <asp:ListItem Text="AB+" Value="AB+"></asp:ListItem>
+                            <asp:ListItem Text="AB-" Value="AB-"></asp:ListItem>
+                        </asp:DropDownList>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Allergies</label>
+                        <asp:TextBox ID="txtAllergies" runat="server" CssClass="form-control" TextMode="MultiLine"></asp:TextBox>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Running Medicines</label>
+                        <asp:TextBox ID="txtMedicines" runat="server" CssClass="form-control" TextMode="MultiLine"></asp:TextBox>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Do you have Insurance?</label>
+                        <asp:DropDownList ID="ddlInsurance" runat="server" CssClass="form-control">
+                            <asp:ListItem Text="Yes" Value="Yes"></asp:ListItem>
+                            <asp:ListItem Text="No" Value="No"></asp:ListItem>
+                        </asp:DropDownList>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Profile Picture</label>
+                        <asp:FileUpload ID="fuProfile" runat="server" CssClass="form-control"/>
+                    </div>
+                </div>
+            </div>
+
+            <asp:Button ID="btnSubmit" runat="server" Text="Register" CssClass="btn btn-primary w-100 mt-3" OnClick="btnSubmit_Click"/>
+        </form>
+    </div>
+</body>
+<%--<head>
     <meta charset="utf-8">
     <title>Register Patient</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
@@ -19,7 +165,6 @@
         }
 
         body {
-            margin-top:100px;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -43,7 +188,7 @@
             z-index: -1;
         }
 
-        .content {
+        .container {
             width: 500px;
             padding: 40px;
             background: rgba(221, 225, 231, 0.95);
@@ -53,14 +198,14 @@
             z-index: 1;
         }
 
-        .content .text {
+        .text-center {
             font-size: 30px;
             font-weight: 600;
             margin-bottom: 25px;
             color: #595959;
         }
 
-        .field {
+        .mb-3 {
             height: 50px;
             width: 100%;
             display: flex;
@@ -68,7 +213,7 @@
             margin-bottom: 20px;
         }
 
-        .field input, .field select, .field textarea {
+        .mb-3 form-label {
             height: 100%;
             width: 100%;
             padding-left: 45px;
@@ -88,7 +233,7 @@
             line-height: 50px;
         }
 
-        button {
+        #btnSubmit {
             width: 100%;
             height: 50px;
             font-size: 18px;
@@ -113,82 +258,213 @@
             color: #3498db;
             text-decoration: none;
         }
+
+        .mb-3 {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            width: 100%;
+        }
+
+            .mb-3 label {
+                font-weight: bold;
+                margin-bottom: 5px;
+            }
+
+        .form-control {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
     </style>
-</head>
+</head>--%>
 
-<body>
-    <div class="content" >
-        <div class="text">Register Patient</div>
-        <form runat="server" >
-            <div class="field">
-                <input type="text" name="fullname" id="fullname" required>
-                <span class="fas fa-user"></span>
-                <label for="fullname">Full Name</label>
+    <%--<body>
+        <div class="container mt-5">
+    <h2 class="text-center">Patient Registration</h2>
+    <form id="form1" runat="server" class="card p-4">
+        <div class="row">
+            <!-- Left Column -->
+            <div class="col-md-6">
+                <div class="mb-3">
+                    <label class="form-label">Full Name</label>
+                    <asp:TextBox ID="txtName" runat="server" CssClass="form-control"></asp:TextBox>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Age</label>
+                    <asp:TextBox ID="txtAge" runat="server" CssClass="form-control" TextMode="Number"></asp:TextBox>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Gender</label>
+                    <asp:DropDownList ID="ddlGender" runat="server" CssClass="form-control">
+                        <asp:ListItem Text="Male" Value="Male"></asp:ListItem>
+                        <asp:ListItem Text="Female" Value="Female"></asp:ListItem>
+                        <asp:ListItem Text="Other" Value="Other"></asp:ListItem>
+                    </asp:DropDownList>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Date of Birth</label>
+                    <asp:TextBox ID="txtDOB" runat="server" CssClass="form-control" TextMode="Date"></asp:TextBox>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Contact Number</label>
+                    <asp:TextBox ID="txtContact" runat="server" CssClass="form-control"></asp:TextBox>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Email</label>
+                    <asp:TextBox ID="txtEmail" runat="server" CssClass="form-control" TextMode="Email"></asp:TextBox>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Password</label>
+                    <asp:TextBox ID="txtPassword" runat="server" CssClass="form-control" TextMode="Password"></asp:TextBox>
+                </div>
             </div>
 
-            <div class="field">
-                <input type="date" name="dob" id="dob" required>
-                <span class="fas fa-calendar"></span>
-                <label for="dob">Date of Birth</label>
+            <!-- Right Column -->
+            <div class="col-md-6">
+                <div class="mb-3">
+                    <label class="form-label">Address</label>
+                    <asp:TextBox ID="txtAddress" runat="server" CssClass="form-control" TextMode="MultiLine"></asp:TextBox>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Emergency Contact</label>
+                    <asp:TextBox ID="txtEmergencyContact" runat="server" CssClass="form-control"></asp:TextBox>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Blood Group</label>
+                    <asp:DropDownList ID="ddlBloodGroup" runat="server" CssClass="form-control">
+                        <asp:ListItem Text="A+" Value="A+"></asp:ListItem>
+                        <asp:ListItem Text="A-" Value="A-"></asp:ListItem>
+                        <asp:ListItem Text="B+" Value="B+"></asp:ListItem>
+                        <asp:ListItem Text="B-" Value="B-"></asp:ListItem>
+                        <asp:ListItem Text="O+" Value="O+"></asp:ListItem>
+                        <asp:ListItem Text="O-" Value="O-"></asp:ListItem>
+                        <asp:ListItem Text="AB+" Value="AB+"></asp:ListItem>
+                        <asp:ListItem Text="AB-" Value="AB-"></asp:ListItem>
+                    </asp:DropDownList>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Allergies</label>
+                    <asp:TextBox ID="txtAllergies" runat="server" CssClass="form-control" TextMode="MultiLine"></asp:TextBox>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Running Medicines</label>
+                    <asp:TextBox ID="txtMedicines" runat="server" CssClass="form-control" TextMode="MultiLine"></asp:TextBox>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Do you have Insurance?</label>
+                    <asp:DropDownList ID="ddlInsurance" runat="server" CssClass="form-control">
+                        <asp:ListItem Text="Yes" Value="Yes"></asp:ListItem>
+                        <asp:ListItem Text="No" Value="No"></asp:ListItem>
+                    </asp:DropDownList>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Profile Picture</label>
+                    <asp:FileUpload ID="fuProfile" runat="server" CssClass="form-control"/>
+                </div>
+            </div>
+        </div>
+
+        <asp:Button ID="btnSubmit" runat="server" Text="Register" CssClass="btn btn-primary w-100 mt-3" OnClick="btnSubmit_Click"/>
+    </form>
+</div>
+
+    <%--<div class="container mt-5">
+        <h2 class="text-center">Patient Registration</h2>
+        <form id="form1" runat="server" class="card p-4">
+            <div class="mb-3">
+                <label class="form-label">Full Name</label>
+                <asp:TextBox ID="txtName" runat="server" CssClass="form-control" ></asp:TextBox>
             </div>
 
-            <div class="field">
-                <select name="gender" id="gender" required>
-                    <option value="" disabled selected>Select Gender</option>
-                    <option value="Male">Male</option>
-                    <option value="Female">Female</option>
-                    <option value="Other">Other</option>
-                </select>
-                <span class="fas fa-venus-mars"></span>
+            <div class="mb-3">
+                <label class="form-label">Age</label>
+                <asp:TextBox ID="txtAge" runat="server" CssClass="form-control" TextMode="Number" ></asp:TextBox>
             </div>
 
-            <div class="field">
-                <input type="text" name="contact" id="contact" pattern="[0-9]{10}" required>
-                <span class="fas fa-phone"></span>
-                <label for="contact">Contact Number</label>
+            <div class="mb-3">
+                <label class="form-label">Gender</label>
+                <asp:DropDownList ID="ddlGender" runat="server" CssClass="form-control">
+                    <asp:ListItem Text="Male" Value="Male"></asp:ListItem>
+                    <asp:ListItem Text="Female" Value="Female"></asp:ListItem>
+                    <asp:ListItem Text="Other" Value="Other"></asp:ListItem>
+                </asp:DropDownList>
             </div>
 
-            <div class="field">
-                <input type="email" name="email" id="email" required>
-                <span class="fas fa-envelope"></span>
-                <label for="email">Email</label>
+            <div class="mb-3">
+                <label class="form-label">Date of Birth</label>
+                <asp:TextBox ID="txtDOB" runat="server" CssClass="form-control" TextMode="Date" ></asp:TextBox>
             </div>
 
-            <div class="field">
-                <textarea name="address" id="address" rows="3" required></textarea>
-                <span class="fas fa-home"></span>
-                <label for="address">Address</label>
+            <div class="mb-3">
+                <label class="form-label">Contact Number</label>
+                <asp:TextBox ID="txtContact" runat="server" CssClass="form-control" ></asp:TextBox>
             </div>
 
-            <div class="field">
-                <textarea name="medical_history" id="medical_history" rows="3"></textarea>
-                <span class="fas fa-notes-medical"></span>
-                <label for="medical_history">Medical History (Optional)</label>
+            <div class="mb-3">
+                <label class="form-label">Email</label>
+                <asp:TextBox ID="txtEmail" runat="server" CssClass="form-control" TextMode="Email" ></asp:TextBox>
             </div>
 
-            <div class="field">
-                <input type="text" name="blood_group" id="blood_group" required>
-                <span class="fas fa-tint"></span>
-                <label for="blood_group">Blood Group</label>
+            <div class="mb-3">
+                <label class="form-label">Password</label>
+                <asp:TextBox ID="txtPassword" runat="server" CssClass="form-control" TextMode="Password" ></asp:TextBox>
             </div>
 
-            <div class="field">
-                <input type="text" name="allergies" id="allergies">
-                <span class="fas fa-allergies"></span>
-                <label for="allergies">Allergies (Optional)</label>
+            <div class="mb-3">
+                <label class="form-label">Address</label>
+                <asp:TextBox ID="txtAddress" runat="server" CssClass="form-control" TextMode="MultiLine" ></asp:TextBox>
             </div>
 
-            <div class="field">
-                <input type="text" name="emergency_contact" id="emergency_contact" pattern="[0-9]{10}" required>
-                <span class="fas fa-user-shield"></span>
-                <label for="emergency_contact">Emergency Contact</label>
+            <div class="mb-3">
+                <label class="form-label">Emergency Contact</label>
+                <asp:TextBox ID="txtEmergencyContact" runat="server" CssClass="form-control" ></asp:TextBox>
             </div>
 
-            <button type="submit">Register</button>
-            <div class="sign-up">
-                Already registered? <a href="LoginPage.aspx">Login here</a>
+            <div class="mb-3">
+                <label class="form-label">Blood Group</label>
+                <asp:DropDownList ID="ddlBloodGroup" runat="server" CssClass="form-control">
+                    <asp:ListItem Text="A+" Value="A+"></asp:ListItem>
+                    <asp:ListItem Text="A-" Value="A-"></asp:ListItem>
+                    <asp:ListItem Text="B+" Value="B+"></asp:ListItem>
+                    <asp:ListItem Text="B-" Value="B-"></asp:ListItem>
+                    <asp:ListItem Text="O+" Value="O+"></asp:ListItem>
+                    <asp:ListItem Text="O-" Value="O-"></asp:ListItem>
+                    <asp:ListItem Text="AB+" Value="AB+"></asp:ListItem>
+                    <asp:ListItem Text="AB-" Value="AB-"></asp:ListItem>
+                </asp:DropDownList>
             </div>
+
+            <div class="mb-3">
+                <label class="form-label">Allergies</label>
+                <asp:TextBox ID="txtAllergies" runat="server" CssClass="form-control" TextMode="MultiLine" ></asp:TextBox>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Running Medicines</label>
+                <asp:TextBox ID="txtMedicines" runat="server" CssClass="form-control" TextMode="MultiLine" ></asp:TextBox>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Do you have Insurance?</label>
+                <asp:DropDownList ID="ddlInsurance" runat="server" CssClass="form-control">
+                    <asp:ListItem Text="Yes" Value="Yes"></asp:ListItem>
+                    <asp:ListItem Text="No" Value="No"></asp:ListItem>
+                </asp:DropDownList>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Profile Picture</label>
+                <asp:FileUpload ID="fuProfile" runat="server" CssClass="form-control"  />
+            </div>
+
+            <asp:Button ID="btnSubmit" runat="server" Text="Register" CssClass="btn btn-primary w-100" OnClick="btnSubmit_Click"/>
         </form>
-    </div>
+    </div>--%>
 </body>
+
+
 </html>

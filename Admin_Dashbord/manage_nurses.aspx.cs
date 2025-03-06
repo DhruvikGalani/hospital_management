@@ -40,19 +40,30 @@ namespace hospital_management.Admin_Dashbord
                 return;
             }
 
-            string profilePath = "~/NurseImages/default.png";
+            string profilePath = "~/userImage/default.png"; // Default image path
 
+            // Check if a file is uploaded
             if(FileUploadProfile.HasFile)
             {
-                string fileName = Guid.NewGuid().ToString() + System.IO.Path.GetExtension(FileUploadProfile.FileName);
-                profilePath = "~/NurseImages/" + fileName;
+                // Ensure the directory exists
+                string directoryPath = Server.MapPath("~/userImage/");
+                if(!Directory.Exists(directoryPath))
+                {
+                    Directory.CreateDirectory(directoryPath);
+                }
+
+                // Generate a unique file name
+                string fileName = Guid.NewGuid().ToString() + Path.GetExtension(FileUploadProfile.FileName);
+                profilePath = "~/userImage/" + fileName;
+
+                // Save the uploaded file
                 FileUploadProfile.SaveAs(Server.MapPath(profilePath));
             }
 
             using(SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["MyConnectionString"].ConnectionString))
             {
                 string query = "INSERT INTO tbl_Nurse (name, age, gender, address, email, password, contactNumber, profile) " +
-                "VALUES (@Name, @Age, @Gender, @Address, @Email, @Password, @Contact, @Profile)";
+                               "VALUES (@Name, @Age, @Gender, @Address, @Email, @Password, @Contact, @Profile)";
 
                 SqlCommand cmd = new SqlCommand(query, con);
                 cmd.Parameters.AddWithValue("@Name", txtName.Text.Trim());
@@ -73,6 +84,48 @@ namespace hospital_management.Admin_Dashbord
                 LoadNurses();
             }
         }
+
+        //protected void btnAddNurse_Click(object sender, EventArgs e)
+        //{
+        //    if(string.IsNullOrWhiteSpace(txtName.Text) || string.IsNullOrWhiteSpace(txtEmail.Text))
+        //    {
+        //        Response.Write("<script>alert('Please Fill All Fields');</script>");
+        //        return;
+        //    }
+
+        //    string profilePath = "~/userImage/default.png";
+
+        //    if(FileUploadProfile.HasFile)
+        //    {
+        //        string fileName = Guid.NewGuid().ToString() + System.IO.Path.GetExtension(FileUploadProfile.FileName);
+        //        profilePath = "~/userImage/" + fileName;
+        //        FileUploadProfile.SaveAs(Server.MapPath(profilePath));
+        //    }
+
+        //    using(SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["MyConnectionString"].ConnectionString))
+        //    {
+        //        string query = "INSERT INTO tbl_Nurse (name, age, gender, address, email, password, contactNumber, profile) " +
+        //        "VALUES (@Name, @Age, @Gender, @Address, @Email, @Password, @Contact, @Profile)";
+
+        //        SqlCommand cmd = new SqlCommand(query, con);
+        //        cmd.Parameters.AddWithValue("@Name", txtName.Text.Trim());
+        //        cmd.Parameters.AddWithValue("@Age", txtAge.Text.Trim());
+        //        cmd.Parameters.AddWithValue("@Gender", ddlGender.SelectedValue);
+        //        cmd.Parameters.AddWithValue("@Address", txtAddress.Text.Trim());
+        //        cmd.Parameters.AddWithValue("@Email", txtEmail.Text.Trim());
+        //        cmd.Parameters.AddWithValue("@Password", txtPassword.Text.Trim());
+        //        cmd.Parameters.AddWithValue("@Contact", txtContact.Text.Trim());
+        //        cmd.Parameters.AddWithValue("@Profile", profilePath);
+
+        //        con.Open();
+        //        cmd.ExecuteNonQuery();
+        //        con.Close();
+
+        //        Response.Write("<script>alert('Nurse Added Successfully');</script>");
+        //        ClearFields();
+        //        LoadNurses();
+        //    }
+        //}
         protected void gvNurses_RowEditing(object sender, GridViewEditEventArgs e)
         {
             gvNurses.EditIndex = e.NewEditIndex;
