@@ -4,174 +4,136 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title></title>
-    <style type="text/css">
-        .auto-style1 {
-            width: 100%;
-          
-        }
-       
-        .no-spinner::-webkit-inner-spin-button, 
-        .no-spinner::-webkit-outer-spin-button {
-            -webkit-appearance: none;
+          <title>Doctor Registration</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
             margin: 0;
+            padding: 0;
         }
-
-        .no-spinner {
-            -moz-appearance: textfield; /* Firefox */
-             width : 360px;
+        .container {
+            width: 50%;
+            margin: 30px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
         }
-        .textFields {
-            width : 360px;
+        .header {
+            background: #007bff;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            font-size: 22px;
+            border-radius: 8px 8px 0 0;
+            font-weight: bold;
         }
-         .btnsubmit {
-     margin-right: 50px;
-     width : 110px;
- }
- .btnreset {
-         width : 110px;
- }
+        .error-message {
+            color: red;
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+        label {
+            font-weight: bold;
+            margin-top: 10px;
+            display: block;
+        }
+        select, input, textarea {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .btn-submit {
+            background: #007bff;
+            color: white;
+            padding: 10px;
+            width: 100%;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 4px;
+            margin-top: 15px;
+        }
+        .btn-submit:hover {
+            background: #0056b3;
+        }
+        .btn-reset {
+            background: #f8f9fa;
+            color: #007bff;
+            padding: 10px;
+            width: 100%;
+            border: 1px solid #007bff;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 4px;
+            margin-top: 15px;
+        }
+        .btn-reset:hover {
+    background: #0056b3;
+}
     </style>
 </head>
-<body style="width: 550px; height: 430px;">
-    <form id="form1" runat="server">
-        <div>
-            <table class="auto-style1">
-                <tr>
-                    <td colspan="2" style="text-align: center; font-family:large;"><strong>Doctor's Registration</strong></td>
-                </tr>
-                <tr>
-                    <td >Name </td>
-                    <td>
-                      <asp:TextBox ID="txtName" runat="server" CssClass="textFields"></asp:TextBox><br />
-                     <asp:RequiredFieldValidator ID="rfvName" runat="server" ControlToValidate="txtName"  ErrorMessage="Name is required" ForeColor="Red" Display="Dynamic" /><br />
-                     <asp:RegularExpressionValidator ID="revName" runat="server" ControlToValidate="txtName"  ErrorMessage="Only letters allowed" ForeColor="Red" Display="Dynamic"  ValidationExpression="^[a-zA-Z\s]+$" />
-                 
+<body>
+    <form id="formDoctorRegister" runat="server" enctype="multipart/form-data">
+        <div class="container">
+            <div class="header">🩺 Doctor Registration</div>
+            <asp:Label ID="lblError" runat="server" CssClass="error-message" />
 
-                    </td>
-                </tr>
-                <tr>
-                    <td >Age </td>
-                    <td>
-                       <asp:TextBox ID="txtAge" runat="server" ClientIDMode="AutoID" CssClass="no-spinner" TextMode="Number" MaxLength="3"></asp:TextBox><br />
-                       <asp:RequiredFieldValidator ID="rfvAge" runat="server" ControlToValidate="txtAge" ErrorMessage="Age is required" ForeColor="Red" Display="Dynamic" /><br />
-                       <asp:RangeValidator ID="rvAge" runat="server" ControlToValidate="txtAge"  ErrorMessage="Age must be between 18 and 100" MinimumValue="18" MaximumValue="100" Type="Integer" ForeColor="Red" Display="Dynamic" />
+            <label>👨‍⚕️ Full Name</label>
+            <asp:TextBox ID="txtName" runat="server" required></asp:TextBox>
 
-                    </td>
-                </tr>
-                <tr>
-                    <td >Gender </td>
-                    <td>
-                        <asp:RadioButtonList ID="rblGender" runat="server" CellPadding="2" CellSpacing="2" RepeatDirection="Horizontal">
-                            <asp:ListItem>Male</asp:ListItem>
-                            <asp:ListItem>Female</asp:ListItem>
-                        </asp:RadioButtonList><br />
+            <label>🎂 Age</label>
+            <asp:TextBox ID="txtAge" runat="server" TextMode="Number" required></asp:TextBox>
 
-                        <asp:RequiredFieldValidator ID="rfvGender" runat="server" ControlToValidate="rblGender"  ErrorMessage="Gender is required." ForeColor="Red" Height="20px" /><br />
+            <label>🚻 Gender</label>
+            <asp:DropDownList ID="ddlGender" runat="server">
+                <asp:ListItem Text="--Select Gender--" Value="" />
+                <asp:ListItem Text="Male" Value="Male" />
+                <asp:ListItem Text="Female" Value="Female" />
+                <asp:ListItem Text="Other" Value="Other" />
+            </asp:DropDownList>
 
-                    </td>
-                </tr>
-                <tr>
-                    <td >Address </td>
-                    <td>
-                        <asp:TextBox ID="txtAddress" runat="server" TextMode="MultiLine" CssClass="textFields"></asp:TextBox><br />
-                        <asp:RequiredFieldValidator ID="rfvAddress" runat="server" ControlToValidate="txtAddress"  ErrorMessage="Address is required." ForeColor="Red" Height="20px" /><br />
+            <label>📍 Address</label>
+            <asp:TextBox ID="txtAddress" runat="server" TextMode="MultiLine" required></asp:TextBox>
 
-                    </td>
-                </tr>
-                <tr>
-                    <td >Specialization </td>
-                    <td>
-                        <asp:DropDownList ID="ddlSpecialities" runat="server" Width="180px" AutoPostBack="True" OnSelectedIndexChanged="ddlSpecialities_SelectedIndexChanged" >
-                        </asp:DropDownList><br />
-                     <asp:RequiredFieldValidator ID="rfvSpecial" runat="server" ControlToValidate="ddlSpecialities" ErrorMessage="Specialities  is required." ForeColor="Red" Height="20px" /><br />
+            <label>🔐 Password</label>
+            <asp:TextBox ID="txtPassword" runat="server" TextMode="Password" required></asp:TextBox>
 
-                        <asp:DropDownList ID="ddlSpecialitiesTypes" runat="server" Width="180px">
-                        </asp:DropDownList><br />
+            <label>🔐 Confirm Password</label>
+            <asp:TextBox ID="txtcPassword" runat="server" TextMode="Password" required></asp:TextBox>
 
-                      <asp:RequiredFieldValidator ID="rfvTyps" runat="server" ControlToValidate="ddlSpecialitiesTypes" ErrorMessage="Specialities Types is required." ForeColor="Red" Height="20px" /><br />
+            <label>🏥 Specialization</label>
+            <asp:DropDownList ID="ddlSpecialization" runat="server">
+                <asp:ListItem Text="--Select Specialization--" Value="" />
+                <asp:ListItem Text="Cardiology" Value="Cardiology" />
+                <asp:ListItem Text="Neurology" Value="Neurology" />
+                <asp:ListItem Text="Orthopedics" Value="Orthopedics" />
+                <asp:ListItem Text="Pediatrics" Value="Pediatrics" />
+            </asp:DropDownList>
 
-                    </td>
-                </tr>
-                <tr>
-                    <td >Experience Years </td>
-                    <td>
-                        <asp:TextBox ID="txtExperienceYear" runat="server" TextMode="Number" CssClass="no-spinner" MaxLength="3"></asp:TextBox><br />
-                        <asp:RequiredFieldValidator ID="rfvExperience" runat="server" ControlToValidate="txtExperienceYear" ErrorMessage="Experience is required." ForeColor="Red" Height="20px"/><br />
+            <label>📅 Years of Experience</label>
+            <asp:TextBox ID="txtExperience" runat="server" TextMode="Number" required></asp:TextBox>
 
-                    </td>
-                </tr>
-                <tr>
-                    <td>Contact No </td>
-                    <td>
-                        <asp:TextBox ID="txtContactNo" runat="server" TextMode="Number" CssClass="no-spinner" MaxLength="10"></asp:TextBox><br />
-                       <asp:RequiredFieldValidator ID="rfvPhoneNumber" runat="server" ControlToValidate="txtContactNo"  ErrorMessage="Phone Number is required." ForeColor="Red" Display="Dynamic" /><br />
-                     <asp:RegularExpressionValidator ID="revPhoneNumber" runat="server" ControlToValidate="txtContactNo" ErrorMessage="Invalid Phone Number (must be 10 digits)" ValidationExpression="^\d{10}$"  ForeColor="Red" Display="Dynamic" />
+            <label>📞 Contact Number</label>
+            <asp:TextBox ID="txtContact" runat="server" required></asp:TextBox>
 
-                    </td>
-                </tr>
-                <tr>
-                    <td >Email </td>
-                    <td>
-                        <asp:TextBox ID="txtEmail" runat="server" TextMode="Email" CssClass="textFields"></asp:TextBox><br />
-                          <asp:RequiredFieldValidator ID="rfvEmail" runat="server" ControlToValidate="txtEmail" ErrorMessage="Email is required." ForeColor="Red" Height="20px" /><br />
-                        <asp:RegularExpressionValidator ID="revEmail" runat="server" ControlToValidate="txtEmail" ErrorMessage="Invalid Email format." CssClass="error" ValidationExpression="^[^@\s]+@[^@\s]+\.[^@\s]+$" ForeColor="Red" Height="20px" />
-                    </td>
-                </tr>
-                <tr>
-                    <td >Password </td>
-                    <td>
-                        <asp:TextBox ID="txtPassword" runat="server" TextMode="Password" CssClass="textFields"></asp:TextBox><br />
-                        <asp:RequiredFieldValidator ID="rfvPassword" runat="server" ControlToValidate="txtPassword" ErrorMessage="Password is required." ForeColor="Red" Display="Dynamic" /><br />
-                       <asp:RegularExpressionValidator ID="revPassword" runat="server" ControlToValidate="txtPassword"  ErrorMessage="Password must be at least 8 characters long, with one uppercase, one lowercase, one number, and one special character." ValidationExpression="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$"  ForeColor="Red" Display="Dynamic" />
+            <label>📧 Email</label>
+            <asp:TextBox ID="txtEmail" runat="server" TextMode="Email" required></asp:TextBox>
 
+            <label>📜 License Number</label>
+            <asp:TextBox ID="txtLicense" runat="server" required></asp:TextBox>
 
-                    </td>
-                </tr>
+            <label>💰 Consultation Fee</label>
+            <asp:TextBox ID="txtFee" runat="server" TextMode="Number" required></asp:TextBox>
 
+            <label>🖼 Profile Picture</label>
+            <asp:FileUpload ID="fileProfile" runat="server" required />
 
-                <tr>
-                   <td >confirm-Password </td>
-                    <td>
-                         <asp:TextBox ID="txtConfirm" runat="server" TextMode="Password" CssClass="textFields"></asp:TextBox><br />
-                        <asp:RequiredFieldValidator ID="rfvConfirmPassword" runat="server" ControlToValidate="txtConfirm"  ErrorMessage="Confirm Password is required." ForeColor="Red" Display="Dynamic" /><br />
-                        <asp:CompareValidator ID="cvPassword" runat="server" ControlToValidate="txtConfirm" ControlToCompare="txtPassword"  ErrorMessage="Passwords do not match." ForeColor="Red" Display="Dynamic" />
-
-
-
-                    </td>
-               </tr>
-
-                <tr>
-                    <td >License Number </td>
-                    <td>
-                       <asp:TextBox ID="txtLicenseNo" runat="server" TextMode="Number" CssClass="no-spinner" MaxLength="12"></asp:TextBox><br />
-                      <asp:RequiredFieldValidator ID="rfvLicense" runat="server" ControlToValidate="txtLicenseNo"  ErrorMessage="License Number is required." ForeColor="Red" Display="Dynamic" /><br />
-                      <asp:RegularExpressionValidator ID="revLicense" runat="server" ControlToValidate="txtLicenseNo"  ErrorMessage="License Number must be exactly 12 digits." ValidationExpression="^\d{12}$" ForeColor="Red" Display="Dynamic" />
-
-                    </td>
-                </tr>
-                <tr>
-                    <td >Consultation Fee</td>
-                    <td>
-                        <asp:TextBox ID="txtFee" runat="server" TextMode="Number" CssClass="no-spinner"></asp:TextBox><br />
-                        <asp:RequiredFieldValidator ID="rfvConsul" runat="server" ControlToValidate="txtFee" ErrorMessage="Fee is required." ForeColor="Red" Height="20px" />
-                       
-
-
-                    </td>
-                </tr>
-                <tr>
-                    <td colspan="2" style="text-align: center">
-                        <asp:Button ID="btnSubmit" runat="server" Text="SUBMIT" CssClass="btnsubmit" OnClick="btnSubmit_Click"/>
-                        <asp:Button ID="btnReset" runat="server" Text="RESET" OnClick="btnReset_Click" CssClass="btnreset"/>
-                    </td>
-                </tr>
-                <tr>
-                    <td colspan="2"><asp:Label ID="lblDetails" runat="server" Text="Details"></asp:Label>
-                    </td>
-                </tr>
-            </table>
+            <asp:Button ID="btnSubmit" runat="server" CssClass="btn-submit" Text="✔ Register Doctor" OnClick="btnSubmit_Click"    />
+             <asp:Button ID="btnReset" runat="server" Text="Reset" CssClass="btn-reset" OnClick="btnReset_Click"  />
         </div>
     </form>
 </body>

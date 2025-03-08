@@ -24,76 +24,31 @@ namespace hospital_management.Doctor
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
-        /// txtPatientName control.
+        /// lblMessage control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtPatientName;
+        protected global::System.Web.UI.WebControls.Label lblMessage;
 
         /// <summary>
-        /// rfvName control.
+        /// ddlPatient control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvName;
+        protected global::System.Web.UI.WebControls.DropDownList ddlPatient;
 
         /// <summary>
-        /// revName control.
+        /// ddlDoctor control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RegularExpressionValidator revName;
-
-        /// <summary>
-        /// rblBlood control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButtonList rblBlood;
-
-        /// <summary>
-        /// rfvBlood control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvBlood;
-
-        /// <summary>
-        /// txtDoctorName control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtDoctorName;
-
-        /// <summary>
-        /// rfvDoctorName control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvDoctorName;
-
-        /// <summary>
-        /// revDoctorName control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RegularExpressionValidator revDoctorName;
+        protected global::System.Web.UI.WebControls.DropDownList ddlDoctor;
 
         /// <summary>
         /// txtVisitDate control.
@@ -105,15 +60,6 @@ namespace hospital_management.Doctor
         protected global::System.Web.UI.WebControls.TextBox txtVisitDate;
 
         /// <summary>
-        /// rfvVisit control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvVisit;
-
-        /// <summary>
         /// txtDiagnosis control.
         /// </summary>
         /// <remarks>
@@ -123,93 +69,48 @@ namespace hospital_management.Doctor
         protected global::System.Web.UI.WebControls.TextBox txtDiagnosis;
 
         /// <summary>
-        /// rfvDiagnosis control.
+        /// txtMedications control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvDiagnosis;
+        protected global::System.Web.UI.WebControls.TextBox txtMedications;
 
         /// <summary>
-        /// txtPrescribedMedications control.
+        /// txtNotes control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtPrescribedMedications;
+        protected global::System.Web.UI.WebControls.TextBox txtNotes;
 
         /// <summary>
-        /// rfvMedication control.
+        /// ddlStatus control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvMedication;
+        protected global::System.Web.UI.WebControls.DropDownList ddlStatus;
 
         /// <summary>
-        /// txtTreatmentNote control.
+        /// btnAddMedicalRecord control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtTreatmentNote;
+        protected global::System.Web.UI.WebControls.Button btnAddMedicalRecord;
 
         /// <summary>
-        /// rfvTreatment control.
+        /// gvMedicalRecords control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvTreatment;
-
-        /// <summary>
-        /// ddlTreatmentStatus control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlTreatmentStatus;
-
-        /// <summary>
-        /// rfvStatus control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvStatus;
-
-        /// <summary>
-        /// btnSubmit control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnSubmit;
-
-        /// <summary>
-        /// btnreset control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnreset;
-
-        /// <summary>
-        /// lblDetails control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblDetails;
+        protected global::System.Web.UI.WebControls.GridView gvMedicalRecords;
     }
 }
