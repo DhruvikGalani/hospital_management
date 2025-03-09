@@ -1,11 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Configuration;
 using System.Data.SqlClient;
-using System.Linq;
 using System.Web;
 using System.Web.UI;
-using System.Web.UI.WebControls;
 
 namespace hospital_management.pages
 {
@@ -21,33 +18,11 @@ namespace hospital_management.pages
             string username = txtEmail.Text;
             string password = txtPassword.Text;
 
-            // Check Admin Login
-            if(ValidateLogin("tbl_Admin", username, password))
-            {
-                Session["Username"] = username;
-                Session["UserRole"] = "Admin";
-                Response.Redirect("~/Admin_Dashbord/Admin_DashBordPage.aspx");
-            }
-            // Check Doctor Login
-            else if(ValidateLogin("tbl_Doctors", username, password))
-            {
-                Session["Username"] = username;
-                Session["UserRole"] = "Doctor";
-                Response.Redirect("~/Doctor/doctor_dashboard.aspx");
-            }
             // Check Nurse Login
-            else if(ValidateLogin("tbl_Nurse", username, password))
+            if(ValidateLogin("tbl_Nurse", username, password))
             {
-                Session["Username"] = username;
-                Session["UserRole"] = "Nurse";
+                FetchNurseDetails(username);
                 Response.Redirect("~/Nurse_dashboard/Nurse_homepage.aspx");
-            }
-            // Check Patient Login
-            else if(ValidateLogin("tbl_Patients", username, password))
-            {
-                Session["Username"] = username;
-                Session["UserRole"] = "Patient";
-                Response.Redirect("~/Patient/patient_dashboard.aspx");
             }
             else
             {
@@ -58,7 +33,6 @@ namespace hospital_management.pages
         private bool ValidateLogin(string tableName, string username, string password)
         {
             bool isValid = false;
-
             string connectionString = ConfigurationManager.ConnectionStrings["MyConnectionString"].ConnectionString;
 
             using(SqlConnection connection = new SqlConnection(connectionString))
@@ -75,5 +49,31 @@ namespace hospital_management.pages
 
             return isValid;
         }
+
+        private void FetchNurseDetails(string username)
+        {
+            string connectionString = ConfigurationManager.ConnectionStrings["MyConnectionString"].ConnectionString;
+            using(SqlConnection connection = new SqlConnection(connectionString))
+            {
+                string query = "SELECT NurseID, Name, Age, Gender, Address, Email, ContactNumber, Profile FROM tbl_Nurse WHERE Email = @Email";
+                SqlCommand cmd = new SqlCommand(query, connection);
+                cmd.Parameters.AddWithValue("@Email", username);
+
+                connection.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                if(reader.Read())
+                {
+                    Session["NurseID"] = reader["NurseID"].ToString();
+                    Session["NurseName"] = reader["Name"].ToString();
+                    Session["NurseAge"] = reader["Age"].ToString();
+                    Session["NurseGender"] = reader["Gender"].ToString();
+                    Session["NurseAddress"] = reader["Address"].ToString();
+                    Session["NurseEmail"] = reader["Email"].ToString();
+                    Session["NurseContact"] = reader["ContactNumber"].ToString();
+                    Session["ProfilePicture"] = reader["Profile"].ToString();
+                }
+            }
+        }
+
     }
 }
