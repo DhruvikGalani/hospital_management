@@ -92,10 +92,11 @@
 
         /* Iframe */
         .content-frame {
-            width: 100%;
-            height: 80vh;
-            border: none;
-            background: white;
+              flex-grow: 1; /* This makes the iframe fill the remaining space */
+    width: 100%;
+    height: calc(100vh - 40px); /* Subtracts padding */
+    border: none;
+    background: white;
         }
     </style>
 
@@ -126,9 +127,6 @@
     </div>
 
     <div class="main-content">
-        <div class="header">
-            <h2>Welcome</h2>
-        </div>
 
         <!-- Iframe to load pages without redirecting -->
 
