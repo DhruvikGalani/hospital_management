@@ -168,7 +168,6 @@
     <Content Include="Nurse_dashboard\Emergency_details.aspx" />
     <Content Include="Nurse_dashboard\homepage.aspx" />
     <Content Include="Nurse_dashboard\laboratorytest_details.aspx" />
-    <Content Include="Nurse_dashboard\login.aspx" />
     <Content Include="Nurse_dashboard\medical_records.aspx" />
     <Content Include="Nurse_dashboard\Nurse_homepage.aspx" />
     <Content Include="Nurse_dashboard\nurse_details.aspx" />
@@ -441,13 +440,6 @@
     </Compile>
     <Compile Include="Nurse_dashboard\laboratorytest_details.aspx.designer.cs">
       <DependentUpon>laboratorytest_details.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Nurse_dashboard\login.aspx.cs">
-      <DependentUpon>login.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Nurse_dashboard\login.aspx.designer.cs">
-      <DependentUpon>login.aspx</DependentUpon>
     </Compile>
     <Compile Include="Nurse_dashboard\medical_records.aspx.cs">
       <DependentUpon>medical_records.aspx</DependentUpon>
