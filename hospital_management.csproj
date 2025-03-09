@@ -353,6 +353,8 @@
     </Compile>
     <Compile Include="Admin_Dashbord\staffInformation_details.aspx.designer.cs">
       <DependentUpon>staffInformation_details.aspx</DependentUpon>
+		<SubType>ASPXCodeBehind</SubType>
+	</Compile>	
     <Compile Include="Doctor\DHomepage.aspx.cs">
       <DependentUpon>DHomepage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
