@@ -72,8 +72,14 @@
     <Content Include="Admin\StaffInformation.aspx" />
     <Content Include="Admin_Dashbord\Admin_DashBordPage.aspx" />
     <Content Include="Admin_Dashbord\admin_homePage.aspx" />
+    <Content Include="Admin_Dashbord\billing_details.aspx" />
+    <Content Include="Admin_Dashbord\feedbackreview_details.aspx" />
+    <Content Include="Admin_Dashbord\manage_appointment.aspx" />
     <Content Include="Admin_Dashbord\manage_doctors.aspx" />
     <Content Include="Admin_Dashbord\manage_nurses.aspx" />
+    <Content Include="Admin_Dashbord\medicalrecords_details.aspx" />
+    <Content Include="Admin_Dashbord\patient_details.aspx" />
+    <Content Include="Admin_Dashbord\staffInformation_details.aspx" />
     <Content Include="App_Data\db_HMS.mdf" />
     <Content Include="App_Data\db_HMS_log.ldf">
       <DependentUpon>db_HMS.mdf</DependentUpon>
@@ -288,6 +294,27 @@
     <Compile Include="Admin_Dashbord\admin_homePage.aspx.designer.cs">
       <DependentUpon>admin_homePage.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Admin_Dashbord\billing_details.aspx.cs">
+      <DependentUpon>billing_details.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin_Dashbord\billing_details.aspx.designer.cs">
+      <DependentUpon>billing_details.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin_Dashbord\feedbackreview_details.aspx.cs">
+      <DependentUpon>feedbackreview_details.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin_Dashbord\feedbackreview_details.aspx.designer.cs">
+      <DependentUpon>feedbackreview_details.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin_Dashbord\manage_appointment.aspx.cs">
+      <DependentUpon>manage_appointment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin_Dashbord\manage_appointment.aspx.designer.cs">
+      <DependentUpon>manage_appointment.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Admin_Dashbord\manage_doctors.aspx.cs">
       <DependentUpon>manage_doctors.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -301,6 +328,27 @@
     </Compile>
     <Compile Include="Admin_Dashbord\manage_nurses.aspx.designer.cs">
       <DependentUpon>manage_nurses.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin_Dashbord\medicalrecords_details.aspx.cs">
+      <DependentUpon>medicalrecords_details.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin_Dashbord\medicalrecords_details.aspx.designer.cs">
+      <DependentUpon>medicalrecords_details.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin_Dashbord\patient_details.aspx.cs">
+      <DependentUpon>patient_details.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin_Dashbord\patient_details.aspx.designer.cs">
+      <DependentUpon>patient_details.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin_Dashbord\staffInformation_details.aspx.cs">
+      <DependentUpon>staffInformation_details.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin_Dashbord\staffInformation_details.aspx.designer.cs">
+      <DependentUpon>staffInformation_details.aspx</DependentUpon>
     </Compile>
     <Compile Include="Doctor\DoctorDetails.aspx.cs">
       <DependentUpon>DoctorDetails.aspx</DependentUpon>
