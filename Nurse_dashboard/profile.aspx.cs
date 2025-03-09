@@ -3,8 +3,6 @@ using System.IO;
 using System.Web;
 using System.Web.UI;
 using System.Data.SqlClient;
-using System.Web.UI.WebControls;
-using System.Xml.Linq;
 
 namespace hospital_management.Nurse_dashboard
 {
@@ -12,72 +10,115 @@ namespace hospital_management.Nurse_dashboard
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["NurseID"] != null)
+            if(Session["NurseID"] != null)
             {
-                if (!IsPostBack)
+                if(!IsPostBack) // Load only first time
                 {
-                    // Load nurse profile from session
-                    txtName.Text = Session["NurseName"].ToString();
-                    txtEmail.Text = Session["NurseEmail"].ToString();
-                    txtContact.Text = Session["NurseContact"].ToString();
-                    imgProfile.ImageUrl = Session["ProfilePicture"].ToString();
+                    LoadNurseProfile();
                 }
             }
             else
             {
-                Response.Redirect("login.aspx");
+                Response.Redirect("~/pages/LoginPage.aspx");
+            }
+        }
+
+        private void LoadNurseProfile()
+        {
+            try
+            {
+                txtName.Text = Session["NurseName"].ToString();
+                txtAge.Text = Session["NurseAge"].ToString();
+                txtGender.Text = Session["NurseGender"].ToString();
+                txtAddress.Text = Session["NurseAddress"].ToString();
+                txtEmail.Text = Session["NurseEmail"].ToString();
+                txtContact.Text = Session["NurseContact"].ToString();
+                imgProfile.ImageUrl = Session["ProfilePicture"].ToString();
+            }
+            catch(Exception ex)
+            {
+                lblMessage.Text = "Error loading profile: " + ex.Message;
+                lblMessage.ForeColor = System.Drawing.Color.Red;
             }
         }
 
         protected void btnSave_Click(object sender, EventArgs e)
         {
-            string name = txtName.Text;
-            string email = txtEmail.Text;
-            string contact = txtContact.Text;
-            string profilePicture = imgProfile.ImageUrl;
-
-            // Check if a new profile picture is uploaded
-            if (fileUpload.HasFile)
+            try
             {
-                string fileName = Path.GetFileName(fileUpload.PostedFile.FileName);
-                string filePath = Server.MapPath("~/Images/") + fileName;
-                fileUpload.SaveAs(filePath);
-                profilePicture = "~/Images/" + fileName;
+                string nurseId = Session["NurseID"].ToString();
+                string name = txtName.Text.Trim();
+                int age = int.Parse(txtAge.Text.Trim());
+                string gender = txtGender.Text.Trim();
+                string address = txtAddress.Text.Trim();
+                string email = txtEmail.Text.Trim();
+                string contact = txtContact.Text.Trim();
+                string profilePicture = imgProfile.ImageUrl; // Default to existing
+
+                if(fileUpload.HasFile)
+                {
+                    string fileName = Path.GetFileName(fileUpload.PostedFile.FileName);
+                    string filePath = Server.MapPath("~/Images/") + fileName;
+                    fileUpload.SaveAs(filePath);
+                    profilePicture = "~/Images/" + fileName;
+                }
+
+                // Update database
+                bool success = UpdateNurseProfile(nurseId, name, age, gender, address, email, contact, profilePicture);
+
+                if(success)
+                {
+                    // Update session values
+                    Session["NurseName"] = name;
+                    Session["NurseAge"] = age.ToString();
+                    Session["NurseGender"] = gender;
+                    Session["NurseAddress"] = address;
+                    Session["NurseEmail"] = email;
+                    Session["NurseContact"] = contact;
+                    Session["ProfilePicture"] = profilePicture;
+
+                    lblMessage.Text = "Profile updated successfully!";
+                    lblMessage.ForeColor = System.Drawing.Color.Green;
+                }
+                else
+                {
+                    lblMessage.Text = "Update failed. Please try again.";
+                    lblMessage.ForeColor = System.Drawing.Color.Red;
+                }
             }
-
-            // Update nurse profile in the database
-            UpdateNurseProfile(Session["NurseID"].ToString(), name, email, contact, profilePicture);
-
-            // Update session with new profile details
-            Session["NurseName"] = name;
-            Session["NurseEmail"] = email;
-            Session["NurseContact"] = contact;
-            Session["ProfilePicture"] = profilePicture;
-
-            lblMessage.Text = "Profile updated successfully";
+            catch(Exception ex)
+            {
+                lblMessage.Text = "Error updating profile: " + ex.Message;
+                lblMessage.ForeColor = System.Drawing.Color.Red;
+            }
         }
 
-        // Method to update nurse profile in the database
-        private void UpdateNurseProfile(string nurseId, string name, string email, string contact, string profilePicture)
+        private bool UpdateNurseProfile(string nurseId, string name, int age, string gender, string address, string email, string contact, string profilePicture)
         {
-            string connectionString = System.Configuration.ConfigurationManager.ConnectionStrings["YourConnectionString"].ConnectionString;
+            string connectionString = System.Configuration.ConfigurationManager.ConnectionStrings["MyConnectionString"].ConnectionString;
+            int rowsAffected = 0;
 
-            using (SqlConnection con = new SqlConnection(connectionString))
+            using(SqlConnection con = new SqlConnection(connectionString))
             {
-                string query = "UPDATE Nurses SET Name = @Name, Email = @Email, ContactNumber = @Contact, ProfilePicture = @ProfilePicture WHERE NurseID = @NurseID";
-                using (SqlCommand cmd = new SqlCommand(query, con))
+                string query = "UPDATE tbl_Nurse SET Name = @Name, Age = @Age, Gender = @Gender, Address = @Address, Email = @Email, ContactNumber = @Contact, Profile = @Profile WHERE NurseID = @NurseID";
+
+                using(SqlCommand cmd = new SqlCommand(query, con))
                 {
                     cmd.Parameters.AddWithValue("@NurseID", nurseId);
                     cmd.Parameters.AddWithValue("@Name", name);
+                    cmd.Parameters.AddWithValue("@Age", age);
+                    cmd.Parameters.AddWithValue("@Gender", gender);
+                    cmd.Parameters.AddWithValue("@Address", address);
                     cmd.Parameters.AddWithValue("@Email", email);
                     cmd.Parameters.AddWithValue("@Contact", contact);
-                    cmd.Parameters.AddWithValue("@ProfilePicture", profilePicture);
+                    cmd.Parameters.AddWithValue("@Profile", profilePicture);
 
                     con.Open();
-                    cmd.ExecuteNonQuery();
+                    rowsAffected = cmd.ExecuteNonQuery();
                     con.Close();
                 }
             }
+            return rowsAffected > 0;
         }
     }
 }
