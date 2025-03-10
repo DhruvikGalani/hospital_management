@@ -9,9 +9,10 @@ namespace hospital_management.Nurse_dashboard
     public partial class medical_records : System.Web.UI.Page
     {
         string strcon = ConfigurationManager.ConnectionStrings["MyConnectionString"].ConnectionString;
+
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!IsPostBack)
+            if(!IsPostBack)
             {
                 LoadMedicalRecords();
             }
@@ -19,7 +20,7 @@ namespace hospital_management.Nurse_dashboard
 
         private void LoadMedicalRecords()
         {
-            using (SqlConnection con = new SqlConnection(strcon))
+            using(SqlConnection con = new SqlConnection(strcon))
             {
                 con.Open();
                 string query = @"SELECT M.recordID, P.name AS PatientName, D.name AS DoctorName, 
@@ -37,13 +38,43 @@ namespace hospital_management.Nurse_dashboard
             }
         }
 
-        protected void gvMedicalRecords_RowEditing(object sender, System.Web.UI.WebControls.GridViewEditEventArgs e)
+        protected void gvMedicalRecords_RowEditing(object sender, GridViewEditEventArgs e)
         {
             gvMedicalRecords.EditIndex = e.NewEditIndex;
-            LoadMedicalRecords();
-        }
+            LoadMedicalRecords(); // Reload data before setting the DropDownList
 
-        protected void gvMedicalRecords_RowCancelingEdit(object sender, System.Web.UI.WebControls.GridViewCancelEditEventArgs e)
+            GridViewRow row = gvMedicalRecords.Rows[e.NewEditIndex];
+            DropDownList ddlDoctor = (DropDownList)row.FindControl("ddlDoctor");
+            Label lblDoctorName = (Label)row.FindControl("lblDoctorName");
+
+            if(ddlDoctor != null)
+            {
+                using(SqlConnection con = new SqlConnection(strcon))
+                {
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand("SELECT doctorID, name FROM tbl_Doctors", con);
+                    SqlDataReader dr = cmd.ExecuteReader();
+
+                    ddlDoctor.DataSource = dr;
+                    ddlDoctor.DataTextField = "name";  // Display doctor name
+                    ddlDoctor.DataValueField = "doctorID";  // Store doctor ID
+                    ddlDoctor.DataBind();
+                    dr.Close();
+                }
+
+                // Set the selected doctor
+                if(lblDoctorName != null && !string.IsNullOrEmpty(lblDoctorName.Text))
+                {
+                    ListItem selectedItem = ddlDoctor.Items.FindByText(lblDoctorName.Text);
+                    if(selectedItem != null)
+                    {
+                        ddlDoctor.ClearSelection();
+                        selectedItem.Selected = true;
+                    }
+                }
+            }
+        }
+        protected void gvMedicalRecords_RowCancelingEdit(object sender, GridViewCancelEditEventArgs e)
         {
             gvMedicalRecords.EditIndex = -1;
             LoadMedicalRecords();
@@ -55,13 +86,20 @@ namespace hospital_management.Nurse_dashboard
             {
                 int recordID = Convert.ToInt32(gvMedicalRecords.DataKeys[e.RowIndex].Value);
 
-                TextBox txtDiagnosis = (TextBox)gvMedicalRecords.Rows[e.RowIndex].Cells[4].Controls[0];
-                TextBox txtMedications = (TextBox)gvMedicalRecords.Rows[e.RowIndex].Cells[5].Controls[0];
-                TextBox txtNotes = (TextBox)gvMedicalRecords.Rows[e.RowIndex].Cells[6].Controls[0];
+                TextBox txtDiagnosis = (TextBox)gvMedicalRecords.Rows[e.RowIndex].FindControl("txtDiagnosis");
+                TextBox txtMedications = (TextBox)gvMedicalRecords.Rows[e.RowIndex].FindControl("txtMedications");
+                TextBox txtNotes = (TextBox)gvMedicalRecords.Rows[e.RowIndex].FindControl("txtNotes");
                 TextBox txtVisitDate = (TextBox)gvMedicalRecords.Rows[e.RowIndex].FindControl("txtVisitDate");
                 DropDownList ddlStatus = (DropDownList)gvMedicalRecords.Rows[e.RowIndex].FindControl("ddlStatus");
+                DropDownList ddlDoctor = (DropDownList)gvMedicalRecords.Rows[e.RowIndex].FindControl("ddlDoctor");
 
-                using (SqlConnection con = new SqlConnection(strcon))
+                if(ddlDoctor == null)
+                {
+                    Response.Write("<script>alert('Doctor dropdown not found!');</script>");
+                    return;
+                }
+
+                using(SqlConnection con = new SqlConnection(strcon))
                 {
                     con.Open();
                     string query = @"UPDATE tbl_MedicalRecords SET 
@@ -69,7 +107,8 @@ namespace hospital_management.Nurse_dashboard
                              prescribedMedications = @medications, 
                              treatmentNotes = @notes, 
                              treatmentStatus = @status, 
-                             visitDate = @visitDate 
+                             visitDate = @visitDate,
+                             doctorID = @doctorID
                              WHERE recordID = @recordID";
 
                     SqlCommand cmd = new SqlCommand(query, con);
@@ -78,6 +117,7 @@ namespace hospital_management.Nurse_dashboard
                     cmd.Parameters.AddWithValue("@notes", txtNotes.Text);
                     cmd.Parameters.AddWithValue("@status", ddlStatus.SelectedValue);
                     cmd.Parameters.AddWithValue("@visitDate", DateTime.Parse(txtVisitDate.Text));
+                    cmd.Parameters.AddWithValue("@doctorID", ddlDoctor.SelectedValue);  // Store doctor ID
                     cmd.Parameters.AddWithValue("@recordID", recordID);
                     cmd.ExecuteNonQuery();
                 }
@@ -86,11 +126,10 @@ namespace hospital_management.Nurse_dashboard
                 LoadMedicalRecords();
                 Response.Write("<script>alert('Medical Record Updated Successfully ✅');</script>");
             }
-            catch (Exception ex)
+            catch(Exception ex)
             {
                 Response.Write("<script>alert('Error: " + ex.Message + "');</script>");
             }
         }
     }
 }
-

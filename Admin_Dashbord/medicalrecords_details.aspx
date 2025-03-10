@@ -63,7 +63,7 @@
             </div>
             
             <div class="mt-4">
-                <h3 class="text-center text-primary">📋 Prescription Records</h3>
+                <h3 class="text-center text-success">📋 Prescription Records</h3>
                 <asp:GridView ID="gvMedicalRecords" runat="server" CssClass="table table-bordered table-striped" AutoGenerateColumns="False" DataKeyNames="recordID"
                     OnRowEditing="gvMedicalRecords_RowEditing" OnRowUpdating="gvMedicalRecords_RowUpdating" OnRowCancelingEdit="gvMedicalRecords_RowCancelingEdit" OnRowDeleting="gvMedicalRecords_RowDeleting">
                     <Columns>

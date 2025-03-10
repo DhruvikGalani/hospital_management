@@ -20,8 +20,85 @@ namespace hospital_management.Admin_Dashbord
             if (!IsPostBack)
             {
                 LoadGrid();
+                LoadPatients();
+                LoadAppointments();
             }
         }
+
+        private void LoadPatients()
+        {
+            string connStr = ConfigurationManager.ConnectionStrings["MyConnectionString"].ConnectionString;
+            using (SqlConnection conn = new SqlConnection(connStr))
+            {
+                conn.Open();
+                string query = "SELECT patientID, name FROM tbl_Patients";
+                SqlCommand cmd = new SqlCommand(query, conn);
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                ddlPatient.DataSource = reader;
+                ddlPatient.DataTextField = "name";
+                ddlPatient.DataValueField = "patientID";
+                ddlPatient.DataBind();
+
+                reader.Close();
+            }
+        }
+
+        private void LoadAppointments()
+        {
+            string connStr = ConfigurationManager.ConnectionStrings["MyConnectionString"].ConnectionString;
+            using (SqlConnection conn = new SqlConnection(connStr))
+            {
+                conn.Open();
+                string query = "SELECT appointmentID FROM tbl_Appointments";
+                SqlCommand cmd = new SqlCommand(query, conn);
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                ddlAppointment.DataSource = reader;
+                ddlAppointment.DataTextField = "appointmentID";
+                ddlAppointment.DataValueField = "appointmentID";
+                ddlAppointment.DataBind();
+
+                reader.Close();
+            }
+        }
+
+        protected void btnInsert_Click(object sender, EventArgs e)
+        {
+            string connStr = ConfigurationManager.ConnectionStrings["MyConnectionString"].ConnectionString;
+            using (SqlConnection conn = new SqlConnection(connStr))
+            {
+                conn.Open();
+                string query = @"INSERT INTO tbl_Billing (patientID, appointmentID, totalAmount, discounts, paymentMode, paymentStatus, paymentDate) 
+                                 VALUES (@patientID, @appointmentID, @totalAmount, @discounts, @paymentMode, @paymentStatus, @paymentDate)";
+
+                SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@patientID", ddlPatient.SelectedValue);
+                cmd.Parameters.AddWithValue("@appointmentID", ddlAppointment.SelectedValue);
+                cmd.Parameters.AddWithValue("@totalAmount", txtTotalAmount.Text);
+                cmd.Parameters.AddWithValue("@discounts", txtDiscounts.Text);
+                cmd.Parameters.AddWithValue("@paymentMode", ddlPaymentMode.SelectedValue);
+                cmd.Parameters.AddWithValue("@paymentStatus", ddlPaymentStatus.SelectedValue);
+                cmd.Parameters.AddWithValue("@paymentDate", txtPaymentDate.Text);
+
+                cmd.ExecuteNonQuery();
+            }
+
+            // डेटा ऐड करने के बाद टेक्स्ट बॉक्स क्लियर करें
+            txtTotalAmount.Text = "";
+            txtDiscounts.Text = "";
+            txtPaymentDate.Text = "";
+
+            // ऑप्शन को डिफ़ॉल्ट पर सेट करें
+            ddlPatient.SelectedIndex = 0;
+            ddlAppointment.SelectedIndex = 0;
+            ddlPaymentMode.SelectedIndex = 0;
+            ddlPaymentStatus.SelectedIndex = 0;
+
+            // पेज को रीफ्रेश करें (यदि आवश्यक हो)
+            Response.Redirect(Request.RawUrl);
+        }
+
 
         void LoadGrid()
         {

@@ -18,7 +18,7 @@
 <body>
     <form runat="server">
         <div class="container mt-5">
-            <h2 class="text-center text-primary">🏥 Laboratory Test Management</h2>
+            <h2 class="text-center text-primary">🧪 Laboratory Test Management</h2>
             <hr />
 
             <!-- Add Test Section -->
@@ -77,16 +77,16 @@
     OnRowDeleting="gvLabTests_RowDeleting">
     <Columns>
 
-         <asp:TemplateField HeaderText="PatientID">
-     <ItemTemplate>
-         <asp:Label ID="lblPatientID" runat="server" Text='<%# Eval("PatientID") %>'></asp:Label>
-     </ItemTemplate>
-     <EditItemTemplate>
-         <asp:TextBox ID="ddlPatientID" runat="server" CssClass="form-control" Text='<%# Bind("PatientID") %>'></asp:TextBox>
-     </EditItemTemplate>
- </asp:TemplateField>
+        <asp:TemplateField HeaderText="Patient Name">
+            <ItemTemplate>
+                <asp:Label ID="lblPatientName" runat="server" Text='<%# Eval("patientName") %>'>
 
-     <asp:TemplateField HeaderText="Test Type">
+                </asp:Label>
+            </ItemTemplate>
+        </asp:TemplateField>
+
+
+        <asp:TemplateField HeaderText="Test Type">
     <ItemTemplate>
         <asp:Label ID="lblTestType" runat="server" Text='<%# Eval("testType") %>'></asp:Label>
     </ItemTemplate>

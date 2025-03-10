@@ -11,8 +11,60 @@
 <body>
      <form id="form1" runat="server">
 <div class="container mt-5">
-    <h2 class="text-center mb-4">Billing Management</h2>
+    <h2 class="text-center text-primary"> 📝 Billing Management</h2>
+
+     <div class="card shadow-lg p-4 mb-4">
+                <h4 class="mb-3">Add Billing Record</h4>
+                <div class="row">
+                    <div class="col-md-4">
+                        <label>Patient</label>
+                        <asp:DropDownList ID="ddlPatient" runat="server" CssClass="form-select"></asp:DropDownList>
+                    </div>
+                    <div class="col-md-4">
+                        <label>Appointment</label>
+                        <asp:DropDownList ID="ddlAppointment" runat="server" CssClass="form-select"></asp:DropDownList>
+                    </div>
+                    <div class="col-md-4">
+                        <label>Total Amount</label>
+                        <asp:TextBox ID="txtTotalAmount" runat="server" CssClass="form-control" />
+                    </div>
+                </div>
+                <div class="row mt-3">
+                    <div class="col-md-4">
+                        <label>Discounts</label>
+                        <asp:TextBox ID="txtDiscounts" runat="server" CssClass="form-control" />
+                    </div>
+                    <div class="col-md-4">
+                        <label>Payment Mode</label>
+                        <asp:DropDownList ID="ddlPaymentMode" runat="server" CssClass="form-select">
+                            <asp:ListItem>Cash</asp:ListItem>
+                            <asp:ListItem>Card</asp:ListItem>
+                            <asp:ListItem>UPI</asp:ListItem>
+                        </asp:DropDownList>
+                    </div>
+                    <div class="col-md-4">
+                        <label>Payment Status</label>
+                        <asp:DropDownList ID="ddlPaymentStatus" runat="server" CssClass="form-select">
+                            <asp:ListItem>Paid</asp:ListItem>
+                            <asp:ListItem>Pending</asp:ListItem>
+                        </asp:DropDownList>
+                    </div>
+                </div>
+                <div class="row mt-3">
+                    <div class="col-md-4">
+                        <label>Payment Date</label>
+                        <asp:TextBox ID="txtPaymentDate" runat="server" CssClass="form-control" TextMode="Date" />
+                    </div>
+                </div>
+                <div class="mt-3">
+                    <asp:Button ID="btnInsert" runat="server" Text="Add Billing" CssClass="btn btn-primary" OnClick="btnInsert_Click" />
+                </div>
+            </div>
+
     <div class="card shadow-lg p-4">
+
+                        <h3 class="text-center text-success">📝  Billing Records</h3>
+
         <asp:GridView ID="GridView1" CssClass="table table-bordered table-striped"
             AutoGenerateColumns="False" DataKeyNames="invoiceID"
             OnRowEditing="GridView1_RowEditing"
