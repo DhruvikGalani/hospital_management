@@ -106,7 +106,10 @@
     <Content Include="Bootstrap\js\bootstrap.esm.min.js" />
     <Content Include="Bootstrap\js\bootstrap.js" />
     <Content Include="Bootstrap\js\bootstrap.min.js" />
+    <Content Include="Doctor\DHomepage.aspx" />
     <Content Include="Doctor\DoctorDetails.aspx" />
+    <Content Include="Doctor\Doctorhomepage.aspx" />
+    <Content Include="Doctor\DoctorProfile.aspx" />
     <Content Include="Doctor\MedicalRecord.aspx" />
     <Content Include="Doctor\NutritionWellness.aspx" />
     <Content Include="Doctor\Patientsandcarers.aspx" />
@@ -329,6 +332,7 @@
     <Compile Include="Admin_Dashbord\manage_nurses.aspx.designer.cs">
       <DependentUpon>manage_nurses.aspx</DependentUpon>
     </Compile>
+
     <Compile Include="Admin_Dashbord\medicalrecords_details.aspx.cs">
       <DependentUpon>medicalrecords_details.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -349,6 +353,14 @@
     </Compile>
     <Compile Include="Admin_Dashbord\staffInformation_details.aspx.designer.cs">
       <DependentUpon>staffInformation_details.aspx</DependentUpon>
+		<SubType>ASPXCodeBehind</SubType>
+	</Compile>	
+    <Compile Include="Doctor\DHomepage.aspx.cs">
+      <DependentUpon>DHomepage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Doctor\DHomepage.aspx.designer.cs">
+      <DependentUpon>DHomepage.aspx</DependentUpon>
     </Compile>
     <Compile Include="Doctor\DoctorDetails.aspx.cs">
       <DependentUpon>DoctorDetails.aspx</DependentUpon>
@@ -356,6 +368,20 @@
     </Compile>
     <Compile Include="Doctor\DoctorDetails.aspx.designer.cs">
       <DependentUpon>DoctorDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Doctor\Doctorhomepage.aspx.cs">
+      <DependentUpon>Doctorhomepage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Doctor\Doctorhomepage.aspx.designer.cs">
+      <DependentUpon>Doctorhomepage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Doctor\DoctorProfile.aspx.cs">
+      <DependentUpon>DoctorProfile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Doctor\DoctorProfile.aspx.designer.cs">
+      <DependentUpon>DoctorProfile.aspx</DependentUpon>
     </Compile>
     <Compile Include="Doctor\MedicalRecord.aspx.cs">
       <DependentUpon>MedicalRecord.aspx</DependentUpon>
