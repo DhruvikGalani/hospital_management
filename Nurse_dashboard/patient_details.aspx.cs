@@ -2,110 +2,138 @@
 using System.Data;
 using System.Data.SqlClient;
 using System.Configuration;
-using hospital_management.Patient;
 using System.Web.UI.WebControls;
 
 namespace hospital_management.Nurse_dashboard
 {
     public partial class patient_details : System.Web.UI.Page
     {
-        string strcon = ConfigurationManager.ConnectionStrings["MyConnectionString"].ConnectionString;
+        private string strcon = ConfigurationManager.ConnectionStrings["MyConnectionString"].ConnectionString;
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!IsPostBack)
+            if(!IsPostBack)
             {
                 BindGridView();
             }
         }
 
-        protected void gvPatients_RowEditing(object sender, GridViewEditEventArgs e)
+        // Bind data to GridView
+        private void BindGridView()
         {
-            gvPatients.EditIndex = e.NewEditIndex;
-            BindGridView();
-        }
-
-        protected void gvPatients_RowUpdating(object sender, GridViewUpdateEventArgs e)
-        {
-            int patientID = Convert.ToInt32(gvPatients.DataKeys[e.RowIndex].Value);
-            TextBox txtName = (TextBox)gvPatients.Rows[e.RowIndex].FindControl("txtName");
-            TextBox txtAge = (TextBox)gvPatients.Rows[e.RowIndex].FindControl("txtAge");
-            DropDownList ddlGender = (DropDownList)gvPatients.Rows[e.RowIndex].FindControl("ddlGender");
-            TextBox txtdateOfBirth = (TextBox)gvPatients.Rows[e.RowIndex].FindControl("txtdateOfBirth");
-            TextBox txtContact = (TextBox)gvPatients.Rows[e.RowIndex].FindControl("txtContact");
-            TextBox txtEmail = (TextBox)gvPatients.Rows[e.RowIndex].FindControl("txtEmail");
-            TextBox txtPassword = (TextBox)gvPatients.Rows[e.RowIndex].FindControl("txtPassword");
-            TextBox txtAddress = (TextBox)gvPatients.Rows[e.RowIndex].FindControl("txtAddress");
-            TextBox txtEmergency = (TextBox)gvPatients.Rows[e.RowIndex].FindControl("txtEmergency");
-            TextBox txtBloodGroup = (TextBox)gvPatients.Rows[e.RowIndex].FindControl("txtBloodGroup");
-            TextBox txtAllergies = (TextBox)gvPatients.Rows[e.RowIndex].FindControl("txtAllergies");
-            TextBox txtMedicines = (TextBox)gvPatients.Rows[e.RowIndex].FindControl("txtMedicines");
-            DropDownList ddlInsurance = (DropDownList)gvPatients.Rows[e.RowIndex].FindControl("ddlInsurance");
-
-            using (SqlConnection con = new SqlConnection(strcon))
+            using(SqlConnection con = new SqlConnection(strcon))
             {
                 con.Open();
-                SqlCommand cmd = new SqlCommand("UPDATE tbl_Patients SET name=@name, age=@age, gender=@gender, dateOfBirth=@dateOfBirth, contactNumber=@contactNumber, email=@email, password=@password, address=@address, emergencyContact=@emergencyContact, bloodGroup=@bloodGroup, allergies=@allergies, runningMedicines=@runningMedicines, insurance=@insurance WHERE patientID=@patientID", con);
-                cmd.Parameters.AddWithValue("@name", txtName.Text);
-                cmd.Parameters.AddWithValue("@age", txtAge.Text);
-                cmd.Parameters.AddWithValue("@gender", ddlGender.SelectedValue);  
-                cmd.Parameters.AddWithValue("@dateOfBirth", DateTime.Parse(txtdateOfBirth.Text));  
-                cmd.Parameters.AddWithValue("@contactNumber", txtContact.Text);
-                cmd.Parameters.AddWithValue("@email", txtEmail.Text);
-                cmd.Parameters.AddWithValue("@password", txtPassword.Text);
-                cmd.Parameters.AddWithValue("@address", txtAddress.Text);
-                cmd.Parameters.AddWithValue("@emergencyContact", txtEmergency.Text);
-                cmd.Parameters.AddWithValue("@bloodGroup", txtBloodGroup.Text);
-                cmd.Parameters.AddWithValue("@allergies", txtAllergies.Text);
-                cmd.Parameters.AddWithValue("@runningMedicines", txtMedicines.Text);
-                cmd.Parameters.AddWithValue("@insurance", ddlInsurance.SelectedValue);  
-                cmd.Parameters.AddWithValue("@patientID", patientID);
-                cmd.ExecuteNonQuery();
+                SqlDataAdapter da = new SqlDataAdapter(@"
+        SELECT 
+            a.appointmentID, 
+            p.patientID, 
+            p.name AS patientName, 
+            p.contactNumber, 
+            p.email, 
+            d.name AS doctorName,  -- Get doctor name instead of ID
+            a.appointmentDateTime, 
+            a.reasonForVisit, 
+            a.clinicLocation, 
+            a.status
+        FROM tbl_Appointments a
+        JOIN tbl_Patients p ON a.patientID = p.patientID
+        JOIN tbl_Doctors d ON a.doctorID = d.doctorID", con); 
+
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                gvAppointments.DataSource = dt;
+                gvAppointments.DataBind();
             }
-            gvPatients.EditIndex = -1;
-            BindGridView();
         }
 
-        protected void gvPatients_RowCancelingEdit(object sender, GridViewCancelEditEventArgs e)
-        {
-            gvPatients.EditIndex = -1;
-            BindGridView();
-        }
 
-        protected void BindGridView()
+        // Row Editing Event
+        protected void gvAppointments_RowEditing(object sender, GridViewEditEventArgs e)
         {
-            using (SqlConnection con = new SqlConnection(strcon))
+            gvAppointments.EditIndex = e.NewEditIndex;
+            BindGridView(); // Rebind GridView to switch to edit mode
+
+            // Get the current row being edited
+            GridViewRow row = gvAppointments.Rows[e.NewEditIndex];
+
+            // Find the DropDownList in the edit template
+            DropDownList ddlDoctor = row.FindControl("ddlDoctor") as DropDownList;
+            Label lblDoctorName = row.FindControl("lblDoctorName") as Label; // Get the current doctor name
+
+            if(ddlDoctor != null)
             {
-                try
+                using(SqlConnection con = new SqlConnection(strcon))
                 {
                     con.Open();
-                    SqlCommand cmd = new SqlCommand("SELECT * FROM tbl_Patients", con);
-                    SqlDataAdapter sda = new SqlDataAdapter(cmd);
-                    DataTable dt = new DataTable();
-                    sda.Fill(dt);
+                    SqlCommand cmd = new SqlCommand("SELECT doctorID, name FROM tbl_Doctors", con);
+                    SqlDataReader dr = cmd.ExecuteReader();
 
-                    Response.Write("Records Found: " + dt.Rows.Count); // Debugging ke liye
-
-                    if (dt.Rows.Count > 0)
-                    {
-                        gvPatients.DataSource = dt;
-                        gvPatients.DataBind();
-                    }
-                    else
-                    {
-                        Response.Write("No Records Found");
-                        gvPatients.DataSource = null;
-                        gvPatients.DataBind();
-                    }
+                    ddlDoctor.DataSource = dr;
+                    ddlDoctor.DataTextField = "name";   // Display doctor name
+                    ddlDoctor.DataValueField = "doctorID";  // Store doctor ID
+                    ddlDoctor.DataBind();
+                    dr.Close();
                 }
-                catch (Exception ex)
+
+                // Ensure lblDoctorName is not null before selecting the current doctor
+                if(lblDoctorName != null && !string.IsNullOrEmpty(lblDoctorName.Text))
                 {
-                    Response.Write("Error: " + ex.Message);
+                    ListItem selectedItem = ddlDoctor.Items.FindByText(lblDoctorName.Text);
+                    if(selectedItem != null)
+                    {
+                        selectedItem.Selected = true;
+                    }
                 }
             }
         }
 
 
-    }
 
+
+        // Row Updating Event
+        protected void gvAppointments_RowUpdating(object sender, GridViewUpdateEventArgs e)
+        {
+            GridViewRow row = gvAppointments.Rows[e.RowIndex];
+
+            int appointmentID = Convert.ToInt32(gvAppointments.DataKeys[e.RowIndex].Value);
+            string doctorID = (row.FindControl("ddlDoctor") as DropDownList).SelectedValue;
+            string dateTime = (row.FindControl("txtDateTime") as TextBox).Text;
+            string reason = (row.FindControl("txtReason") as TextBox).Text;
+            string location = (row.FindControl("txtLocation") as TextBox).Text;
+            string status = (row.FindControl("ddlStatus") as DropDownList).SelectedValue;
+
+            using(SqlConnection con = new SqlConnection(strcon))
+            {
+                con.Open();
+                SqlCommand cmd = new SqlCommand(@"
+        UPDATE tbl_Appointments 
+        SET doctorID=@doctorID, appointmentDateTime=@dateTime, 
+            reasonForVisit=@reason, clinicLocation=@location, status=@status
+        WHERE appointmentID=@appointmentID", con);
+
+                cmd.Parameters.AddWithValue("@appointmentID", appointmentID);
+                cmd.Parameters.AddWithValue("@doctorID", doctorID);
+                cmd.Parameters.AddWithValue("@dateTime", dateTime);
+                cmd.Parameters.AddWithValue("@reason", reason);
+                cmd.Parameters.AddWithValue("@location", location);
+                cmd.Parameters.AddWithValue("@status", status);
+
+                cmd.ExecuteNonQuery();
+            }
+
+            gvAppointments.EditIndex = -1;
+            BindGridView();
+        }
+
+        // Cancel Editing
+        protected void gvAppointments_RowCancelingEdit(object sender, GridViewCancelEditEventArgs e)
+        {
+            gvAppointments.EditIndex = -1;
+            BindGridView();
+        }
+
+        // Row Deleting Event
+        
+    }
 }
