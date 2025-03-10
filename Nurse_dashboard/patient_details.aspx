@@ -8,7 +8,7 @@
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" />
 </head>
 <body>
-    <form id="form1" runat="server">>
+    <form id="form1" runat="server">
         <div class=" mt-4">
  <h2 class="text-center text-success">📝 Appointments List</h2>
 

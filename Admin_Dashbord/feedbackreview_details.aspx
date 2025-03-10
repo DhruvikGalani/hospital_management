@@ -12,7 +12,7 @@
 <body>
     <form id="form1" runat="server">
         <div class="container mt-4">
-            <h2 class="text-center text-success">📝 Feedback Review Management</h2>
+            <h2 class="text-center text-primary">📝 Feedback Review Management</h2>
             <asp:Label ID="lblMessage" runat="server"></asp:Label>
 
             <div class="card p-4">

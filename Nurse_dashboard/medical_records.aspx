@@ -10,8 +10,8 @@
 <body>
     <form id="form1" runat="server">
         <div class="container mt-4">
-            <h2 class="text-center mb-4">Medical Records</h2>
-            <asp:GridView ID="gvMedicalRecords" runat="server" AutoGenerateColumns="False" CssClass="table table-bordered"
+            <h2 class="text-center text-success"> 📋 Medical Records</h2>
+            <asp:GridView ID="gvMedicalRecords" runat="server" AutoGenerateColumns="False" CssClass="table table-bordered table-striped"
                 DataKeyNames="recordID" OnRowEditing="gvMedicalRecords_RowEditing"
                 OnRowUpdating="gvMedicalRecords_RowUpdating" OnRowCancelingEdit="gvMedicalRecords_RowCancelingEdit">
                 <Columns>

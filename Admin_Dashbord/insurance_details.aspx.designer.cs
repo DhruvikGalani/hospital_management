@@ -11,7 +11,7 @@ namespace hospital_management.Admin_Dashbord
 {
 
 
-    public partial class billing_details
+    public partial class insurance_details
     {
 
         /// <summary>
@@ -24,6 +24,15 @@ namespace hospital_management.Admin_Dashbord
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
+        /// lblMessage control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblMessage;
+
+        /// <summary>
         /// ddlPatient control.
         /// </summary>
         /// <remarks>
@@ -33,75 +42,84 @@ namespace hospital_management.Admin_Dashbord
         protected global::System.Web.UI.WebControls.DropDownList ddlPatient;
 
         /// <summary>
-        /// ddlAppointment control.
+        /// txtPolicyNumber control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlAppointment;
+        protected global::System.Web.UI.WebControls.TextBox txtPolicyNumber;
 
         /// <summary>
-        /// txtTotalAmount control.
+        /// txtProvider control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtTotalAmount;
+        protected global::System.Web.UI.WebControls.TextBox txtProvider;
 
         /// <summary>
-        /// txtDiscounts control.
+        /// txtCoverageDetails control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtDiscounts;
+        protected global::System.Web.UI.WebControls.TextBox txtCoverageDetails;
 
         /// <summary>
-        /// ddlPaymentMode control.
+        /// ddlClaimStatus control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlPaymentMode;
+        protected global::System.Web.UI.WebControls.DropDownList ddlClaimStatus;
 
         /// <summary>
-        /// ddlPaymentStatus control.
+        /// txtClaimAmount control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlPaymentStatus;
+        protected global::System.Web.UI.WebControls.TextBox txtClaimAmount;
 
         /// <summary>
-        /// txtPaymentDate control.
+        /// txtApprovalDate control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtPaymentDate;
+        protected global::System.Web.UI.WebControls.TextBox txtApprovalDate;
 
         /// <summary>
-        /// btnInsert control.
+        /// txtExpiryDate control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnInsert;
+        protected global::System.Web.UI.WebControls.TextBox txtExpiryDate;
 
         /// <summary>
-        /// GridView1 control.
+        /// btnAdd control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GridView1;
+        protected global::System.Web.UI.WebControls.Button btnAdd;
+
+        /// <summary>
+        /// gvInsurance control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView gvInsurance;
     }
 }
