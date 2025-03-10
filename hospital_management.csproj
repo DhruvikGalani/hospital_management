@@ -74,6 +74,7 @@
     <Content Include="Admin_Dashbord\admin_homePage.aspx" />
     <Content Include="Admin_Dashbord\billing_details.aspx" />
     <Content Include="Admin_Dashbord\feedbackreview_details.aspx" />
+    <Content Include="Admin_Dashbord\insurance_details.aspx" />
     <Content Include="Admin_Dashbord\manage_appointment.aspx" />
     <Content Include="Admin_Dashbord\manage_doctors.aspx" />
     <Content Include="Admin_Dashbord\manage_nurses.aspx" />
@@ -310,6 +311,13 @@
     </Compile>
     <Compile Include="Admin_Dashbord\feedbackreview_details.aspx.designer.cs">
       <DependentUpon>feedbackreview_details.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin_Dashbord\insurance_details.aspx.cs">
+      <DependentUpon>insurance_details.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin_Dashbord\insurance_details.aspx.designer.cs">
+      <DependentUpon>insurance_details.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin_Dashbord\manage_appointment.aspx.cs">
       <DependentUpon>manage_appointment.aspx</DependentUpon>

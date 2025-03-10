@@ -12,7 +12,7 @@
 <body>
     <form id="form1" runat="server">
         <div class="container mt-4">
-            <h2 class="text-center text-success">Manage Patients</h2>
+            <h2 class="text-center text-primary">Manage Patients</h2>
             <asp:Label ID="lblMessage" runat="server" CssClass="text-danger"></asp:Label>
 
             <div class="card p-4">

@@ -36,6 +36,9 @@
         </div>
     </div>
 
+                            <h3 class="text-center text-success">📝 Staff Records</h3>
+
+
     <asp:GridView ID="GridViewStaff" runat="server" CssClass="table table-bordered mt-4" AutoGenerateColumns="False"
     DataKeyNames="staffID" OnRowEditing="GridViewStaff_RowEditing" OnRowCancelingEdit="GridViewStaff_RowCancelingEdit"
     OnRowUpdating="GridViewStaff_RowUpdating" OnRowDeleting="GridViewStaff_RowDeleting">
