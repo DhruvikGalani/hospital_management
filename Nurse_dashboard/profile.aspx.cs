@@ -53,7 +53,7 @@ namespace hospital_management.Nurse_dashboard
                 string address = txtAddress.Text.Trim();
                 string email = txtEmail.Text.Trim();
                 string contact = txtContact.Text.Trim();
-                string profilePicture = imgProfile.ImageUrl; 
+                string profilePicture = imgProfile.ImageUrl; // Default to existing
 
                 if (fileUpload.HasFile)
                 {

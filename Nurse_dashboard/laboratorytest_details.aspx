@@ -66,6 +66,7 @@
                 </div>
             </div>
 
+            <!-- Laboratory Test Records -->
             <div class="mt-5">
                 <h3 class="text-center text-success">📝 Laboratory Test Records</h3>
                <asp:GridView ID="gvLabTests" runat="server" CssClass="table table-bordered table-striped text-center"

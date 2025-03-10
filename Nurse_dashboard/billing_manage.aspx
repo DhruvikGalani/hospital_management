@@ -10,8 +10,8 @@
 <body>
     <form id="form1" runat="server">
         <div class="container mt-4">
-            <h2 class="text-center text-success"> 📝 Billing Management</h2>
-            <asp:GridView ID="gvBilling" runat="server" AutoGenerateColumns="False" CssClass="table table-bordered table-striped"
+            <h2 class="text-center mb-4">Billing Management</h2>
+            <asp:GridView ID="gvBilling" runat="server" AutoGenerateColumns="False" CssClass="table table-bordered"
                 DataKeyNames="invoiceID" AllowPaging="true" PageSize="10">
                 <Columns>
                     <asp:BoundField DataField="invoiceID" HeaderText="Invoice ID" ReadOnly="true" />
