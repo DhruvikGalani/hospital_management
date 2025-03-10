@@ -33,15 +33,6 @@ namespace hospital_management.Nurse_dashboard
         protected global::System.Web.UI.WebControls.DropDownList ddlAmbulanceID;
 
         /// <summary>
-        /// txtPatientName control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtPatientName;
-
-        /// <summary>
         /// txtContactNumber control.
         /// </summary>
         /// <remarks>
@@ -49,6 +40,15 @@ namespace hospital_management.Nurse_dashboard
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtContactNumber;
+
+        /// <summary>
+        /// txtArrivalTime control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtArrivalTime;
 
         /// <summary>
         /// txtReportedSymptoms control.
@@ -67,15 +67,6 @@ namespace hospital_management.Nurse_dashboard
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtLocation;
-
-        /// <summary>
-        /// txtArrivalTime control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtArrivalTime;
 
         /// <summary>
         /// btnAddEmergency control.

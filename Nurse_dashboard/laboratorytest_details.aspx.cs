@@ -64,7 +64,7 @@
                         {
                             cmd.Parameters.AddWithValue("@patientID", ddlPatientID.SelectedValue);
                             cmd.Parameters.AddWithValue("@testType", ddlTestType.SelectedValue);
-                            cmd.Parameters.AddWithValue("@date", txtTestDate.Text);
+                            cmd.Parameters.AddWithValue("@testDate", txtTestDate.Text);
                             cmd.Parameters.AddWithValue("@resultDate", Convert.ToDateTime(txtResultDate.Text));
                             cmd.Parameters.AddWithValue("@technicianName", txtTechnicianName.Text);
                             cmd.Parameters.AddWithValue("@results", txtResults.Text);
@@ -126,7 +126,11 @@
 
             public void BindLabTestData()
             {
-                using (SqlDataAdapter da = new SqlDataAdapter("SELECT testID, patientID, testType, testDate, resultDate, technicianName, results FROM tbl_LaboratoryTests", con))
+               using (SqlDataAdapter da = new SqlDataAdapter(
+    "SELECT lt.testID, p.name AS patientName, lt.testType, lt.testDate, lt.resultDate, lt.technicianName, lt.results " +
+    "FROM tbl_LaboratoryTests lt " +
+    "INNER JOIN tbl_Patients p ON lt.patientID = p.patientID", con))
+
                 {
                     DataTable dt = new DataTable();
                     da.Fill(dt);

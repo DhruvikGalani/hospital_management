@@ -24,12 +24,12 @@ namespace hospital_management.Nurse_dashboard
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
-        /// gvPatients control.
+        /// gvAppointments control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gvPatients;
+        protected global::System.Web.UI.WebControls.GridView gvAppointments;
     }
 }
