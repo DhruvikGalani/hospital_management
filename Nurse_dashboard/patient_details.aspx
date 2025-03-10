@@ -1,59 +1,83 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="patient_details.aspx.cs" Inherits="hospital_management.Nurse_dashboard.patient_details" %>
 
-
 <!DOCTYPE html>
 <html>
-<head>
-    <title>Patient Records</title>
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" />
+<head runat="server">
+    <title>Appointments Management</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
 </head>
 <body>
     <form id="form1" runat="server">
         <div class="container mt-4">
-            <h2 class="text-center mb-4">Patient Records</h2>
+            <h2 class="text-center text-primary">📅 Appointments List
+            </h2>
+            <hr />
 
-           <asp:GridView ID="gvPatients" runat="server" AutoGenerateColumns="False" DataKeyNames="patientID" CssClass="table table-bordered" 
-    OnRowEditing="gvPatients_RowEditing" OnRowUpdating="gvPatients_RowUpdating" OnRowCancelingEdit="gvPatients_RowCancelingEdit">
-    <Columns>
-        <asp:BoundField DataField="patientID" HeaderText="Patient ID" ReadOnly="true" />
-        <asp:TemplateField HeaderText="Name">
-            <ItemTemplate>
-                <asp:Label ID="lblName" runat="server" Text='<%# Eval("name") %>'></asp:Label>
-            </ItemTemplate>
-            <EditItemTemplate>
-                <asp:TextBox ID="txtName" runat="server" CssClass="form-control" Text='<%# Eval("name") %>'></asp:TextBox>
-            </EditItemTemplate>
-        </asp:TemplateField>
-        <asp:TemplateField HeaderText="Age">
-            <ItemTemplate>
-                <asp:Label ID="lblAge" runat="server" Text='<%# Eval("age") %>'></asp:Label>
-            </ItemTemplate>
-            <EditItemTemplate>
-                <asp:TextBox ID="txtAge" runat="server" CssClass="form-control" Text='<%# Eval("age") %>'></asp:TextBox>
-            </EditItemTemplate>
-        </asp:TemplateField>
-        <asp:TemplateField HeaderText="Gender">
-            <ItemTemplate>
-                <asp:Label ID="lblGender" runat="server" Text='<%# Eval("gender") %>'></asp:Label>
-            </ItemTemplate>
-            <EditItemTemplate>
-                <asp:DropDownList ID="ddlGender" runat="server" CssClass="form-control">
-                    <asp:ListItem Text="Male" Value="Male"></asp:ListItem>
-                    <asp:ListItem Text="Female" Value="Female"></asp:ListItem>
-                </asp:DropDownList>
-            </EditItemTemplate>
-        </asp:TemplateField>
-        <asp:TemplateField HeaderText="Address">
-            <ItemTemplate>
-                <asp:Label ID="lblAddress" runat="server" Text='<%# Eval("address") %>'></asp:Label>
-            </ItemTemplate>
-            <EditItemTemplate>
-                <asp:TextBox ID="txtAddress" runat="server" CssClass="form-control" Text='<%# Eval("address") %>'></asp:TextBox>
-            </EditItemTemplate>
-        </asp:TemplateField>
-        <asp:CommandField ShowEditButton="true" />
-    </Columns>
-</asp:GridView>
+            <asp:GridView ID="gvAppointments" runat="server" AutoGenerateColumns="False" CssClass="table table-bordered"
+                DataKeyNames="appointmentID" OnRowEditing="gvAppointments_RowEditing"
+                OnRowUpdating="gvAppointments_RowUpdating" OnRowCancelingEdit="gvAppointments_RowCancelingEdit">
+
+                <Columns>
+                    <asp:BoundField DataField="appointmentID" HeaderText="ID" ReadOnly="true" Visible="false" />
+                    <asp:BoundField DataField="patientID" HeaderText="Patient ID" ReadOnly="true" />
+                    <asp:BoundField DataField="patientName" HeaderText="Patient Name" ReadOnly="true" />
+                    <asp:BoundField DataField="contactNumber" HeaderText="Contact Number" ReadOnly="true" />
+                    <asp:BoundField DataField="email" HeaderText="Email" ReadOnly="true" />
+
+                    <asp:TemplateField HeaderText="Doctor">
+                        <ItemTemplate>
+                            <asp:Label ID="lblDoctorName" runat="server" Text='<%# Eval("doctorName") %>' />
+                        </ItemTemplate>
+                        <EditItemTemplate>
+                            <asp:DropDownList ID="ddlDoctor" runat="server" CssClass="form-control">
+                            </asp:DropDownList>
+                        </EditItemTemplate>
+                    </asp:TemplateField>
+
+
+                    <asp:TemplateField HeaderText="Date & Time">
+                        <ItemTemplate>
+                            <asp:Label ID="lblDateTime" runat="server" Text='<%# Eval("appointmentDateTime", "{0:yyyy-MM-dd HH:mm}") %>' />
+                        </ItemTemplate>
+                        <EditItemTemplate>
+                            <asp:TextBox ID="txtDateTime" runat="server" CssClass="form-control" Text='<%# Bind("appointmentDateTime") %>' />
+                        </EditItemTemplate>
+                    </asp:TemplateField>
+
+                    <asp:TemplateField HeaderText="Reason">
+                        <ItemTemplate>
+                            <asp:Label ID="lblReason" runat="server" Text='<%# Eval("reasonForVisit") %>' />
+                        </ItemTemplate>
+                        <EditItemTemplate>
+                            <asp:TextBox ID="txtReason" runat="server" CssClass="form-control" Text='<%# Bind("reasonForVisit") %>' />
+                        </EditItemTemplate>
+                    </asp:TemplateField>
+
+                    <asp:TemplateField HeaderText="Clinic Location">
+                        <ItemTemplate>
+                            <asp:Label ID="lblLocation" runat="server" Text='<%# Eval("clinicLocation") %>' />
+                        </ItemTemplate>
+                        <EditItemTemplate>
+                            <asp:TextBox ID="txtLocation" runat="server" CssClass="form-control" Text='<%# Bind("clinicLocation") %>' />
+                        </EditItemTemplate>
+                    </asp:TemplateField>
+
+                    <asp:TemplateField HeaderText="Status">
+                        <ItemTemplate>
+                            <asp:Label ID="lblStatus" runat="server" Text='<%# Eval("status") %>' />
+                        </ItemTemplate>
+                        <EditItemTemplate>
+                            <asp:DropDownList ID="ddlStatus" runat="server">
+                                <asp:ListItem Text="Pending" Value="Pending"></asp:ListItem>
+                                <asp:ListItem Text="Confirmed" Value="Confirmed"></asp:ListItem>
+                                <asp:ListItem Text="Cancelled" Value="Cancelled"></asp:ListItem>
+                            </asp:DropDownList>
+                        </EditItemTemplate>
+                    </asp:TemplateField>
+
+                    <asp:CommandField ShowEditButton="True" />
+                </Columns>
+            </asp:GridView>
         </div>
     </form>
 </body>
