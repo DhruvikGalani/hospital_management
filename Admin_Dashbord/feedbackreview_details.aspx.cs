@@ -2,7 +2,6 @@
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
-using System.Reflection;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
@@ -14,7 +13,7 @@ namespace hospital_management.Admin_Dashbord
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!IsPostBack)
+            if(!IsPostBack)
             {
                 BindDropDownLists();
                 BindGridView();
@@ -23,10 +22,11 @@ namespace hospital_management.Admin_Dashbord
 
         private void BindDropDownLists()
         {
-            using (SqlConnection con = new SqlConnection(connStr))
+            using(SqlConnection con = new SqlConnection(connStr))
             {
                 con.Open();
 
+                // Bind Patients Dropdown
                 SqlDataAdapter daPatients = new SqlDataAdapter("SELECT patientID, name FROM tbl_Patients", con);
                 DataTable dtPatients = new DataTable();
                 daPatients.Fill(dtPatients);
@@ -34,7 +34,9 @@ namespace hospital_management.Admin_Dashbord
                 ddlPatient.DataTextField = "name";
                 ddlPatient.DataValueField = "patientID";
                 ddlPatient.DataBind();
+                ddlPatient.Items.Insert(0, new ListItem("-- Select Patient --", "0"));
 
+                // Bind Doctors Dropdown
                 SqlDataAdapter daDoctors = new SqlDataAdapter("SELECT doctorID, name FROM tbl_Doctors", con);
                 DataTable dtDoctors = new DataTable();
                 daDoctors.Fill(dtDoctors);
@@ -42,37 +44,30 @@ namespace hospital_management.Admin_Dashbord
                 ddlDoctor.DataTextField = "name";
                 ddlDoctor.DataValueField = "doctorID";
                 ddlDoctor.DataBind();
-
-                SqlDataAdapter daStaffs = new SqlDataAdapter("SELECT staffID, fullName FROM tbl_StaffInformation", con);
-                DataTable dtStaffs = new DataTable();
-                daStaffs.Fill(dtStaffs);
-                ddlStaff.DataSource = dtStaffs;
-                ddlStaff.DataTextField = "fullName";
-                ddlStaff.DataValueField = "staffID";
-                ddlStaff.DataBind();
+                ddlDoctor.Items.Insert(0, new ListItem("-- Select Doctor --", "0"));
             }
         }
 
         private void BindGridView()
         {
-            using (SqlConnection con = new SqlConnection(connStr))
+            using(SqlConnection con = new SqlConnection(connStr))
             {
-                string query = @"SELECT f.feedbackID, 
-                        p.name AS patientID, 
-                        d.name AS doctorID, 
-                        s.fullName AS staffID,
-                        f.visitDate, 
-                        f.feedbackText, 
-                        f.rating 
-                 FROM tbl_FeedbackReview f
-                 INNER JOIN tbl_Patients p ON f.patientID = p.patientID
-                 INNER JOIN tbl_Doctors d ON f.doctorID = d.doctorID
-                 INNER JOIN tbl_StaffInformation s ON f.staffID = s.staffID";
+                string query = @"
+                    SELECT f.feedbackID, 
+                           p.patientID, 
+                           p.name AS PatientName, 
+                           d.doctorID, 
+                           d.name AS DoctorName, 
+                           f.visitDate, 
+                           f.feedbackText, 
+                           f.rating 
+                    FROM tbl_FeedbackReview f
+                    INNER JOIN tbl_Patients p ON f.patientID = p.patientID
+                    INNER JOIN tbl_Doctors d ON f.doctorID = d.doctorID";
 
-
-                using (SqlCommand cmd = new SqlCommand(query, con))
+                using(SqlCommand cmd = new SqlCommand(query, con))
                 {
-                    using (SqlDataAdapter da = new SqlDataAdapter(cmd))
+                    using(SqlDataAdapter da = new SqlDataAdapter(cmd))
                     {
                         DataTable dt = new DataTable();
                         da.Fill(dt);
@@ -83,38 +78,42 @@ namespace hospital_management.Admin_Dashbord
             }
         }
 
-
-
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
-            using (SqlConnection con = new SqlConnection(connStr))
+            if(ddlPatient.SelectedValue == "0" || ddlDoctor.SelectedValue == "0")
             {
-                string query = "INSERT INTO tbl_FeedbackReview (patientID, doctorID, staffID, visitDate, feedbackText, rating) VALUES (@patientID, @doctorID, @staffID, @visitDate, @feedbackText, @rating)";
-                using (SqlCommand cmd = new SqlCommand(query, con))
+                Response.Write("<script>alert('Please select a valid patient and doctor.');</script>");
+                return;
+            }
+
+            using(SqlConnection con = new SqlConnection(connStr))
+            {
+                string query = "INSERT INTO tbl_FeedbackReview (patientID, doctorID, visitDate, feedbackText, rating) VALUES (@patientID, @doctorID, @visitDate, @feedbackText, @rating)";
+                using(SqlCommand cmd = new SqlCommand(query, con))
                 {
                     cmd.Parameters.AddWithValue("@patientID", ddlPatient.SelectedValue);
                     cmd.Parameters.AddWithValue("@doctorID", ddlDoctor.SelectedValue);
-                    cmd.Parameters.AddWithValue("@staffID", ddlStaff.SelectedValue);
                     cmd.Parameters.AddWithValue("@visitDate", txtVisitDate.Text);
                     cmd.Parameters.AddWithValue("@feedbackText", txtFeedback.Text);
                     cmd.Parameters.AddWithValue("@rating", txtRating.Text);
                     con.Open();
                     cmd.ExecuteNonQuery();
-                    BindGridView();
-                    ClearForm();
                 }
-
             }
+
+            BindGridView();
+            ClearForm();
         }
+
         private void ClearForm()
         {
             ddlPatient.SelectedIndex = 0;
             ddlDoctor.SelectedIndex = 0;
-            ddlStaff.SelectedIndex = 0;
             txtVisitDate.Text = "";
             txtFeedback.Text = "";
             txtRating.Text = "";
         }
+
         protected void GridViewFeedback_RowEditing(object sender, GridViewEditEventArgs e)
         {
             GridViewFeedback.EditIndex = e.NewEditIndex;
@@ -126,16 +125,20 @@ namespace hospital_management.Admin_Dashbord
             GridViewRow row = GridViewFeedback.Rows[e.RowIndex];
             int feedbackID = Convert.ToInt32(GridViewFeedback.DataKeys[e.RowIndex].Value);
 
-            TextBox txtEditVisitDate = row.FindControl("txtEditVisitDate") as TextBox;
-            TextBox txtEditFeedback = row.FindControl("txtEditFeedback") as TextBox;
-            TextBox txtEditRating = row.FindControl("txtEditRating") as TextBox;
+            DropDownList ddlPatientEdit = (DropDownList)row.FindControl("ddlPatientEdit");
+            DropDownList ddlDoctorEdit = (DropDownList)row.FindControl("ddlDoctorEdit");
+            TextBox txtEditVisitDate = (TextBox)row.FindControl("txtEditVisitDate");
+            TextBox txtEditFeedback = (TextBox)row.FindControl("txtEditFeedback");
+            TextBox txtEditRating = (TextBox)row.FindControl("txtEditRating");
 
-            using (SqlConnection con = new SqlConnection(connStr))
+            using(SqlConnection con = new SqlConnection(connStr))
             {
-                string query = "UPDATE tbl_FeedbackReview SET visitDate=@visitDate, feedbackText=@feedbackText, rating=@rating WHERE feedbackID=@feedbackID";
-                using (SqlCommand cmd = new SqlCommand(query, con))
+                string query = "UPDATE tbl_FeedbackReview SET patientID=@patientID, doctorID=@doctorID, visitDate=@visitDate, feedbackText=@feedbackText, rating=@rating WHERE feedbackID=@feedbackID";
+                using(SqlCommand cmd = new SqlCommand(query, con))
                 {
                     cmd.Parameters.AddWithValue("@feedbackID", feedbackID);
+                    cmd.Parameters.AddWithValue("@patientID", ddlPatientEdit.SelectedValue);
+                    cmd.Parameters.AddWithValue("@doctorID", ddlDoctorEdit.SelectedValue);
                     cmd.Parameters.AddWithValue("@visitDate", txtEditVisitDate.Text);
                     cmd.Parameters.AddWithValue("@feedbackText", txtEditFeedback.Text);
                     cmd.Parameters.AddWithValue("@rating", txtEditRating.Text);
@@ -158,10 +161,10 @@ namespace hospital_management.Admin_Dashbord
         {
             int feedbackID = Convert.ToInt32(GridViewFeedback.DataKeys[e.RowIndex].Value);
 
-            using (SqlConnection con = new SqlConnection(connStr))
+            using(SqlConnection con = new SqlConnection(connStr))
             {
                 string query = "DELETE FROM tbl_FeedbackReview WHERE feedbackID=@feedbackID";
-                using (SqlCommand cmd = new SqlCommand(query, con))
+                using(SqlCommand cmd = new SqlCommand(query, con))
                 {
                     cmd.Parameters.AddWithValue("@feedbackID", feedbackID);
                     con.Open();
@@ -170,6 +173,45 @@ namespace hospital_management.Admin_Dashbord
             }
 
             BindGridView();
+        }
+
+        protected void GridViewFeedback_RowDataBound(object sender, GridViewRowEventArgs e)
+        {
+            if(e.Row.RowType == DataControlRowType.DataRow && e.Row.RowIndex == GridViewFeedback.EditIndex)
+            {
+                DropDownList ddlPatientEdit = (DropDownList)e.Row.FindControl("ddlPatientEdit");
+                DropDownList ddlDoctorEdit = (DropDownList)e.Row.FindControl("ddlDoctorEdit");
+
+                if(ddlPatientEdit != null)
+                {
+                    using(SqlConnection con = new SqlConnection(connStr))
+                    {
+                        SqlDataAdapter da = new SqlDataAdapter("SELECT patientID, name FROM tbl_Patients", con);
+                        DataTable dt = new DataTable();
+                        da.Fill(dt);
+                        ddlPatientEdit.DataSource = dt;
+                        ddlPatientEdit.DataTextField = "name";
+                        ddlPatientEdit.DataValueField = "patientID";
+                        ddlPatientEdit.DataBind();
+                        ddlPatientEdit.SelectedValue = DataBinder.Eval(e.Row.DataItem, "patientID").ToString();
+                    }
+                }
+
+                if(ddlDoctorEdit != null)
+                {
+                    using(SqlConnection con = new SqlConnection(connStr))
+                    {
+                        SqlDataAdapter da = new SqlDataAdapter("SELECT doctorID, name FROM tbl_Doctors", con);
+                        DataTable dt = new DataTable();
+                        da.Fill(dt);
+                        ddlDoctorEdit.DataSource = dt;
+                        ddlDoctorEdit.DataTextField = "name";
+                        ddlDoctorEdit.DataValueField = "doctorID";
+                        ddlDoctorEdit.DataBind();
+                        ddlDoctorEdit.SelectedValue = DataBinder.Eval(e.Row.DataItem, "doctorID").ToString();
+                    }
+                }
+            }
         }
     }
 }
