@@ -4,149 +4,144 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title></title>
-    <style type="text/css">
-        .auto-style1 {
-            width: 100%;
-        }
-        .textbox {
-            width:360px
-        }
-     
-        .auto-style3 {
-            width: 24%;
-        }
-        .auto-style4 {
-            width: 74%;
-        }
-         .btnsubmit {
-     margin-right: 50px;
-     width : 110px;
- }
- .btnreset {
-         width : 110px;
- }
-     
-    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nutrition Wellness</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../CSS/aspx.css" rel="stylesheet" />
 </head>
-<body style="width: 500px">
-    <form id="form1" runat="server">
-        <div>
-            <table class="auto-style1">
-                <tr>
-                    <td colspan="2" style="text-align: center; font-family:large"><strong>NutritionWellness</strong></td>
-                </tr>
-                <tr>
-                    <td class="auto-style3">Patient Name</td>
-                    <td class="auto-style4">
-                        <asp:TextBox ID="txtPatientName" runat="server" CssClass="textbox" ></asp:TextBox>
-                            <asp:RequiredFieldValidator ID="rfvName" runat="server" ControlToValidate="txtPatientName"  ErrorMessage="Patient name is required" ForeColor="Red" Display="Dynamic" />
-                           <asp:RegularExpressionValidator ID="revName" runat="server" ControlToValidate="txtPatientName"  ErrorMessage="Only letters allowed" ForeColor="Red" Display="Dynamic"  ValidationExpression="^[a-zA-Z\s]+$" />
-
-
-                    </td>
-                </tr>
-                <tr>
-                    <td class="auto-style3">Doctor Name</td>
-                    <td class="auto-style4" >
-                        <asp:TextBox ID="txtDoctorName" runat="server" CssClass="textbox" ></asp:TextBox>
-                         <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtDoctorName"  ErrorMessage="Doctor name is required" ForeColor="Red" Display="Dynamic" />
-                        <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="txtDoctorName"  ErrorMessage="Only letters allowed" ForeColor="Red" Display="Dynamic"  ValidationExpression="^[a-zA-Z\s]+$" />
-
-
-
-                    </td>
-                </tr>
-                <tr>
-                    <td class="auto-style3">Diet Plan</td>
-                    <td class="auto-style4">
-                        <asp:TextBox ID="txtDietPlan" runat="server" CssClass="textbox" ></asp:TextBox>
-                        <asp:RequiredFieldValidator ID="rfvDietplan" runat="server" ControlToValidate="txtDietPlan"  ErrorMessage="Diet plan is required" ForeColor="Red" Display="Dynamic" />
-
-                    </td>
-                </tr>
-                <tr>
-                    <td class="auto-style3">Exercise Plan</td>
-                    <td class="auto-style4" >
-                        <asp:TextBox ID="txtExercisePlan" runat="server" CssClass="textbox" TextMode="MultiLine" ></asp:TextBox>
-                        <asp:RequiredFieldValidator ID="rfvEcercise" runat="server" ControlToValidate="txtExercisePlan"  ErrorMessage="Exercise paln is required" ForeColor="Red" Display="Dynamic" />
-
-                    </td>
-                </tr>
-                <tr>
-                    <td class="auto-style3">Health Goal</td>
-                    <td class="auto-style4" >
-                        <asp:DropDownList ID="ddlHealthGoals" runat="server" Width="180px" AutoPostBack="True" OnSelectedIndexChanged="ddlHealthGoals_SelectedIndexChanged">
-                        </asp:DropDownList>
-						<asp:RequiredFieldValidator ID="rfvHealthGoals" runat="server" ControlToValidate="ddlHealthGoals" ErrorMessage="health goal  is required" ForeColor="Red" Display="Dynamic" />
-
-
-                        <asp:DropDownList ID="ddlHealthGoalsTypes" runat="server" Width="180px">
-                        </asp:DropDownList>
-                    </td>
-                     <asp:RequiredFieldValidator ID="rfvHealthtypes" runat="server" ControlToValidate="ddlHealthGoals"  ErrorMessage="health goal types is required" ForeColor="Red" Display="Dynamic" />
-                    
-
-                </tr>
-                <tr>
-                    <td class="auto-style3">Allergies</td>
-                    <td class="auto-style4" >
-                        <asp:TextBox ID="txtAllergies" runat="server" CssClass="textbox" TextMode="MultiLine" ></asp:TextBox>
-						<asp:RequiredFieldValidator ID="rfvAllergies" runat="server" ControlToValidate="txtAllergies" ErrorMessage="Allergies is required" ForeColor="Red" Display="Dynamic" />
-                        
-                    </td>
-                </tr>
-                <tr>
-                    <td class="auto-style3">Created Date</td>
-                    <td class="auto-style4" >
-                        <asp:TextBox ID="txtCreatedDate" runat="server" CssClass="textbox" TextMode="Date" ></asp:TextBox>
-						<asp:RequiredFieldValidator ID="rfvCreateddata" ErrorMessage="Created Date is required" ControlToValidate="txtCreatedDate" runat="server" ForeColor="Red" Display="Dynamic"  />
-                         
-                    </td>
-                </tr>
-                <tr>
-                    <td class="auto-style3">Last Updated</td>
-                    <td class="auto-style4">
-                        <asp:TextBox ID="txtLastUpdated"  runat="server" CssClass="textbox" TextMode="Date" ></asp:TextBox>
-                    </td>       
-					<asp:RequiredFieldValidator ID="rfvLastupdated" ErrorMessage="Last Updated data is required" ControlToValidate="txtLastUpdated" runat="server"  ForeColor="Red" Display="Dynamic"  />
-					
-                </tr>
-                <tr>
-                    <td class="auto-style3">Plan Status</td>
-                    <td class="auto-style4" >
-                        <asp:DropDownList ID="ddlPlanStatus" runat="server" Width="180px">
-                            <asp:ListItem>Active</asp:ListItem>
-                            <asp:ListItem>Inactive</asp:ListItem>
-                            <asp:ListItem>Completed</asp:ListItem>
-                            <asp:ListItem>Discontinued</asp:ListItem>
-                            <asp:ListItem>Cancelled</asp:ListItem>
-                        </asp:DropDownList>
-                      <asp:RequiredFieldValidator ID="rfvSatatus" ErrorMessage="Plan status is required" ControlToValidate="txtLastUpdated" runat="server" ForeColor="Red" Display="Dynamic"  />
-                    </td>
-                </tr>
-                <tr>
-                    <td class="auto-style3">Notes</td>
-                    <td class="auto-style4" >
-                        <asp:TextBox ID="txtNotes" runat="server" CssClass="textbox" TextMode="MultiLine" ></asp:TextBox>
-                        <asp:RequiredFieldValidator ID="rfvNotes" ErrorMessage="notes is required" ControlToValidate="txtLastUpdated" runat="server" ForeColor="Red" Display="Dynamic"  />
-
-
-                    </td>
-                </tr>
-                <tr>
-                    <td colspan="2" style="text-align: center">
-                        <asp:Button ID="btnSave" runat="server" Text="SAVE" OnClick="btnSave_Click" CssClass="btnsubmit" />
-                        <asp:Button ID="btnReset" runat="server" Text="RESET" OnClick="btnReset_Click" CssClass="btnreset" />
-                    </td>
-                </tr>
-                <tr>
-                    <td colspan="2">
-                        <asp:Label ID="lblDetails" runat="server" Text="Details"></asp:Label>
-                    </td>
-                </tr>
-            </table>
+<div class="container mt-5">
+    <div class="card shadow">
+        <div class="card-header bg-primary text-white">
+            <h4 class="text-center">🍎 Nutrition Wellness Management</h4>
         </div>
-    </form>
+        <div class="card-body">
+            <form id="form1" runat="server">
+                <asp:Label ID="lblMessage" runat="server" CssClass="text-center"></asp:Label>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <label>👤 Patient Name</label>
+                        <asp:DropDownList ID="ddlPatient" CssClass="form-select" runat="server" AutoPostBack="True"></asp:DropDownList>
+                    </div>
+                    <div class="col-md-6">
+                        <label>🩺 Doctor Name</label>
+                        <asp:DropDownList ID="ddlDoctor" CssClass="form-select" runat="server"></asp:DropDownList>
+                    </div>
+                </div>
+
+                <div class="row mt-3">
+                    <div class="col-md-6">
+                        <label>🥗 Diet Plan</label>
+                        <asp:TextBox ID="txtDietPlan" CssClass="form-control" runat="server"></asp:TextBox>
+                    </div>
+                    <div class="col-md-6">
+                        <label>💪 Exercise Plan</label>
+                        <asp:TextBox ID="txtExercisePlan" CssClass="form-control" runat="server"></asp:TextBox>
+                    </div>
+                </div>
+
+                <div class="row mt-3">
+                    <div class="col-md-6">
+                        <label>🎯 Health Goals</label>
+                        <asp:TextBox ID="txtHealthGoals" CssClass="form-control" runat="server"></asp:TextBox>
+                    </div>
+                    <div class="col-md-6">
+                        <label>⚠ Allergies</label>
+                        <asp:TextBox ID="txtAllergies" CssClass="form-control" runat="server"></asp:TextBox>
+                    </div>
+                </div>
+                <div class="form-group">
+    <label>Notes</label>
+    <asp:TextBox ID="txtNotes" runat="server" CssClass="form-control"></asp:TextBox>
+</div>
+
+
+                <div class="mt-4 text-center">
+                    <asp:Button ID="btnAddNutrition" CssClass="btn btn-primary" runat="server" Text="➕ Add Record" OnClick="btnAddNutrition_Click" />
+                </div>
+                <br />
+                <h3 class="mt-5 text-center text-success">Nutrition Wellness</h3>
+                <br />
+                <!-- GridView -->
+                <div class="mt-5">
+                    <asp:GridView ID="GridViewNutrition" runat="server" AutoGenerateColumns="False" DataKeyNames="wellnessID"
+                        CssClass="table table-bordered" OnRowEditing="GridViewNutrition_RowEditing" OnRowCancelingEdit="GridViewNutrition_RowCancelingEdit"
+                        OnRowUpdating="GridViewNutrition_RowUpdating" OnRowDeleting="GridViewNutrition_RowDeleting">
+                        <Columns>
+                            <asp:BoundField DataField="wellnessID" HeaderText="Wellness ID" ReadOnly="True" />
+                     <asp:TemplateField HeaderText="Patient Name">
+            <ItemTemplate>
+                <%# Eval("patientName") %>
+            </ItemTemplate>
+            <EditItemTemplate>
+                <asp:DropDownList ID="ddlPatientEdit" runat="server" CssClass="form-select"></asp:DropDownList>
+                <asp:HiddenField ID="hdnPatientID" runat="server" Value='<%# Eval("patientID") %>' />
+            </EditItemTemplate>
+        </asp:TemplateField>
+                            <asp:TemplateField HeaderText="Doctor Name">
+            <ItemTemplate>
+                <%# Eval("doctorName") %>
+            </ItemTemplate>
+            <EditItemTemplate>
+                <asp:DropDownList ID="ddlDoctorEdit" runat="server" CssClass="form-select"></asp:DropDownList>
+                <asp:HiddenField ID="hdnDoctorID" runat="server" Value='<%# Eval("doctorID") %>' />
+            </EditItemTemplate>
+        </asp:TemplateField>
+
+
+                            <asp:TemplateField HeaderText="Diet Plan">
+                                <ItemTemplate>
+                                    <%# Eval("dietPlan") %>
+                                </ItemTemplate>
+                                <EditItemTemplate>
+                                    <asp:TextBox ID="txtDietPlanEdit" runat="server" Text='<%# Bind("dietPlan") %>' CssClass="form-control"></asp:TextBox>
+                                </EditItemTemplate>
+                            </asp:TemplateField>
+
+                            <asp:TemplateField HeaderText="Exercise Plan">
+                                <ItemTemplate>
+                                    <%# Eval("exercisePlan") %>
+                                </ItemTemplate>
+                                <EditItemTemplate>
+                                    <asp:TextBox ID="txtExercisePlanEdit" runat="server" Text='<%# Bind("exercisePlan") %>' CssClass="form-control"></asp:TextBox>
+                                </EditItemTemplate>
+                            </asp:TemplateField>
+
+                            <asp:TemplateField HeaderText="Health Goals">
+                                <ItemTemplate>
+                                    <%# Eval("healthGoals") %>
+                                </ItemTemplate>
+                                <EditItemTemplate>
+                                    <asp:TextBox ID="txtHealthGoalsEdit" runat="server" Text='<%# Bind("healthGoals") %>' CssClass="form-control"></asp:TextBox>
+                                </EditItemTemplate>
+                            </asp:TemplateField>
+
+                            <asp:TemplateField HeaderText="Allergies">
+                                <ItemTemplate>
+                                    <%# Eval("allergies") %>
+                                </ItemTemplate>
+                                <EditItemTemplate>
+                                    <asp:TextBox ID="txtAllergiesEdit" runat="server" Text='<%# Bind("allergies") %>' CssClass="form-control"></asp:TextBox>
+                                </EditItemTemplate>
+                            </asp:TemplateField>
+
+                             <asp:TemplateField HeaderText="Health Goals">
+     <ItemTemplate>
+         <%# Eval("Notes") %>
+     </ItemTemplate>
+     <EditItemTemplate>
+         <asp:TextBox ID="txtNotesEdit" runat="server" Text='<%# Bind("Notes") %>' CssClass="form-control"></asp:TextBox>
+     </EditItemTemplate>
+ </asp:TemplateField>
+
+                            <asp:CommandField ShowEditButton="True" ShowDeleteButton="True" />
+                        </Columns>
+                    </asp:GridView>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
 </body>
 </html>

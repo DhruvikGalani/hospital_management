@@ -33,9 +33,9 @@ namespace hospital_management.Nurse_dashboard
                 txtAddress.Text = Session["NurseAddress"].ToString();
                 txtEmail.Text = Session["NurseEmail"].ToString();
                 txtContact.Text = Session["NurseContact"].ToString();
-                imgProfile.ImageUrl = Session["ProfilePicture"].ToString();
+                imgProfile.ImageUrl = Session["ProfilePicture"] != null ? Session["ProfilePicture"].ToString() : "~/Images/default.png";
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 lblMessage.Text = "Error loading profile: " + ex.Message;
                 lblMessage.ForeColor = System.Drawing.Color.Red;
@@ -55,12 +55,24 @@ namespace hospital_management.Nurse_dashboard
                 string contact = txtContact.Text.Trim();
                 string profilePicture = imgProfile.ImageUrl; // Default to existing
 
-                if(fileUpload.HasFile)
+                if (fileUpload.HasFile)
                 {
-                    string fileName = Path.GetFileName(fileUpload.PostedFile.FileName);
-                    string filePath = Server.MapPath("~/Images/") + fileName;
-                    fileUpload.SaveAs(filePath);
-                    profilePicture = "~/Images/" + fileName;
+                    string fileExtension = Path.GetExtension(fileUpload.FileName).ToLower();
+                    string[] allowedExtensions = { ".jpg", ".jpeg", ".png", ".svg" };
+
+                    if (Array.Exists(allowedExtensions, ext => ext == fileExtension))
+                    {
+                        string fileName = Path.GetFileName(fileUpload.PostedFile.FileName);
+                        string filePath = Server.MapPath("~/Images/") + fileName;
+                        fileUpload.SaveAs(filePath);
+                        profilePicture = "~/Images/" + fileName;
+                    }
+                    else
+                    {
+                        lblMessage.Text = "Only JPG, JPEG, PNG, and SVG files are allowed.";
+                        lblMessage.ForeColor = System.Drawing.Color.Red;
+                        return;
+                    }
                 }
 
                 // Update database
@@ -76,6 +88,8 @@ namespace hospital_management.Nurse_dashboard
                     Session["NurseEmail"] = email;
                     Session["NurseContact"] = contact;
                     Session["ProfilePicture"] = profilePicture;
+
+                    imgProfile.ImageUrl = profilePicture;
 
                     lblMessage.Text = "Profile updated successfully!";
                     lblMessage.ForeColor = System.Drawing.Color.Green;

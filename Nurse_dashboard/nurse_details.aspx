@@ -23,7 +23,8 @@
     <form id="form1" runat="server">
         <div class="container">
 
-            <h2 class="text-center text-primary">👩‍⚕️Nurse Management</h2>
+            <h2 class="text-center text-primary">👩‍⚕️ Nurse Management</h2>
+            <hr/>
             <div class="card p-4 shadow">
                 <div class="row">
                     <div class="col-md-6">

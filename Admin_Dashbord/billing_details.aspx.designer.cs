@@ -7,92 +7,101 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace hospital_management.Nurse_dashboard
+namespace hospital_management.Admin_Dashbord
 {
 
 
-    public partial class Emergency_details
+    public partial class billing_details
     {
 
         /// <summary>
-        /// ddlPatientID control.
+        /// form1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlPatientID;
+        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
-        /// ddlAmbulanceID control.
+        /// ddlPatient control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlAmbulanceID;
+        protected global::System.Web.UI.WebControls.DropDownList ddlPatient;
 
         /// <summary>
-        /// txtContactNumber control.
+        /// ddlAppointment control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtContactNumber;
+        protected global::System.Web.UI.WebControls.DropDownList ddlAppointment;
 
         /// <summary>
-        /// txtArrivalTime control.
+        /// txtTotalAmount control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtArrivalTime;
+        protected global::System.Web.UI.WebControls.TextBox txtTotalAmount;
 
         /// <summary>
-        /// txtReportedSymptoms control.
+        /// txtDiscounts control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtReportedSymptoms;
+        protected global::System.Web.UI.WebControls.TextBox txtDiscounts;
 
         /// <summary>
-        /// txtLocation control.
+        /// ddlPaymentMode control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtLocation;
+        protected global::System.Web.UI.WebControls.DropDownList ddlPaymentMode;
 
         /// <summary>
-        /// btnAddEmergency control.
+        /// ddlPaymentStatus control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnAddEmergency;
+        protected global::System.Web.UI.WebControls.DropDownList ddlPaymentStatus;
 
         /// <summary>
-        /// lblMessage control.
+        /// txtPaymentDate control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblMessage;
+        protected global::System.Web.UI.WebControls.TextBox txtPaymentDate;
 
         /// <summary>
-        /// gvEmergency control.
+        /// btnInsert control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gvEmergency;
+        protected global::System.Web.UI.WebControls.Button btnInsert;
+
+        /// <summary>
+        /// GridView1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView GridView1;
     }
 }

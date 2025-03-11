@@ -18,7 +18,7 @@
 <body>
     <form runat="server">
         <div class="container mt-5">
-            <h2 class="text-center text-primary">🏥 Laboratory Test Management</h2>
+            <h2 class="text-center text-primary">🧪 Laboratory Test Management</h2>
             <hr />
 
             <!-- Add Test Section -->
@@ -77,16 +77,16 @@
     OnRowDeleting="gvLabTests_RowDeleting">
     <Columns>
 
-         <asp:TemplateField HeaderText="PatientID">
-     <ItemTemplate>
-         <asp:Label ID="lblPatientID" runat="server" Text='<%# Eval("PatientID") %>'></asp:Label>
-     </ItemTemplate>
-     <EditItemTemplate>
-         <asp:TextBox ID="ddlPatientID" runat="server" CssClass="form-control" Text='<%# Bind("PatientID") %>'></asp:TextBox>
-     </EditItemTemplate>
- </asp:TemplateField>
+        <asp:TemplateField HeaderText="Patient Name">
+            <ItemTemplate>
+                <asp:Label ID="lblPatientName" runat="server" Text='<%# Eval("patientName") %>'>
 
-     <asp:TemplateField HeaderText="Test Type">
+                </asp:Label>
+            </ItemTemplate>
+        </asp:TemplateField>
+
+
+        <asp:TemplateField HeaderText="Test Type">
     <ItemTemplate>
         <asp:Label ID="lblTestType" runat="server" Text='<%# Eval("testType") %>'></asp:Label>
     </ItemTemplate>
@@ -96,24 +96,46 @@
             <asp:ListItem Text="Urine Test" Value="Urine Test"></asp:ListItem>
             <asp:ListItem Text="X-ray" Value="X-ray"></asp:ListItem>
             <asp:ListItem Text="MRI" Value="MRI"></asp:ListItem>
+            <asp:ListItem Text="CT scan" Value="CT scan"></asp:ListItem>
+            <asp:ListItem Text="UltraSound" Value="UltraSound"></asp:ListItem>
+            <asp:ListItem Text="ECG" Value="ECG"></asp:ListItem>
+            <asp:ListItem Text="Echocardiogram" Value="Echocardiogram"></asp:ListItem>
+            <asp:ListItem Text="Liver Function Test" Value="Liver Function Test"></asp:ListItem>
+            <asp:ListItem Text="Kidney Function Test" Value="Kidney Function Test"></asp:ListItem>
+            <asp:ListItem Text="Thyroid Function Test" Value="Thyroid Function Test"></asp:ListItem>
+            <asp:ListItem Text="Blood Sugar Test" Value="Blood Sugar Test"></asp:ListItem>
+            <asp:ListItem Text="Cholesterol Test" Value="Cholesterol Test"></asp:ListItem>
+            <asp:ListItem Text="Allergy Test" Value="Allergy Test"></asp:ListItem>
+            <asp:ListItem Text="COVID19 Test" Value="COVID19 Test"></asp:ListItem>
+            <asp:ListItem Text="Stool Test" Value="Stool Test"></asp:ListItem>
+            <asp:ListItem Text="Biopsy" Value="Biopsy"></asp:ListItem>
+            <asp:ListItem Text="Vitamin Level Test" Value="Vitamin Level Test"></asp:ListItem>
+            <asp:ListItem Text="Hormonal Test" Value="Hormonal Test"></asp:ListItem>
+
+
         </asp:DropDownList>
     </EditItemTemplate>
 </asp:TemplateField>
 
         <asp:TemplateField HeaderText="Test Date">
-    <ItemTemplate>
-        <asp:Label ID="lblTestDate" runat="server" Text='<%# Eval("testDate", "{0:dd/MM/yyyy}") %>'></asp:Label>
-    </ItemTemplate>
-</asp:TemplateField>
+<ItemTemplate>
+    <asp:Label ID="lbltestDate" runat="server" Text='<%# Eval("testDate", "{0:yyyy-MM-dd}") %>'></asp:Label>
+</ItemTemplate>
+<EditItemTemplate>
+    <asp:TextBox ID="txtEdittestDate" runat="server" CssClass="form-control" Text='<%# Bind("testDate", "{0:yyyy-MM-dd}") %>' TextMode="Date"></asp:TextBox>
+</EditItemTemplate>
+        </asp:TemplateField>
 
-<asp:TemplateField HeaderText="Result Date">
-    <ItemTemplate>
-        <asp:Label ID="lblResultDate" runat="server" Text='<%# Eval("resultDate", "{0:dd/MM/yyyy}") %>'></asp:Label>
-    </ItemTemplate>
-</asp:TemplateField>
+ <asp:TemplateField HeaderText="Result Date">
+<ItemTemplate>
+    <asp:Label ID="lblresulttDate" runat="server" Text='<%# Eval("resultDate", "{0:yyyy-MM-dd}") %>'></asp:Label>
+</ItemTemplate>
+<EditItemTemplate>
+    <asp:TextBox ID="txtEditresultDate" runat="server" CssClass="form-control" Text='<%# Bind("resultDate", "{0:yyyy-MM-dd}") %>' TextMode="Date"></asp:TextBox>
+</EditItemTemplate>
+        </asp:TemplateField>
 
-
-        <asp:TemplateField HeaderText="Results">
+        <asp:TemplateField HeaderText="Technician">
             <ItemTemplate>
                 <asp:Label ID="lblTechnicianName" runat="server" Text='<%# Eval("TechnicianName") %>'></asp:Label>
             </ItemTemplate>
