@@ -84,48 +84,6 @@ namespace hospital_management.Admin_Dashbord
                 LoadNurses();
             }
         }
-
-        //protected void btnAddNurse_Click(object sender, EventArgs e)
-        //{
-        //    if(string.IsNullOrWhiteSpace(txtName.Text) || string.IsNullOrWhiteSpace(txtEmail.Text))
-        //    {
-        //        Response.Write("<script>alert('Please Fill All Fields');</script>");
-        //        return;
-        //    }
-
-        //    string profilePath = "~/userImage/default.png";
-
-        //    if(FileUploadProfile.HasFile)
-        //    {
-        //        string fileName = Guid.NewGuid().ToString() + System.IO.Path.GetExtension(FileUploadProfile.FileName);
-        //        profilePath = "~/userImage/" + fileName;
-        //        FileUploadProfile.SaveAs(Server.MapPath(profilePath));
-        //    }
-
-        //    using(SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["MyConnectionString"].ConnectionString))
-        //    {
-        //        string query = "INSERT INTO tbl_Nurse (name, age, gender, address, email, password, contactNumber, profile) " +
-        //        "VALUES (@Name, @Age, @Gender, @Address, @Email, @Password, @Contact, @Profile)";
-
-        //        SqlCommand cmd = new SqlCommand(query, con);
-        //        cmd.Parameters.AddWithValue("@Name", txtName.Text.Trim());
-        //        cmd.Parameters.AddWithValue("@Age", txtAge.Text.Trim());
-        //        cmd.Parameters.AddWithValue("@Gender", ddlGender.SelectedValue);
-        //        cmd.Parameters.AddWithValue("@Address", txtAddress.Text.Trim());
-        //        cmd.Parameters.AddWithValue("@Email", txtEmail.Text.Trim());
-        //        cmd.Parameters.AddWithValue("@Password", txtPassword.Text.Trim());
-        //        cmd.Parameters.AddWithValue("@Contact", txtContact.Text.Trim());
-        //        cmd.Parameters.AddWithValue("@Profile", profilePath);
-
-        //        con.Open();
-        //        cmd.ExecuteNonQuery();
-        //        con.Close();
-
-        //        Response.Write("<script>alert('Nurse Added Successfully');</script>");
-        //        ClearFields();
-        //        LoadNurses();
-        //    }
-        //}
         protected void gvNurses_RowEditing(object sender, GridViewEditEventArgs e)
         {
             gvNurses.EditIndex = e.NewEditIndex;
@@ -137,7 +95,6 @@ namespace hospital_management.Admin_Dashbord
             LoadNurses();
         }
 
-
         protected void gvNurses_RowUpdating(object sender, GridViewUpdateEventArgs e)
         {
             int nurseID = Convert.ToInt32(gvNurses.DataKeys[e.RowIndex].Value);
@@ -147,13 +104,15 @@ namespace hospital_management.Admin_Dashbord
             string age = ((TextBox)row.FindControl("txtAgeEdit")).Text;
             string address = ((TextBox)row.FindControl("txtAddressEdit")).Text;
             string contact = ((TextBox)row.FindControl("txtContactEdit")).Text;
+            string gender = ((DropDownList)row.FindControl("ddlGenderEdit")).SelectedValue;
 
             using(SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["MyConnectionString"].ConnectionString))
             {
-                string query = "UPDATE tbl_Nurse SET name=@Name, age=@Age, address=@Address, contactNumber=@Contact WHERE nurseID=@NurseID";
+                string query = "UPDATE tbl_Nurse SET name=@Name, age=@Age, gender=@Gender, address=@Address, contactNumber=@Contact WHERE nurseID=@NurseID";
                 SqlCommand cmd = new SqlCommand(query, con);
                 cmd.Parameters.AddWithValue("@Name", name);
                 cmd.Parameters.AddWithValue("@Age", age);
+                cmd.Parameters.AddWithValue("@Gender", gender);
                 cmd.Parameters.AddWithValue("@Address", address);
                 cmd.Parameters.AddWithValue("@Contact", contact);
                 cmd.Parameters.AddWithValue("@NurseID", nurseID);
@@ -166,6 +125,8 @@ namespace hospital_management.Admin_Dashbord
             gvNurses.EditIndex = -1;
             LoadNurses();
         }
+
+        //
 
         protected void gvNurses_RowDeleting(object sender, GridViewDeleteEventArgs e)
         {

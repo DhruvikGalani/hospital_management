@@ -22,6 +22,16 @@
             transition: transform 0.3s ease;
             cursor: pointer;
         }
+        /* Header */
+        .header {
+            background: #3498db;
+            padding: 20px;
+            color: white;
+            text-align: center;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
 
         .dashboard-card:hover {
             transform: scale(1.05);
@@ -34,74 +44,75 @@
     </style>
 </head>
 <body>
-    <form id="form1" runat="server">
-        <div class="container mt-4">
-            <div class="row">
-                <div class="col-md-4 mb-4">
-                    <div class="dashboard-card">
-                        <i class="fa fa-user-md text-primary"></i>
-                        <h4>Doctors</h4>
-                        <p>Manage Doctor Records</p>
-                    </div>
+    <div class="header">
+        <h2>Welcome Admin</h2>
+    </div>
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <div class="dashboard-card">
+                    <i class="fa fa-user-md text-primary"></i>
+                    <h4>Doctors</h4>
+                    <p>Manage Doctor Records</p>
                 </div>
-                <div class="col-md-4 mb-4">
-                    <div class="dashboard-card">
-                        <i class="fa fa-user-nurse text-danger"></i>
-                        <h4>Nurses</h4>
-                        <p>Manage Nurse Records</p>
-                    </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="dashboard-card">
+                    <i class="fa fa-user-nurse text-danger"></i>
+                    <h4>Nurses</h4>
+                    <p>Manage Nurse Records</p>
                 </div>
-                <div class="col-md-4 mb-4">
-                    <div class="dashboard-card">
-                        <i class="fa fa-users text-warning"></i>
-                        <h4>Patients</h4>
-                        <p>View and Manage Patient Records</p>
-                    </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="dashboard-card">
+                    <i class="fa fa-users text-warning"></i>
+                    <h4>Patients</h4>
+                    <p>View and Manage Patient Records</p>
                 </div>
-                <div class="col-md-4 mb-4">
-                    <div class="dashboard-card">
-                        <i class="fa fa-ambulance text-success"></i>
-                        <h4>Ambulances</h4>
-                        <p>Monitor Availability</p>
-                    </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="dashboard-card">
+                    <i class="fa fa-ambulance text-success"></i>
+                    <h4>Ambulances</h4>
+                    <p>Monitor Availability</p>
                 </div>
-                <div class="col-md-4 mb-4">
-                    <div class="dashboard-card">
-                        <i class="fa fa-calendar-check text-info"></i>
-                        <h4>Appointments</h4>
-                        <p>Manage Appointments</p>
-                    </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="dashboard-card">
+                    <i class="fa fa-calendar-check text-info"></i>
+                    <h4>Appointments</h4>
+                    <p>Manage Appointments</p>
                 </div>
-                <div class="col-md-4 mb-4">
-                    <div class="dashboard-card">
-                        <i class="fa fa-file-invoice-dollar text-secondary"></i>
-                        <h4>Billing</h4>
-                        <p>Manage Hospital Billing</p>
-                    </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="dashboard-card">
+                    <i class="fa fa-file-invoice-dollar text-secondary"></i>
+                    <h4>Billing</h4>
+                    <p>Manage Hospital Billing</p>
                 </div>
-                <div class="col-md-4 mb-4">
-                    <div class="dashboard-card">
-                        <i class="fa fa-vials text-danger"></i>
-                        <h4>Laboratory</h4>
-                        <p>Manage Lab Tests</p>
-                    </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="dashboard-card">
+                    <i class="fa fa-vials text-danger"></i>
+                    <h4>Laboratory</h4>
+                    <p>Manage Lab Tests</p>
                 </div>
-                <div class="col-md-4 mb-4">
-                    <div class="dashboard-card">
-                        <i class="fa fa-chart-line text-primary"></i>
-                        <h4>Reports</h4>
-                        <p>Generate Reports</p>
-                    </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="dashboard-card">
+                    <i class="fa fa-chart-line text-primary"></i>
+                    <h4>Reports</h4>
+                    <p>Generate Reports</p>
                 </div>
-                <div class="col-md-4 mb-4">
-                    <div class="dashboard-card">
-                        <i class="fa fa-cogs text-dark"></i>
-                        <h4>Settings</h4>
-                        <p>Configure System Settings</p>
-                    </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="dashboard-card">
+                    <i class="fa fa-cogs text-dark"></i>
+                    <h4>Settings</h4>
+                    <p>Configure System Settings</p>
                 </div>
             </div>
         </div>
-    </form>
+    </div>
 </body>
 </html>

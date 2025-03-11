@@ -29,9 +29,9 @@
                             <asp:ListItem Text="Male" Value="Male" />
                             <asp:ListItem Text="Female" Value="Female" />
                         </asp:DropDownList>
+                        <asp:TextBox ID="txtAddress" runat="server" CssClass="form-control mb-3" Placeholder="Address"></asp:TextBox>
                     </div>
                     <div class="col-md-6">
-                        <asp:TextBox ID="txtAddress" runat="server" CssClass="form-control mb-3" Placeholder="Address"></asp:TextBox>
                         <asp:TextBox ID="txtEmail" runat="server" CssClass="form-control mb-3" Placeholder="Email"></asp:TextBox>
                         <asp:TextBox ID="txtPassword" runat="server" CssClass="form-control mb-3" Placeholder="Password" TextMode="Password"></asp:TextBox>
                         <asp:TextBox ID="txtContact" runat="server" CssClass="form-control mb-3" Placeholder="Contact"></asp:TextBox>
@@ -88,7 +88,17 @@
                         </EditItemTemplate>
                     </asp:TemplateField>
 
-                    <asp:BoundField DataField="gender" HeaderText="Gender" />
+                    <asp:TemplateField HeaderText="Gender">
+                        <ItemTemplate>
+                            <%# Eval("gender") %>
+                        </ItemTemplate>
+                        <EditItemTemplate>
+                            <asp:DropDownList ID="ddlGenderEdit" runat="server" CssClass="form-control">
+                                <asp:ListItem Text="Male" Value="Male" />
+                                <asp:ListItem Text="Female" Value="Female" />
+                            </asp:DropDownList>
+                        </EditItemTemplate>
+                    </asp:TemplateField>
 
                     <asp:CommandField ShowEditButton="True" ShowDeleteButton="True" />
                 </Columns>
