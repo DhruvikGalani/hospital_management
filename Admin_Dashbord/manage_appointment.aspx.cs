@@ -79,23 +79,40 @@ namespace hospital_management.Admin_Dashbord
         {
             DateTime appointmentDateTime;
 
-            if (DateTime.TryParseExact(txtDateTime.Text, "yyyy-MM-ddTHH:mm", CultureInfo.InvariantCulture, DateTimeStyles.None, out appointmentDateTime))
-
-                using (SqlConnection con = new SqlConnection(connStr))
+            if(DateTime.TryParseExact(txtDateTime.Text, "yyyy-MM-ddTHH:mm", CultureInfo.InvariantCulture, DateTimeStyles.None, out appointmentDateTime))
             {
-                string query = "INSERT INTO tbl_Appointments (patientID, doctorID, appointmentDateTime, reasonForVisit, clinicLocation) VALUES (@patientID, @doctorID, @appointmentDateTime, @reasonForVisit, @clinicLocation)";
-                using (SqlCommand cmd = new SqlCommand(query, con))
+                using(SqlConnection con = new SqlConnection(connStr))
                 {
-                    cmd.Parameters.AddWithValue("@patientID", ddlPatient.SelectedValue);
-                    cmd.Parameters.AddWithValue("@doctorID", ddlDoctor.SelectedValue);
+                    string query = "INSERT INTO tbl_Appointments (patientID, doctorID, appointmentDateTime, reasonForVisit, clinicLocation) VALUES (@patientID, @doctorID, @appointmentDateTime, @reasonForVisit, @clinicLocation)";
+
+                    using(SqlCommand cmd = new SqlCommand(query, con))
+                    {
+                        cmd.Parameters.AddWithValue("@patientID", ddlPatient.SelectedValue);
+                        cmd.Parameters.AddWithValue("@doctorID", ddlDoctor.SelectedValue);
                         cmd.Parameters.AddWithValue("@appointmentDateTime", appointmentDateTime);
-                        cmd.Parameters.AddWithValue("@reasonForVisit", txtReason.Text);
-                    cmd.Parameters.AddWithValue("@clinicLocation", txtLocation.Text);
-                    con.Open();
-                    cmd.ExecuteNonQuery();
-                    BindGridView();
+                        cmd.Parameters.AddWithValue("@reasonForVisit", txtReason.Text.Trim());
+                        cmd.Parameters.AddWithValue("@clinicLocation", txtLocation.Text.Trim());
+
+                        con.Open();
+                        cmd.ExecuteNonQuery();
+                        con.Close();
+
+                        Response.Write("<script>alert('Appointment added successfully!');</script>");
+
+                        ClearFields();
+
+                        BindGridView();
+                    }
                 }
             }
+        }
+        private void ClearFields()
+        {
+            txtDateTime.Text = "";       
+            txtReason.Text = "";         
+            txtLocation.Text = "";       
+            ddlPatient.SelectedIndex = 0;
+            ddlDoctor.SelectedIndex = 0; 
         }
 
         protected void GridView1_RowEditing(object sender, GridViewEditEventArgs e)
@@ -110,23 +127,19 @@ namespace hospital_management.Admin_Dashbord
             {
                 GridViewRow row = GridView1.Rows[e.RowIndex];
 
-                // ✅ Retrieve Appointment ID
                 int appointmentID = Convert.ToInt32(GridView1.DataKeys[e.RowIndex].Value);
 
-                // ✅ Find controls inside Edit Template
                 TextBox txtEditDate = row.FindControl("txtEditDate") as TextBox;
                 TextBox txtEditReason = row.FindControl("txtEditReason") as TextBox;
                 TextBox txtEditLocation = row.FindControl("txtEditLocation") as TextBox;
                 DropDownList ddlEditStatus = row.FindControl("ddlEditStatus") as DropDownList;
 
-                // ✅ Check if controls exist
                 if (txtEditDate == null || txtEditReason == null || txtEditLocation == null || ddlEditStatus == null)
                 {
                     Response.Write("<script>alert('Error: Some controls are missing!');</script>");
                     return;
                 }
 
-                // ✅ Convert DateTime properly
                 DateTime appointmentDateTime;
                 if (!DateTime.TryParseExact(txtEditDate.Text, "yyyy-MM-ddTHH:mm", CultureInfo.InvariantCulture, DateTimeStyles.None, out appointmentDateTime))
                 {
@@ -135,7 +148,6 @@ namespace hospital_management.Admin_Dashbord
                 }
 
                
-                // ✅ Update Query
                 using (SqlConnection con = new SqlConnection(connStr))
                 {
                     string query = @"UPDATE tbl_Appointments 
@@ -157,7 +169,6 @@ namespace hospital_management.Admin_Dashbord
                         int rowsAffected = cmd.ExecuteNonQuery();
                         con.Close();
 
-                        // ✅ Check if update was successful
                         if (rowsAffected > 0)
                         {
                             Response.Write("<script>alert('Update successful!');</script>");

@@ -33,13 +33,22 @@ namespace hospital_management.Admin_Dashbord
         protected global::System.Web.UI.WebControls.DropDownList ddlPatient;
 
         /// <summary>
-        /// ddlAppointment control.
+        /// txtAppointmentDate control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlAppointment;
+        protected global::System.Web.UI.WebControls.TextBox txtAppointmentDate;
+
+        /// <summary>
+        /// hfAppointmentID control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField hfAppointmentID;
 
         /// <summary>
         /// txtTotalAmount control.
