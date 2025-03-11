@@ -10,41 +10,57 @@
    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
 
-   <style>
-       body {
-           background-color: #f8f9fa;
-       }
+    <style>
+     body {
+         background-color: #f8f9fa;
+     }
 
-       .dashboard-card {
-           padding: 50px; /* Increased padding */
-           text-align: center;
-           background: white;
-           border-radius: 15px;
-           box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
-           transition: transform 0.3s ease;
-           cursor: pointer;
-       }
+     .dashboard-card {
+         padding: 40px;
+         text-align: center;
+         background: white;
+         border-radius: 10px;
+         box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+         transition: transform 0.3s ease;
+         cursor: pointer;
+     }
+     /* Header */
+     .header {
+         background: #3498db;
+         padding: 20px;
+         color: white;
+         text-align: center;
+         border-radius: 5px;
+         margin-bottom: 20px;
+         font-size: 24px;
+     }
 
-       .dashboard-card:hover {
-           transform: scale(1.1); /* Slightly bigger on hover */
-       }
+     .dashboard-card:hover {
+         transform: scale(1.05);
+     }
 
-       i {
-           font-size: 60px; /* Larger icons */
-           margin-bottom: 20px;
-       }
-
-       h4 {
-           font-size: 24px; /* Bigger text */
-       }
-
-       p {
-           font-size: 18px; /* Adjust paragraph size */
-       }
-   </style>
+     i {
+         font-size: 50px;
+         margin-bottom: 20px;
+     }
+      /* Header */
+ .header {
+     background: #3498db;
+     padding: 20px;
+     color: white;
+     text-align: center;
+     border-radius: 5px;
+     margin-bottom: 20px;
+     font-size: 24px;
+ }
+ </style>
 </head>
 <body>
     <form id="form1" runat="server">
+        <div class="header">
+            <h2>Welcome</h2>
+        </div>
+
         <div class="container mt-4">
             <div class="row">
                 <div class="col-md-6 mb-4">
