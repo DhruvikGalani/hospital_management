@@ -51,13 +51,13 @@ namespace hospital_management.Admin_Dashbord
         protected global::System.Web.UI.WebControls.DropDownList ddlDoctor;
 
         /// <summary>
-        /// ddlStaff control.
+        /// txtRating control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlStaff;
+        protected global::System.Web.UI.WebControls.TextBox txtRating;
 
         /// <summary>
         /// txtVisitDate control.
@@ -76,15 +76,6 @@ namespace hospital_management.Admin_Dashbord
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtFeedback;
-
-        /// <summary>
-        /// txtRating control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtRating;
 
         /// <summary>
         /// btnSubmit control.

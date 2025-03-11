@@ -1,6 +1,118 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="NutritionWellness.aspx.cs" Inherits="hospital_management.Doctor.NutritionWellness" %>
 
 <!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nutrition Wellness</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <style>
+        .container {
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div class="container">
+            <h2 class="text-center text-primary">🍎 Nutrition Wellness Management</h2>
+            <div class="card p-4 shadow">
+                <asp:Label ID="lblMessage" runat="server" CssClass="text-center text-danger"></asp:Label>
+                <div class="row">
+                    <div class="col-md-6">
+                        <asp:DropDownList ID="ddlPatient" CssClass="form-control mb-3" runat="server" AutoPostBack="True"></asp:DropDownList>
+                    </div>
+                    <div class="col-md-6">
+                        <asp:DropDownList ID="ddlDoctor" CssClass="form-control mb-3" runat="server"></asp:DropDownList>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <asp:TextBox ID="txtDietPlan" CssClass="form-control mb-3" runat="server" Placeholder="Diet Plan"></asp:TextBox>
+                    </div>
+                    <div class="col-md-6">
+                        <asp:TextBox ID="txtExercisePlan" CssClass="form-control mb-3" runat="server" Placeholder="Exercise Plan"></asp:TextBox>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <asp:TextBox ID="txtHealthGoals" CssClass="form-control mb-3" runat="server" Placeholder="Health Goals"></asp:TextBox>
+                    </div>
+                    <div class="col-md-6">
+                        <asp:TextBox ID="txtAllergies" CssClass="form-control mb-3" runat="server" Placeholder="Allergies"></asp:TextBox>
+                    </div>
+                </div>
+                <asp:TextBox ID="txtNotes" CssClass="form-control mb-3" runat="server" Placeholder="Notes"></asp:TextBox>
+                <div class="text-center">
+                    <asp:Button ID="btnAddNutrition" CssClass="btn btn-primary" runat="server" Text="Add Record" OnClick="btnAddNutrition_Click" />
+                </div>
+            </div>
+            <h3 class="mt-5 text-center text-success">Nutrition Wellness Records</h3>
+            <asp:GridView ID="GridViewNutrition" runat="server" AutoGenerateColumns="False" DataKeyNames="wellnessID" CssClass="table table-bordered table-striped mt-3"
+                OnRowEditing="GridViewNutrition_RowEditing" OnRowCancelingEdit="GridViewNutrition_RowCancelingEdit"
+                OnRowUpdating="GridViewNutrition_RowUpdating" OnRowDeleting="GridViewNutrition_RowDeleting">
+                <Columns>
+                    <asp:BoundField DataField="wellnessID" HeaderText="Wellness ID" ReadOnly="True" />
+                    <asp:TemplateField HeaderText="Patient Name">
+                        <ItemTemplate>
+                            <%# Eval("patientName") %>
+                        </ItemTemplate>
+                        <EditItemTemplate>
+                            <asp:DropDownList ID="ddlPatientEdit" runat="server" CssClass="form-control"></asp:DropDownList>
+                        </EditItemTemplate>
+                    </asp:TemplateField>
+                    <asp:TemplateField HeaderText="Doctor Name">
+                        <ItemTemplate>
+                            <%# Eval("doctorName") %>
+                        </ItemTemplate>
+                        <EditItemTemplate>
+                            <asp:DropDownList ID="ddlDoctorEdit" runat="server" CssClass="form-control"></asp:DropDownList>
+                        </EditItemTemplate>
+                    </asp:TemplateField>
+                    <asp:TemplateField HeaderText="Diet Plan">
+                        <ItemTemplate>
+                            <%# Eval("dietPlan") %>
+                        </ItemTemplate>
+                        <EditItemTemplate>
+                            <asp:TextBox ID="txtDietPlanEdit" runat="server" Text='<%# Bind("dietPlan") %>' CssClass="form-control"></asp:TextBox>
+                        </EditItemTemplate>
+                    </asp:TemplateField>
+                    <asp:TemplateField HeaderText="Exercise Plan">
+                        <ItemTemplate>
+                            <%# Eval("exercisePlan") %>
+                        </ItemTemplate>
+                        <EditItemTemplate>
+                            <asp:TextBox ID="txtExercisePlanEdit" runat="server" Text='<%# Bind("exercisePlan") %>' CssClass="form-control"></asp:TextBox>
+                        </EditItemTemplate>
+                    </asp:TemplateField>
+                    <asp:TemplateField HeaderText="Health Goals">
+                        <ItemTemplate>
+                            <%# Eval("healthGoals") %>
+                        </ItemTemplate>
+                        <EditItemTemplate>
+                            <asp:TextBox ID="txtHealthGoalsEdit" runat="server" Text='<%# Bind("healthGoals") %>' CssClass="form-control"></asp:TextBox>
+                        </EditItemTemplate>
+                    </asp:TemplateField>
+                    <asp:TemplateField HeaderText="Allergies">
+                        <ItemTemplate>
+                            <%# Eval("allergies") %>
+                        </ItemTemplate>
+                        <EditItemTemplate>
+                            <asp:TextBox ID="txtAllergiesEdit" runat="server" Text='<%# Bind("allergies") %>' CssClass="form-control"></asp:TextBox>
+                        </EditItemTemplate>
+                    </asp:TemplateField>
+                    <asp:CommandField ShowEditButton="True" ShowDeleteButton="True" />
+                </Columns>
+            </asp:GridView>
+        </div>
+    </form>
+</body>
+</html>
+
+<%--<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="NutritionWellness.aspx.cs" Inherits="hospital_management.Doctor.NutritionWellness" %>
+
+<!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
@@ -144,4 +256,4 @@
     </div>
 </div>
 </body>
-</html>
+</html>--%>
