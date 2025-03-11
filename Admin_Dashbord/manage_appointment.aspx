@@ -45,7 +45,7 @@
             </div>
 
             <div class="mt-4">
-            <h3 class="text-center text-success">📝 Appointments List</h3>
+            <h3 class="text-center text-success">Appointments List</h3>
 
                 <asp:GridView ID="GridView1" runat="server" CssClass="table table-bordered table-striped" AutoGenerateColumns="False" DataKeyNames="appointmentID"
                     OnRowEditing="GridView1_RowEditing" OnRowUpdating="GridView1_RowUpdating" OnRowCancelingEdit="GridView1_RowCancelingEdit" OnRowDeleting="GridView1_RowDeleting">
@@ -90,8 +90,7 @@
                                 <asp:Label ID="lblStatus" runat="server" Text='<%# Bind("status") %>'></asp:Label>
                             </ItemTemplate>
                         </asp:TemplateField>
-                        <asp:CommandField ShowEditButton="True" ButtonType="Button" EditText="Edit" UpdateText="Update" CancelText="Cancel" />
-                        <asp:CommandField ShowDeleteButton="True" ButtonType="Button" DeleteText="Delete" />
+                        <asp:CommandField ShowEditButton="True" ShowDeleteButton="True" />
                     </Columns>
                 </asp:GridView>
             </div>

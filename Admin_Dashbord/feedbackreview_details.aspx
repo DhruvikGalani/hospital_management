@@ -26,9 +26,10 @@
                         <asp:DropDownList ID="ddlDoctor" runat="server" CssClass="form-control"></asp:DropDownList>
                     </div>
                     <div class="col-md-4">
-                        <label>Staff:</label>
-                        <asp:DropDownList ID="ddlStaff" runat="server" CssClass="form-control"></asp:DropDownList>
+                        <label>Rating (1-5):</label>
+                        <asp:TextBox ID="txtRating" runat="server" CssClass="form-control"></asp:TextBox>
                     </div>
+                   
                 </div>
                 <div class="row mt-2">
                     <div class="col-md-4">
@@ -39,10 +40,7 @@
                         <label>Feedback:</label>
                         <asp:TextBox ID="txtFeedback" runat="server" CssClass="form-control" TextMode="MultiLine"></asp:TextBox>
                     </div>
-                    <div class="col-md-4">
-                        <label>Rating (1-5):</label>
-                        <asp:TextBox ID="txtRating" runat="server" CssClass="form-control"></asp:TextBox>
-                    </div>
+                   
                 </div>
                 <div class="mt-3 text-center">
                     <asp:Button ID="btnSubmit" runat="server" Text="Submit Feedback" CssClass="btn btn-primary" OnClick="btnSubmit_Click" />
@@ -50,42 +48,64 @@
             </div>
 
             <div class="mt-4">
-                <h3 class="text-center text-success">📌 Feedback Reviews</h3>
+                <h3 class="text-center text-success">Feedback Reviews</h3>
                 <asp:GridView ID="GridViewFeedback" runat="server" CssClass="table table-bordered table-striped" AutoGenerateColumns="False" DataKeyNames="feedbackID"
-                    OnRowEditing="GridViewFeedback_RowEditing" OnRowUpdating="GridViewFeedback_RowUpdating" OnRowCancelingEdit="GridViewFeedback_RowCancelingEdit" OnRowDeleting="GridViewFeedback_RowDeleting">
+                    OnRowEditing="GridViewFeedback_RowEditing" OnRowUpdating="GridViewFeedback_RowUpdating"
+                    OnRowCancelingEdit="GridViewFeedback_RowCancelingEdit" OnRowDeleting="GridViewFeedback_RowDeleting"
+                    OnRowDataBound="GridViewFeedback_RowDataBound">
+
                     <Columns>
-                        <asp:BoundField DataField="feedbackID" HeaderText="Feedback ID" ReadOnly="True" />
-                        <asp:BoundField DataField="patientID" HeaderText="Patient Name" />
-                        <asp:BoundField DataField="doctorID" HeaderText="Doctor Name" />
-                        <asp:BoundField DataField="staffID" HeaderText="Staff Name" />
+                        <asp:TemplateField HeaderText="Patient Name">
+                            <ItemTemplate>
+                                <%# Eval("PatientName") %>
+                            </ItemTemplate>
+                            <EditItemTemplate>
+                                <asp:DropDownList ID="ddlPatientEdit" runat="server" CssClass="form-select"></asp:DropDownList>
+                            </EditItemTemplate>
+                        </asp:TemplateField>
+
+                        <asp:TemplateField HeaderText="Doctor Name">
+                            <ItemTemplate>
+                                <%# Eval("DoctorName") %>
+                            </ItemTemplate>
+                            <EditItemTemplate>
+                                <asp:DropDownList ID="ddlDoctorEdit" runat="server" CssClass="form-select"></asp:DropDownList>
+                            </EditItemTemplate>
+                        </asp:TemplateField>
+
                         <asp:TemplateField HeaderText="Visit Date">
-                            <EditItemTemplate>
-                                <asp:TextBox ID="txtEditVisitDate" runat="server" CssClass="form-control" Text='<%# Bind("visitDate", "{0:yyyy-MM-dd}") %>' TextMode="Date"></asp:TextBox>
-                            </EditItemTemplate>
                             <ItemTemplate>
-                                <asp:Label ID="lblVisitDate" runat="server" Text='<%# Eval("visitDate", "{0:yyyy-MM-dd}") %>'></asp:Label>
+                                <%# Eval("visitDate", "{0:yyyy-MM-dd}") %>
                             </ItemTemplate>
+                            <EditItemTemplate>
+                                <asp:TextBox ID="txtEditVisitDate" runat="server" CssClass="form-control" TextMode="Date" Text='<%# Bind("visitDate", "{0:yyyy-MM-dd}") %>'></asp:TextBox>
+                            </EditItemTemplate>
                         </asp:TemplateField>
+
                         <asp:TemplateField HeaderText="Feedback">
-                            <EditItemTemplate>
-                                <asp:TextBox ID="txtEditFeedback" runat="server" CssClass="form-control" Text='<%# Bind("feedbackText") %>'></asp:TextBox>
-                            </EditItemTemplate>
                             <ItemTemplate>
-                                <asp:Label ID="lblFeedback" runat="server" Text='<%# Bind("feedbackText") %>'></asp:Label>
+                                <%# Eval("feedbackText") %>
                             </ItemTemplate>
+                            <EditItemTemplate>
+                                <asp:TextBox ID="txtEditFeedback" runat="server" CssClass="form-control" TextMode="MultiLine" Text='<%# Bind("feedbackText") %>'></asp:TextBox>
+                            </EditItemTemplate>
                         </asp:TemplateField>
+
                         <asp:TemplateField HeaderText="Rating">
+                            <ItemTemplate>
+                                <%# Eval("rating") %>
+                            </ItemTemplate>
                             <EditItemTemplate>
                                 <asp:TextBox ID="txtEditRating" runat="server" CssClass="form-control" Text='<%# Bind("rating") %>'></asp:TextBox>
                             </EditItemTemplate>
-                            <ItemTemplate>
-                                <asp:Label ID="lblRating" runat="server" Text='<%# Bind("rating") %>'></asp:Label>
-                            </ItemTemplate>
                         </asp:TemplateField>
-                        <asp:CommandField ShowEditButton="True" ButtonType="Button" EditText="Edit" UpdateText="Update" CancelText="Cancel" />
-                        <asp:CommandField ShowDeleteButton="True" ButtonType="Button" DeleteText="Delete" />
+
+                        <asp:CommandField ShowEditButton="True" ShowDeleteButton="True" />
+
                     </Columns>
                 </asp:GridView>
+
+
             </div>
         </div>
     </form>
