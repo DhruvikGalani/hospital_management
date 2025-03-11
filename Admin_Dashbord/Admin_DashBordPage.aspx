@@ -77,16 +77,7 @@
             transition: margin-left 0.3s;
         }
 
-        /* Header */
-        .header {
-            background: #3498db;
-            padding: 20px;
-            color: white;
-            text-align: center;
-            border-radius: 5px;
-            margin-bottom: 20px;
-            font-size: 24px;
-        }
+       
 
         /* Iframe */
         .content-frame {
@@ -107,7 +98,6 @@
             <li><a href="manage_doctors.aspx" target="contentFrame"><i class="fas fa-user-md"></i>Manage Doctors</a></li>
             <li><a href="manage_nurses.aspx" target="contentFrame"><i class="fas fa-user-nurse"></i>Manage Nurses</a></li>
             <li><a href="patient_details.aspx" target="contentFrame"><i class="fas fa-procedures"></i>Manage Patients</a></li>
-            <li><a href="staffInformation_details.aspx" target="contentFrame"><i class="fas fa-users"></i>Manage Staff</a></li>
             <li><a href="../Nurse_dashboard/Ambulance_details.aspx" target="contentFrame"><i class="fas fa-ambulance"></i>Ambulances</a></li>
             <li><a href="insurance_details.aspx" target="contentFrame"><i class="fas fa-file-invoice-dollar"></i>Insurance</a></li>
             <li><a href="manage_appointment.aspx" target="contentFrame"><i class="fas fa-calendar-check"></i>Appointments</a></li>
@@ -117,16 +107,13 @@
             <li><a href="../Nurse_dashboard/laboratorytest_details.aspx" target="contentFrame"><i class="fas fa-vials"></i>Laboratory Test Management</a></li>
             <li><a href="feedbackreview_details.aspx" target="contentFrame"><i class="fas fa-comment-dots"></i>Feedback & Reviews</a></li>
             <li><a href="nutrition_wellness.aspx" target="contentFrame"><i class="fas fa-apple-alt"></i>Nutrition & Wellness</a></li>
-            <li><a href="reports.aspx" target="contentFrame"><i class="fas fa-chart-line"></i>Reports</a></li>
             <li><a href="settings.aspx" target="contentFrame"><i class="fas fa-cogs"></i>Settings</a></li>
         </ul>
     </div>
 
     <!-- Main Content -->
     <div class="main-content">
-        <div class="header">
-            <h2>Welcome Admin</h2>
-        </div>
+     
 
         <!-- Iframe to load pages without redirecting -->
         <iframe name="contentFrame" class="content-frame" src="admin_homePage.aspx"></iframe>

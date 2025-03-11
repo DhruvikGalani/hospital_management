@@ -16,9 +16,9 @@
 <body>
 
     <form runat="server">
-        <div class="container mt-5">
+        <div class="container mt-4">
             <h2 class="text-center text-primary">⚠️ Emergency Management</h2>
-            <hr/>
+            <div class="card p-4">
 
                 <div class="row">
                     <div class="col-md-6">
@@ -66,7 +66,8 @@
                 <asp:Label ID="lblMessage" runat="server" CssClass="mt-3"></asp:Label>
             </div>
 
-            <h3 class="mt-5 text-center text-success">Emergency Cases</h3>
+        <div class="mt-4">
+            <h3 class="text-center text-success">Emergency Cases</h3>
             <asp:GridView ID="gvEmergency" runat="server" CssClass="table table-bordered table-striped mt-3"
                 AutoGenerateColumns="False" DataKeyNames="emergencyCaseID"
                 OnRowEditing="gvEmergency_RowEditing"
@@ -136,7 +137,7 @@
             </asp:GridView>
 
         </div>
-
+        </div>
     </form>
 
 
