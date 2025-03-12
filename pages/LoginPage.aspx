@@ -153,9 +153,6 @@
                 <a href="#">Forgot Password?</a>
             </div>
             <asp:Button ID="btnLogin" runat="server" Text="Sign in" OnClick="btnLogin_Click" CssClass="submit-btn" />
-          <%--  <div class="sign-up">
-                Not a member? <a href="RegisterPage.aspx">Signup now</a>
-            </div>--%>
         </form>
     </div>
 </body>
