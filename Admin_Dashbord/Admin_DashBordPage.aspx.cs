@@ -11,7 +11,10 @@ namespace hospital_management.Admin_Dashbord
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if(Session["AdminID"] == null)
+            {
+                Response.Redirect("~/pages/LoginPage.aspx");
+            }
         }
     }
 }

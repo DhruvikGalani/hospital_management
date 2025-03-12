@@ -11,7 +11,10 @@ namespace hospital_management.Doctor
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if(Session["DoctorID"] == null)
+            {
+                Response.Redirect("~/pages/LoginPage.aspx");
+            }
         }
     }
 }
