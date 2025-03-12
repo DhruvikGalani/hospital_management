@@ -122,6 +122,12 @@
             <li><a href="patient_details.aspx" target="contentFrame"><i class="fas fa-procedures"></i>Patient Management</a></li>
             <li><a href="medical_records.aspx" target="contentFrame"><i class="fas fa-file-medical"></i>Medical Records</a></li>
             <li><a href="billing_manage.aspx" target="contentFrame"><i class="fas fa-money-bill-wave"></i>Billing Management</a></li>
+            <li>
+                <a href="nurse_logout.aspx" target="_self">
+                    <i class="fas fa-sign-out-alt"></i>Logout
+                </a>
+            </li>
+
         </ul>
 
     </div>

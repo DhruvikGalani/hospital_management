@@ -75,17 +75,6 @@
          transition: margin-left 0.3s;
      }
 
-     /* Header */
-     .header {
-         background: #3498db;
-         padding: 20px;
-         color: white;
-         text-align: center;
-         border-radius: 5px;
-         margin-bottom: 20px;
-         font-size: 24px;
-     }
-
      /* Iframe */
      .content-frame {
          width: 100%;
@@ -100,29 +89,24 @@
       <div class="sidebar">
       <h2>HMS - Doctor</h2>
       <ul>
-          <%--  <li><a href="profile.aspx" target="contentFrame"> 👤Profile</a></li>
-  <li><a href="homepage.aspx" target="contentFrame">🏠 Home</a></li>
-  <li><a href="Ambulance_details.aspx" target="contentFrame">🚑 Ambulance Services</a></li>
-  <li><a href="Emergency_details.aspx" target="contentFrame">⚠️ Emergency Cases</a></li>
-  <li><a href="laboratorytest_details.aspx" target="contentFrame">🧪 Laboratory Management</a></li>
-  <li><a href="patient_details.aspx" target="contentFrame">🧑‍⚕️ Patient Management</a></li>
-  <li><a href="medical_records.aspx" target="contentFrame">📄 Doctor Records</a></li>
-  <li><a href="billing_manage.aspx" target="contentFrame"> 💳Billing Management</a></li>--%>
-          <li><a href="DoctorProfile.aspx" target="contentFrame"><i class="fas fa-user"></i>Profile</a></li>
+          <li><a href="doctor_profile.aspx" target="contentFrame"><i class="fas fa-user"></i>Profile</a></li>
           <li><a href="DHomepage.aspx" target="contentFrame"><i class="fas fa-home"></i>Home</a></li>
           <li><a href="MedicalRecord.aspx" target="contentFrame"><i class="fas fa-ambulance"></i>Medical Record</a></li>
           <li><a href="NutritionWellness.aspx" target="contentFrame"><i class="fas fa-exclamation-triangle"></i>Nutrition Wellness</a></li>
           <li><a href="Patientsandcarers.aspx" target="contentFrame"><i class="fas fa-vials"></i>Patients and carers</a></li>
-  
+          <li><a href="../Nurse_dashboard/billing_manage.aspx" target="contentFrame"><i class="fas fa-money-bill-wave"></i>Billing & Payments</a></li>
+          <li>
+              <a href="doctor_logout.aspx" target="_self">
+                  <i class="fas fa-sign-out-alt"></i>Logout
+              </a>
+          </li>
+
       </ul>
 
   </div>
 
   <div class="main-content">
-      <div class="header">
-          <h2>Welcome</h2>
-      </div>
-
+     
       <!-- Iframe to load pages without redirecting -->
 
       <iframe name="contentFrame" class="content-frame" src="DHomepage.aspx"></iframe>
