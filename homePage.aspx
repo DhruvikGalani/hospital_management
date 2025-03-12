@@ -31,7 +31,46 @@
         section {
             scroll-margin-top: 80px; /* Adjust based on your header height */
         }
+        /* Profile Section */
+.profile-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    background-color: transparent;
+    border-radius: 10px;
+    margin: 10px;
+}
 
+.profile-pic {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #007bff;
+}
+
+.profile-name {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+    color : white;
+}
+
+.logout {
+    background-color: #dc3545;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 14px;
+    margin-left: 10px;
+    transition: 0.3s;
+}
+
+.logout:hover {
+    background-color: #b02a37;
+}
     </style>
     <script>
 
@@ -297,17 +336,28 @@
         <nav class="nav">
             <ul>
                 <li><a href="#home">Home</a></li>
-                <li><a href="https://localhost:44331/Doctor/Patientsandcarers.aspx">Patients and carers</a>
+                <li><a href="https://localhost:44331/Doctor/Patientsandcarers.aspx">Patients and carers</a></li>
                 <li><a href="#services">Services</a></li>
                 <li><a href="#doctors">Doctors</a></li>
                 <li><a href="#appointments">Appointments</a></li>
                 <li><a href="#contact">Contact</a></li>
-                <li><a href="pages/LoginPage.aspx">Login</a></li>
-               <li><a href="https://localhost:44331/pages/RegisterPage.aspx">Register</a></li>
-                
 
+                <% if (Session["UserType"] == null) { %>
+                <!-- Show Login and Register if User is Not Logged In -->
+                <li><a href="pages/LoginPage.aspx">Login</a></li>
+                <li><a href="https://localhost:44331/pages/RegisterPage.aspx">Register</a></li>
+                <% } %>
             </ul>
         </nav>
+
+        <!-- Profile Section: Displayed Only If Logged In -->
+        <% if (Session["UserType"] != null && Session["UserType"].ToString() == "Patient") { %>
+        <div class="profile-container">
+            <img src="<%= ResolveUrl(Session["PatientProfilePicture"]?.ToString() ?? "~/Images/default.png") %>" alt="Profile" class="profile-pic">
+            <span class="profile-name"><%= Session["PatientName"] %></span>
+            <a href="Patient/patient_logout.aspx" class="logout">Logout</a>
+        </div>
+        <% } %>
     </header>
     <div class="image-preload">
         <img src="Images/hms_im.jpg" alt="Image 1" />
@@ -322,7 +372,8 @@
         <div class="hero-content">
             <h1 class="maintxt">Your Health Is Our Priority</h1>
             <p>Providing exceptional healthcare services with compassion and expertise</p>
-            <button class="cta-button">Book Appointment</button>
+            <button class="cta-button" onclick="window.location.href='Patient/AddAppointment.aspx';">Book Appointment</button>
+
         </div>
     </section>
     <section id="services" class="services">
