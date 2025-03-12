@@ -72,6 +72,8 @@
     <Content Include="Admin\StaffInformation.aspx" />
     <Content Include="Admin_Dashbord\Admin_DashBordPage.aspx" />
     <Content Include="Admin_Dashbord\admin_homePage.aspx" />
+    <Content Include="Admin_Dashbord\admin_logout.aspx" />
+    <Content Include="Admin_Dashbord\admin_profile.aspx" />
     <Content Include="Admin_Dashbord\billing_details.aspx" />
     <Content Include="Admin_Dashbord\feedbackreview_details.aspx" />
     <Content Include="Admin_Dashbord\insurance_details.aspx" />
@@ -110,6 +112,8 @@
     <Content Include="Doctor\DoctorDetails.aspx" />
     <Content Include="Doctor\Doctorhomepage.aspx" />
     <Content Include="Doctor\DoctorProfile.aspx" />
+    <Content Include="Doctor\doctor_logout.aspx" />
+    <Content Include="Doctor\doctor_profile.aspx" />
     <Content Include="Doctor\MedicalRecord.aspx" />
     <Content Include="Doctor\NutritionWellness.aspx" />
     <Content Include="Doctor\Patientsandcarers.aspx" />
@@ -174,6 +178,7 @@
     <Content Include="Nurse_dashboard\medical_records.aspx" />
     <Content Include="Nurse_dashboard\Nurse_homepage.aspx" />
     <Content Include="Nurse_dashboard\nurse_details.aspx" />
+    <Content Include="Nurse_dashboard\nurse_logout.aspx" />
     <Content Include="Nurse_dashboard\patient_details.aspx" />
     <Content Include="Nurse_dashboard\profile.aspx" />
     <Content Include="pages\LoginPage.aspx" />
@@ -297,6 +302,20 @@
     <Compile Include="Admin_Dashbord\admin_homePage.aspx.designer.cs">
       <DependentUpon>admin_homePage.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Admin_Dashbord\admin_logout.aspx.cs">
+      <DependentUpon>admin_logout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin_Dashbord\admin_logout.aspx.designer.cs">
+      <DependentUpon>admin_logout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin_Dashbord\admin_profile.aspx.cs">
+      <DependentUpon>admin_profile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin_Dashbord\admin_profile.aspx.designer.cs">
+      <DependentUpon>admin_profile.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Admin_Dashbord\billing_details.aspx.cs">
       <DependentUpon>billing_details.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -380,6 +399,20 @@
     </Compile>
     <Compile Include="Doctor\DoctorProfile.aspx.designer.cs">
       <DependentUpon>DoctorProfile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Doctor\doctor_logout.aspx.cs">
+      <DependentUpon>doctor_logout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Doctor\doctor_logout.aspx.designer.cs">
+      <DependentUpon>doctor_logout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Doctor\doctor_profile.aspx.cs">
+      <DependentUpon>doctor_profile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Doctor\doctor_profile.aspx.designer.cs">
+      <DependentUpon>doctor_profile.aspx</DependentUpon>
     </Compile>
     <Compile Include="Doctor\MedicalRecord.aspx.cs">
       <DependentUpon>MedicalRecord.aspx</DependentUpon>
@@ -485,6 +518,13 @@
     </Compile>
     <Compile Include="Nurse_dashboard\nurse_details.aspx.designer.cs">
       <DependentUpon>nurse_details.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Nurse_dashboard\nurse_logout.aspx.cs">
+      <DependentUpon>nurse_logout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Nurse_dashboard\nurse_logout.aspx.designer.cs">
+      <DependentUpon>nurse_logout.aspx</DependentUpon>
     </Compile>
     <Compile Include="Nurse_dashboard\patient_details.aspx.cs">
       <DependentUpon>patient_details.aspx</DependentUpon>
