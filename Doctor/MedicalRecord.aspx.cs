@@ -22,72 +22,7 @@ namespace hospital_management.Doctor
 
         }
 
-        //void BindPatient()
-        //{
-        //    SqlDataAdapter da = new SqlDataAdapter("SELECT patientID, name AS patientName FROM tbl_Patients", con);
-        //    DataTable dt = new DataTable();
-        //    da.Fill(dt);
-        //    ddlPatient.DataSource = dt;
-        //    ddlPatient.DataTextField = "patientName";
-        //    ddlPatient.DataValueField = "patientID";
-        //    ddlPatient.DataBind();
-        //    ddlPatient.Items.Insert(0, new ListItem("--Select Patient--", "0"));
-        //}
-
-        //void BindDoctor()
-        //{
-        //    SqlDataAdapter da = new SqlDataAdapter("SELECT doctorID, name AS doctorName FROM tbl_Doctors", con);
-        //    DataTable dt = new DataTable();
-        //    da.Fill(dt);
-        //    ddlDoctor.DataSource = dt;
-        //    ddlDoctor.DataTextField = "doctorName";
-        //    ddlDoctor.DataValueField = "doctorID";
-        //    ddlDoctor.DataBind();
-        //    ddlDoctor.Items.Insert(0, new ListItem("--Select Doctor--", "0"));
-        //}
-
-        //private void BindPatient(DropDownList ddlPatients)
-        //{
-        //    using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["MyConnectionString"].ConnectionString))
-        //    {
-        //        using (SqlCommand cmd = new SqlCommand("SELECT patientID, name FROM tbl_Patients", con))
-        //        {
-        //            con.Open();
-        //            SqlDataAdapter da = new SqlDataAdapter(cmd);
-        //            DataTable dt = new DataTable();
-        //            da.Fill(dt);
-        //            con.Close();
-
-        //            ddlPatients.DataSource = dt;
-        //            ddlPatients.DataTextField = "name";
-        //            ddlPatients.DataValueField = "patientID";
-        //            ddlPatients.DataBind();
-        //        }
-        //    }
-        //}
-
-        //// Method to populate the doctor dropdown
-        //private void BindDoctor(DropDownList ddlDoctors)
-        //{
-        //    using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["MyConnectionString"].ConnectionString))
-        //    {
-        //        using (SqlCommand cmd = new SqlCommand("SELECT doctorID, name FROM tbl_Doctors", con))
-        //        {
-        //            con.Open();
-        //            SqlDataAdapter da = new SqlDataAdapter(cmd);
-        //            DataTable dt = new DataTable();
-        //            da.Fill(dt);
-        //            con.Close();
-
-        //            ddlDoctors.DataSource = dt;
-        //            ddlDoctors.DataTextField = "name";
-        //            ddlDoctors.DataValueField = "doctorID";
-        //            ddlDoctors.DataBind();
-        //        }
-        //    }
-        //}
-
-        // Default patient dropdown population method (for the main form)
+        
         private void PopulatePatientDropdown()
         {
             using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["MyConnectionString"].ConnectionString))
@@ -281,6 +216,25 @@ namespace hospital_management.Doctor
             BindGridView();
         }
 
+        void BindGridView()
+        {
+            SqlDataAdapter da = new SqlDataAdapter(@"
+        SELECT 
+            m.recordID, 
+            p.patientID, p.name AS PatientName, 
+            d.doctorID, d.name AS DoctorName, 
+            m.visitDate, m.diagnosis, 
+            m.prescribedMedications, m.treatmentNotes, m.treatmentStatus 
+        FROM tbl_MedicalRecords m
+        INNER JOIN tbl_Patients p ON m.patientID = p.patientID
+        INNER JOIN tbl_Doctors d ON m.doctorID = d.doctorID", con);
+
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            gvMedicalRecords.DataSource = dt;
+            gvMedicalRecords.DataBind();
+        }
+
         protected void gvMedicalRecords_RowUpdating(object sender, GridViewUpdateEventArgs e)
         {
             try
@@ -292,41 +246,53 @@ namespace hospital_management.Doctor
                 GridViewRow row = gvMedicalRecords.Rows[e.RowIndex];
 
                 // Get edited values from the GridView controls
-                DropDownList ddlEditPatient = (DropDownList)row.FindControl("ddlEditPatient");
-                DropDownList ddlEditDoctor = (DropDownList)row.FindControl("ddlEditDoctor");
-                TextBox txtEditVisitDate = (TextBox)row.FindControl("txtEditVisitDate");
-                TextBox txtEditDiagnosis = (TextBox)row.FindControl("txtEditDiagnosis");
-                TextBox txtEditMedications = (TextBox)row.FindControl("txtEditMedications");
-                TextBox txtEditNotes = (TextBox)row.FindControl("txtEditNotes");
-                DropDownList ddlEditStatus = (DropDownList)row.FindControl("ddlEditStatus");
+                DropDownList ddlEditPatient = (DropDownList)row.FindControl("ddlPatientEdit");
+                DropDownList ddlEditDoctor = (DropDownList)row.FindControl("ddlDoctorEdit");
+                TextBox txtEditVisitDate = (TextBox)row.FindControl("txtVisitDateEdit");
+                TextBox txtEditDiagnosis = (TextBox)row.FindControl("txtDiagnosisEdit");
+                TextBox txtEditMedications = (TextBox)row.FindControl("txtMedicationsEdit");
+                TextBox txtEditNotes = (TextBox)row.FindControl("txtNotesEdit");
+                DropDownList ddlEditStatus = (DropDownList)row.FindControl("ddlStatusEdit");
 
-                using (SqlCommand cmd = new SqlCommand(@"UPDATE tbl_MedicalRecords 
-    SET 
-        patientID = @patientID, 
-        doctorID = @doctorID, 
-        visitDate = @visitDate, 
-        diagnosis = @diagnosis, 
-        prescribedMedications = @medications, 
-        treatmentNotes = @notes, 
-        treatmentStatus = @treatmentStatus
-    WHERE recordID = @recordID", con))
+                if(ddlEditPatient == null || ddlEditDoctor == null || txtEditVisitDate == null ||
+                    txtEditDiagnosis == null || txtEditMedications == null || txtEditNotes == null || ddlEditStatus == null)
+                {
+                    lblMessage.Text = "⚠ Error: Some input fields could not be found.";
+                    lblMessage.CssClass = "text-danger";
+                    return;
+                }
+
+                using(SqlCommand cmd = new SqlCommand(@"UPDATE tbl_MedicalRecords 
+            SET 
+                patientID = @patientID, 
+                doctorID = @doctorID, 
+                visitDate = @visitDate, 
+                diagnosis = @diagnosis, 
+                prescribedMedications = @medications, 
+                treatmentNotes = @notes, 
+                treatmentStatus = @treatmentStatus
+            WHERE recordID = @recordID", con))
                 {
                     // Safely get values from the grid controls
-                    int patientID = ddlEditPatient != null ? Convert.ToInt32(ddlEditPatient.SelectedValue) : 0;
-                    int doctorID = ddlEditDoctor != null ? Convert.ToInt32(ddlEditDoctor.SelectedValue) : 0;
+                    int patientID = Convert.ToInt32(ddlEditPatient.SelectedValue);
+                    int doctorID = Convert.ToInt32(ddlEditDoctor.SelectedValue);
+
+                    DateTime visitDate;
+                    if(!DateTime.TryParse(txtEditVisitDate.Text, out visitDate))
+                    {
+                        lblMessage.Text = "⚠ Error: Invalid date format.";
+                        lblMessage.CssClass = "text-danger";
+                        return;
+                    }
 
                     cmd.Parameters.AddWithValue("@recordID", recordID);
                     cmd.Parameters.AddWithValue("@patientID", patientID);
                     cmd.Parameters.AddWithValue("@doctorID", doctorID);
-
-                    // Add the missing visitDate parameter
-                    cmd.Parameters.AddWithValue("@visitDate", txtEditVisitDate != null ?
-                        Convert.ToDateTime(txtEditVisitDate.Text) : DateTime.Now);
-
-                    cmd.Parameters.AddWithValue("@diagnosis", txtEditDiagnosis != null ? txtEditDiagnosis.Text.Trim() : "");
-                    cmd.Parameters.AddWithValue("@medications", txtEditMedications != null ? txtEditMedications.Text.Trim() : "");
-                    cmd.Parameters.AddWithValue("@notes", txtEditNotes != null ? txtEditNotes.Text.Trim() : "");
-                    cmd.Parameters.AddWithValue("@treatmentStatus", ddlEditStatus != null ? ddlEditStatus.SelectedValue : "Not Started");
+                    cmd.Parameters.AddWithValue("@visitDate", visitDate);
+                    cmd.Parameters.AddWithValue("@diagnosis", txtEditDiagnosis.Text.Trim());
+                    cmd.Parameters.AddWithValue("@medications", txtEditMedications.Text.Trim());
+                    cmd.Parameters.AddWithValue("@notes", txtEditNotes.Text.Trim());
+                    cmd.Parameters.AddWithValue("@treatmentStatus", ddlEditStatus.SelectedValue);
 
                     con.Open();
                     cmd.ExecuteNonQuery();
@@ -339,12 +305,13 @@ namespace hospital_management.Doctor
                     BindGridView();
                 }
             }
-            catch (Exception ex)
+            catch(Exception ex)
             {
                 lblMessage.Text = "⚠ Error: " + ex.Message;
                 lblMessage.CssClass = "text-danger";
             }
         }
+
         protected void gvMedicalRecords_RowDeleting(object sender, GridViewDeleteEventArgs e)
         {
             int recordID = Convert.ToInt32(gvMedicalRecords.DataKeys[e.RowIndex].Value);
@@ -358,17 +325,6 @@ namespace hospital_management.Doctor
             lblMessage.CssClass = "text-danger";
         }
 
-        void BindGridView()
-        {
-            SqlDataAdapter da = new SqlDataAdapter(@"SELECT m.recordID, p.name AS PatientName, d.name AS DoctorName, m.visitDate, m.diagnosis, m.prescribedMedications, m.treatmentNotes, m.treatmentStatus 
-                                                    FROM tbl_MedicalRecords m
-                                                    INNER JOIN tbl_Patients p ON m.patientID = p.patientID
-                                                    INNER JOIN tbl_Doctors d ON m.doctorID = d.doctorID", con);
-            DataTable dt = new DataTable();
-            da.Fill(dt);
-            gvMedicalRecords.DataSource = dt;
-            gvMedicalRecords.DataBind();
-        }
 
         void ClearFields()
         {

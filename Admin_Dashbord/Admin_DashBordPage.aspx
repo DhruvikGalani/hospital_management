@@ -12,19 +12,20 @@
 
     <style>
         /* Sidebar */
-        .sidebar {
-            position: fixed;
-            width: 260px;
-            height: 100vh;
-            overflow-y: auto;
-            background: #2c3e50;
-            padding-top: 20px;
-            padding-bottom: 10px;
-            color: white;
-            transition: width 0.3s;
-            scrollbar-width: thin;
-            scrollbar-color: #888 #2c3e50;
-        }
+       .sidebar {
+    position: fixed;
+    width: 260px;
+    height: 100vh;
+    overflow-y: auto;
+    background: #2c3e50;
+    padding-top: 20px;
+    padding-bottom: 10px; /* Padding should now work */
+    color: white;
+    transition: width 0.3s;
+    scrollbar-width: thin;
+    scrollbar-color: #888 #2c3e50;
+    box-sizing: border-box; /* Ensures padding is included inside the height */
+}
 
         .sidebar::-webkit-scrollbar {
             width: 8px;
@@ -77,12 +78,13 @@
             transition: margin-left 0.3s;
         }
 
-       
+
 
         /* Iframe */
         .content-frame {
+            flex-grow: 1; /* This makes the iframe fill the remaining space */
             width: 100%;
-            height: 80vh;
+            height: calc(100vh - 40px); /* Subtracts padding */
             border: none;
             background: white;
         }
@@ -94,6 +96,7 @@
     <div class="sidebar">
         <h2>HMS - Admin</h2>
         <ul>
+            <li><a href="admin_profile.aspx" target="contentFrame"><i class="fas fa-user"></i>Profile</a></li>
             <li><a href="admin_homePage.aspx" target="contentFrame"><i class="fas fa-home"></i>Home</a></li>
             <li><a href="manage_doctors.aspx" target="contentFrame"><i class="fas fa-user-md"></i>Manage Doctors</a></li>
             <li><a href="manage_nurses.aspx" target="contentFrame"><i class="fas fa-user-nurse"></i>Manage Nurses</a></li>
@@ -101,13 +104,18 @@
             <li><a href="../Nurse_dashboard/Ambulance_details.aspx" target="contentFrame"><i class="fas fa-ambulance"></i>Ambulances</a></li>
             <li><a href="insurance_details.aspx" target="contentFrame"><i class="fas fa-file-invoice-dollar"></i>Insurance</a></li>
             <li><a href="manage_appointment.aspx" target="contentFrame"><i class="fas fa-calendar-check"></i>Appointments</a></li>
-            <li><a href="medicalrecords_details.aspx" target="contentFrame"><i class="fas fa-file-medical"></i>Medical Records</a></li>
+            <li><a href="../Doctor/MedicalRecord.aspx" target="contentFrame"><i class="fas fa-file-medical"></i>Medical Records</a></li>
             <li><a href="../Nurse_dashboard/Emergency_details.aspx" target="contentFrame"><i class="fas fa-exclamation-triangle"></i>Emergency Management</a></li>
             <li><a href="billing_details.aspx" target="contentFrame"><i class="fas fa-money-bill-wave"></i>Billing & Payments</a></li>
             <li><a href="../Nurse_dashboard/laboratorytest_details.aspx" target="contentFrame"><i class="fas fa-vials"></i>Laboratory Test Management</a></li>
             <li><a href="feedbackreview_details.aspx" target="contentFrame"><i class="fas fa-comment-dots"></i>Feedback & Reviews</a></li>
             <li><a href="nutrition_wellness.aspx" target="contentFrame"><i class="fas fa-apple-alt"></i>Nutrition & Wellness</a></li>
-            <li><a href="settings.aspx" target="contentFrame"><i class="fas fa-cogs"></i>Settings</a></li>
+            <li>
+                <a href="admin_logout.aspx" target="_self">
+                    <i class="fas fa-sign-out-alt"></i>Logout
+                </a>
+            </li>
+
         </ul>
     </div>
 
